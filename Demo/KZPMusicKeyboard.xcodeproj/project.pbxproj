@@ -142,6 +142,7 @@
 		C989F3A619AF1D6D002608F7 /* 107.aif in Resources */ = {isa = PBXBuildFile; fileRef = C989F34E19AF1D6D002608F7 /* 107.aif */; };
 		C989F3A719AF1D6D002608F7 /* 108.aif in Resources */ = {isa = PBXBuildFile; fileRef = C989F34F19AF1D6D002608F7 /* 108.aif */; };
 		C989F3A919AF59B6002608F7 /* piano_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = C989F3A819AF59B6002608F7 /* piano_keyboard.png */; };
+		C989F51F19AF853E002608F7 /* KZPMusicKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = C989F51D19AF848B002608F7 /* KZPMusicKeyboard.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,6 +303,7 @@
 		C989F34E19AF1D6D002608F7 /* 107.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = 107.aif; path = ../Assets/Audio/107.aif; sourceTree = "<group>"; };
 		C989F34F19AF1D6D002608F7 /* 108.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = 108.aif; path = ../Assets/Audio/108.aif; sourceTree = "<group>"; };
 		C989F3A819AF59B6002608F7 /* piano_keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = piano_keyboard.png; path = ../Assets/Images/piano_keyboard.png; sourceTree = "<group>"; };
+		C989F51D19AF848B002608F7 /* KZPMusicKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboard.h; path = ../Source/KZPMusicKeyboard.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +412,7 @@
 			children = (
 				C989F2B519AF0C01002608F7 /* AGWindowView */,
 				C989F1F619AF0A6B002608F7 /* Assets */,
+				C989F51D19AF848B002608F7 /* KZPMusicKeyboard.h */,
 				C989F2A719AF0A8E002608F7 /* KZPMusicKeyboardView.xib */,
 				C989F2A819AF0A8E002608F7 /* KZPMusicKeyboardViewController.h */,
 				C989F2A919AF0A8E002608F7 /* KZPMusicKeyboardViewController.m */,
@@ -574,6 +577,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		C989F51E19AF8532002608F7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C989F51F19AF853E002608F7 /* KZPMusicKeyboard.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		C989F1BC19AF07AB002608F7 /* KZPMusicKeyboard */ = {
 			isa = PBXNativeTarget;
@@ -582,6 +596,7 @@
 				C989F1B919AF07AB002608F7 /* Sources */,
 				C989F1BA19AF07AB002608F7 /* Frameworks */,
 				C989F1BB19AF07AB002608F7 /* Resources */,
+				C989F51E19AF8532002608F7 /* Headers */,
 			);
 			buildRules = (
 			);

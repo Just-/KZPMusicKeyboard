@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KZPMusicKeyboardManager.h"
-#import "KZPMusicTextField.h"
+#import "KZPMusicKeyboard.h"
 
 @interface ViewController : UIViewController <KZPMusicKeyboardDelegate>
 
