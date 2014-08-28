@@ -40,6 +40,9 @@
     self.showKeyboardButton.enabled = NO;
 }
 
+
+#pragma mark - KZPMusicKeyboardDelegate -
+
 - (void)keyboardDidSendBackspace
 {
     self.outputLabel.text = @"";
@@ -48,9 +51,7 @@
 - (void)keyboardDidSendSignal:(NSArray *)noteID inputType:(NSArray *)type spelling:(NSArray *)spelling duration:(NSNumber *)duration midiPacket:(NSArray *)MIDI oscPacket:(NSArray *)OSC
 {
     NSMutableString *text = [NSMutableString stringWithString:@""];
-    for (NSNumber *note in noteID) {
-        [text appendFormat:@"%@ ", note];
-    }
+    for (NSNumber *note in noteID) [text appendFormat:@"%@ ", note];
     self.outputLabel.text = text;
 }
 
