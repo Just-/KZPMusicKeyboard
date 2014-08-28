@@ -1,0 +1,1482 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KZPMusicKeyboardViewController">
+            <connections>
+                <outlet property="aggregatorThresholdLabel" destination="1H5-A6-uHd" id="MIA-88-hNL"/>
+                <outlet property="aggregatorThresholdSlider" destination="7bP-9y-RMr" id="7Y0-tz-Bdz"/>
+                <outlet property="dotButton" destination="1Wm-Cv-h71" id="dwQ-yH-yAH"/>
+                <outlet property="keyboardMainView" destination="3r0-fP-Xh8" id="StT-G0-4V7"/>
+                <outlet property="keyboardMap" destination="lzX-4y-Wzv" id="btA-t9-snb"/>
+                <outlet property="mapRegionLeftShadow" destination="FeD-C9-1v6" id="q8O-xl-frt"/>
+                <outlet property="mapRegionRightShadow" destination="iOd-0g-9QM" id="rhZ-FG-v8D"/>
+                <outlet property="mapRegionVisible" destination="lkc-yF-dWN" id="kEu-e9-q7m"/>
+                <outlet property="restButton" destination="7cV-c3-rCG" id="MWr-mW-Fo9"/>
+                <outlet property="tieButton" destination="1fv-XW-Zse" id="gV8-qL-JKK"/>
+                <outlet property="view" destination="1" id="tA1-Zr-5kE"/>
+                <outletCollection property="keyButtons" destination="why-Ac-uJN" id="bBV-h7-O2y"/>
+                <outletCollection property="keyButtons" destination="C4z-pt-gHf" id="Ly4-qv-RcN"/>
+                <outletCollection property="keyButtons" destination="08T-tv-OWe" id="gJE-hk-FHV"/>
+                <outletCollection property="keyButtons" destination="uf5-ih-fV6" id="fO6-aO-guS"/>
+                <outletCollection property="keyButtons" destination="etj-xQ-UeJ" id="DFc-qG-O1B"/>
+                <outletCollection property="keyButtons" destination="Y3Q-dp-HNa" id="O41-eW-rZg"/>
+                <outletCollection property="keyButtons" destination="rC9-TJ-e9A" id="LJb-1N-pNo"/>
+                <outletCollection property="keyButtons" destination="pHG-V4-np1" id="oLn-4G-Urh"/>
+                <outletCollection property="keyButtons" destination="y89-jD-Q7O" id="d2A-D8-WSh"/>
+                <outletCollection property="keyButtons" destination="nZj-mT-KLi" id="vQG-Ps-RFr"/>
+                <outletCollection property="keyButtons" destination="3o2-Nu-JLL" id="oFa-rP-KEm"/>
+                <outletCollection property="keyButtons" destination="5iw-0M-rGJ" id="K13-xI-RIr"/>
+                <outletCollection property="keyButtons" destination="D01-AY-I2k" id="Lk0-4V-Gqx"/>
+                <outletCollection property="keyButtons" destination="HgS-zU-BaK" id="aQs-Ik-9VY"/>
+                <outletCollection property="keyButtons" destination="HaM-pw-IjQ" id="ODy-RD-77o"/>
+                <outletCollection property="keyButtons" destination="wFe-PY-16D" id="Ecc-SK-53E"/>
+                <outletCollection property="keyButtons" destination="ClV-Zc-4YL" id="aNW-fk-MDZ"/>
+                <outletCollection property="keyButtons" destination="jGG-5O-yd6" id="fH1-jO-6Qr"/>
+                <outletCollection property="keyButtons" destination="fkN-U9-2mJ" id="XWn-Lo-y5e"/>
+                <outletCollection property="keyButtons" destination="X2N-qd-HG6" id="6aP-Pf-Lbq"/>
+                <outletCollection property="keyButtons" destination="eI2-jZ-1GH" id="G69-FP-a1r"/>
+                <outletCollection property="keyButtons" destination="Kos-W4-c8D" id="f3f-Gf-Pg7"/>
+                <outletCollection property="keyButtons" destination="wfd-XB-b2V" id="4Ke-Eu-r3g"/>
+                <outletCollection property="keyButtons" destination="ZI5-xG-zZI" id="Nnk-la-2qg"/>
+                <outletCollection property="keyButtons" destination="MwK-F0-7Wv" id="ZqQ-OT-0av"/>
+                <outletCollection property="keyButtons" destination="FcB-a4-8jG" id="oQu-oR-sor"/>
+                <outletCollection property="keyButtons" destination="VBP-V7-lBI" id="Zr7-nP-qez"/>
+                <outletCollection property="keyButtons" destination="eVc-VV-tZC" id="YEb-uo-mkh"/>
+                <outletCollection property="keyButtons" destination="ZR9-Kf-zVd" id="Y2d-rl-Q3F"/>
+                <outletCollection property="keyButtons" destination="QKZ-iW-Wvo" id="3Jg-CL-SNu"/>
+                <outletCollection property="keyButtons" destination="d3a-lR-EpD" id="b3j-a8-8BA"/>
+                <outletCollection property="keyButtons" destination="why-Ac-uJN" id="CHq-NZ-gRO"/>
+                <outletCollection property="keyButtons" destination="08T-tv-OWe" id="URC-lK-Bqu"/>
+                <outletCollection property="keyButtons" destination="C4z-pt-gHf" id="bhk-Yb-Rg0"/>
+                <outletCollection property="keyButtons" destination="yfZ-OB-yvr" id="NSt-wB-X80"/>
+                <outletCollection property="keyButtons" destination="M6X-1F-C5Q" id="92k-pV-tuc"/>
+                <outletCollection property="keyButtons" destination="FE8-Fr-DTD" id="XJY-eY-9bW"/>
+                <outletCollection property="keyButtons" destination="1da-0v-xZG" id="Gwj-cU-vUv"/>
+                <outletCollection property="keyButtons" destination="o1d-Ne-GUZ" id="UIz-dx-2BM"/>
+                <outletCollection property="keyButtons" destination="wge-4K-8Kz" id="wyy-Ng-hr2"/>
+                <outletCollection property="keyButtons" destination="7wT-bY-re0" id="rGY-0T-edX"/>
+                <outletCollection property="keyButtons" destination="a7P-ZA-bno" id="zB1-gj-rIr"/>
+                <outletCollection property="keyButtons" destination="fI8-F0-Mcs" id="htd-Xy-Z0i"/>
+                <outletCollection property="keyButtons" destination="IBe-Dq-LMy" id="R7u-xz-5NH"/>
+                <outletCollection property="keyButtons" destination="QOW-FD-gq3" id="P6o-ex-Nhd"/>
+                <outletCollection property="keyButtons" destination="nfM-VM-zQL" id="3GZ-XB-k5c"/>
+                <outletCollection property="keyButtons" destination="7Jd-Fq-5Ne" id="ZXA-fB-6oO"/>
+                <outletCollection property="keyButtons" destination="oY0-kW-eaV" id="Iao-LS-xDe"/>
+                <outletCollection property="keyButtons" destination="1sX-C0-Fd0" id="nVt-8s-J7Z"/>
+                <outletCollection property="keyButtons" destination="I1M-dW-1yy" id="lZb-Cp-Z4u"/>
+                <outletCollection property="keyButtons" destination="tsl-2W-YGP" id="06T-tx-Bdb"/>
+                <outletCollection property="keyButtons" destination="BCx-cI-9pW" id="AhK-D6-fm8"/>
+                <outletCollection property="keyButtons" destination="2QV-4K-isI" id="Sjp-Qp-cLc"/>
+                <outletCollection property="keyButtons" destination="RN5-rD-HnK" id="26D-5M-vmF"/>
+                <outletCollection property="keyButtons" destination="p3W-SF-nqp" id="g11-Sr-rPC"/>
+                <outletCollection property="keyButtons" destination="krT-wI-erq" id="UMm-9s-8cS"/>
+                <outletCollection property="keyButtons" destination="NLd-YF-TkZ" id="t04-ds-O7f"/>
+                <outletCollection property="keyButtons" destination="DAy-Ay-g0Y" id="RBs-wb-1Wd"/>
+                <outletCollection property="keyButtons" destination="ENG-Ff-zsB" id="xfx-rL-AAa"/>
+                <outletCollection property="keyButtons" destination="Ggh-FA-73R" id="YqA-6A-M9P"/>
+                <outletCollection property="keyButtons" destination="YbO-k1-TMO" id="x2O-rq-8NE"/>
+                <outletCollection property="keyButtons" destination="xsY-8g-78G" id="cHc-ZZ-0H0"/>
+                <outletCollection property="keyButtons" destination="mnX-mR-XwO" id="7aA-SA-5q4"/>
+                <outletCollection property="keyButtons" destination="ir1-9u-zFl" id="2dI-5d-8ss"/>
+                <outletCollection property="keyButtons" destination="IW4-3p-UIW" id="kgL-UN-mJo"/>
+                <outletCollection property="keyButtons" destination="1nT-tH-06h" id="FT2-Ee-Y8t"/>
+                <outletCollection property="keyButtons" destination="gVb-gs-uMJ" id="qZi-vr-E3W"/>
+                <outletCollection property="keyButtons" destination="isJ-vL-2RH" id="gS4-r6-pJv"/>
+                <outletCollection property="keyButtons" destination="1ea-gg-hGo" id="Ses-kb-AvM"/>
+                <outletCollection property="keyButtons" destination="MWV-ez-gVs" id="2fl-20-cXb"/>
+                <outletCollection property="keyButtons" destination="wJt-5q-cp6" id="Ugg-LU-1va"/>
+                <outletCollection property="keyButtons" destination="XUk-ac-ocW" id="CjP-qk-PLA"/>
+                <outletCollection property="keyButtons" destination="iNT-Yi-khA" id="IOz-FD-KWi"/>
+                <outletCollection property="keyButtons" destination="9HH-by-tdZ" id="fzp-j7-eDF"/>
+                <outletCollection property="keyButtons" destination="fTx-JH-0JU" id="8eb-QX-AMM"/>
+                <outletCollection property="keyButtons" destination="JfJ-xT-Uab" id="kWv-ZZ-Den"/>
+                <outletCollection property="keyButtons" destination="0Ni-nf-B8k" id="MME-cg-B3a"/>
+                <outletCollection property="keyButtons" destination="vm0-Tr-zUR" id="jLX-YI-3fx"/>
+                <outletCollection property="keyButtons" destination="9cR-xU-kfK" id="847-3p-qbr"/>
+                <outletCollection property="keyButtons" destination="w3E-p1-X67" id="sD6-cB-nTn"/>
+                <outletCollection property="keyButtons" destination="CKB-tC-aMH" id="ehL-g8-l7r"/>
+                <outletCollection property="keyButtons" destination="Mep-5F-fmW" id="crq-FA-wm6"/>
+                <outletCollection property="keyButtons" destination="FNE-Ed-U6e" id="ogD-hF-xPt"/>
+                <outletCollection property="keyButtons" destination="cip-Cp-N8T" id="Y8E-Ut-bUa"/>
+                <outletCollection property="keyButtons" destination="Ce4-Pz-DBo" id="Qjo-kk-ape"/>
+                <outletCollection property="keyButtons" destination="HUe-cA-I54" id="z7T-7G-xx8"/>
+                <outletCollection property="keyButtons" destination="oXM-PD-E10" id="Kx6-bo-u7E"/>
+                <outletCollection property="keyButtons" destination="3Lb-DX-np9" id="0BU-YZ-1Xr"/>
+                <outletCollection property="keyButtons" destination="Z90-vG-B5k" id="OjE-62-9xt"/>
+                <outletCollection property="keyButtons" destination="9io-iK-Ri3" id="Efe-mN-4jf"/>
+                <outletCollection property="accidentalButtons" destination="H2N-27-F0u" id="6tW-HZ-PON"/>
+                <outletCollection property="accidentalButtons" destination="NQa-rK-Kz2" id="R6z-H7-LHz"/>
+                <outletCollection property="accidentalButtons" destination="A6J-NC-ugy" id="aIs-OV-32w"/>
+                <outletCollection property="accidentalButtons" destination="x0t-2j-X9N" id="a4V-ff-TIT"/>
+                <outletCollection property="durationButtons" destination="JkZ-bh-IPD" id="emK-I2-cq1"/>
+                <outletCollection property="durationButtons" destination="I6n-Bb-3Qv" id="hmr-Vy-ZXB"/>
+                <outletCollection property="durationButtons" destination="8Ad-8b-jzQ" id="LNB-UY-Y69"/>
+                <outletCollection property="durationButtons" destination="5dj-dW-DLC" id="Rk3-co-4Xv"/>
+                <outletCollection property="durationButtons" destination="vZO-j1-aAP" id="PlX-YX-Pgh"/>
+                <outletCollection property="durationButtons" destination="dr1-i8-ebQ" id="Lug-Gs-wmU"/>
+                <outletCollection property="keyboardControlButtons" destination="H2N-27-F0u" id="Guh-Ze-GY0"/>
+                <outletCollection property="keyboardControlButtons" destination="NQa-rK-Kz2" id="TVg-4G-J2N"/>
+                <outletCollection property="keyboardControlButtons" destination="A6J-NC-ugy" id="UhI-ft-WFD"/>
+                <outletCollection property="keyboardControlButtons" destination="x0t-2j-X9N" id="n6i-gG-uAz"/>
+                <outletCollection property="keyboardControlButtons" destination="7cV-c3-rCG" id="zIh-5l-5CW"/>
+                <outletCollection property="keyboardControlButtons" destination="dr1-i8-ebQ" id="3Sb-py-2sO"/>
+                <outletCollection property="keyboardControlButtons" destination="vZO-j1-aAP" id="iPy-b3-zf8"/>
+                <outletCollection property="keyboardControlButtons" destination="5dj-dW-DLC" id="TU9-ly-u6G"/>
+                <outletCollection property="keyboardControlButtons" destination="8Ad-8b-jzQ" id="3qh-j4-V0F"/>
+                <outletCollection property="keyboardControlButtons" destination="I6n-Bb-3Qv" id="KUV-d0-mX3"/>
+                <outletCollection property="keyboardControlButtons" destination="JkZ-bh-IPD" id="kMg-Yy-SAF"/>
+                <outletCollection property="keyboardControlButtons" destination="1Wm-Cv-h71" id="LyY-QO-TYM"/>
+                <outletCollection property="keyboardControlButtons" destination="1fv-XW-Zse" id="65a-Xy-pQ5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="462"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZrH-XV-0jR">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="462"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="keyboard_map.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="lzX-4y-Wzv">
+                    <rect key="frame" x="0.0" y="47" width="1024" height="83"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="wk2-FT-NCH" appends="YES" id="Zz2-sW-Oya"/>
+                        <outletCollection property="gestureRecognizers" destination="JUK-9J-82o" appends="YES" id="Yry-4H-k9c"/>
+                    </connections>
+                </imageView>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dr1-i8-ebQ">
+                    <rect key="frame" x="474" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-wt.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="durationButtonPress:" destination="-1" eventType="touchUpInside" id="FTl-BD-G9T"/>
+                        <action selector="durationButtonTouch:" destination="-1" eventType="touchDown" id="4G5-Ia-dau"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cV-c3-rCG">
+                    <rect key="frame" x="414" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="musis-rests.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="restButtonPress:" destination="-1" eventType="touchUpInside" id="O0s-l5-SH0"/>
+                        <action selector="restButtonTouch:" destination="-1" eventType="touchDown" id="k7q-LX-5FS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZO-j1-aAP">
+                    <rect key="frame" x="522" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-minim.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="durationButtonPress:" destination="-1" eventType="touchUpInside" id="aqT-Vs-FG7"/>
+                        <action selector="durationButtonTouch:" destination="-1" eventType="touchDown" id="7aD-Zo-MoD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dj-dW-DLC">
+                    <rect key="frame" x="570" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-crotchet.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="durationButtonPress:" destination="-1" eventType="touchUpInside" id="g78-LE-Xb0"/>
+                        <action selector="durationButtonTouch:" destination="-1" eventType="touchDown" id="Llb-dU-wxg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ad-8b-jzQ">
+                    <rect key="frame" x="618" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-quaver.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="durationButtonPress:" destination="-1" eventType="touchUpInside" id="BaA-hf-0Sp"/>
+                        <action selector="durationButtonTouch:" destination="-1" eventType="touchDown" id="tWi-8Q-sIM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="16" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6n-Bb-3Qv">
+                    <rect key="frame" x="666" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-squaver.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="durationButtonPress:" destination="-1" eventType="touchUpInside" id="7qi-xD-sp7"/>
+                        <action selector="durationButtonTouch:" destination="-1" eventType="touchDown" id="lIB-xY-Ybr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="32" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkZ-bh-IPD">
+                    <rect key="frame" x="714" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-dsquaver.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="durationButtonPress:" destination="-1" eventType="touchUpInside" id="w1n-Yv-bDR"/>
+                        <action selector="durationButtonTouch:" destination="-1" eventType="touchDown" id="byq-RK-JC4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="32" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wm-Cv-h71">
+                    <rect key="frame" x="773" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-dot.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dotButtonPress:" destination="-1" eventType="touchUpInside" id="1Qt-jr-z28"/>
+                        <action selector="durationButtonTouch:" destination="-1" eventType="touchDown" id="r6b-Z7-Dvi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="32" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fv-XW-Zse">
+                    <rect key="frame" x="821" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-tie.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="durationButtonTouch:" destination="-1" eventType="touchDown" id="VwN-cf-hTl"/>
+                        <action selector="tieButtonPress:" destination="-1" eventType="touchUpInside" id="Jps-Rf-Lmp"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2N-27-F0u">
+                    <rect key="frame" x="3" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-sharp.png">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="accidentalButtonPress:" destination="-1" eventType="touchUpInside" id="V7p-7Q-Szd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQa-rK-Kz2">
+                    <rect key="frame" x="51" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-flat.png">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="accidentalButtonPress:" destination="-1" eventType="touchUpInside" id="PhR-9i-viJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6J-NC-ugy">
+                    <rect key="frame" x="99" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-double-sharp.png">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="accidentalButtonPress:" destination="-1" eventType="touchUpInside" id="WLa-dH-4BH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0t-2j-X9N">
+                    <rect key="frame" x="147" y="3" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" image="music-double-flat.png">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="accidentalButtonPress:" destination="-1" eventType="touchUpInside" id="gVT-S2-INF"/>
+                    </connections>
+                </button>
+                <view multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3r0-fP-Xh8">
+                    <rect key="frame" x="-1407" y="130" width="4200" height="332"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" tag="26" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etj-xQ-UeJ">
+                            <rect key="frame" x="331" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="nhh-oi-NQD"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="28" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rC9-TJ-e9A">
+                            <rect key="frame" x="408" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="2kc-gA-jyk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="29" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHG-V4-np1">
+                            <rect key="frame" x="485" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="gRd-zK-GZs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="31" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZj-mT-KLi">
+                            <rect key="frame" x="562" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="jgX-J3-Vs3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="24" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vor-vX-7Ym">
+                            <rect key="frame" x="254" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="gRb-d6-w3u"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="33" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iw-0M-rGJ">
+                            <rect key="frame" x="639" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="e7V-c3-MmZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="35" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgS-zU-BaK">
+                            <rect key="frame" x="716" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Adn-Vo-h3t"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="36" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaM-pw-IjQ">
+                            <rect key="frame" x="793" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="9i4-6t-g8L"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="38" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClV-Zc-4YL">
+                            <rect key="frame" x="870" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="M59-0l-okC"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="40" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkN-U9-2mJ">
+                            <rect key="frame" x="947" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Ci2-Vj-HS6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uf5-ih-fV6">
+                            <rect key="frame" x="308" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="aKQ-cb-KoE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="27" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Q-dp-HNa">
+                            <rect key="frame" x="386" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="xiE-Re-Fqb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="37" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFe-PY-16D">
+                            <rect key="frame" x="847" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="B2c-Iy-90T"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="39" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGG-5O-yd6">
+                            <rect key="frame" x="925" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="zZW-LU-ML2"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="30" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y89-jD-Q7O">
+                            <rect key="frame" x="539" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="RJB-Ip-Qn1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="32" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3o2-Nu-JLL">
+                            <rect key="frame" x="617" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Ac2-gx-cOf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="34" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D01-AY-I2k">
+                            <rect key="frame" x="694" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="uiD-aA-9Ol"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="41" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2N-qd-HG6">
+                            <rect key="frame" x="1024" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="7y9-hU-T9s"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="43" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI2-jZ-1GH">
+                            <rect key="frame" x="1101" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="EdR-KJ-nOC"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="45" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kos-W4-c8D">
+                            <rect key="frame" x="1178" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="UQH-6N-M5O"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="47" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfd-XB-b2V">
+                            <rect key="frame" x="1255" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="gXL-aB-S2Z"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="48" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZI5-xG-zZI">
+                            <rect key="frame" x="1332" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="MEv-pg-5tq"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="50" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwK-F0-7Wv">
+                            <rect key="frame" x="1409" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Ya9-C2-I8k"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="52" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcB-a4-8jG">
+                            <rect key="frame" x="1486" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="lZj-7a-c1j"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="49" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-V7-lBI">
+                            <rect key="frame" x="1386" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="RzX-Tn-3b5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="51" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVc-VV-tZC">
+                            <rect key="frame" x="1464" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Rb4-rA-eEk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="42" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR9-Kf-zVd">
+                            <rect key="frame" x="1078" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="sed-qU-8Wt"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="44" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKZ-iW-Wvo">
+                            <rect key="frame" x="1156" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Dwd-j0-Kx8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="46" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3a-lR-EpD">
+                            <rect key="frame" x="1233" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="l1d-gM-iUn"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="21" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="why-Ac-uJN">
+                            <rect key="frame" x="100" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="0Zm-Wb-1yn"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="23" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08T-tv-OWe">
+                            <rect key="frame" x="177" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="3dK-Kq-e2T"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="22" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4z-pt-gHf">
+                            <rect key="frame" x="155" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="cab-qr-6WV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="53" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfZ-OB-yvr">
+                            <rect key="frame" x="1563" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="EPH-E7-r3E"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="55" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6X-1F-C5Q">
+                            <rect key="frame" x="1640" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="4CX-wU-9Sr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="57" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FE8-Fr-DTD">
+                            <rect key="frame" x="1717" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="iVd-ZN-3Sb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="59" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1da-0v-xZG">
+                            <rect key="frame" x="1794" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="57F-q4-Au9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="60" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1d-Ne-GUZ">
+                            <rect key="frame" x="1871" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="c6Q-gV-J6H"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="62" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wge-4K-8Kz">
+                            <rect key="frame" x="1948" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="5hN-bd-NFD"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="64" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wT-bY-re0">
+                            <rect key="frame" x="2025" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Iq3-o4-gCw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="65" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7P-ZA-bno">
+                            <rect key="frame" x="2102" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="KjB-Qg-2bf"/>
+                            </connections>
+                        </button>
+                        <view userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ygT-0A-MI6">
+                            <rect key="frame" x="1871" y="6" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.7191765907601384" green="0.96373895613444416" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <button opaque="NO" tag="61" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fI8-F0-Mcs">
+                            <rect key="frame" x="1925" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="e0Y-Np-DD5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="63" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBe-Dq-LMy">
+                            <rect key="frame" x="2003" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="hNl-mG-zT2"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="54" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOW-FD-gq3">
+                            <rect key="frame" x="1617" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="KkA-J8-0ag"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="56" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfM-VM-zQL">
+                            <rect key="frame" x="1695" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="btb-a4-ugs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="58" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Jd-Fq-5Ne">
+                            <rect key="frame" x="1772" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="P51-C4-2KN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="67" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oY0-kW-eaV">
+                            <rect key="frame" x="2179" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="eyi-e0-r0P"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="69" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sX-C0-Fd0">
+                            <rect key="frame" x="2256" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="h15-pe-mkc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="71" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-dW-1yy">
+                            <rect key="frame" x="2333" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="TUJ-9e-S9D"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="72" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsl-2W-YGP">
+                            <rect key="frame" x="2410" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="e0t-dl-XtJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="74" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCx-cI-9pW">
+                            <rect key="frame" x="2487" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="9cE-Vk-gHs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="76" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2QV-4K-isI">
+                            <rect key="frame" x="2564" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Tbd-oN-7Tj"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="73" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RN5-rD-HnK">
+                            <rect key="frame" x="2464" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="1Qe-hv-HNk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="75" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3W-SF-nqp">
+                            <rect key="frame" x="2541" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="res-e1-M80"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="66" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krT-wI-erq">
+                            <rect key="frame" x="2156" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="x8d-VK-lIM"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="68" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLd-YF-TkZ">
+                            <rect key="frame" x="2234" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="YkZ-4J-WxR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="70" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAy-Ay-g0Y">
+                            <rect key="frame" x="2311" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="YyQ-gy-mkx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="77" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENG-Ff-zsB">
+                            <rect key="frame" x="2641" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="OCJ-Nw-ciI"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="79" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggh-FA-73R">
+                            <rect key="frame" x="2718" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="aLX-3U-psy"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="81" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbO-k1-TMO">
+                            <rect key="frame" x="2795" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="tb2-Yk-oSa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="83" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsY-8g-78G">
+                            <rect key="frame" x="2872" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Hqb-sn-iRu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="84" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnX-mR-XwO">
+                            <rect key="frame" x="2949" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="cWl-c8-CBu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="86" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir1-9u-zFl">
+                            <rect key="frame" x="3026" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Ufa-pJ-yTH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="88" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IW4-3p-UIW">
+                            <rect key="frame" x="3103" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Yvc-Sc-00a"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="85" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nT-tH-06h">
+                            <rect key="frame" x="3003" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="wwM-Uz-145"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="87" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVb-gs-uMJ">
+                            <rect key="frame" x="3081" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="iq3-6z-jCg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="78" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isJ-vL-2RH">
+                            <rect key="frame" x="2695" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="W1O-tv-3LD"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="80" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ea-gg-hGo">
+                            <rect key="frame" x="2773" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="LH2-Rw-SOs"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="82" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWV-ez-gVs">
+                            <rect key="frame" x="2850" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Rw8-FY-XEw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="89" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJt-5q-cp6">
+                            <rect key="frame" x="3180" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="rzd-3P-ANO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="91" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUk-ac-ocW">
+                            <rect key="frame" x="3257" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="xBo-mI-091"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="93" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNT-Yi-khA">
+                            <rect key="frame" x="3334" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="fuA-fm-eFu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="95" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9HH-by-tdZ">
+                            <rect key="frame" x="3411" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="wrx-Zz-Nsr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="96" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTx-JH-0JU">
+                            <rect key="frame" x="3488" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="DKa-ju-XRb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="98" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfJ-xT-Uab">
+                            <rect key="frame" x="3565" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="1G5-lE-fAQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ni-nf-B8k">
+                            <rect key="frame" x="3642" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="bIt-jB-eb9"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="97" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm0-Tr-zUR">
+                            <rect key="frame" x="3542" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="VW7-7U-bTw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="99" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cR-xU-kfK">
+                            <rect key="frame" x="3620" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="Ou4-gQ-8Ki"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="90" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3E-p1-X67">
+                            <rect key="frame" x="3234" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="PPJ-Bc-TSa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="92" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKB-tC-aMH">
+                            <rect key="frame" x="3312" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="c2H-wZ-14l"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="94" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mep-5F-fmW">
+                            <rect key="frame" x="3389" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="e17-Qm-JkW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNE-Ed-U6e">
+                            <rect key="frame" x="3719" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="8lG-Ga-I2y"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="103" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cip-Cp-N8T">
+                            <rect key="frame" x="3796" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="D51-Fd-5iJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="105" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ce4-Pz-DBo">
+                            <rect key="frame" x="3873" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="8Hy-hV-Ies"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="107" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUe-cA-I54">
+                            <rect key="frame" x="3950" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="2Sq-nZ-Fqj"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="108" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXM-PD-E10">
+                            <rect key="frame" x="4027" y="0.0" width="78" height="332"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ivory_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ivory_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="luH-sQ-Sei"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Lb-DX-np9">
+                            <rect key="frame" x="3773" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="JoW-Gb-5RJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z90-vG-B5k">
+                            <rect key="frame" x="3851" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="SJm-vF-Hd8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="106" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9io-iK-Ri3">
+                            <rect key="frame" x="3928" y="6" width="48" height="191"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Button" image="ebony_keyup.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="ebony_keydown.png"/>
+                            <connections>
+                                <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="TL2-hL-dhb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                </view>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="•" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmj-oy-C6R">
+                    <rect key="frame" x="457" y="109" width="25" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <color key="textColor" red="0.71917659079999996" green="0.96373895610000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FeD-C9-1v6">
+                    <rect key="frame" x="0.0" y="47" width="334" height="83"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOd-0g-9QM">
+                    <rect key="frame" x="598" y="47" width="1000" height="83"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lkc-yF-dWN">
+                    <rect key="frame" x="334" y="47" width="264" height="83"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="5" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7bP-9y-RMr">
+                    <rect key="frame" x="249" y="6" width="153" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="aggregatorThresholdSliderValueChanged:" destination="-1" eventType="valueChanged" id="0Ue-SL-q7H"/>
+                    </connections>
+                </slider>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chord: 5ms" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="48" translatesAutoresizingMaskIntoConstraints="NO" id="1H5-A6-uHd">
+                    <rect key="frame" x="195" y="3" width="48" height="41"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoQ-F1-p8G">
+                    <rect key="frame" x="895" y="-2" width="62" height="51"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="backspace.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="1u6-Nq-PTZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn2-WL-Hx8">
+                    <rect key="frame" x="974" y="6" width="44" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="piano_icon.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="-1" eventType="touchUpInside" id="Hks-zN-oLI"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <tapGestureRecognizer id="wk2-FT-NCH">
+            <connections>
+                <action selector="keyboardMapTapped:" destination="-1" id="BgT-Yt-apE"/>
+            </connections>
+        </tapGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="JUK-9J-82o">
+            <connections>
+                <action selector="keyboardMapPanned:" destination="-1" id="G5B-7R-7t6"/>
+            </connections>
+        </panGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="backspace.png" width="256" height="256"/>
+        <image name="bg-wood.jpg" width="1920" height="1200"/>
+        <image name="ebony_keydown.png" width="48" height="191"/>
+        <image name="ebony_keyup.png" width="48" height="191"/>
+        <image name="ivory_keydown.png" width="78" height="332"/>
+        <image name="ivory_keyup.png" width="78" height="332"/>
+        <image name="keyboard_map.jpeg" width="600" height="72"/>
+        <image name="music-crotchet.png" width="69" height="69"/>
+        <image name="music-dot.png" width="49" height="49"/>
+        <image name="music-double-flat.png" width="49" height="49"/>
+        <image name="music-double-sharp.png" width="49" height="49"/>
+        <image name="music-dsquaver.png" width="69" height="69"/>
+        <image name="music-flat.png" width="49" height="49"/>
+        <image name="music-minim.png" width="69" height="69"/>
+        <image name="music-quaver.png" width="69" height="69"/>
+        <image name="music-sharp.png" width="49" height="49"/>
+        <image name="music-squaver.png" width="69" height="69"/>
+        <image name="music-tie.png" width="49" height="49"/>
+        <image name="music-wt.png" width="49" height="49"/>
+        <image name="musis-rests.png" width="60" height="60"/>
+        <image name="piano_icon.png" width="399" height="418"/>
+    </resources>
+</document>
