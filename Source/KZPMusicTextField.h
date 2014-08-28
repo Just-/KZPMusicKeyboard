@@ -23,6 +23,7 @@ typedef enum {
 
 @interface KZPMusicTextField : UITextField <KZPMusicKeyboardDelegate>
 
+// These parameters are available
 @property (nonatomic) KZPMusicInputType musicInputType;
 @property (nonatomic) BOOL needsRhythmControls;
 

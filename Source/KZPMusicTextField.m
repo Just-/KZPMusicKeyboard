@@ -8,7 +8,6 @@
 
 #import "KZPMusicTextField.h"
 #import "KZPMusicKeyboardManager.h"
-#import "NSString+functions.h"
 #import "AGWindowView.h"
 #import "UIView+frameOperations.h"
 
