@@ -143,6 +143,11 @@
 		C989F3A719AF1D6D002608F7 /* 108.aif in Resources */ = {isa = PBXBuildFile; fileRef = C989F34F19AF1D6D002608F7 /* 108.aif */; };
 		C989F3A919AF59B6002608F7 /* piano_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = C989F3A819AF59B6002608F7 /* piano_keyboard.png */; };
 		C989F51F19AF853E002608F7 /* KZPMusicKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = C989F51D19AF848B002608F7 /* KZPMusicKeyboard.h */; };
+		C9AECF8C1A44E5610050733C /* music-double-flat-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AECF8B1A44E5610050733C /* music-double-flat-inverted.png */; };
+		C9AECF911A44E7020050733C /* music-double-sharp-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AECF8D1A44E7020050733C /* music-double-sharp-inverted.png */; };
+		C9AECF921A44E7020050733C /* music-flat-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AECF8E1A44E7020050733C /* music-flat-inverted.png */; };
+		C9AECF931A44E7020050733C /* music-natural-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AECF8F1A44E7020050733C /* music-natural-inverted.png */; };
+		C9AECF941A44E7020050733C /* music-sharp-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AECF901A44E7020050733C /* music-sharp-inverted.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -304,6 +309,11 @@
 		C989F34F19AF1D6D002608F7 /* 108.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = 108.aif; path = ../Assets/Audio/108.aif; sourceTree = "<group>"; };
 		C989F3A819AF59B6002608F7 /* piano_keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = piano_keyboard.png; path = ../Assets/Images/piano_keyboard.png; sourceTree = "<group>"; };
 		C989F51D19AF848B002608F7 /* KZPMusicKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboard.h; path = ../Source/KZPMusicKeyboard.h; sourceTree = "<group>"; };
+		C9AECF8B1A44E5610050733C /* music-double-flat-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-double-flat-inverted.png"; path = "../Assets/Images/music-double-flat-inverted.png"; sourceTree = "<group>"; };
+		C9AECF8D1A44E7020050733C /* music-double-sharp-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-double-sharp-inverted.png"; path = "../Assets/Images/music-double-sharp-inverted.png"; sourceTree = "<group>"; };
+		C9AECF8E1A44E7020050733C /* music-flat-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-flat-inverted.png"; path = "../Assets/Images/music-flat-inverted.png"; sourceTree = "<group>"; };
+		C9AECF8F1A44E7020050733C /* music-natural-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-natural-inverted.png"; path = "../Assets/Images/music-natural-inverted.png"; sourceTree = "<group>"; };
+		C9AECF901A44E7020050733C /* music-sharp-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-sharp-inverted.png"; path = "../Assets/Images/music-sharp-inverted.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -547,6 +557,11 @@
 		C989F2C919AF1CC7002608F7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C9AECF8D1A44E7020050733C /* music-double-sharp-inverted.png */,
+				C9AECF8E1A44E7020050733C /* music-flat-inverted.png */,
+				C9AECF8F1A44E7020050733C /* music-natural-inverted.png */,
+				C9AECF901A44E7020050733C /* music-sharp-inverted.png */,
+				C9AECF8B1A44E5610050733C /* music-double-flat-inverted.png */,
 				C989F3A819AF59B6002608F7 /* piano_keyboard.png */,
 				C989F2CA19AF1D63002608F7 /* backspace.png */,
 				C989F2CB19AF1D63002608F7 /* bg-wood.jpg */,
@@ -671,6 +686,7 @@
 				C989F37619AF1D6D002608F7 /* 59.aif in Resources */,
 				C989F35919AF1D6D002608F7 /* 30.aif in Resources */,
 				C989F38919AF1D6D002608F7 /* 78.aif in Resources */,
+				C9AECF911A44E7020050733C /* music-double-sharp-inverted.png in Resources */,
 				C989F36519AF1D6D002608F7 /* 42.aif in Resources */,
 				C989F38119AF1D6D002608F7 /* 70.aif in Resources */,
 				C989F37E19AF1D6D002608F7 /* 67.aif in Resources */,
@@ -678,6 +694,7 @@
 				C989F39219AF1D6D002608F7 /* 87.aif in Resources */,
 				C989F35F19AF1D6D002608F7 /* 36.aif in Resources */,
 				C989F2E719AF1D63002608F7 /* keyboard_map.jpeg in Resources */,
+				C9AECF931A44E7020050733C /* music-natural-inverted.png in Resources */,
 				C989F35319AF1D6D002608F7 /* 24.aif in Resources */,
 				C989F38F19AF1D6D002608F7 /* 84.aif in Resources */,
 				C989F2F019AF1D63002608F7 /* music-quaver.png in Resources */,
@@ -685,6 +702,7 @@
 				C989F38619AF1D6D002608F7 /* 75.aif in Resources */,
 				C989F36C19AF1D6D002608F7 /* 49.aif in Resources */,
 				C989F39919AF1D6D002608F7 /* 94.aif in Resources */,
+				C9AECF941A44E7020050733C /* music-sharp-inverted.png in Resources */,
 				C989F39819AF1D6D002608F7 /* 93.aif in Resources */,
 				C989F38719AF1D6D002608F7 /* 76.aif in Resources */,
 				C989F36E19AF1D6D002608F7 /* 51.aif in Resources */,
@@ -761,6 +779,7 @@
 				C989F3A619AF1D6D002608F7 /* 107.aif in Resources */,
 				C989F37C19AF1D6D002608F7 /* 65.aif in Resources */,
 				C989F3A119AF1D6D002608F7 /* 102.aif in Resources */,
+				C9AECF8C1A44E5610050733C /* music-double-flat-inverted.png in Resources */,
 				C989F2EE19AF1D63002608F7 /* music-minim.png in Resources */,
 				C989F1D419AF07AC002608F7 /* Main.storyboard in Resources */,
 				C989F37719AF1D6D002608F7 /* 60.aif in Resources */,
@@ -778,6 +797,7 @@
 				C989F39519AF1D6D002608F7 /* 90.aif in Resources */,
 				C989F35A19AF1D6D002608F7 /* 31.aif in Resources */,
 				C989F35819AF1D6D002608F7 /* 29.aif in Resources */,
+				C9AECF921A44E7020050733C /* music-flat-inverted.png in Resources */,
 				C989F35D19AF1D6D002608F7 /* 34.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
