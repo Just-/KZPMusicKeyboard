@@ -159,7 +159,7 @@
     
     [self.noteIDs addObject:@(noteID)];
     [self.inputTypes addObject:@(KBD__NOTE_ON)];
-    [self.spellings addObject:selectedAccidental ? selectedAccidental : @(SP__NATURAL)];
+    if (selectedAccidental) [self.spellings addObject:selectedAccidental];
     self.selectedDuration = selectedDuration;
     [self.MIDIPackets addObject:[NSNull null]];
     [self.OSCPackets addObject:[NSNull null]];
@@ -175,6 +175,7 @@
 
 - (void)flushAggregatedNoteInformation
 {
+    if (![self.spellings count]) [self.spellings addObject:@(SP__NATURAL)];
     if ([self.delegate respondsToSelector:@selector(keyboardDidSendSignal:inputType:spelling:duration:dotted:tied:midiPacket:oscPacket:)]) {
         [self.delegate keyboardDidSendSignal:self.noteIDs
                                    inputType:self.inputTypes
@@ -239,7 +240,7 @@
     [(UIButton *)sender layer].opacity = 0.5;
     for (UIButton *duration in self.durationButtons) {
         if (duration.selected) {
-            NSNumber *selectedDuration = @([duration tag]);
+            NSNumber *selectedDuration = @(-[duration tag]);
             [self.delegate keyboardDidSendSignal:nil
                                        inputType:nil
                                         spelling:nil
