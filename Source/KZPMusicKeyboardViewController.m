@@ -159,7 +159,7 @@
     
     [self.noteIDs addObject:@(noteID)];
     [self.inputTypes addObject:@(KBD__NOTE_ON)];
-    [self.spellings addObject:selectedAccidental ? selectedAccidental : [NSNull null]];
+    [self.spellings addObject:selectedAccidental ? selectedAccidental : @(SP__NATURAL)];
     self.selectedDuration = selectedDuration;
     [self.MIDIPackets addObject:[NSNull null]];
     [self.OSCPackets addObject:[NSNull null]];

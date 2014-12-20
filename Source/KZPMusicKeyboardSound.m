@@ -8,11 +8,11 @@
 
 #import "KZPMusicKeyboardSound.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface KZPMusicKeyboardSound ()
-{
-    SystemSoundID tones[88];
-}
+
+@property (strong, nonatomic) NSArray *tones;
 
 @end
 
@@ -22,11 +22,13 @@
 {
     self = [super init];
     if (self) {
+        NSMutableArray *tones = [NSMutableArray array];
         for (int i = 0; i < TOTAL_KEYS; i++) {
             int noteID = LOWEST_KEY+i;
             NSURL *url = [[NSBundle mainBundle] URLForResource:[NSString stringWithFormat:@"%d", noteID] withExtension:@"aif"];
-            AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, tones+i);
+            [tones addObject:[[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil]];
         }
+        _tones = (NSArray *)tones;
     }
     return self;
 }
@@ -34,15 +36,8 @@
 - (BOOL)playNoteWithID:(NSUInteger)noteID
 {
     if (noteID < LOWEST_KEY) return NO;
-    AudioServicesPlaySystemSound(tones[noteID - LOWEST_KEY]);
+    [(AVAudioPlayer *)_tones[noteID] play];
     return YES;
-}
-
-- (void)dealloc
-{
-    for (int i = 0; i < TOTAL_KEYS; i++) {
-        AudioServicesDisposeSystemSoundID(tones[i]);
-    }
 }
 
 @end

@@ -58,7 +58,7 @@ static KZPMusicKeyboardManager *defaultManager;
     // iOS7 and iOS8 have different notions of screen height
     CGFloat landscapeScreenHeight = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     
-    [self.pianoKeyboard.view setFrameY:landscapeScreenHeight]; // landscape
+    [self.pianoKeyboard.view setFrameY:landscapeScreenHeight];
     [self.windowView addSubview:self.pianoKeyboard.view];
     [UIView animateWithDuration:0.3 animations:^{
         [self.pianoKeyboard.view setFrameY:landscapeScreenHeight - self.pianoKeyboard.view.frame.size.height];
@@ -68,8 +68,11 @@ static KZPMusicKeyboardManager *defaultManager;
 
 - (void)hideControllerWithCompletionBlock:(void (^)())completionBlock
 {
+    // iOS7 and iOS8 have different notions of screen height
+    CGFloat landscapeScreenHeight = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    
     [UIView animateWithDuration:0.3 animations:^{
-        [self.pianoKeyboard.view setFrameY:[UIScreen mainScreen].bounds.size.width]; // landscape
+        [self.pianoKeyboard.view setFrameY:landscapeScreenHeight]; // landscape
     } completion:^(BOOL finished) {
         UIView *windowView = [self.pianoKeyboard.view superview];
         [self.pianoKeyboard.view removeFromSuperview];
