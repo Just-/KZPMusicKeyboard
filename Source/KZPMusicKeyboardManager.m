@@ -54,10 +54,14 @@ static KZPMusicKeyboardManager *defaultManager;
         self.windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskLandscape;
     }
     self.pianoKeyboard.rhythmControlsEnabled = needsRhythmControls;
-    [self.pianoKeyboard.view setFrameY:[UIScreen mainScreen].bounds.size.width]; // landscape
+    
+    // iOS7 and iOS8 have different notions of screen height
+    CGFloat landscapeScreenHeight = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    
+    [self.pianoKeyboard.view setFrameY:landscapeScreenHeight]; // landscape
     [self.windowView addSubview:self.pianoKeyboard.view];
     [UIView animateWithDuration:0.3 animations:^{
-        [self.pianoKeyboard.view setFrameY:[UIScreen mainScreen].bounds.size.width - self.pianoKeyboard.view.frame.size.height];
+        [self.pianoKeyboard.view setFrameY:landscapeScreenHeight - self.pianoKeyboard.view.frame.size.height];
     }];
     return self.windowView;
 }
