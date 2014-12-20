@@ -211,6 +211,8 @@
         }
         duration.layer.opacity = duration.selected ? 1.0 : 0.5;
     }
+    self.dotButton.selected = !self.dotButton.selected;
+    self.dotButton.layer.opacity = self.dotButton.selected ? 1.0 : 0.5;
 }
 
 - (IBAction)durationButtonTouch:(id)sender {
