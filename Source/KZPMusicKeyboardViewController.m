@@ -39,6 +39,7 @@
 @property (strong, nonatomic) NSMutableArray *MIDIPackets;
 @property (strong, nonatomic) NSMutableArray *OSCPackets;
 @property (strong, nonatomic) NSTimer *chordTimer;
+@property (strong, nonatomic) UILongPressGestureRecognizer *longPressGesture;
 
 @end
 
@@ -107,6 +108,9 @@
     }
     
     [self aggregatorThresholdSliderValueChanged:self.aggregatorThresholdSlider];
+    
+    self.longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGestureFired)];
+    [self.keyboardMainView addGestureRecognizer:self.longPressGesture];
 }
 
 - (IBAction)keyboardMapTapped:(id)sender {
@@ -171,6 +175,13 @@
                                                      selector:@selector(flushAggregatedNoteInformation)
                                                      userInfo:nil
                                                       repeats:NO];
+}
+
+- (void)longPressGestureFired
+{
+    if (self.longPressGesture.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"fire!");        
+    }
 }
 
 - (void)flushAggregatedNoteInformation
