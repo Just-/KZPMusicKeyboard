@@ -148,6 +148,16 @@
 		C9AECF921A44E7020050733C /* music-flat-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AECF8E1A44E7020050733C /* music-flat-inverted.png */; };
 		C9AECF931A44E7020050733C /* music-natural-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AECF8F1A44E7020050733C /* music-natural-inverted.png */; };
 		C9AECF941A44E7020050733C /* music-sharp-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AECF901A44E7020050733C /* music-sharp-inverted.png */; };
+		C9AECFDD1A451AFE0050733C /* NSArray+functions.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AECFD31A451AFE0050733C /* NSArray+functions.h */; };
+		C9AECFDE1A451AFE0050733C /* NSArray+functions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFD41A451AFE0050733C /* NSArray+functions.m */; };
+		C9AECFDF1A451AFE0050733C /* NSSet+SetOperations.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AECFD51A451AFE0050733C /* NSSet+SetOperations.h */; };
+		C9AECFE01A451AFE0050733C /* NSSet+SetOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFD61A451AFE0050733C /* NSSet+SetOperations.m */; };
+		C9AECFE11A451AFE0050733C /* NSString+functions.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AECFD71A451AFE0050733C /* NSString+functions.h */; };
+		C9AECFE21A451AFE0050733C /* NSString+functions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFD81A451AFE0050733C /* NSString+functions.m */; };
+		C9AECFE31A451AFE0050733C /* SciNotation.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AECFD91A451AFE0050733C /* SciNotation.h */; };
+		C9AECFE41A451AFE0050733C /* SciNotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFDA1A451AFE0050733C /* SciNotation.m */; };
+		C9AECFE51A451AFE0050733C /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AECFDB1A451AFE0050733C /* Utilities.h */; };
+		C9AECFE61A451AFE0050733C /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFDC1A451AFE0050733C /* Utilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,6 +324,16 @@
 		C9AECF8E1A44E7020050733C /* music-flat-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-flat-inverted.png"; path = "../Assets/Images/music-flat-inverted.png"; sourceTree = "<group>"; };
 		C9AECF8F1A44E7020050733C /* music-natural-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-natural-inverted.png"; path = "../Assets/Images/music-natural-inverted.png"; sourceTree = "<group>"; };
 		C9AECF901A44E7020050733C /* music-sharp-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-sharp-inverted.png"; path = "../Assets/Images/music-sharp-inverted.png"; sourceTree = "<group>"; };
+		C9AECFD31A451AFE0050733C /* NSArray+functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+functions.h"; sourceTree = "<group>"; };
+		C9AECFD41A451AFE0050733C /* NSArray+functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+functions.m"; sourceTree = "<group>"; };
+		C9AECFD51A451AFE0050733C /* NSSet+SetOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+SetOperations.h"; sourceTree = "<group>"; };
+		C9AECFD61A451AFE0050733C /* NSSet+SetOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+SetOperations.m"; sourceTree = "<group>"; };
+		C9AECFD71A451AFE0050733C /* NSString+functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+functions.h"; sourceTree = "<group>"; };
+		C9AECFD81A451AFE0050733C /* NSString+functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+functions.m"; sourceTree = "<group>"; };
+		C9AECFD91A451AFE0050733C /* SciNotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SciNotation.h; sourceTree = "<group>"; };
+		C9AECFDA1A451AFE0050733C /* SciNotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SciNotation.m; sourceTree = "<group>"; };
+		C9AECFDB1A451AFE0050733C /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		C9AECFDC1A451AFE0050733C /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +364,7 @@
 		C989F1B419AF07AB002608F7 = {
 			isa = PBXGroup;
 			children = (
+				C9AECFD21A451AFE0050733C /* KZPUtilities */,
 				C989F1F519AF099F002608F7 /* KZPMusicKeyboard */,
 				C989F1C619AF07AC002608F7 /* KZPMusicKeyboardDemo */,
 				C989F1E519AF07AC002608F7 /* KZPMusicKeyboardTests */,
@@ -590,6 +611,24 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		C9AECFD21A451AFE0050733C /* KZPUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				C9AECFD31A451AFE0050733C /* NSArray+functions.h */,
+				C9AECFD41A451AFE0050733C /* NSArray+functions.m */,
+				C9AECFD51A451AFE0050733C /* NSSet+SetOperations.h */,
+				C9AECFD61A451AFE0050733C /* NSSet+SetOperations.m */,
+				C9AECFD71A451AFE0050733C /* NSString+functions.h */,
+				C9AECFD81A451AFE0050733C /* NSString+functions.m */,
+				C9AECFD91A451AFE0050733C /* SciNotation.h */,
+				C9AECFDA1A451AFE0050733C /* SciNotation.m */,
+				C9AECFDB1A451AFE0050733C /* Utilities.h */,
+				C9AECFDC1A451AFE0050733C /* Utilities.m */,
+			);
+			name = KZPUtilities;
+			path = ../../KZPUtilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -597,7 +636,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AECFDF1A451AFE0050733C /* NSSet+SetOperations.h in Headers */,
 				C989F51F19AF853E002608F7 /* KZPMusicKeyboard.h in Headers */,
+				C9AECFE31A451AFE0050733C /* SciNotation.h in Headers */,
+				C9AECFE51A451AFE0050733C /* Utilities.h in Headers */,
+				C9AECFE11A451AFE0050733C /* NSString+functions.h in Headers */,
+				C9AECFDD1A451AFE0050733C /* NSArray+functions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,11 +861,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AECFE01A451AFE0050733C /* NSSet+SetOperations.m in Sources */,
 				C989F2B119AF0A8E002608F7 /* KZPMusicKeyboardViewController.m in Sources */,
 				C989F2BB19AF0C01002608F7 /* AGWindowViewTest.m in Sources */,
+				C9AECFE41A451AFE0050733C /* SciNotation.m in Sources */,
 				C989F1D719AF07AC002608F7 /* ViewController.m in Sources */,
+				C9AECFDE1A451AFE0050733C /* NSArray+functions.m in Sources */,
+				C9AECFE21A451AFE0050733C /* NSString+functions.m in Sources */,
 				C989F2B319AF0A8E002608F7 /* KZPMusicKeyboardManager.m in Sources */,
 				C989F2B419AF0A8E002608F7 /* KZPMusicTextField.m in Sources */,
+				C9AECFE61A451AFE0050733C /* Utilities.m in Sources */,
 				C989F2BA19AF0C01002608F7 /* AGWindowView.m in Sources */,
 				C989F1D119AF07AC002608F7 /* AppDelegate.m in Sources */,
 				C989F1CD19AF07AC002608F7 /* main.m in Sources */,
