@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
-    SP__NATURAL = 0,
-    SP__SHARP,
+    SP__DOUBLE_FLAT = -2,
     SP__FLAT,
-    SP__DOUBLE_SHARP,
-    SP__DOUBLE_FLAT
+    SP__NATURAL,
+    SP__SHARP,
+    SP__DOUBLE_SHARP
 } noteSpelling;
 
 typedef enum {
@@ -33,6 +33,8 @@ typedef enum {
                     inputType:(NSArray *)type
                      spelling:(NSArray *)spelling
                      duration:(NSNumber *)duration
+                       dotted:(BOOL)dotted
+                         tied:(BOOL)tied
                    midiPacket:(NSArray *)MIDI
                     oscPacket:(NSArray *)OSC;
 

@@ -175,11 +175,13 @@
 
 - (void)flushAggregatedNoteInformation
 {
-    if ([self.delegate respondsToSelector:@selector(keyboardDidSendSignal:inputType:spelling:duration:midiPacket:oscPacket:)]) {
+    if ([self.delegate respondsToSelector:@selector(keyboardDidSendSignal:inputType:spelling:duration:dotted:tied:midiPacket:oscPacket:)]) {
         [self.delegate keyboardDidSendSignal:self.noteIDs
                                    inputType:self.inputTypes
                                     spelling:self.spellings
                                     duration:self.selectedDuration
+                                      dotted:self.dotButton.selected
+                                        tied:self.tieButton.selected
                                   midiPacket:self.MIDIPackets
                                    oscPacket:self.OSCPackets];
     }
@@ -189,6 +191,8 @@
     self.selectedDuration = nil;
     self.MIDIPackets = nil;
     self.OSCPackets = nil;
+    self.tieButton.selected = NO;
+    self.tieButton.layer.opacity = 0.5;
 }
 
 
@@ -214,16 +218,18 @@
     }
 }
 
-- (IBAction)dotButtonPress:(id)sender {
-    
-    // This is going to be really complicated
-    NSLog(@"dot button press");
+- (IBAction)dotButtonPress:(id)sender
+{
+    if (!self.rhythmControlsEnabled) return;
+    self.dotButton.selected = !self.dotButton.selected;
+    self.dotButton.layer.opacity = self.dotButton.selected ? 1.0 : 0.5;
 }
 
-- (IBAction)tieButtonPress:(id)sender {
-    
-    // This is going to be really complicated    
-    NSLog(@"tie button press");
+- (IBAction)tieButtonPress:(id)sender
+{
+    if (!self.rhythmControlsEnabled) return;
+    self.tieButton.selected = !self.tieButton.selected;
+    self.tieButton.layer.opacity = self.tieButton.selected ? 1.0 : 0.5;
 }
 
 - (IBAction)restButtonPress:(id)sender
@@ -234,9 +240,18 @@
     for (UIButton *duration in self.durationButtons) {
         if (duration.selected) {
             NSNumber *selectedDuration = @([duration tag]);
-            [self.delegate keyboardDidSendSignal:nil inputType:nil spelling:nil duration:selectedDuration midiPacket:nil oscPacket:nil];
+            [self.delegate keyboardDidSendSignal:nil
+                                       inputType:nil
+                                        spelling:nil
+                                        duration:selectedDuration
+                                          dotted:self.dotButton.selected
+                                            tied:NO
+                                      midiPacket:nil
+                                       oscPacket:nil];
         }
     }
+    self.tieButton.selected = NO;
+    self.tieButton.layer.opacity = 0.5;
 }
 
 - (IBAction)restButtonTouch:(id)sender {

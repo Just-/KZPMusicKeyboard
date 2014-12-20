@@ -47,10 +47,18 @@
     self.outputLabel.text = @"";
 }
 
-- (void)keyboardDidSendSignal:(NSArray *)noteID inputType:(NSArray *)type spelling:(NSArray *)spelling duration:(NSNumber *)duration midiPacket:(NSArray *)MIDI oscPacket:(NSArray *)OSC
+- (void)keyboardDidSendSignal:(NSArray *)noteID
+                    inputType:(NSArray *)type
+                     spelling:(NSArray *)spelling
+                     duration:(NSNumber *)duration
+                       dotted:(BOOL)dotted
+                         tied:(BOOL)tied
+                   midiPacket:(NSArray *)MIDI
+                    oscPacket:(NSArray *)OSC
 {
     NSMutableString *text = [NSMutableString stringWithString:@""];
     for (NSNumber *note in noteID) [text appendFormat:@"%@ ", note];
+    NSLog(@"info %@, %@, %@, %d, %d", type, spelling, duration, dotted, tied);
     self.outputLabel.text = text;
 }
 
