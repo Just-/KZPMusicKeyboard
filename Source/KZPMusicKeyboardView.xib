@@ -1300,11 +1300,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FeD-C9-1v6">
-                    <rect key="frame" x="0.0" y="42" width="20" height="83"/>
+                    <rect key="frame" x="0.0" y="42" width="334" height="83"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOd-0g-9QM">
-                    <rect key="frame" x="0.0" y="42" width="10" height="83"/>
+                    <rect key="frame" x="598" y="42" width="1000" height="83"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="5" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="7bP-9y-RMr">
@@ -1351,7 +1351,7 @@
                     </connections>
                 </button>
                 <view opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lkc-yF-dWN">
-                    <rect key="frame" x="0.0" y="42" width="100" height="83"/>
+                    <rect key="frame" x="334" y="42" width="264" height="83"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
@@ -1359,7 +1359,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="140" y="157.5"/>
+            <point key="canvasLocation" x="329" y="122.5"/>
         </view>
         <tapGestureRecognizer id="wk2-FT-NCH">
             <connections>
