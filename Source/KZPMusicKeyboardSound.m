@@ -36,7 +36,7 @@
 - (BOOL)playNoteWithID:(NSUInteger)noteID
 {
     if (noteID < LOWEST_KEY) return NO;
-    [(AVAudioPlayer *)_tones[noteID] play];
+    [(AVAudioPlayer *)_tones[noteID - LOWEST_KEY] play];
     return YES;
 }
 
