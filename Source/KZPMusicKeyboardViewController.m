@@ -42,15 +42,18 @@
 @property (strong, nonatomic) NSMutableArray *MIDIPackets;
 @property (strong, nonatomic) NSMutableArray *OSCPackets;
 @property (strong, nonatomic) NSTimer *chordTimer;
-@property (strong, nonatomic) NSMutableArray *spellingButtons;
+
+// Spelling
+@property (strong, nonatomic) NSArray *imageNames;
+@property (strong, nonatomic) NSMutableDictionary *spellingButtons;
 
 @end
 
 @implementation KZPMusicKeyboardViewController
 
-- (NSMutableArray *)manualSpellingButtons
+- (NSMutableDictionary *)spellingButtons
 {
-    if (!_spellingButtons) _spellingButtons = [NSMutableArray array];
+    if (!_spellingButtons) _spellingButtons = [NSMutableDictionary dictionary];
     return _spellingButtons;
 }
 
@@ -116,6 +119,7 @@
         keyboardControl.layer.opacity = 0.5;
     }
     
+    self.imageNames = @[@"double-flat", @"flat", @"natural", @"sharp", @"double-sharp"];
     [self aggregatorThresholdSliderValueChanged:self.aggregatorThresholdSlider];
 }
 
@@ -350,7 +354,6 @@
 
 - (void)displayAccidentalOptionsForNoteID:(int)noteID
 {
-    NSArray *imageNames = @[@"double-flat", @"flat", @"natural", @"sharp", @"double-sharp"];
     int order[5] = {-2, 2, -1, 1, 0};
     
     BOOL isWhite;
@@ -369,11 +372,14 @@
         dim = EBONY_DIM;
         isWhite = NO;
     }
+    
     UIButton *key;
     for (UIButton *k in self.keyButtons) {
         if ([k tag] == noteID) key = k;
     }
+    
     CGRect keyFrame = [key frame];
+    NSMutableArray *spellingButtons = [NSMutableArray array];
     
     for (int i = 0; i < 5; i++) {
         int modifier = order[i];
@@ -381,22 +387,42 @@
             CGRect accidentalFrame = CGRectMake(keyFrame.origin.x + inset_h,
                                                 keyFrame.size.height - (buttonCount * offset) - inset_v - dim,
                                                 dim, dim);
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"music-%@%@", imageNames[modifier + 2], isWhite ? @"" : @"-inverted"]];
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"music-%@%@", self.imageNames[modifier + 2], isWhite ? @"" : @"-inverted"]];
             UIButton *button = [[UIButton alloc] initWithFrame:accidentalFrame];
-            button.tag = modifier;
+            button.tag = noteID;
             [button setImage:image forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(spellingButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
             button.layer.borderWidth = 1.0;
             button.layer.cornerRadius = 5.0;
             button.layer.borderColor = isWhite ? [UIColor lightGrayColor].CGColor : [UIColor darkGrayColor].CGColor;
             button.alpha = 0.0;
+            button.titleLabel.text = self.imageNames[modifier + 2];
             [UIView animateWithDuration:0.3 animations:^{
                 button.alpha = 1.0;
             }];
             buttonCount++;
-            [self.spellingButtons addObject:button];
+            [spellingButtons addObject:button];
             [self.keyboardMainView addSubview:button];
         }
     }
+    
+    [self.spellingButtons setValue:spellingButtons forKey:[NSString stringWithFormat:@"%d", noteID]];
+}
+
+- (void)spellingButtonPressed:(UIButton *)sender
+{
+    NSString *key = [NSString stringWithFormat:@"%d", [sender tag]];
+    NSArray *buttonSet = [self.spellingButtons valueForKey:key];
+    [self.spellingButtons removeObjectForKey:key];
+    [UIView animateWithDuration:0.3 animations:^{
+        for (UIButton *button in buttonSet) {
+            button.alpha = 0.0;
+        }
+    } completion:^(BOOL finished) {
+        for (UIButton *button in buttonSet) {
+            [button removeFromSuperview];
+        }
+    }];
 }
 
 
