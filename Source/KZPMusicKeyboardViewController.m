@@ -42,10 +42,17 @@
 @property (strong, nonatomic) NSMutableArray *MIDIPackets;
 @property (strong, nonatomic) NSMutableArray *OSCPackets;
 @property (strong, nonatomic) NSTimer *chordTimer;
+@property (strong, nonatomic) NSMutableArray *spellingButtons;
 
 @end
 
 @implementation KZPMusicKeyboardViewController
+
+- (NSMutableArray *)manualSpellingButtons
+{
+    if (!_spellingButtons) _spellingButtons = [NSMutableArray array];
+    return _spellingButtons;
+}
 
 - (NSMutableArray *)noteIDs
 {
@@ -381,7 +388,12 @@
             button.layer.borderWidth = 1.0;
             button.layer.cornerRadius = 5.0;
             button.layer.borderColor = isWhite ? [UIColor lightGrayColor].CGColor : [UIColor darkGrayColor].CGColor;
+            button.alpha = 0.0;
+            [UIView animateWithDuration:0.3 animations:^{
+                button.alpha = 1.0;
+            }];
             buttonCount++;
+            [self.spellingButtons addObject:button];
             [self.keyboardMainView addSubview:button];
         }
     }
