@@ -28,6 +28,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *accidentalButtons;
 @property (weak, nonatomic) IBOutlet UIButton *dotButton;
 @property (weak, nonatomic) IBOutlet UIButton *tieButton;
+@property (weak, nonatomic) IBOutlet UIButton *manualSpellButton;
 
 @property (strong, nonatomic) KZPMusicKeyboardSound *keyboardSound;
 
@@ -39,7 +40,6 @@
 @property (strong, nonatomic) NSMutableArray *MIDIPackets;
 @property (strong, nonatomic) NSMutableArray *OSCPackets;
 @property (strong, nonatomic) NSTimer *chordTimer;
-@property (strong, nonatomic) UILongPressGestureRecognizer *longPressGesture;
 
 @end
 
@@ -108,9 +108,6 @@
     }
     
     [self aggregatorThresholdSliderValueChanged:self.aggregatorThresholdSlider];
-    
-    self.longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGestureFired)];
-    [self.keyboardMainView addGestureRecognizer:self.longPressGesture];
 }
 
 - (IBAction)keyboardMapTapped:(id)sender {
@@ -139,15 +136,35 @@
     }
 }
 
+
+#pragma mark - Pitch -
+
+- (IBAction)accidentalButtonPress:(id)sender {
+    UIButton *accidentalButton = (UIButton*)sender;
+    for (UIButton *accidental in self.accidentalButtons) {
+        if (accidental == accidentalButton) {
+            accidentalButton.selected = !accidentalButton.selected;
+        } else {
+            accidental.selected = NO;
+        }
+        accidental.layer.opacity = accidental.selected ? 1.0 : 0.5;
+    }
+}
+
 // TODO: separate note on/off eventually
 - (IBAction)keyButtonPressed:(id)sender
 {
+    if (self.manualSpellButton.selected) {
+        NSLog(@"bring up the options!");
+        return;
+    }
+    
     NSUInteger noteID = [sender tag];
     [self.keyboardSound playNoteWithID:noteID];
     
     NSNumber *selectedAccidental;
     for (UIButton *accidental in self.accidentalButtons) {
-        if (accidental.selected) {
+        if (accidental.selected && accidental.tag) {
             selectedAccidental = @((noteSpelling)[accidental tag]);
             accidental.selected = NO;
             accidental.layer.opacity = 0.5;
@@ -177,13 +194,6 @@
                                                       repeats:NO];
 }
 
-- (void)longPressGestureFired
-{
-    if (self.longPressGesture.state == UIGestureRecognizerStateBegan) {
-        NSLog(@"fire!");        
-    }
-}
-
 - (void)flushAggregatedNoteInformation
 {
     if (![self.spellings count]) [self.spellings addObject:@(SP__NATURAL)];
@@ -205,8 +215,12 @@
     self.OSCPackets = nil;
     self.tieButton.selected = NO;
     self.tieButton.layer.opacity = 0.5;
+    self.manualSpellButton.selected = NO;
+    self.manualSpellButton.layer.opacity = 0.5;
 }
 
+
+#pragma mark - Rhythm -
 
 // TODO: MIDI and OSC should operate using Notifications
 - (IBAction)durationButtonPress:(id)sender
@@ -271,18 +285,6 @@
 - (IBAction)restButtonTouch:(id)sender {
     if (self.rhythmControlsEnabled) {
         [(UIButton *)sender layer].opacity = 1.0;
-    }
-}
-
-- (IBAction)accidentalButtonPress:(id)sender {
-    UIButton *accidentalButton = (UIButton*)sender;
-    for (UIButton *accidental in self.accidentalButtons) {
-        if (accidental == accidentalButton) {
-            accidentalButton.selected = !accidentalButton.selected;
-        } else {
-            accidental.selected = NO;
-        }
-        accidental.layer.opacity = accidental.selected ? 1.0 : 0.5;
     }
 }
 
