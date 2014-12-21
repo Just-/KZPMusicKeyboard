@@ -10,6 +10,8 @@
 #import "UIView+frameOperations.h"
 #import "KZPMusicKeyboardManager.h"
 #import "KZPMusicKeyboardSound.h"
+#import "SciNotation.h"
+#import "UIView+frameOperations.h"
 
 @interface KZPMusicKeyboardViewController ()
 
@@ -154,11 +156,6 @@
 // TODO: separate note on/off eventually
 - (IBAction)keyButtonPressed:(id)sender
 {
-    if (self.manualSpellButton.selected) {
-        NSLog(@"bring up the options!");
-        return;
-    }
-    
     NSUInteger noteID = [sender tag];
     [self.keyboardSound playNoteWithID:noteID];
     
@@ -196,6 +193,13 @@
 
 - (void)flushAggregatedNoteInformation
 {
+    if (self.manualSpellButton.selected) {
+        for (NSNumber *noteID in self.noteIDs) {
+            [self displayAccidentalOptionsForNoteID:[noteID intValue]];
+        }
+        return;
+    }
+    
     if (![self.spellings count]) [self.spellings addObject:@(SP__NATURAL)];
     if ([self.delegate respondsToSelector:@selector(keyboardDidSendSignal:inputType:spelling:duration:dotted:tied:midiPacket:oscPacket:)]) {
         [self.delegate keyboardDidSendSignal:self.noteIDs
@@ -232,12 +236,14 @@
         if (duration == durationButton) {
             durationButton.selected = !durationButton.selected;
         } else {
+            if (duration.selected) {
+                self.dotButton.selected = NO;
+                self.dotButton.layer.opacity = 0.5;
+            }
             duration.selected = NO;
         }
         duration.layer.opacity = duration.selected ? 1.0 : 0.5;
     }
-    self.dotButton.selected = !self.dotButton.selected;
-    self.dotButton.layer.opacity = self.dotButton.selected ? 1.0 : 0.5;
 }
 
 - (IBAction)durationButtonTouch:(id)sender {
@@ -321,6 +327,64 @@
     [self.mapRegionLeftShadow setFrameX:0];
     [self.mapRegionLeftShadow setFrameWidth:leftX < 0 ? 0 : leftX];
     [self.mapRegionRightShadow setFrameX:leftX + self.mapRegionVisible.frame.size.width];
+}
+
+
+#pragma mark - Manual Spelling -
+
+#define EBONY_DIM       31
+#define IVORY_DIM       34
+#define EBONY_INSET_H    8
+#define IVORY_INSET_H   22
+#define EBONY_INSET_V   18
+#define IVORY_INSET_V   12
+#define EBONY_OFFSET    36
+#define IVORY_OFFSET    40
+
+- (void)displayAccidentalOptionsForNoteID:(int)noteID
+{
+    NSArray *imageNames = @[@"double-flat", @"flat", @"natural", @"sharp", @"double-sharp"];
+    int order[5] = {-2, 2, -1, 1, 0};
+    
+    BOOL isWhite;
+    int offset, inset_h, inset_v, dim, buttonCount = 0;
+    
+    if ([SciNotation noteIsWhite:noteID]) {
+        offset = IVORY_OFFSET;
+        inset_h = IVORY_INSET_H;
+        inset_v = IVORY_INSET_V;
+        dim = IVORY_DIM;
+        isWhite = YES;
+    } else {
+        offset = EBONY_OFFSET;
+        inset_h = EBONY_INSET_H;
+        inset_v = EBONY_INSET_V;
+        dim = EBONY_DIM;
+        isWhite = NO;
+    }
+    UIButton *key;
+    for (UIButton *k in self.keyButtons) {
+        if ([k tag] == noteID) key = k;
+    }
+    CGRect keyFrame = [key frame];
+    
+    for (int i = 0; i < 5; i++) {
+        int modifier = order[i];
+        if ([SciNotation modifier:modifier isLegalForPitch:noteID]) {
+            CGRect accidentalFrame = CGRectMake(keyFrame.origin.x + inset_h,
+                                                keyFrame.size.height - (buttonCount * offset) - inset_v - dim,
+                                                dim, dim);
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"music-%@%@", imageNames[modifier + 2], isWhite ? @"" : @"-inverted"]];
+            UIButton *button = [[UIButton alloc] initWithFrame:accidentalFrame];
+            button.tag = modifier;
+            [button setImage:image forState:UIControlStateNormal];
+            button.layer.borderWidth = 1.0;
+            button.layer.cornerRadius = 5.0;
+            button.layer.borderColor = isWhite ? [UIColor lightGrayColor].CGColor : [UIColor darkGrayColor].CGColor;
+            buttonCount++;
+            [self.keyboardMainView addSubview:button];
+        }
+    }
 }
 
 

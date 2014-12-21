@@ -142,7 +142,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZrH-XV-0jR">
-                    <rect key="frame" x="0.0" y="-5" width="1024" height="462"/>
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="457"/>
                 </imageView>
                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="keyboard_map.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="lzX-4y-Wzv">
                     <rect key="frame" x="0.0" y="42" width="1024" height="83"/>
