@@ -10,6 +10,7 @@
                 <outlet property="aggregatorThresholdLabel" destination="1H5-A6-uHd" id="MIA-88-hNL"/>
                 <outlet property="aggregatorThresholdSlider" destination="7bP-9y-RMr" id="7Y0-tz-Bdz"/>
                 <outlet property="dotButton" destination="1Wm-Cv-h71" id="dwQ-yH-yAH"/>
+                <outlet property="keyboardDefocusView" destination="ET4-cM-RmV" id="JdX-SF-D3P"/>
                 <outlet property="keyboardMainView" destination="3r0-fP-Xh8" id="StT-G0-4V7"/>
                 <outlet property="keyboardMap" destination="lzX-4y-Wzv" id="btA-t9-snb"/>
                 <outlet property="manualSpellButton" destination="S4z-9u-pSn" id="Pos-yr-4oZ"/>
@@ -1289,6 +1290,10 @@
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchUpInside" id="TL2-hL-dhb"/>
                             </connections>
                         </button>
+                        <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ET4-cM-RmV">
+                            <rect key="frame" x="0.0" y="0.0" width="4200" height="332"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>

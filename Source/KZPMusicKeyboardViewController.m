@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *mapRegionLeftShadow;
 @property (weak, nonatomic) IBOutlet UIView *mapRegionRightShadow;
 @property (weak, nonatomic) IBOutlet UIView *mapRegionVisible;
+@property (weak, nonatomic) IBOutlet UIView *keyboardDefocusView;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyboardControlButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *durationButtons;
@@ -112,6 +113,10 @@
     self.keyboardSound = [[KZPMusicKeyboardSound alloc] init];
     self.mapRegionVisible.layer.borderWidth = 2.0;
     self.mapRegionVisible.layer.borderColor = [UIColor yellowColor].CGColor;
+    self.keyboardDefocusView.hidden = YES;
+    self.keyboardDefocusView.alpha = 0.0;
+    UITapGestureRecognizer *refocusGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refocusKeyboard)];
+    [self.keyboardDefocusView addGestureRecognizer:refocusGesture];
     
     for (UIButton *keyboardControl in self.keyboardControlButtons) {
         keyboardControl.layer.borderWidth = 1.0;
@@ -156,6 +161,38 @@
     }
 }
 
+- (void)refocusKeyboard
+{
+    self.manualSpellButton.selected = NO;
+    self.manualSpellButton.layer.opacity = 0.5;
+    self.noteIDs = nil;
+    self.inputTypes = nil;
+    self.spellings = nil;
+    self.selectedDuration = nil;
+    self.MIDIPackets = nil;
+    self.OSCPackets = nil;
+    self.tieButton.selected = NO;
+    self.tieButton.layer.opacity = 0.5;
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.keyboardDefocusView.alpha = 0.0;
+        for (NSArray *buttonSet in [self.spellingButtons allValues]) {
+            for (UIButton *button in buttonSet) {
+                button.alpha = 0.0;
+            }
+        }
+        
+    } completion:^(BOOL finished) {
+        self.keyboardDefocusView.hidden = YES;
+        for (NSArray *buttonSet in [self.spellingButtons allValues]) {
+            for (UIButton *button in buttonSet) {
+                [button removeFromSuperview];
+            }
+        }
+    }];
+    
+    self.spellingButtons = nil;
+}
 
 #pragma mark - Pitch -
 
@@ -363,6 +400,11 @@
 
 - (void)displayAccidentalOptionsForNoteID:(int)noteID
 {
+    self.keyboardDefocusView.hidden = NO;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.keyboardDefocusView.alpha = 0.3;
+    }];
+    
     int order[5] = {-2, 2, -1, 1, 0};
     
     BOOL isWhite;
@@ -412,6 +454,7 @@
             buttonCount++;
             [spellingButtons addObject:button];
             [self.keyboardMainView addSubview:button];
+            [self.keyboardMainView bringSubviewToFront:button];
         }
     }
     
@@ -442,11 +485,18 @@
     }
     
     // Reflush note info with chosen accidentals
+    self.spellingButtons = nil;
     self.manualSpellButton.selected = NO;
     self.manualSpellButton.layer.opacity = 0.5;
     self.noteIDs = [NSMutableArray arrayWithArray:[self.spellingChoices allKeys]];
     self.spellings = [NSMutableArray arrayWithArray:[self.spellingChoices allValues]];
     [self flushAggregatedNoteInformation];
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        self.keyboardDefocusView.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        self.keyboardDefocusView.hidden = YES;
+    }];
 }
 
 
