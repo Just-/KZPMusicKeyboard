@@ -158,6 +158,7 @@
 		C9AECFE41A451AFE0050733C /* SciNotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFDA1A451AFE0050733C /* SciNotation.m */; };
 		C9AECFE51A451AFE0050733C /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AECFDB1A451AFE0050733C /* Utilities.h */; };
 		C9AECFE61A451AFE0050733C /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AECFDC1A451AFE0050733C /* Utilities.m */; };
+		C9AED3B31A5A9D8D0050733C /* music-accidentals.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AED3B21A5A9D8D0050733C /* music-accidentals.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -334,6 +335,7 @@
 		C9AECFDA1A451AFE0050733C /* SciNotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SciNotation.m; sourceTree = "<group>"; };
 		C9AECFDB1A451AFE0050733C /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		C9AECFDC1A451AFE0050733C /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		C9AED3B21A5A9D8D0050733C /* music-accidentals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-accidentals.png"; path = "../Assets/Images/music-accidentals.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -578,6 +580,7 @@
 		C989F2C919AF1CC7002608F7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C9AED3B21A5A9D8D0050733C /* music-accidentals.png */,
 				C9AECF8D1A44E7020050733C /* music-double-sharp-inverted.png */,
 				C9AECF8E1A44E7020050733C /* music-flat-inverted.png */,
 				C9AECF8F1A44E7020050733C /* music-natural-inverted.png */,
@@ -737,6 +740,7 @@
 				C989F36919AF1D6D002608F7 /* 46.aif in Resources */,
 				C989F39219AF1D6D002608F7 /* 87.aif in Resources */,
 				C989F35F19AF1D6D002608F7 /* 36.aif in Resources */,
+				C9AED3B31A5A9D8D0050733C /* music-accidentals.png in Resources */,
 				C989F2E719AF1D63002608F7 /* keyboard_map.jpeg in Resources */,
 				C9AECF931A44E7020050733C /* music-natural-inverted.png in Resources */,
 				C989F35319AF1D6D002608F7 /* 24.aif in Resources */,

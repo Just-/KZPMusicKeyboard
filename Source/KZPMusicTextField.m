@@ -78,7 +78,7 @@
             [[KZPMusicKeyboardManager defaultManager] removeImmediately];
         }];
     } else {
-        [[KZPMusicKeyboardManager defaultManager] hideControllerWithCompletionBlock:NULL];
+        [[KZPMusicKeyboardManager defaultManager] hideControllerWithCompletionBlock:NULL deactivate:YES];
         [UIView animateWithDuration:0.3 animations:^{
             self.keyboardTypeToggle.alpha = 0.0;
         } completion:^(BOOL finished) {
@@ -206,7 +206,7 @@
         [[KZPMusicKeyboardManager defaultManager] hideControllerWithCompletionBlock:^{
             self.inputView = nil;
             [super becomeFirstResponder];
-        }];
+        } deactivate:NO];
     }
     
     self.keyboardTypeToggle.selected = !self.keyboardTypeToggle.selected;

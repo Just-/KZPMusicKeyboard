@@ -66,7 +66,7 @@
 {
     [[KZPMusicKeyboardManager defaultManager] hideControllerWithCompletionBlock:^{
         self.showKeyboardButton.enabled = YES;
-    }];
+    } deactivate:YES];
 }
 
 @end

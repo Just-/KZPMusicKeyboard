@@ -39,7 +39,7 @@
 - (void)setResponder:(id<KZPMusicKeyboardDelegate>)responder;
 
 - (UIView *)showControllerWithRhythmControls:(BOOL)needsRhythmControls;
-- (void)hideControllerWithCompletionBlock:(void(^)())completionBlock;
+- (void)hideControllerWithCompletionBlock:(void (^)())completionBlock deactivate:(BOOL)deactivate;
 - (void)removeImmediately;
 
 //- (void)qwertyKeyboardDidHide:(id)receiver;

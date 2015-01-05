@@ -66,7 +66,7 @@ static KZPMusicKeyboardManager *defaultManager;
     return self.windowView;
 }
 
-- (void)hideControllerWithCompletionBlock:(void (^)())completionBlock
+- (void)hideControllerWithCompletionBlock:(void (^)())completionBlock deactivate:(BOOL)deactivate
 {
     // iOS7 and iOS8 have different notions of screen height
     CGFloat landscapeScreenHeight = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
@@ -76,12 +76,11 @@ static KZPMusicKeyboardManager *defaultManager;
     } completion:^(BOOL finished) {
         UIView *windowView = [self.pianoKeyboard.view superview];
         [self.pianoKeyboard.view removeFromSuperview];
-        if (completionBlock == NULL) {
+        if (deactivate) {
             [windowView removeFromSuperview];
             self.windowView = nil;
-        } else {
-            completionBlock();
         }
+        if (completionBlock) completionBlock();
     }];
 }
 
