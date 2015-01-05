@@ -45,7 +45,9 @@
 
 // Spelling
 @property (strong, nonatomic) NSArray *imageNames;
+@property (strong, nonatomic) NSDictionary *imageNameMap;
 @property (strong, nonatomic) NSMutableDictionary *spellingButtons;
+@property (strong, nonatomic) NSMutableDictionary *spellingChoices;
 
 @end
 
@@ -120,6 +122,11 @@
     }
     
     self.imageNames = @[@"double-flat", @"flat", @"natural", @"sharp", @"double-sharp"];
+    self.imageNameMap = @{@"double-flat": @(-2),
+                          @"flat": @(-1),
+                          @"natural": @(0),
+                          @"sharp": @(1),
+                          @"double-sharp": @(2)};
     [self aggregatorThresholdSliderValueChanged:self.aggregatorThresholdSlider];
 }
 
@@ -205,8 +212,10 @@
 - (void)flushAggregatedNoteInformation
 {
     if (self.manualSpellButton.selected) {
+        self.spellingChoices = [NSMutableDictionary dictionary];
         for (NSNumber *noteID in self.noteIDs) {
             [self displayAccidentalOptionsForNoteID:[noteID intValue]];
+            [self.spellingChoices setObject:[NSNull null] forKey:noteID];
         }
         return;
     }
@@ -406,13 +415,13 @@
         }
     }
     
-    [self.spellingButtons setValue:spellingButtons forKey:[NSString stringWithFormat:@"%d", noteID]];
+    [self.spellingButtons setObject:spellingButtons forKey:[NSNumber numberWithInt:noteID]];
 }
 
 - (void)spellingButtonPressed:(UIButton *)sender
 {
-    NSString *key = [NSString stringWithFormat:@"%d", [sender tag]];
-    NSArray *buttonSet = [self.spellingButtons valueForKey:key];
+    NSNumber *key = [NSNumber numberWithInt:[sender tag]];
+    NSArray *buttonSet = [self.spellingButtons objectForKey:key];
     [self.spellingButtons removeObjectForKey:key];
     [UIView animateWithDuration:0.3 animations:^{
         for (UIButton *button in buttonSet) {
@@ -423,6 +432,21 @@
             [button removeFromSuperview];
         }
     }];
+    [self.spellingChoices setObject:[self.imageNameMap valueForKey:sender.titleLabel.text] forKey:key];
+    
+    // Check if all accidentals are picked
+    for (NSNumber *k in [self.spellingChoices allKeys]) {
+        if ([[self.spellingChoices objectForKey:k] isEqual:[NSNull null]]) {
+            return;
+        }
+    }
+    
+    // Reflush note info with chosen accidentals
+    self.manualSpellButton.selected = NO;
+    self.manualSpellButton.layer.opacity = 0.5;
+    self.noteIDs = [NSMutableArray arrayWithArray:[self.spellingChoices allKeys]];
+    self.spellings = [NSMutableArray arrayWithArray:[self.spellingChoices allValues]];
+    [self flushAggregatedNoteInformation];
 }
 
 
