@@ -303,6 +303,14 @@ static BOOL IS_IOS_8_OR_HIGHER()
 
 #pragma mark - Hit test
 
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    if (CGRectContainsPoint(self.passThroughFrame, point)) {
+        return NO;
+    }
+    return YES;
+}
+
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     id hitView = [super hitTest:point withEvent:event];

@@ -42,6 +42,8 @@
 @property (nonatomic, copy) void (^onDidMoveOutOfWindow)(void);
 @property (nonatomic, assign) BOOL onlySubviewsCapturesTouch;
 
+@property (nonatomic) CGRect passThroughFrame;
+
 - (id)initAndAddToWindow:(UIWindow *)window;
 - (id)initAndAddToKeyWindow;
 

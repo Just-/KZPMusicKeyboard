@@ -57,12 +57,14 @@ static KZPMusicKeyboardManager *defaultManager;
     
     // iOS7 and iOS8 have different notions of screen height
     CGFloat landscapeScreenHeight = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    CGFloat landscapeScreenWidth = MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     
     [self.pianoKeyboard.view setFrameY:landscapeScreenHeight];
     [self.windowView addSubview:self.pianoKeyboard.view];
     [UIView animateWithDuration:0.3 animations:^{
         [self.pianoKeyboard.view setFrameY:landscapeScreenHeight - self.pianoKeyboard.view.frame.size.height];
     }];
+    self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.pianoKeyboard.view.frame.origin.y);
     return self.windowView;
 }
 

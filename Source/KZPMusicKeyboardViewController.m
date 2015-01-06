@@ -211,7 +211,6 @@
 // TODO: separate note on/off eventually
 - (IBAction)keyButtonPressed:(id)sender
 {
-    NSLog(@"pres");
     NSUInteger noteID = [sender tag];
     [self.keyboardSound playNoteWithID:noteID];
     
