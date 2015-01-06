@@ -442,11 +442,13 @@
             UIButton *button = [[UIButton alloc] initWithFrame:accidentalFrame];
             button.tag = noteID;
             [button setImage:image forState:UIControlStateNormal];
+            button.clipsToBounds = YES;
             [button addTarget:self action:@selector(spellingButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
             button.layer.borderWidth = 1.0;
             button.layer.cornerRadius = 5.0;
             button.layer.borderColor = isWhite ? [UIColor lightGrayColor].CGColor : [UIColor darkGrayColor].CGColor;
             button.alpha = 0.0;
+            button.backgroundColor = [UIColor clearColor];
             button.titleLabel.text = self.imageNames[modifier + 2];
             [UIView animateWithDuration:0.3 animations:^{
                 button.alpha = 1.0;
