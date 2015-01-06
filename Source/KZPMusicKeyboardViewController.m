@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *dotButton;
 @property (weak, nonatomic) IBOutlet UIButton *tieButton;
 @property (weak, nonatomic) IBOutlet UIButton *manualSpellButton;
+@property (weak, nonatomic) IBOutlet UIButton *backspaceButton;
 
 @property (strong, nonatomic) KZPMusicKeyboardSound *keyboardSound;
 
@@ -123,7 +124,9 @@
         keyboardControl.layer.cornerRadius = 5.0;
         keyboardControl.clipsToBounds = YES;
         keyboardControl.layer.borderColor = [UIColor darkGrayColor].CGColor;
-        keyboardControl.layer.opacity = 0.5;
+        if (keyboardControl != self.backspaceButton) {
+            keyboardControl.layer.opacity = 0.5;
+        }
     }
     
     self.imageNames = @[@"double-flat", @"flat", @"natural", @"sharp", @"double-sharp"];
@@ -161,10 +164,8 @@
     }
 }
 
-- (void)refocusKeyboard
+- (void)resetAggregation
 {
-    self.manualSpellButton.selected = NO;
-    self.manualSpellButton.layer.opacity = 0.5;
     self.noteIDs = nil;
     self.inputTypes = nil;
     self.spellings = nil;
@@ -173,6 +174,13 @@
     self.OSCPackets = nil;
     self.tieButton.selected = NO;
     self.tieButton.layer.opacity = 0.5;
+    self.manualSpellButton.selected = NO;
+    self.manualSpellButton.layer.opacity = 0.5;
+}
+
+- (void)refocusKeyboard
+{
+    [self resetAggregation];
     
     [UIView animateWithDuration:0.2 animations:^{
         self.keyboardDefocusView.alpha = 0.0;
@@ -193,6 +201,7 @@
     
     self.spellingButtons = nil;
 }
+
 
 #pragma mark - Pitch -
 
@@ -268,16 +277,7 @@
                                   midiPacket:self.MIDIPackets
                                    oscPacket:self.OSCPackets];
     }
-    self.noteIDs = nil;
-    self.inputTypes = nil;
-    self.spellings = nil;
-    self.selectedDuration = nil;
-    self.MIDIPackets = nil;
-    self.OSCPackets = nil;
-    self.tieButton.selected = NO;
-    self.tieButton.layer.opacity = 0.5;
-    self.manualSpellButton.selected = NO;
-    self.manualSpellButton.layer.opacity = 0.5;
+    [self resetAggregation];
 }
 
 
