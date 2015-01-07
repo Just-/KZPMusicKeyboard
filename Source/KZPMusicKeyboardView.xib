@@ -20,6 +20,7 @@
                 <outlet property="mapRegionVisible" destination="lkc-yF-dWN" id="kEu-e9-q7m"/>
                 <outlet property="restButton" destination="7cV-c3-rCG" id="MWr-mW-Fo9"/>
                 <outlet property="tieButton" destination="1fv-XW-Zse" id="gV8-qL-JKK"/>
+                <outlet property="toneSelector" destination="8EU-2P-5De" id="wCl-m9-LTr"/>
                 <outlet property="view" destination="1" id="tA1-Zr-5kE"/>
                 <outletCollection property="keyButtons" destination="why-Ac-uJN" id="bBV-h7-O2y"/>
                 <outletCollection property="keyButtons" destination="C4z-pt-gHf" id="Ly4-qv-RcN"/>
@@ -1380,9 +1381,12 @@
                     <rect key="frame" x="869" y="6" width="150" height="29"/>
                     <segments>
                         <segment title="Piano"/>
-                        <segment title="Tines"/>
+                        <segment title="Rhodes"/>
                     </segments>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="toneSelected:" destination="-1" eventType="valueChanged" id="6ws-JV-fLP"/>
+                    </connections>
                 </segmentedControl>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoQ-F1-p8G">
                     <rect key="frame" x="815" y="3" width="35" height="35"/>

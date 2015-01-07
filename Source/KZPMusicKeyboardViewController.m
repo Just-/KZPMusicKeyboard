@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *manualSpellButton;
 @property (weak, nonatomic) IBOutlet UIButton *backspaceButton;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *toneSelector;
 @property (strong, nonatomic) SoundBankPlayer *soundBankPlayer;
 
 // Aggregation of note information for the purpose of detecting chords
@@ -112,7 +113,7 @@
 {
     [super viewDidLoad];
     self.soundBankPlayer = [[SoundBankPlayer alloc] init];
-    [self.soundBankPlayer setSoundBank:@"Piano"];
+    [self.soundBankPlayer setSoundBank:[self.toneSelector titleForSegmentAtIndex:[self.toneSelector selectedSegmentIndex]]];
     
     for (UIButton *keyButton in self.keyButtons) {
         [keyButton addTarget:self action:@selector(keyButtonReleased:) forControlEvents:UIControlEventTouchUpInside];
@@ -145,6 +146,11 @@
                           @"sharp": @(1),
                           @"double-sharp": @(2)};
     [self aggregatorThresholdSliderValueChanged:self.aggregatorThresholdSlider];
+}
+
+- (IBAction)toneSelected:(id)sender {
+    self.soundBankPlayer = [[SoundBankPlayer alloc] init];
+    [self.soundBankPlayer setSoundBank:[self.toneSelector titleForSegmentAtIndex:[self.toneSelector selectedSegmentIndex]]];
 }
 
 - (IBAction)keyboardMapTapped:(id)sender {
