@@ -330,6 +330,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="nhh-oi-NQD"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="RlQ-SH-0Qd"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="fZW-Ji-yvI"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="28" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rC9-TJ-e9A">
@@ -341,6 +343,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="2kc-gA-jyk"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="6jk-9B-qDk"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="mHd-gj-4If"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="29" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHG-V4-np1">
@@ -352,6 +356,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="gRd-zK-GZs"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="B0S-PP-k86"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="ZeK-KD-Wy2"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="31" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZj-mT-KLi">
@@ -363,6 +369,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="jgX-J3-Vs3"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="9OL-hb-i2W"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="e2U-oe-ydm"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="24" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vor-vX-7Ym">
@@ -374,6 +382,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="gRb-d6-w3u"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="CfR-rv-XmV"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="b7L-Kb-sE0"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="33" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iw-0M-rGJ">
@@ -385,6 +395,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="e7V-c3-MmZ"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="DzC-F2-dvO"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="O02-bi-CZA"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="35" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgS-zU-BaK">
@@ -396,6 +408,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="Adn-Vo-h3t"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="Swu-Jc-4Ol"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="wPR-fe-VcR"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="36" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaM-pw-IjQ">
@@ -407,6 +421,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="9i4-6t-g8L"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="Iht-GD-VNI"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="KpY-XI-rwR"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="38" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClV-Zc-4YL">
@@ -418,6 +434,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="M59-0l-okC"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="8H5-F4-4uc"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="9U7-A8-Dl3"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="40" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkN-U9-2mJ">
@@ -429,6 +447,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="Ci2-Vj-HS6"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="5ON-R7-NjG"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="Gez-nx-lG5"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uf5-ih-fV6">
@@ -440,6 +460,8 @@
                             <state key="selected" image="ebony_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="aKQ-cb-KoE"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="7HM-gw-jY1"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="zjO-lq-rA3"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="27" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Q-dp-HNa">
@@ -451,6 +473,8 @@
                             <state key="selected" image="ebony_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="xiE-Re-Fqb"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="9Qv-eg-4pb"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="ka6-UQ-YmJ"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="37" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFe-PY-16D">
@@ -462,6 +486,8 @@
                             <state key="selected" image="ebony_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="B2c-Iy-90T"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="P4m-qi-YZo"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="lm2-1V-tHo"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="39" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGG-5O-yd6">
@@ -473,6 +499,8 @@
                             <state key="selected" image="ebony_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="zZW-LU-ML2"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="QOl-4H-QpZ"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="WvU-Sq-j6G"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="30" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y89-jD-Q7O">
@@ -484,6 +512,8 @@
                             <state key="selected" image="ebony_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="RJB-Ip-Qn1"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="Jup-Ar-q6X"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="WSx-pw-hUu"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="32" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3o2-Nu-JLL">
@@ -495,6 +525,8 @@
                             <state key="selected" image="ebony_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="Ac2-gx-cOf"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="eA0-2e-aCD"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="m2o-vj-vS4"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="34" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D01-AY-I2k">
@@ -506,6 +538,8 @@
                             <state key="selected" image="ebony_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="uiD-aA-9Ol"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="GAl-v1-sd7"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="ps5-A6-ZFH"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="41" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2N-qd-HG6">
@@ -517,6 +551,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="7y9-hU-T9s"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="Jmo-ij-Dmr"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="QgV-xL-zMD"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="43" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI2-jZ-1GH">
@@ -528,6 +564,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="EdR-KJ-nOC"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="7xS-RE-uQf"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="Gn6-uC-Nul"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="45" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kos-W4-c8D">
@@ -539,6 +577,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="UQH-6N-M5O"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="nBk-bG-H5G"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="sJl-CW-UGW"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="47" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfd-XB-b2V">
@@ -550,6 +590,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="gXL-aB-S2Z"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="Qak-C9-UOm"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="gEk-P1-Xo9"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="48" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZI5-xG-zZI">
@@ -561,6 +603,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="MEv-pg-5tq"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="Ep8-MW-Abp"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="Xan-Ar-eHa"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="50" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwK-F0-7Wv">
@@ -572,6 +616,8 @@
                             <state key="selected" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="Ya9-C2-I8k"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpInside" id="RLb-cL-pvB"/>
+                                <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="ygh-jC-zjw"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="52" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcB-a4-8jG">

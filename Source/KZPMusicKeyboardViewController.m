@@ -9,7 +9,7 @@
 #import "KZPMusicKeyboardViewController.h"
 #import "UIView+frameOperations.h"
 #import "KZPMusicKeyboardManager.h"
-#import "KZPMusicKeyboardSound.h"
+#import "SoundBankPlayer.h"
 #import "SciNotation.h"
 #import "UIView+frameOperations.h"
 
@@ -34,7 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *manualSpellButton;
 @property (weak, nonatomic) IBOutlet UIButton *backspaceButton;
 
-@property (strong, nonatomic) KZPMusicKeyboardSound *keyboardSound;
+@property (strong, nonatomic) SoundBankPlayer *soundBankPlayer;
 
 // Aggregation of note information for the purpose of detecting chords
 @property (strong, nonatomic) NSMutableArray *noteIDs;
@@ -111,7 +111,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.keyboardSound = [[KZPMusicKeyboardSound alloc] init];
+    self.soundBankPlayer = [[SoundBankPlayer alloc] init];
+    [self.soundBankPlayer setSoundBank:@"Piano"];
+    
+    for (UIButton *keyButton in self.keyButtons) {
+        [keyButton addTarget:self action:@selector(keyButtonReleased:) forControlEvents:UIControlEventTouchUpInside];
+        [keyButton addTarget:self action:@selector(keyButtonReleased:) forControlEvents:UIControlEventTouchUpOutside];
+        
+        //  What about drag events?
+    }
+    
     self.mapRegionVisible.layer.borderWidth = 2.0;
     self.mapRegionVisible.layer.borderColor = [UIColor yellowColor].CGColor;
     self.keyboardDefocusView.hidden = YES;
@@ -221,7 +230,7 @@
 - (IBAction)keyButtonPressed:(id)sender
 {
     NSUInteger noteID = [sender tag];
-    [self.keyboardSound playNoteWithID:noteID];
+    [self.soundBankPlayer noteOn:noteID gain:0.5];
     
     NSNumber *selectedAccidental;
     for (UIButton *accidental in self.accidentalButtons) {
@@ -253,6 +262,12 @@
                                                      selector:@selector(flushAggregatedNoteInformation)
                                                      userInfo:nil
                                                       repeats:NO];
+}
+
+- (IBAction)keyButtonReleased:(id)sender
+{
+    NSUInteger noteID = [sender tag];
+    [self.soundBankPlayer noteOff:noteID];
 }
 
 - (void)flushAggregatedNoteInformation
