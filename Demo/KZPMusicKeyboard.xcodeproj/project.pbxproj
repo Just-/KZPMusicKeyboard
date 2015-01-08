@@ -80,26 +80,19 @@
 		C9A2FD8D1A5D68E800B92463 /* P200 Piano G#9.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FD251A5D68E800B92463 /* P200 Piano G#9.caf */; };
 		C9A2FD8E1A5D68E800B92463 /* Piano.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FD261A5D68E800B92463 /* Piano.plist */; };
 		C9A2FDE31A5D704900B92463 /* Rhodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDE21A5D704900B92463 /* Rhodes.plist */; };
-		C9A2FDF81A5D70E700B92463 /* Rhodes A#2.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDE41A5D70E700B92463 /* Rhodes A#2.caf */; };
-		C9A2FDF91A5D70E700B92463 /* Rhodes A#3.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDE51A5D70E700B92463 /* Rhodes A#3.caf */; };
-		C9A2FDFA1A5D70E700B92463 /* Rhodes A#4.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDE61A5D70E700B92463 /* Rhodes A#4.caf */; };
-		C9A2FDFB1A5D70E700B92463 /* Rhodes A#5.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDE71A5D70E700B92463 /* Rhodes A#5.caf */; };
-		C9A2FDFC1A5D70E700B92463 /* Rhodes A#7.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDE81A5D70E700B92463 /* Rhodes A#7.caf */; };
-		C9A2FDFD1A5D70E700B92463 /* Rhodes C7.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDE91A5D70E700B92463 /* Rhodes C7.caf */; };
-		C9A2FDFE1A5D70E700B92463 /* Rhodes C10.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDEA1A5D70E700B92463 /* Rhodes C10.caf */; };
-		C9A2FDFF1A5D70E700B92463 /* Rhodes D#8.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDEB1A5D70E700B92463 /* Rhodes D#8.caf */; };
-		C9A2FE001A5D70E700B92463 /* Rhodes D2.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDEC1A5D70E700B92463 /* Rhodes D2.caf */; };
-		C9A2FE011A5D70E700B92463 /* Rhodes D3.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDED1A5D70E700B92463 /* Rhodes D3.caf */; };
-		C9A2FE021A5D70E700B92463 /* Rhodes D4.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDEE1A5D70E700B92463 /* Rhodes D4.caf */; };
-		C9A2FE031A5D70E700B92463 /* Rhodes D5.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDEF1A5D70E700B92463 /* Rhodes D5.caf */; };
-		C9A2FE041A5D70E700B92463 /* Rhodes D6.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDF01A5D70E700B92463 /* Rhodes D6.caf */; };
-		C9A2FE051A5D70E700B92463 /* Rhodes F#2.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDF11A5D70E700B92463 /* Rhodes F#2.caf */; };
-		C9A2FE061A5D70E700B92463 /* Rhodes F#3.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDF21A5D70E700B92463 /* Rhodes F#3.caf */; };
-		C9A2FE071A5D70E700B92463 /* Rhodes F#4.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDF31A5D70E700B92463 /* Rhodes F#4.caf */; };
-		C9A2FE081A5D70E700B92463 /* Rhodes F#5.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDF41A5D70E700B92463 /* Rhodes F#5.caf */; };
-		C9A2FE091A5D70E700B92463 /* Rhodes F#6.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDF51A5D70E700B92463 /* Rhodes F#6.caf */; };
-		C9A2FE0A1A5D70E700B92463 /* Rhodes F#7.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDF61A5D70E700B92463 /* Rhodes F#7.caf */; };
-		C9A2FE0B1A5D70E700B92463 /* Rhodes G#9.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FDF71A5D70E700B92463 /* Rhodes G#9.caf */; };
+		C9A2FE291A5E202D00B92463 /* Rhodes C2.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE1C1A5E202D00B92463 /* Rhodes C2.caf */; };
+		C9A2FE2A1A5E202D00B92463 /* Rhodes C3.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE1D1A5E202D00B92463 /* Rhodes C3.caf */; };
+		C9A2FE2B1A5E202D00B92463 /* Rhodes C4.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE1E1A5E202D00B92463 /* Rhodes C4.caf */; };
+		C9A2FE2C1A5E202D00B92463 /* Rhodes C5.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE1F1A5E202D00B92463 /* Rhodes C5.caf */; };
+		C9A2FE2D1A5E202D00B92463 /* Rhodes C6.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE201A5E202D00B92463 /* Rhodes C6.caf */; };
+		C9A2FE2E1A5E202D00B92463 /* Rhodes C7.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE211A5E202D00B92463 /* Rhodes C7.caf */; };
+		C9A2FE2F1A5E202D00B92463 /* Rhodes C8.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE221A5E202D00B92463 /* Rhodes C8.caf */; };
+		C9A2FE301A5E202D00B92463 /* Rhodes E3.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE231A5E202D00B92463 /* Rhodes E3.caf */; };
+		C9A2FE311A5E202D00B92463 /* Rhodes G2.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE241A5E202D00B92463 /* Rhodes G2.caf */; };
+		C9A2FE321A5E202D00B92463 /* Rhodes G4.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE251A5E202D00B92463 /* Rhodes G4.caf */; };
+		C9A2FE331A5E202D00B92463 /* Rhodes G5.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE261A5E202D00B92463 /* Rhodes G5.caf */; };
+		C9A2FE341A5E202D00B92463 /* Rhodes G6.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE271A5E202D00B92463 /* Rhodes G6.caf */; };
+		C9A2FE351A5E202D00B92463 /* Rhodes G7.caf in Resources */ = {isa = PBXBuildFile; fileRef = C9A2FE281A5E202D00B92463 /* Rhodes G7.caf */; };
 		C9AECF8C1A44E5610050733C /* music-double-flat-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AECF8B1A44E5610050733C /* music-double-flat-inverted.png */; };
 		C9AECF911A44E7020050733C /* music-double-sharp-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AECF8D1A44E7020050733C /* music-double-sharp-inverted.png */; };
 		C9AECF921A44E7020050733C /* music-flat-inverted.png in Resources */ = {isa = PBXBuildFile; fileRef = C9AECF8E1A44E7020050733C /* music-flat-inverted.png */; };
@@ -213,26 +206,19 @@
 		C9A2FD251A5D68E800B92463 /* P200 Piano G#9.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "P200 Piano G#9.caf"; sourceTree = "<group>"; };
 		C9A2FD261A5D68E800B92463 /* Piano.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Piano.plist; sourceTree = "<group>"; };
 		C9A2FDE21A5D704900B92463 /* Rhodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Rhodes.plist; path = Rhodes/Rhodes.plist; sourceTree = "<group>"; };
-		C9A2FDE41A5D70E700B92463 /* Rhodes A#2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes A#2.caf"; path = "Rhodes/Rhodes A#2.caf"; sourceTree = "<group>"; };
-		C9A2FDE51A5D70E700B92463 /* Rhodes A#3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes A#3.caf"; path = "Rhodes/Rhodes A#3.caf"; sourceTree = "<group>"; };
-		C9A2FDE61A5D70E700B92463 /* Rhodes A#4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes A#4.caf"; path = "Rhodes/Rhodes A#4.caf"; sourceTree = "<group>"; };
-		C9A2FDE71A5D70E700B92463 /* Rhodes A#5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes A#5.caf"; path = "Rhodes/Rhodes A#5.caf"; sourceTree = "<group>"; };
-		C9A2FDE81A5D70E700B92463 /* Rhodes A#7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes A#7.caf"; path = "Rhodes/Rhodes A#7.caf"; sourceTree = "<group>"; };
-		C9A2FDE91A5D70E700B92463 /* Rhodes C7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes C7.caf"; path = "Rhodes/Rhodes C7.caf"; sourceTree = "<group>"; };
-		C9A2FDEA1A5D70E700B92463 /* Rhodes C10.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes C10.caf"; path = "Rhodes/Rhodes C10.caf"; sourceTree = "<group>"; };
-		C9A2FDEB1A5D70E700B92463 /* Rhodes D#8.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes D#8.caf"; path = "Rhodes/Rhodes D#8.caf"; sourceTree = "<group>"; };
-		C9A2FDEC1A5D70E700B92463 /* Rhodes D2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes D2.caf"; path = "Rhodes/Rhodes D2.caf"; sourceTree = "<group>"; };
-		C9A2FDED1A5D70E700B92463 /* Rhodes D3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes D3.caf"; path = "Rhodes/Rhodes D3.caf"; sourceTree = "<group>"; };
-		C9A2FDEE1A5D70E700B92463 /* Rhodes D4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes D4.caf"; path = "Rhodes/Rhodes D4.caf"; sourceTree = "<group>"; };
-		C9A2FDEF1A5D70E700B92463 /* Rhodes D5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes D5.caf"; path = "Rhodes/Rhodes D5.caf"; sourceTree = "<group>"; };
-		C9A2FDF01A5D70E700B92463 /* Rhodes D6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes D6.caf"; path = "Rhodes/Rhodes D6.caf"; sourceTree = "<group>"; };
-		C9A2FDF11A5D70E700B92463 /* Rhodes F#2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes F#2.caf"; path = "Rhodes/Rhodes F#2.caf"; sourceTree = "<group>"; };
-		C9A2FDF21A5D70E700B92463 /* Rhodes F#3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes F#3.caf"; path = "Rhodes/Rhodes F#3.caf"; sourceTree = "<group>"; };
-		C9A2FDF31A5D70E700B92463 /* Rhodes F#4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes F#4.caf"; path = "Rhodes/Rhodes F#4.caf"; sourceTree = "<group>"; };
-		C9A2FDF41A5D70E700B92463 /* Rhodes F#5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes F#5.caf"; path = "Rhodes/Rhodes F#5.caf"; sourceTree = "<group>"; };
-		C9A2FDF51A5D70E700B92463 /* Rhodes F#6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes F#6.caf"; path = "Rhodes/Rhodes F#6.caf"; sourceTree = "<group>"; };
-		C9A2FDF61A5D70E700B92463 /* Rhodes F#7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes F#7.caf"; path = "Rhodes/Rhodes F#7.caf"; sourceTree = "<group>"; };
-		C9A2FDF71A5D70E700B92463 /* Rhodes G#9.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes G#9.caf"; path = "Rhodes/Rhodes G#9.caf"; sourceTree = "<group>"; };
+		C9A2FE1C1A5E202D00B92463 /* Rhodes C2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes C2.caf"; path = "Rhodes/Rhodes C2.caf"; sourceTree = "<group>"; };
+		C9A2FE1D1A5E202D00B92463 /* Rhodes C3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes C3.caf"; path = "Rhodes/Rhodes C3.caf"; sourceTree = "<group>"; };
+		C9A2FE1E1A5E202D00B92463 /* Rhodes C4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes C4.caf"; path = "Rhodes/Rhodes C4.caf"; sourceTree = "<group>"; };
+		C9A2FE1F1A5E202D00B92463 /* Rhodes C5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes C5.caf"; path = "Rhodes/Rhodes C5.caf"; sourceTree = "<group>"; };
+		C9A2FE201A5E202D00B92463 /* Rhodes C6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes C6.caf"; path = "Rhodes/Rhodes C6.caf"; sourceTree = "<group>"; };
+		C9A2FE211A5E202D00B92463 /* Rhodes C7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes C7.caf"; path = "Rhodes/Rhodes C7.caf"; sourceTree = "<group>"; };
+		C9A2FE221A5E202D00B92463 /* Rhodes C8.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes C8.caf"; path = "Rhodes/Rhodes C8.caf"; sourceTree = "<group>"; };
+		C9A2FE231A5E202D00B92463 /* Rhodes E3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes E3.caf"; path = "Rhodes/Rhodes E3.caf"; sourceTree = "<group>"; };
+		C9A2FE241A5E202D00B92463 /* Rhodes G2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes G2.caf"; path = "Rhodes/Rhodes G2.caf"; sourceTree = "<group>"; };
+		C9A2FE251A5E202D00B92463 /* Rhodes G4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes G4.caf"; path = "Rhodes/Rhodes G4.caf"; sourceTree = "<group>"; };
+		C9A2FE261A5E202D00B92463 /* Rhodes G5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes G5.caf"; path = "Rhodes/Rhodes G5.caf"; sourceTree = "<group>"; };
+		C9A2FE271A5E202D00B92463 /* Rhodes G6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes G6.caf"; path = "Rhodes/Rhodes G6.caf"; sourceTree = "<group>"; };
+		C9A2FE281A5E202D00B92463 /* Rhodes G7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rhodes G7.caf"; path = "Rhodes/Rhodes G7.caf"; sourceTree = "<group>"; };
 		C9AECF8B1A44E5610050733C /* music-double-flat-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-double-flat-inverted.png"; path = "../Assets/Images/music-double-flat-inverted.png"; sourceTree = "<group>"; };
 		C9AECF8D1A44E7020050733C /* music-double-sharp-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-double-sharp-inverted.png"; path = "../Assets/Images/music-double-sharp-inverted.png"; sourceTree = "<group>"; };
 		C9AECF8E1A44E7020050733C /* music-flat-inverted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-flat-inverted.png"; path = "../Assets/Images/music-flat-inverted.png"; sourceTree = "<group>"; };
@@ -492,26 +478,19 @@
 		C9A2FDE11A5D6FD900B92463 /* Rhodes */ = {
 			isa = PBXGroup;
 			children = (
-				C9A2FDE41A5D70E700B92463 /* Rhodes A#2.caf */,
-				C9A2FDE51A5D70E700B92463 /* Rhodes A#3.caf */,
-				C9A2FDE61A5D70E700B92463 /* Rhodes A#4.caf */,
-				C9A2FDE71A5D70E700B92463 /* Rhodes A#5.caf */,
-				C9A2FDE81A5D70E700B92463 /* Rhodes A#7.caf */,
-				C9A2FDE91A5D70E700B92463 /* Rhodes C7.caf */,
-				C9A2FDEA1A5D70E700B92463 /* Rhodes C10.caf */,
-				C9A2FDEB1A5D70E700B92463 /* Rhodes D#8.caf */,
-				C9A2FDEC1A5D70E700B92463 /* Rhodes D2.caf */,
-				C9A2FDED1A5D70E700B92463 /* Rhodes D3.caf */,
-				C9A2FDEE1A5D70E700B92463 /* Rhodes D4.caf */,
-				C9A2FDEF1A5D70E700B92463 /* Rhodes D5.caf */,
-				C9A2FDF01A5D70E700B92463 /* Rhodes D6.caf */,
-				C9A2FDF11A5D70E700B92463 /* Rhodes F#2.caf */,
-				C9A2FDF21A5D70E700B92463 /* Rhodes F#3.caf */,
-				C9A2FDF31A5D70E700B92463 /* Rhodes F#4.caf */,
-				C9A2FDF41A5D70E700B92463 /* Rhodes F#5.caf */,
-				C9A2FDF51A5D70E700B92463 /* Rhodes F#6.caf */,
-				C9A2FDF61A5D70E700B92463 /* Rhodes F#7.caf */,
-				C9A2FDF71A5D70E700B92463 /* Rhodes G#9.caf */,
+				C9A2FE1C1A5E202D00B92463 /* Rhodes C2.caf */,
+				C9A2FE1D1A5E202D00B92463 /* Rhodes C3.caf */,
+				C9A2FE1E1A5E202D00B92463 /* Rhodes C4.caf */,
+				C9A2FE1F1A5E202D00B92463 /* Rhodes C5.caf */,
+				C9A2FE201A5E202D00B92463 /* Rhodes C6.caf */,
+				C9A2FE211A5E202D00B92463 /* Rhodes C7.caf */,
+				C9A2FE221A5E202D00B92463 /* Rhodes C8.caf */,
+				C9A2FE231A5E202D00B92463 /* Rhodes E3.caf */,
+				C9A2FE241A5E202D00B92463 /* Rhodes G2.caf */,
+				C9A2FE251A5E202D00B92463 /* Rhodes G4.caf */,
+				C9A2FE261A5E202D00B92463 /* Rhodes G5.caf */,
+				C9A2FE271A5E202D00B92463 /* Rhodes G6.caf */,
+				C9A2FE281A5E202D00B92463 /* Rhodes G7.caf */,
 				C9A2FDE21A5D704900B92463 /* Rhodes.plist */,
 			);
 			name = Rhodes;
@@ -630,69 +609,59 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A2FE2D1A5E202D00B92463 /* Rhodes C6.caf in Resources */,
 				C9A2FD7E1A5D68E800B92463 /* P200 Piano A#7.caf in Resources */,
 				C9A2FD851A5D68E800B92463 /* P200 Piano D5.caf in Resources */,
-				C9A2FDF91A5D70E700B92463 /* Rhodes A#3.caf in Resources */,
 				C9AECF911A44E7020050733C /* music-double-sharp-inverted.png in Resources */,
 				C9AED3B31A5A9D8D0050733C /* music-accidentals.png in Resources */,
 				C989F2E719AF1D63002608F7 /* keyboard_map.jpeg in Resources */,
-				C9A2FE041A5D70E700B92463 /* Rhodes D6.caf in Resources */,
 				C9AECF931A44E7020050733C /* music-natural-inverted.png in Resources */,
-				C9A2FE061A5D70E700B92463 /* Rhodes F#3.caf in Resources */,
 				C989F2F019AF1D63002608F7 /* music-quaver.png in Resources */,
 				C9A2FD881A5D68E800B92463 /* P200 Piano F#3.caf in Resources */,
 				C989F2E519AF1D63002608F7 /* ivory_keydown.png in Resources */,
-				C9A2FDFF1A5D70E700B92463 /* Rhodes D#8.caf in Resources */,
 				C9AECF941A44E7020050733C /* music-sharp-inverted.png in Resources */,
 				C989F1D919AF07AC002608F7 /* Images.xcassets in Resources */,
 				C9A2FD8A1A5D68E800B92463 /* P200 Piano F#5.caf in Resources */,
 				C9A2FD7F1A5D68E800B92463 /* P200 Piano C10.caf in Resources */,
 				C989F2F719AF1D63002608F7 /* qwerty.png in Resources */,
-				C9A2FE021A5D70E700B92463 /* Rhodes D4.caf in Resources */,
-				C9A2FE0A1A5D70E700B92463 /* Rhodes F#7.caf in Resources */,
-				C9A2FE001A5D70E700B92463 /* Rhodes D2.caf in Resources */,
 				C9A2FD891A5D68E800B92463 /* P200 Piano F#4.caf in Resources */,
+				C9A2FE291A5E202D00B92463 /* Rhodes C2.caf in Resources */,
 				C989F2E819AF1D63002608F7 /* music-crotchet.png in Resources */,
 				C989F1CB19AF07AC002608F7 /* InfoPlist.strings in Resources */,
 				C989F2E319AF1D63002608F7 /* ebony_keydown.png in Resources */,
-				C9A2FDF81A5D70E700B92463 /* Rhodes A#2.caf in Resources */,
 				C9A2FD8E1A5D68E800B92463 /* Piano.plist in Resources */,
 				C9A2FDE31A5D704900B92463 /* Rhodes.plist in Resources */,
 				C989F2F119AF1D63002608F7 /* music-sharp.png in Resources */,
 				C989F2F519AF1D63002608F7 /* musis-rests.png in Resources */,
-				C9A2FDFB1A5D70E700B92463 /* Rhodes A#5.caf in Resources */,
 				C989F2EB19AF1D63002608F7 /* music-double-sharp.png in Resources */,
 				C989F2B019AF0A8E002608F7 /* KZPMusicKeyboardView.xib in Resources */,
 				C9A2FD8D1A5D68E800B92463 /* P200 Piano G#9.caf in Resources */,
-				C9A2FDFE1A5D70E700B92463 /* Rhodes C10.caf in Resources */,
 				C989F2ED19AF1D63002608F7 /* music-flat.png in Resources */,
 				C9A2FD7D1A5D68E800B92463 /* P200 Piano A#5.caf in Resources */,
-				C9A2FDFD1A5D70E700B92463 /* Rhodes C7.caf in Resources */,
 				C989F2F619AF1D63002608F7 /* piano_icon.png in Resources */,
+				C9A2FE331A5E202D00B92463 /* Rhodes G5.caf in Resources */,
+				C9A2FE2E1A5E202D00B92463 /* Rhodes C7.caf in Resources */,
 				C989F2F319AF1D63002608F7 /* music-tie.png in Resources */,
+				C9A2FE351A5E202D00B92463 /* Rhodes G7.caf in Resources */,
+				C9A2FE2C1A5E202D00B92463 /* Rhodes C5.caf in Resources */,
+				C9A2FE2A1A5E202D00B92463 /* Rhodes C3.caf in Resources */,
+				C9A2FE301A5E202D00B92463 /* Rhodes E3.caf in Resources */,
 				C989F2EA19AF1D63002608F7 /* music-double-flat.png in Resources */,
-				C9A2FE071A5D70E700B92463 /* Rhodes F#4.caf in Resources */,
 				C9A2FD7C1A5D68E800B92463 /* P200 Piano A#4.caf in Resources */,
-				C9A2FDFC1A5D70E700B92463 /* Rhodes A#7.caf in Resources */,
-				C9A2FE011A5D70E700B92463 /* Rhodes D3.caf in Resources */,
-				C9A2FE081A5D70E700B92463 /* Rhodes F#5.caf in Resources */,
-				C9A2FE0B1A5D70E700B92463 /* Rhodes G#9.caf in Resources */,
 				C989F2E419AF1D63002608F7 /* ebony_keyup.png in Resources */,
 				C9A2FD861A5D68E800B92463 /* P200 Piano D6.caf in Resources */,
 				C9A2FD831A5D68E800B92463 /* P200 Piano D3.caf in Resources */,
 				C989F2E919AF1D63002608F7 /* music-dot.png in Resources */,
 				C9A2FD8B1A5D68E800B92463 /* P200 Piano F#6.caf in Resources */,
 				C989F2E619AF1D63002608F7 /* ivory_keyup.png in Resources */,
+				C9A2FE2B1A5E202D00B92463 /* Rhodes C4.caf in Resources */,
 				C989F2F419AF1D63002608F7 /* music-wt.png in Resources */,
 				C989F2EF19AF1D63002608F7 /* music-natural.png in Resources */,
+				C9A2FE341A5E202D00B92463 /* Rhodes G6.caf in Resources */,
 				C989F3A919AF59B6002608F7 /* piano_keyboard.png in Resources */,
 				C989F2E119AF1D63002608F7 /* backspace.png in Resources */,
-				C9A2FE031A5D70E700B92463 /* Rhodes D5.caf in Resources */,
 				C9A2FD841A5D68E800B92463 /* P200 Piano D4.caf in Resources */,
-				C9A2FE051A5D70E700B92463 /* Rhodes F#2.caf in Resources */,
 				C9A2FD821A5D68E800B92463 /* P200 Piano D2.caf in Resources */,
-				C9A2FDFA1A5D70E700B92463 /* Rhodes A#4.caf in Resources */,
-				C9A2FE091A5D70E700B92463 /* Rhodes F#6.caf in Resources */,
 				C9A2FD7B1A5D68E800B92463 /* P200 Piano A#3.caf in Resources */,
 				C9AECF8C1A44E5610050733C /* music-double-flat-inverted.png in Resources */,
 				C9A2FD801A5D68E800B92463 /* P200 Piano C7.caf in Resources */,
@@ -700,10 +669,13 @@
 				C989F1D419AF07AC002608F7 /* Main.storyboard in Resources */,
 				C989F2F219AF1D63002608F7 /* music-squaver.png in Resources */,
 				C9A2FD8C1A5D68E800B92463 /* P200 Piano F#7.caf in Resources */,
+				C9A2FE321A5E202D00B92463 /* Rhodes G4.caf in Resources */,
 				C989F2EC19AF1D63002608F7 /* music-dsquaver.png in Resources */,
 				C9A2FD7A1A5D68E800B92463 /* P200 Piano A#2.caf in Resources */,
 				C9A2FD811A5D68E800B92463 /* P200 Piano D#8.caf in Resources */,
 				C9A2FD871A5D68E800B92463 /* P200 Piano F#2.caf in Resources */,
+				C9A2FE311A5E202D00B92463 /* Rhodes G2.caf in Resources */,
+				C9A2FE2F1A5E202D00B92463 /* Rhodes C8.caf in Resources */,
 				C989F2E219AF1D63002608F7 /* bg-wood.jpg in Resources */,
 				C9AECF921A44E7020050733C /* music-flat-inverted.png in Resources */,
 			);

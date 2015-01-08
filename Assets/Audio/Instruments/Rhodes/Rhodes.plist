@@ -6,67 +6,46 @@
 	<string>Rho</string>
 	<key>data</key>
 	<array>
-		<string>32000</string>
-		<string>Rhodes D2.caf</string>
-		<string>26</string>
-		<string>26</string>
-		<string>Rhodes F#2.caf</string>
-		<string>30</string>
-		<string>30</string>
-		<string>Rhodes A#2.caf</string>
-		<string>34</string>
-		<string>34</string>
-		<string>Rhodes D3.caf</string>
-		<string>38</string>
-		<string>38</string>
-		<string>Rhodes F#3.caf</string>
-		<string>42</string>
-		<string>42</string>
-		<string>Rhodes A#3.caf</string>
-		<string>46</string>
-		<string>46</string>
-		<string>Rhodes D4.caf</string>
-		<string>50</string>
-		<string>50</string>
-		<string>Rhodes F#4.caf</string>
-		<string>54</string>
-		<string>54</string>
-		<string>Rhodes A#4.caf</string>
-		<string>58</string>
-		<string>58</string>
-		<string>Rhodes D5.caf</string>
-		<string>62</string>
-		<string>62</string>
-		<string>Rhodes F#5.caf</string>
-		<string>66</string>
-		<string>66</string>
-		<string>Rhodes A#5.caf</string>
-		<string>70</string>
-		<string>70</string>
-		<string>Rhodes D6.caf</string>
-		<string>74</string>
-		<string>74</string>
-		<string>Rhodes F#6.caf</string>
-		<string>78</string>
-		<string>78</string>
+		<string>22050</string>
+		<string>Rhodes C2.caf</string>
+		<string>36</string>
+		<string>24</string>
+		<string>Rhodes G2.caf</string>
+		<string>43</string>
+		<string>31</string>
+		<string>Rhodes C3.caf</string>
+		<string>48</string>
+		<string>36</string>
+		<string>Rhodes E3.caf</string>
+		<string>52</string>
+		<string>40</string>
+		<string>Rhodes C4.caf</string>
+		<string>60</string>
+		<string>48</string>
+		<string>Rhodes G4.caf</string>
+		<string>67</string>
+		<string>55</string>
+		<string>Rhodes C5.caf</string>
+		<string>72</string>
+		<string>60</string>
+		<string>Rhodes G5.caf</string>
+		<string>79</string>
+		<string>67</string>
+		<string>Rhodes C6.caf</string>
+		<string>84</string>
+		<string>72</string>
+		<string>Rhodes G6.caf</string>
+		<string>91</string>
+		<string>79</string>
 		<string>Rhodes C7.caf</string>
+		<string>96</string>
 		<string>84</string>
-		<string>84</string>
-		<string>Rhodes F#7.caf</string>
-		<string>90</string>
-		<string>90</string>
-		<string>Rhodes A#7.caf</string>
-		<string>94</string>
-		<string>94</string>
-		<string>Rhodes D#8.caf</string>
-		<string>99</string>
-		<string>99</string>
-		<string>Rhodes G#9.caf</string>
-		<string>104</string>
-		<string>104</string>
-		<string>Rhodes C10.caf</string>
+		<string>Rhodes G7.caf</string>
+		<string>103</string>
+		<string>91</string>
+		<string>Rhodes C8.caf</string>
 		<string>108</string>
-		<string>108</string>
+		<string>96</string>
 	</array>
 </dict>
 </plist>
