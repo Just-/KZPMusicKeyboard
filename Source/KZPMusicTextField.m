@@ -133,6 +133,8 @@
                     inputType:(NSArray *)type
                      spelling:(NSArray *)spelling
                      duration:(NSNumber *)duration
+                       dotted:(BOOL)dotted
+                         tied:(BOOL)tied
                    midiPacket:(NSArray *)MIDI
                     oscPacket:(NSArray *)OSC
 {
