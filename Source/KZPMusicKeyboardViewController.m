@@ -15,6 +15,8 @@
 
 @interface KZPMusicKeyboardViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *dismissButton;
+
 @property (weak, nonatomic) IBOutlet UIImageView *keyboardMap;
 @property (weak, nonatomic) IBOutlet UIView *keyboardMainView;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyButtons;
@@ -134,7 +136,7 @@
         keyboardControl.layer.cornerRadius = 5.0;
         keyboardControl.clipsToBounds = YES;
         keyboardControl.layer.borderColor = [UIColor darkGrayColor].CGColor;
-        if (keyboardControl != self.backspaceButton) {
+        if (keyboardControl != self.backspaceButton && keyboardControl != self.dismissButton) {
             keyboardControl.layer.opacity = 0.5;
         }
     }
@@ -162,15 +164,16 @@
     
 }
 
-- (IBAction)keyboardMapPanned:(id)sender {
-    CGPoint position = [(UIPanGestureRecognizer *)sender locationInView:self.keyboardMap];
-    [self panToXPosition:position.x];
-}
-
-- (IBAction)dismissKeyboard:(id)sender {
+- (IBAction)dismissButtonPressed:(id)sender
+{
     if ([self.delegate respondsToSelector:@selector(keyboardWasDismissed)]) {
         [self.delegate keyboardWasDismissed];
     }
+}
+
+- (IBAction)keyboardMapPanned:(id)sender {
+    CGPoint position = [(UIPanGestureRecognizer *)sender locationInView:self.keyboardMap];
+    [self panToXPosition:position.x];
 }
 
 - (IBAction)backButtonPressed:(id)sender {
@@ -300,7 +303,6 @@
     }
     [self resetAggregation];
 }
-
 
 #pragma mark - Rhythm -
 

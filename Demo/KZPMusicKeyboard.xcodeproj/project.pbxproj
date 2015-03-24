@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94162AA1AC16BED00E7BFDF /* dismiss.png in Resources */ = {isa = PBXBuildFile; fileRef = C94162A91AC16BED00E7BFDF /* dismiss.png */; };
 		C989F1C119AF07AB002608F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C019AF07AB002608F7 /* Foundation.framework */; };
 		C989F1C319AF07AC002608F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C219AF07AC002608F7 /* CoreGraphics.framework */; };
 		C989F1C519AF07AC002608F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C419AF07AC002608F7 /* UIKit.framework */; };
@@ -122,6 +123,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C94162A91AC16BED00E7BFDF /* dismiss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dismiss.png; path = ../Assets/Images/dismiss.png; sourceTree = "<group>"; };
 		C989F1BD19AF07AB002608F7 /* KZPMusicKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KZPMusicKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C989F1C019AF07AB002608F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C989F1C219AF07AC002608F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -391,6 +393,7 @@
 		C989F2C919AF1CC7002608F7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C94162A91AC16BED00E7BFDF /* dismiss.png */,
 				C9AED3B21A5A9D8D0050733C /* music-accidentals.png */,
 				C9AECF8D1A44E7020050733C /* music-double-sharp-inverted.png */,
 				C9AECF8E1A44E7020050733C /* music-flat-inverted.png */,
@@ -635,6 +638,7 @@
 				C989F2F519AF1D63002608F7 /* musis-rests.png in Resources */,
 				C989F2EB19AF1D63002608F7 /* music-double-sharp.png in Resources */,
 				C989F2B019AF0A8E002608F7 /* KZPMusicKeyboardView.xib in Resources */,
+				C94162AA1AC16BED00E7BFDF /* dismiss.png in Resources */,
 				C9A2FD8D1A5D68E800B92463 /* P200 Piano G#9.caf in Resources */,
 				C989F2ED19AF1D63002608F7 /* music-flat.png in Resources */,
 				C9A2FD7D1A5D68E800B92463 /* P200 Piano A#5.caf in Resources */,
