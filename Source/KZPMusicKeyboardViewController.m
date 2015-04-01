@@ -119,8 +119,21 @@
     } else {
         self.keyboardDefocusView.hidden = NO;
         self.keyboardDefocusView.alpha = 0.5;
+        for (UIButton *accidental in self.accidentalButtons) {
+            accidental.selected = NO;
+            accidental.layer.opacity = 0.5;
+        }
     }
     _keyboardEnabled = keyboardEnabled;
+}
+
+- (void)setRhythmMode:(KZPMusicKeyboardRhythmMode)rhythmMode
+{
+    if (rhythmMode == KZPMusicKeyboardRhythmMode_Active) {
+        
+    } else if (rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
+        
+    }
 }
 
 - (void)viewDidLoad
@@ -238,6 +251,8 @@
 #pragma mark - Pitch -
 
 - (IBAction)accidentalButtonPress:(id)sender {
+    if (!self.keyboardEnabled) return;
+    
     UIButton *accidentalButton = (UIButton*)sender;
     for (UIButton *accidental in self.accidentalButtons) {
         if (accidental == accidentalButton) {
@@ -279,12 +294,17 @@
     [self.OSCPackets addObject:[NSNull null]];
     
     [self.chordTimer invalidate];
-    NSUInteger sliderSetting = (NSUInteger)round([self.aggregatorThresholdSlider value]);
-    self.chordTimer = [NSTimer scheduledTimerWithTimeInterval:(double)sliderSetting / 1000
-                                                       target:self
-                                                     selector:@selector(flushAggregatedNoteInformation)
-                                                     userInfo:nil
-                                                      repeats:NO];
+    
+    if (self.chordsEnabled) {
+        NSUInteger sliderSetting = (NSUInteger)round([self.aggregatorThresholdSlider value]);
+        self.chordTimer = [NSTimer scheduledTimerWithTimeInterval:(double)sliderSetting / 1000
+                                                           target:self
+                                                         selector:@selector(flushAggregatedNoteInformation)
+                                                         userInfo:nil
+                                                          repeats:NO];
+    } else {
+        [self flushAggregatedNoteInformation];
+    }
 }
 
 - (IBAction)keyButtonReleased:(id)sender
@@ -309,7 +329,7 @@
         [self.delegate keyboardDidSendSignal:self.noteIDs
                                    inputType:self.inputTypes
                                     spelling:self.spellings
-                                    duration:self.selectedDuration
+                                    duration:self.rhythmControlsEnabled ? self.selectedDuration : nil
                                       dotted:self.dotButton.selected
                                         tied:self.tieButton.selected
                                   midiPacket:self.MIDIPackets
