@@ -26,6 +26,8 @@ typedef enum {
 // These parameters are available
 @property (nonatomic) KZPMusicInputType musicInputType;
 @property (nonatomic) BOOL needsRhythmControls;
+@property (nonatomic) BOOL pitchInputDisabled;
+@property (nonatomic) BOOL chordalInputDisabled;
 
 - (BOOL)showingQwertyKeyboard;
 - (void)qwertyKeyboardDidHide;

@@ -111,6 +111,18 @@
     _rhythmControlsEnabled = rhythmControlsEnabled;
 }
 
+- (void)setKeyboardEnabled:(BOOL)keyboardEnabled
+{
+    if (keyboardEnabled) {
+        self.keyboardDefocusView.hidden = YES;
+        self.keyboardDefocusView.alpha = 0.0;
+    } else {
+        self.keyboardDefocusView.hidden = NO;
+        self.keyboardDefocusView.alpha = 0.5;
+    }
+    _keyboardEnabled = keyboardEnabled;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -198,6 +210,8 @@
 
 - (void)refocusKeyboard
 {
+    if (!self.keyboardEnabled) return;
+    
     [self resetAggregation];
     
     [UIView animateWithDuration:0.2 animations:^{

@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "KZPMusicKeyboardViewController.h"
 
+#define kENABLE_KEYBOARD        @"keyboard?"
+#define kENABLE_RHYTHM          @"rhythm?"
+#define kENABLE_CHORDS          @"chords?"
 //
 // There are three ways to invoke KZPKeyboard
 //
@@ -38,7 +41,7 @@
 
 - (void)setResponder:(id<KZPMusicKeyboardDelegate>)responder;
 
-- (UIView *)showControllerWithRhythmControls:(BOOL)needsRhythmControls;
+- (UIView *)showControllerWithOptions:(NSDictionary *)keyboardOptions;
 - (void)hideControllerWithCompletionBlock:(void (^)())completionBlock deactivate:(BOOL)deactivate;
 - (void)removeImmediately;
 

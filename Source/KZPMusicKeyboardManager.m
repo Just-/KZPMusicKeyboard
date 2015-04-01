@@ -47,13 +47,16 @@ static KZPMusicKeyboardManager *defaultManager;
 
 #pragma mark - Show / Hide -
 
-- (UIView *)showControllerWithRhythmControls:(BOOL)needsRhythmControls
+- (UIView *)showControllerWithOptions:(NSDictionary *)keyboardOptions
 {
     if (self.windowView == nil) {
         self.windowView = [[AGWindowView alloc] initAndAddToKeyWindow];
         self.windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskLandscape;
     }
-    self.pianoKeyboard.rhythmControlsEnabled = needsRhythmControls;
+    self.pianoKeyboard.rhythmControlsEnabled = [[keyboardOptions valueForKey:kENABLE_RHYTHM] boolValue];
+    self.pianoKeyboard.keyboardEnabled = [[keyboardOptions valueForKey:kENABLE_KEYBOARD] boolValue];
+    self.pianoKeyboard.chordsEnabled = [[keyboardOptions valueForKey:kENABLE_CHORDS] boolValue];
+    self.pianoKeyboard.rhythmMode = self.pianoKeyboard.rhythmControlsEnabled && !self.pianoKeyboard.keyboardEnabled ?KZPMusicKeyboardRhythmMode_Active : KZPMusicKeyboardRhythmMode_Passive;
     
     // iOS7 and iOS8 have different notions of screen height
     CGFloat landscapeScreenHeight = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);

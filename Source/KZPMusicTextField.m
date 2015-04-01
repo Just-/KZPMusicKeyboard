@@ -95,7 +95,10 @@
     if (self.musicInputType & KZPMusicInputType_PianoKeyboard) {
         
         [[KZPMusicKeyboardManager defaultManager] setResponder:self];
-        UIView *windowView = [[KZPMusicKeyboardManager defaultManager] showControllerWithRhythmControls:self.needsRhythmControls];
+        NSDictionary *keyboardOptions = @{kENABLE_KEYBOARD: @(!self.pitchInputDisabled),
+                                          kENABLE_CHORDS: @(!self.chordalInputDisabled),
+                                          kENABLE_RHYTHM: @(self.needsRhythmControls)};
+        UIView *windowView = [[KZPMusicKeyboardManager defaultManager] showControllerWithOptions:keyboardOptions];
         [windowView addSubview:self.keyboardTypeToggle];
         self.inputView = self.nullView; // Hide standard keyboard, but show blinking cursor
         
@@ -105,15 +108,9 @@
             [UIView animateWithDuration:0.3 animations:^{
                 self.keyboardTypeToggle.alpha = 1.0;
             }];
-        }
-        
-        return [super becomeFirstResponder];
-        
-    } else if (self.musicInputType & KZPMusicInputType_NormalKeyboard) {
-        
-        return [super becomeFirstResponder];
+        }   
     }
-    return YES;
+    return [super becomeFirstResponder];
 }
 
 
