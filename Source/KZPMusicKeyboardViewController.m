@@ -129,11 +129,28 @@
 
 - (void)setRhythmMode:(KZPMusicKeyboardRhythmMode)rhythmMode
 {
-    if (rhythmMode == KZPMusicKeyboardRhythmMode_Active) {
-        
-    } else if (rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
-        
-    }
+//    
+//        duration.layer
+//        if (duration == durationButton) {
+//            durationButton.selected = !durationButton.selected;
+//        } else {
+//            if (duration.selected) {
+//                self.dotButton.selected = NO;
+//                self.dotButton.layer.opacity = 0.5;
+//            }
+//            duration.selected = NO;
+//        }
+//        
+//    }
+//    if (rhythmMode == KZPMusicKeyboardRhythmMode_Active) {
+//        
+//    } else if (rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
+//        for (UIButton *duration in self.durationButtons) {
+//            duration.layer.opacity = 0.5;
+//            duration.
+//        
+//    }
+    _rhythmMode = rhythmMode;
 }
 
 - (void)viewDidLoad
@@ -344,20 +361,44 @@
 - (IBAction)durationButtonPress:(id)sender
 {
     if (!self.rhythmControlsEnabled) return;
-    UIButton *durationButton = (UIButton*)sender;
     
-    for (UIButton *duration in self.durationButtons) {
-        if (duration == durationButton) {
-            durationButton.selected = !durationButton.selected;
-        } else {
-            if (duration.selected) {
-                self.dotButton.selected = NO;
-                self.dotButton.layer.opacity = 0.5;
+    // Rhythm controls are treated as settings for pitch durations
+    if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
+        UIButton *durationButton = (UIButton*)sender;
+        
+        for (UIButton *duration in self.durationButtons) {
+            if (duration == durationButton) {
+                durationButton.selected = !durationButton.selected;
+            } else {
+                if (duration.selected) {
+                    self.dotButton.selected = NO;
+                    self.dotButton.layer.opacity = 0.5;
+                }
+                duration.selected = NO;
             }
-            duration.selected = NO;
+            duration.layer.opacity = duration.selected ? 1.0 : 0.5;
         }
-        duration.layer.opacity = duration.selected ? 1.0 : 0.5;
     }
+    
+    // Rhythm controls are used to express rhythms on their own, without pitch information
+    else {
+        [(UIButton *)sender layer].opacity = 0.5;
+        int duration = [(UIButton *)sender tag];
+        if (self.restButton.selected) {
+            duration = -duration;
+        }
+        NSNumber *selectedDuration = @(duration);
+        [self.delegate keyboardDidSendSignal:nil
+                                   inputType:nil
+                                    spelling:nil
+                                    duration:selectedDuration
+                                      dotted:self.dotButton.selected
+                                        tied:self.tieButton.selected
+                                  midiPacket:nil
+                                   oscPacket:nil];
+        
+    }
+
 }
 
 - (IBAction)durationButtonTouch:(id)sender {
@@ -384,22 +425,33 @@
 {
     if (!self.rhythmControlsEnabled) return;
     
-    [(UIButton *)sender layer].opacity = 0.5;
-    for (UIButton *duration in self.durationButtons) {
-        if (duration.selected) {
-            NSNumber *selectedDuration = @(-[duration tag]);
-            [self.delegate keyboardDidSendSignal:nil
-                                       inputType:nil
-                                        spelling:nil
-                                        duration:selectedDuration
-                                          dotted:self.dotButton.selected
-                                            tied:NO
-                                      midiPacket:nil
-                                       oscPacket:nil];
-        }
-    }
     self.tieButton.selected = NO;
     self.tieButton.layer.opacity = 0.5;
+    
+    // Rest is acknowledged immediately
+    if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
+        [(UIButton *)sender layer].opacity = 0.5;
+        for (UIButton *duration in self.durationButtons) {
+            if (duration.selected) {
+                NSNumber *selectedDuration = @(-[duration tag]);
+                [self.delegate keyboardDidSendSignal:nil
+                                           inputType:nil
+                                            spelling:nil
+                                            duration:selectedDuration
+                                              dotted:self.dotButton.selected
+                                                tied:NO
+                                          midiPacket:nil
+                                           oscPacket:nil];
+            }
+        }
+    }
+    
+    // Rest is treated as a toggle
+    else if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Active) {
+        self.restButton.selected = !self.restButton.selected;
+        self.restButton.layer.opacity = self.restButton.selected ? 1.0 : 0.5;
+    }
+    
 }
 
 - (IBAction)restButtonTouch:(id)sender {
@@ -414,6 +466,8 @@
 }
 
 
+#define KEYBOARD_MAP_OVERHANG   25
+
 #pragma mark - Keyboard Map -
 
 - (void)panToRangeWithCenterNote:(NSUInteger)noteID animated:(BOOL)animated
@@ -423,9 +477,6 @@
         [self panToXPosition:positionX];
     }];
 }
-
-
-#define KEYBOARD_MAP_OVERHANG   25
 
 - (void)panToXPosition:(float)x
 {
