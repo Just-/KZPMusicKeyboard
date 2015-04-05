@@ -127,32 +127,6 @@
     _keyboardEnabled = keyboardEnabled;
 }
 
-- (void)setRhythmMode:(KZPMusicKeyboardRhythmMode)rhythmMode
-{
-//    
-//        duration.layer
-//        if (duration == durationButton) {
-//            durationButton.selected = !durationButton.selected;
-//        } else {
-//            if (duration.selected) {
-//                self.dotButton.selected = NO;
-//                self.dotButton.layer.opacity = 0.5;
-//            }
-//            duration.selected = NO;
-//        }
-//        
-//    }
-//    if (rhythmMode == KZPMusicKeyboardRhythmMode_Active) {
-//        
-//    } else if (rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
-//        for (UIButton *duration in self.durationButtons) {
-//            duration.layer.opacity = 0.5;
-//            duration.
-//        
-//    }
-    _rhythmMode = rhythmMode;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

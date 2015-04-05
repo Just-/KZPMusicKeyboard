@@ -54,6 +54,7 @@
 
 #pragma mark - Qwerty Keyboard -
 
+//
 - (void)qwertyKeyboardDidHide
 {
     if ([self isCurrentlySwitchingKeyboards]) {
@@ -64,34 +65,48 @@
 
 #pragma mark - UITextField -
 
+// TODO: this crash seems to happen when a text field that still has focus is removed from the
+// canvas. It means that rfr is called on a deallocated instance as part of a new field gaining
+// focus. A bug somewhere is causing the text field to believe that it has resigned first responder
+// status when in fact it hasn't. In any case it maintains the cursor, which indicates that the
+// manual call to rfr isn't working properly.
 - (BOOL)resignFirstResponder
 {
-    NSLog(@"resign first responder: %@", self);
+
+
+    NSLog(@"resign first responder! (%@)", self.musicInputType == KZPMusicInputType_PianoKeyboard ? @"Music" : @"Normal");
+    // DEPRECATED
     self.isCurrentlySwitchingKeyboards = NO;
+    
+//    if (self.keyboardType == KZPMusicInputType_NormalKeyboard) {
+//        [[KZPMusicKeyboardManager defaultManager] removeImmediately];
+//    }
     
     if ([self showingQwertyKeyboard]) {
         [UIView animateWithDuration:0.3 animations:^{
             self.keyboardTypeToggle.alpha = 0.0;
         } completion:^(BOOL finished) {
-            NSLog(@"resign first responder (1): %@", self);
             self.keyboardTypeToggle.hidden = YES;
             [[KZPMusicKeyboardManager defaultManager] removeImmediately];
         }];
     } else {
+        
         [[KZPMusicKeyboardManager defaultManager] hideControllerWithCompletionBlock:NULL deactivate:YES];
         [UIView animateWithDuration:0.3 animations:^{
             self.keyboardTypeToggle.alpha = 0.0;
         } completion:^(BOOL finished) {
-            NSLog(@"resign first responder (2): %@", self);                        
             self.keyboardTypeToggle.hidden = YES;
         }];
     }
-    
     return [super resignFirstResponder];
 }
 
+// TODO: Will probably have to use keyboard did hide/show notifications here.
 - (BOOL)becomeFirstResponder
 {
+
+        NSLog(@"become first responder! (%@)", self.musicInputType == KZPMusicInputType_PianoKeyboard ? @"Music" : @"Normal");
+    
     if (self.musicInputType & KZPMusicInputType_PianoKeyboard) {
         
         [[KZPMusicKeyboardManager defaultManager] setResponder:self];
@@ -103,6 +118,7 @@
         self.inputView = self.nullView; // Hide standard keyboard, but show blinking cursor
         
         // If this is also a normal keyboard, add the toggle button
+        // DEPRECATED
         if (self.musicInputType & KZPMusicInputType_NormalKeyboard) {
             [self resetToggleButton];
             [UIView animateWithDuration:0.3 animations:^{
@@ -135,7 +151,6 @@
                    midiPacket:(NSArray *)MIDI
                     oscPacket:(NSArray *)OSC
 {
-    NSLog(@"%@, %@", noteID, duration);
     if ([self.text isEqualToString:@""]) {
         self.text = [NSString stringWithFormat:@"%@", [noteID count] > 1 ? [self chordFromNoteIDs:noteID] : [noteID lastObject]];
     } else {
@@ -146,6 +161,7 @@
 
 #pragma mark - Auxiliary -
 
+// TODO: This method is worthless
 - (NSString *)chordFromNoteIDs:(NSArray *)noteIDs
 {
     NSMutableString *chordString = [NSMutableString stringWithString:@"[ "];
@@ -159,6 +175,7 @@
 
 #pragma mark - Toggle Button Functions -
 
+// DEPRECATED
 - (void)setupToggleButton
 {
     self.keyboardTypeToggle = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -174,6 +191,7 @@
     [self resetToggleButton];
 }
 
+// DEPRECATED
 - (void)resetToggleButton
 {
     if (!self.isCurrentlySwitchingKeyboards) {
@@ -184,11 +202,13 @@
     self.keyboardTypeToggle.frame = CGRectMake(LOCATION_X__SWITCHER, LOCATION_Y__PIANO, WIDTH_SWITCHER, HEIGHT_SWITCHER);
 }
 
+// DEPRECATED
 - (BOOL)showingQwertyKeyboard
 {
     return self.keyboardTypeToggle.selected;
 }
 
+// DEPRECATED
 - (void)switchKeyboards
 {
     self.isCurrentlySwitchingKeyboards = YES;
