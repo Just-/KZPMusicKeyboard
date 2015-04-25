@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "KZPMusicKeyboardViewController.h"
 
-// TODO: don't use these constants, measure instead
-#define LOCATION_Y__PIANO       260
-#define LOCATION_Y__QWERTY      370
-#define LOCATION_X__SWITCHER    5
-#define WIDTH_SWITCHER          80
-#define HEIGHT_SWITCHER         40
-
 typedef enum {
     KZPMusicInputType_PianoKeyboard  = 1<<0,
     KZPMusicInputType_NormalKeyboard = 1<<1
@@ -28,9 +21,6 @@ typedef enum {
 @property (nonatomic) BOOL needsRhythmControls;
 @property (nonatomic) BOOL pitchInputDisabled;
 @property (nonatomic) BOOL chordalInputDisabled;
-
-- (BOOL)showingQwertyKeyboard;
-- (void)qwertyKeyboardDidHide;
 
 // Override these methods in a KZPMusicTextField subclass
 - (void)keyboardDidSendBackspace;
