@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "794AD9D01DD8BD12E81828E8F9BE4495F45D3907",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "794AD9D01DD8BD12E81828E8F9BE4495F45D3907" : 0,
+    "10C7EB6F3FE25719CF25854053C856A375C57B83" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "42CC79C9-A544-4903-9F42-F33CB0E930FF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "794AD9D01DD8BD12E81828E8F9BE4495F45D3907" : "kzpmusickeyboard\/",
+    "10C7EB6F3FE25719CF25854053C856A375C57B83" : "kzputilities\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KZPMusicKeyboard",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Demo\/KZPMusicKeyboard.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:kazoompah\/kzputilities.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "10C7EB6F3FE25719CF25854053C856A375C57B83"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/kazoompah\/kzpmusickeyboard",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "794AD9D01DD8BD12E81828E8F9BE4495F45D3907"
+    }
+  ]
+}
