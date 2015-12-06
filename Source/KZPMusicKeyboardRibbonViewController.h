@@ -17,6 +17,10 @@
 - (MusicSpelling)selectedAccidental;
 - (void)resetSpelling;
 - (unsigned int)selectedDuration;
+- (BOOL)isRest;
+- (BOOL)isTied;
+- (BOOL)isRest;
+
 - (NSString *)selectedPatch;
 
 - (void)resetDuration;

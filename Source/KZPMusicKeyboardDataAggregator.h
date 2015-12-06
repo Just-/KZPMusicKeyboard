@@ -22,7 +22,7 @@ typedef enum {
 @property (nonatomic, getter=chordDetectionEnabled, setter=enableChordDetection:) BOOL chordDetection;
 
 - (void)reset;
-- (void)receiveDuration:(unsigned int)duration;
+- (void)receiveDuration:(unsigned int)duration rest:(BOOL)rest dotted:(BOOL)dotted tied:(BOOL)tied;
 - (void)receiveSpelling:(MusicSpelling)spelling;
 - (void)receivePitch:(NSUInteger)pitch;
 

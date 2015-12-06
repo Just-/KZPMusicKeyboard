@@ -20,4 +20,18 @@
     return self;
 }
 
+- (void)addPitch:(NSUInteger)pitch
+{
+    if (!_noteValues) _noteValues = [NSArray array];
+    _noteValues = [_noteValues arrayByAddingObject:@(pitch)];
+}
+
+- (void)addSpelling:(MusicSpelling)spelling
+{
+    if (spelling) {
+        if (!_spellings) _spellings = [NSArray array];
+        _spellings = [_spellings arrayByAddingObject:@(spelling)];
+    }
+}
+
 @end

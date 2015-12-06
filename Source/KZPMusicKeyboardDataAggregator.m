@@ -11,50 +11,42 @@
 @interface KZPMusicKeyboardDataAggregator ()
 
 // Aggregation of note information for the purpose of detecting chords
-@property (strong, nonatomic) NSMutableArray *noteIDs;
-@property (strong, nonatomic) NSMutableArray *inputTypes;
-@property (strong, nonatomic) NSMutableArray *spellings;
-@property (nonatomic) unsigned int selectedDuration;
 @property (strong, nonatomic) NSTimer *chordTimer;
+@property (strong, nonatomic) KZPMusicDurationData *durationData;
+@property (strong, nonatomic) KZPMusicPitchData *pitchData;
 
 @end
 
 @implementation KZPMusicKeyboardDataAggregator
 
-- (NSMutableArray *)noteIDs
+- (KZPMusicPitchData *)pitchData
 {
-    if (!_noteIDs) _noteIDs = [NSMutableArray array];
-    return _noteIDs;
-}
-
-- (NSMutableArray *)inputTypes
-{
-    if (!_inputTypes) _inputTypes = [NSMutableArray array];
-    return _inputTypes;
+    if (!_pitchData) _pitchData = [[KZPMusicPitchData alloc] init];
+    return _pitchData;
 }
 
 - (void)reset
 {
-    self.noteIDs = nil;
-    self.inputTypes = nil;
-    self.spellings = nil;
-    self.selectedDuration = 0;
+    self.durationData = nil;
+    self.pitchData = nil;
 }
 
-- (void)receiveDuration:(unsigned int)duration
+- (void)receiveDuration:(unsigned int)duration rest:(BOOL)rest dotted:(BOOL)dotted tied:(BOOL)tied
 {
-    self.selectedDuration = duration;
+    self.durationData = [[KZPMusicDurationData alloc] initWithDuration:duration rest:rest tied:dotted dotted:tied];
 }
 
 - (void)receiveSpelling:(MusicSpelling)spelling
 {
-    if (spelling) [self.spellings addObject:@(spelling)];
+    [self.pitchData addSpelling:spelling];
 }
 
 - (void)receivePitch:(NSUInteger)pitch
 {
-    [self.noteIDs addObject:@(pitch)];
-    [self.inputTypes addObject:@(KBD__NOTE_ON)];
+    [self.pitchData addPitch:pitch];
+    
+//    [self.noteIDs addObject:@(pitch)];
+//    [self.inputTypes addObject:@(KBD__NOTE_ON)];
     
     [self.chordTimer invalidate];
     
@@ -72,10 +64,8 @@
 
 - (void)flush
 {
-    KZPMusicDurationData *durationData = [[KZPMusicDurationData alloc] init]; //initWithDuration:self.selectedDuration isTied:];
-    KZPMusicPitchData *pitchData = [[KZPMusicPitchData alloc] initWithNoteData:self.noteIDs spellingData:self.spellings];
-    
-    [self.delegate keyboardDidSendPitchData:pitchData withDurationData:durationData];
+
+    [self.delegate keyboardDidSendPitchData:self.pitchData withDurationData:self.durationData];
     [self reset];
 }
 

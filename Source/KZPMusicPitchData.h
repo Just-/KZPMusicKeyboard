@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KZPMusicSciNotation.h"
 
 @interface KZPMusicPitchData : NSObject
 
-- (instancetype)initWithNoteData:(NSArray *)noteData spellingData:(NSArray *)spellingData;
-
 @property (strong, readonly) NSArray *spellings;
 @property (strong, readonly) NSArray *noteValues;
+
+- (void)addPitch:(NSUInteger)pitch;
+- (void)addSpelling:(MusicSpelling)spelling;
 
 @end

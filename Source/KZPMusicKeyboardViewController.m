@@ -161,7 +161,12 @@
 {
     NSUInteger noteID = [sender tag];
     [self.localAudio noteOn:noteID];
-    [self.musicDataAggregator receiveDuration:[self.controlRibbon selectedDuration]];
+    
+    // TODO: Give aggregator to control ribbon. Have a rule for flush.
+    [self.musicDataAggregator receiveDuration:[self.controlRibbon selectedDuration]
+                                         rest:[self.controlRibbon isRest]
+                                       dotted:[self.controlRibbon isDotted]
+                                         tied:[self.controlRibbon isTied]];
     [self.musicDataAggregator receiveSpelling:[self.controlRibbon selectedAccidental]];
     [self.musicDataAggregator receivePitch:noteID];
     [self.controlRibbon resetSpelling];
