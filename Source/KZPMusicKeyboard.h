@@ -16,10 +16,10 @@
 
 @property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
 
-+ (void)show;
-+ (void)hide;
-+ (void)showWithCompletion:(void (^)())completionBlock deactivate:(BOOL)deactivate; // ?? deactivate?
-+ (void)hideWithCompletion:(void (^)())completionBlock deactivate:(BOOL)deactivate;
+- (void)show;
+- (void)hide;
+- (void)showWithCompletion:(void (^)())completionBlock deactivate:(BOOL)deactivate; // ?? deactivate?
+- (void)hideWithCompletion:(void (^)())completionBlock deactivate:(BOOL)deactivate;
 
 @property (nonatomic) BOOL shouldAnimate;
 @property (nonatomic) BOOL sendNoteOff;

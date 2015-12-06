@@ -13,39 +13,60 @@
 
 @interface KZPMusicKeyboard ()
 
-@property (strong, nonatomic) KZPMusicKeyboardViewController *pianoKeyboard;
+@property (strong, nonatomic) KZPMusicKeyboardViewController *keyboardViewController;
 @property (strong, nonatomic) AGWindowView *windowView;
 
 @end
 
 @implementation KZPMusicKeyboard
 
-static KZPMusicKeyboard *default;
+static KZPMusicKeyboard *keyboardInstance;
 
-+ (KZPMusicKeyboard *)default
++ (KZPMusicKeyboard *)keyboard
 {
-    if (!default) default = [[KZPMusicKeyboard alloc] init];
-    return default;
+    if (!keyboardInstance) keyboardInstance = [[KZPMusicKeyboard alloc] init];
+    return keyboardInstance;
 }
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        self.pianoKeyboard = [[KZPMusicKeyboardViewController alloc] initWithNibName:@"KZPMusicKeyboardView" bundle:nil];
-        [self.pianoKeyboard.view setFrameY:[[UIScreen mainScreen] bounds].size.width - self.pianoKeyboard.view.frame.size.height];
+        self.keyboardViewController = [[KZPMusicKeyboardViewController alloc] initWithNibName:@"KZPMusicKeyboardView" bundle:nil];
+        [self.keyboardViewController.view setFrameY:[[UIScreen mainScreen] bounds].size.width - self.keyboardViewController.view.frame.size.height];
 
     }
     return self;
 }
 
-- (void)setResponder:(id<KZPMusicKeyboardDelegate>)responder
+- (void)setDelegate:(id<KZPMusicKeyboardDelegate>)delegate
 {
-    self.pianoKeyboard.delegate = responder;
+    self.keyboardViewController.delegate = delegate;
 }
 
 
 #pragma mark - Show / Hide -
+
+- (void)show
+{
+    
+}
+
+- (void)showWithCompletion:(void (^)())completionBlock deactivate:(BOOL)deactivate
+{
+    
+}
+
+- (void)hide
+{
+    
+}
+
+- (void)hideWithCompletion:(void (^)())completionBlock deactivate:(BOOL)deactivate
+{
+    
+}
+
 
 - (UIView *)showControllerWithOptions:(NSDictionary *)keyboardOptions
 {
