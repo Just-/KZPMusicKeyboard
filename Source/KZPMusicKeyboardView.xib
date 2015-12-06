@@ -9,7 +9,7 @@
             <connections>
                 <outlet property="keyboardDefocusView" destination="ET4-cM-RmV" id="JdX-SF-D3P"/>
                 <outlet property="keyboardMainView" destination="3r0-fP-Xh8" id="StT-G0-4V7"/>
-                <outlet property="view" destination="1" id="tA1-Zr-5kE"/>
+                <outlet property="view" destination="1" id="GdJ-1A-A2o"/>
                 <outletCollection property="keyButtons" destination="why-Ac-uJN" id="bBV-h7-O2y"/>
                 <outletCollection property="keyButtons" destination="C4z-pt-gHf" id="Ly4-qv-RcN"/>
                 <outletCollection property="keyButtons" destination="08T-tv-OWe" id="gJE-hk-FHV"/>

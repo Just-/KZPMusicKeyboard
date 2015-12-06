@@ -30,14 +30,16 @@
 #pragma mark - Actions -
 
 
-- (IBAction)keyboardMapTapped:(id)sender {
+- (IBAction)keyboardMapTapped:(id)sender
+{
     CGPoint position = [(UITapGestureRecognizer *)sender locationInView:self.keyboardMap];
     [UIView animateWithDuration:0.2 animations:^{
         [self panToXPosition:position.x];
     }];
 }
 
-- (IBAction)keyboardMapPanned:(id)sender {
+- (IBAction)keyboardMapPanned:(id)sender
+{
     CGPoint position = [(UIPanGestureRecognizer *)sender locationInView:self.keyboardMap];
     [self panToXPosition:position.x];
 }

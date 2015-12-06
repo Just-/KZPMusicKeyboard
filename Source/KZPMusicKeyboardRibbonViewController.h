@@ -10,7 +10,7 @@
 #import "KZPMusicKeyboardDelegate.h"
 #import "KZPMusicSciNotation.h"
 
-@interface KZPMusicKeyboardRibbonViewController : ViewController
+@interface KZPMusicKeyboardRibbonViewController : UIViewController
 
 @property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
 

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		60994138E94727FBF750C5FD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB1C342A76DF1A765EA10ED /* libPods.a */; };
+		A19FB8E01C1487DC00B54305 /* KZPMusicKeyboardMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19FB8DD1C1487DC00B54305 /* KZPMusicKeyboardMapView.xib */; };
+		A19FB8E11C1487DC00B54305 /* KZPMusicKeyboardRibbonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19FB8DE1C1487DC00B54305 /* KZPMusicKeyboardRibbonView.xib */; };
+		A19FB8E21C1487DC00B54305 /* KZPMusicKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19FB8DF1C1487DC00B54305 /* KZPMusicKeyboardView.xib */; };
 		A1EFF8611C142C7E005636E5 /* KZPMusicDurationData.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF85F1C142C7D005636E5 /* KZPMusicDurationData.h */; };
 		A1EFF8621C142C7E005636E5 /* KZPMusicDurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */; };
 		A1EFF8631C142C7E005636E5 /* KZPMusicDurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */; };
@@ -41,13 +44,12 @@
 		A1EFF8A21C144910005636E5 /* music-squaver.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8821C144910005636E5 /* music-squaver.png */; };
 		A1EFF8A31C144910005636E5 /* music-tie.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8831C144910005636E5 /* music-tie.png */; };
 		A1EFF8A41C144910005636E5 /* music-wt.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8841C144910005636E5 /* music-wt.png */; };
-		A1EFF8A51C144910005636E5 /* musis-rests.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8851C144910005636E5 /* musis-rests.png */; };
+		A1EFF8A51C144910005636E5 /* music-rests.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8851C144910005636E5 /* music-rests.png */; };
 		A1EFF8A61C144910005636E5 /* piano_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8861C144910005636E5 /* piano_icon.png */; };
 		A1EFF8A71C144910005636E5 /* piano_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8871C144910005636E5 /* piano_keyboard.png */; };
 		A1EFF8A81C144910005636E5 /* qwerty.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8881C144910005636E5 /* qwerty.png */; };
 		A1EFF8AC1C1452CB005636E5 /* KZPMusicKeyboardAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF8AA1C1452CB005636E5 /* KZPMusicKeyboardAudio.h */; };
 		A1EFF8AD1C1452CB005636E5 /* KZPMusicKeyboardAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8AB1C1452CB005636E5 /* KZPMusicKeyboardAudio.m */; };
-		A1EFF8B31C1454B0005636E5 /* KZPMusicKeyboardRibbonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8B21C1454B0005636E5 /* KZPMusicKeyboardRibbonView.xib */; };
 		A1EFF8B71C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF8B51C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.h */; };
 		A1EFF8B81C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8B61C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.m */; };
 		A1EFF8BD1C145B2E005636E5 /* KZPMusicKeyboardMapViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF8BB1C145B2E005636E5 /* KZPMusicKeyboardMapViewController.h */; };
@@ -57,7 +59,6 @@
 		A1EFF8C41C145BBD005636E5 /* KZPMusicKeyboardDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF8C31C145BBD005636E5 /* KZPMusicKeyboardDelegate.h */; };
 		A1EFF8CC1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF8CA1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.h */; };
 		A1EFF8CD1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8CB1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.m */; };
-		A1EFF8D11C14630E005636E5 /* KZPMusicKeyboardMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8D01C14630E005636E5 /* KZPMusicKeyboardMapView.xib */; };
 		C989F1C119AF07AB002608F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C019AF07AB002608F7 /* Foundation.framework */; };
 		C989F1C319AF07AC002608F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C219AF07AC002608F7 /* CoreGraphics.framework */; };
 		C989F1C519AF07AC002608F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C419AF07AC002608F7 /* UIKit.framework */; };
@@ -72,7 +73,6 @@
 		C989F1E219AF07AC002608F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C419AF07AC002608F7 /* UIKit.framework */; };
 		C989F1EA19AF07AC002608F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C989F1E819AF07AC002608F7 /* InfoPlist.strings */; };
 		C989F1EC19AF07AC002608F7 /* KZPMusicKeyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C989F1EB19AF07AC002608F7 /* KZPMusicKeyboardTests.m */; };
-		C989F2B019AF0A8E002608F7 /* KZPMusicKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C989F2A719AF0A8E002608F7 /* KZPMusicKeyboardView.xib */; };
 		C989F2B119AF0A8E002608F7 /* KZPMusicKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C989F2A919AF0A8E002608F7 /* KZPMusicKeyboardViewController.m */; };
 		C989F2B319AF0A8E002608F7 /* KZPMusicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = C989F2AD19AF0A8E002608F7 /* KZPMusicKeyboard.m */; };
 		C989F2BE19AF0C2F002608F7 /* UIView+frameOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = C989F2BD19AF0C2F002608F7 /* UIView+frameOperations.m */; };
@@ -91,6 +91,9 @@
 /* Begin PBXFileReference section */
 		26BDAF1873AC7170CC619915 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8F7A20FB70E3F1CF3440ABB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A19FB8DD1C1487DC00B54305 /* KZPMusicKeyboardMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KZPMusicKeyboardMapView.xib; path = ../Source/KZPMusicKeyboardMapView.xib; sourceTree = "<group>"; };
+		A19FB8DE1C1487DC00B54305 /* KZPMusicKeyboardRibbonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KZPMusicKeyboardRibbonView.xib; path = ../Source/KZPMusicKeyboardRibbonView.xib; sourceTree = "<group>"; };
+		A19FB8DF1C1487DC00B54305 /* KZPMusicKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KZPMusicKeyboardView.xib; path = ../Source/KZPMusicKeyboardView.xib; sourceTree = "<group>"; };
 		A1EFF85F1C142C7D005636E5 /* KZPMusicDurationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicDurationData.h; path = ../Source/KZPMusicDurationData.h; sourceTree = "<group>"; };
 		A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicDurationData.m; path = ../Source/KZPMusicDurationData.m; sourceTree = "<group>"; };
 		A1EFF8641C142C9B005636E5 /* KZPMusicPitchData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicPitchData.h; path = ../Source/KZPMusicPitchData.h; sourceTree = "<group>"; };
@@ -122,13 +125,12 @@
 		A1EFF8821C144910005636E5 /* music-squaver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-squaver.png"; sourceTree = "<group>"; };
 		A1EFF8831C144910005636E5 /* music-tie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-tie.png"; sourceTree = "<group>"; };
 		A1EFF8841C144910005636E5 /* music-wt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-wt.png"; sourceTree = "<group>"; };
-		A1EFF8851C144910005636E5 /* musis-rests.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "musis-rests.png"; sourceTree = "<group>"; };
+		A1EFF8851C144910005636E5 /* music-rests.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-rests.png"; sourceTree = "<group>"; };
 		A1EFF8861C144910005636E5 /* piano_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piano_icon.png; sourceTree = "<group>"; };
 		A1EFF8871C144910005636E5 /* piano_keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piano_keyboard.png; sourceTree = "<group>"; };
 		A1EFF8881C144910005636E5 /* qwerty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qwerty.png; sourceTree = "<group>"; };
 		A1EFF8AA1C1452CB005636E5 /* KZPMusicKeyboardAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardAudio.h; path = ../Source/KZPMusicKeyboardAudio.h; sourceTree = "<group>"; };
 		A1EFF8AB1C1452CB005636E5 /* KZPMusicKeyboardAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardAudio.m; path = ../Source/KZPMusicKeyboardAudio.m; sourceTree = "<group>"; };
-		A1EFF8B21C1454B0005636E5 /* KZPMusicKeyboardRibbonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KZPMusicKeyboardRibbonView.xib; path = ../Source/KZPMusicKeyboardRibbonView.xib; sourceTree = "<group>"; };
 		A1EFF8B51C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardRibbonViewController.h; path = ../Source/KZPMusicKeyboardRibbonViewController.h; sourceTree = "<group>"; };
 		A1EFF8B61C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardRibbonViewController.m; path = ../Source/KZPMusicKeyboardRibbonViewController.m; sourceTree = "<group>"; };
 		A1EFF8BB1C145B2E005636E5 /* KZPMusicKeyboardMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardMapViewController.h; path = ../Source/KZPMusicKeyboardMapViewController.h; sourceTree = "<group>"; };
@@ -138,7 +140,6 @@
 		A1EFF8C31C145BBD005636E5 /* KZPMusicKeyboardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardDelegate.h; path = ../Source/KZPMusicKeyboardDelegate.h; sourceTree = "<group>"; };
 		A1EFF8CA1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardDataAggregator.h; path = ../Source/KZPMusicKeyboardDataAggregator.h; sourceTree = "<group>"; };
 		A1EFF8CB1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardDataAggregator.m; path = ../Source/KZPMusicKeyboardDataAggregator.m; sourceTree = "<group>"; };
-		A1EFF8D01C14630E005636E5 /* KZPMusicKeyboardMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KZPMusicKeyboardMapView.xib; path = ../Source/KZPMusicKeyboardMapView.xib; sourceTree = "<group>"; };
 		AAB1C342A76DF1A765EA10ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C989F1BD19AF07AB002608F7 /* KZPMusicKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KZPMusicKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C989F1C019AF07AB002608F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -159,7 +160,6 @@
 		C989F1E719AF07AC002608F7 /* KZPMusicKeyboardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KZPMusicKeyboardTests-Info.plist"; sourceTree = "<group>"; };
 		C989F1E919AF07AC002608F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C989F1EB19AF07AC002608F7 /* KZPMusicKeyboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KZPMusicKeyboardTests.m; sourceTree = "<group>"; };
-		C989F2A719AF0A8E002608F7 /* KZPMusicKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KZPMusicKeyboardView.xib; path = ../Source/KZPMusicKeyboardView.xib; sourceTree = "<group>"; };
 		C989F2A819AF0A8E002608F7 /* KZPMusicKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardViewController.h; path = ../Source/KZPMusicKeyboardViewController.h; sourceTree = "<group>"; };
 		C989F2A919AF0A8E002608F7 /* KZPMusicKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardViewController.m; path = ../Source/KZPMusicKeyboardViewController.m; sourceTree = "<group>"; };
 		C989F2AC19AF0A8E002608F7 /* KZPMusicKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboard.h; path = ../Source/KZPMusicKeyboard.h; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 				A1EFF8821C144910005636E5 /* music-squaver.png */,
 				A1EFF8831C144910005636E5 /* music-tie.png */,
 				A1EFF8841C144910005636E5 /* music-wt.png */,
-				A1EFF8851C144910005636E5 /* musis-rests.png */,
+				A1EFF8851C144910005636E5 /* music-rests.png */,
 				A1EFF8861C144910005636E5 /* piano_icon.png */,
 				A1EFF8871C144910005636E5 /* piano_keyboard.png */,
 				A1EFF8881C144910005636E5 /* qwerty.png */,
@@ -295,7 +295,7 @@
 		A1EFF8B11C145436005636E5 /* Control Ribbon */ = {
 			isa = PBXGroup;
 			children = (
-				A1EFF8B21C1454B0005636E5 /* KZPMusicKeyboardRibbonView.xib */,
+				A19FB8DE1C1487DC00B54305 /* KZPMusicKeyboardRibbonView.xib */,
 				A1EFF8B51C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.h */,
 				A1EFF8B61C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.m */,
 			);
@@ -305,7 +305,7 @@
 		A1EFF8B41C145756005636E5 /* Main Interface */ = {
 			isa = PBXGroup;
 			children = (
-				C989F2A719AF0A8E002608F7 /* KZPMusicKeyboardView.xib */,
+				A19FB8DF1C1487DC00B54305 /* KZPMusicKeyboardView.xib */,
 				C989F2A819AF0A8E002608F7 /* KZPMusicKeyboardViewController.h */,
 				C989F2A919AF0A8E002608F7 /* KZPMusicKeyboardViewController.m */,
 			);
@@ -315,9 +315,9 @@
 		A1EFF8B91C145A12005636E5 /* Keyboard Map Ribbon */ = {
 			isa = PBXGroup;
 			children = (
+				A19FB8DD1C1487DC00B54305 /* KZPMusicKeyboardMapView.xib */,
 				A1EFF8BB1C145B2E005636E5 /* KZPMusicKeyboardMapViewController.h */,
 				A1EFF8BC1C145B2E005636E5 /* KZPMusicKeyboardMapViewController.m */,
-				A1EFF8D01C14630E005636E5 /* KZPMusicKeyboardMapView.xib */,
 			);
 			name = "Keyboard Map Ribbon";
 			sourceTree = "<group>";
@@ -541,17 +541,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1EFF88E1C144910005636E5 /* ebony_keyup.png in Resources */,
-				A1EFF8B31C1454B0005636E5 /* KZPMusicKeyboardRibbonView.xib in Resources */,
+				A19FB8E11C1487DC00B54305 /* KZPMusicKeyboardRibbonView.xib in Resources */,
 				C989F1D919AF07AC002608F7 /* Images.xcassets in Resources */,
 				A1EFF8991C144910005636E5 /* music-dsquaver.png in Resources */,
 				A1EFF8A21C144910005636E5 /* music-squaver.png in Resources */,
 				A1EFF88D1C144910005636E5 /* ebony_keydown.png in Resources */,
 				A1EFF8A41C144910005636E5 /* music-wt.png in Resources */,
 				A1EFF8A71C144910005636E5 /* piano_keyboard.png in Resources */,
+				A19FB8E21C1487DC00B54305 /* KZPMusicKeyboardView.xib in Resources */,
 				A1EFF8981C144910005636E5 /* music-double-sharp.png in Resources */,
 				A1EFF8A31C144910005636E5 /* music-tie.png in Resources */,
 				C989F1CB19AF07AC002608F7 /* InfoPlist.strings in Resources */,
-				C989F2B019AF0A8E002608F7 /* KZPMusicKeyboardView.xib in Resources */,
 				A1EFF88F1C144910005636E5 /* ivory_keydown.png in Resources */,
 				A1EFF89C1C144910005636E5 /* music-minim.png in Resources */,
 				A1EFF89F1C144910005636E5 /* music-quaver.png in Resources */,
@@ -561,10 +561,9 @@
 				A1EFF8A01C144910005636E5 /* music-sharp-inverted.png in Resources */,
 				A1EFF89B1C144910005636E5 /* music-flat.png in Resources */,
 				A1EFF8A61C144910005636E5 /* piano_icon.png in Resources */,
-				A1EFF8A51C144910005636E5 /* musis-rests.png in Resources */,
+				A1EFF8A51C144910005636E5 /* music-rests.png in Resources */,
 				A1EFF8A11C144910005636E5 /* music-sharp.png in Resources */,
 				C989F1D419AF07AC002608F7 /* Main.storyboard in Resources */,
-				A1EFF8D11C14630E005636E5 /* KZPMusicKeyboardMapView.xib in Resources */,
 				A1EFF89E1C144910005636E5 /* music-natural.png in Resources */,
 				A1EFF88C1C144910005636E5 /* dismiss.png in Resources */,
 				A1EFF8931C144910005636E5 /* music-crotchet.png in Resources */,
@@ -576,6 +575,7 @@
 				A1EFF8961C144910005636E5 /* music-double-flat.png in Resources */,
 				A1EFF88B1C144910005636E5 /* bg-wood.jpg in Resources */,
 				A1EFF89A1C144910005636E5 /* music-flat-inverted.png in Resources */,
+				A19FB8E01C1487DC00B54305 /* KZPMusicKeyboardMapView.xib in Resources */,
 				A1EFF8911C144910005636E5 /* keyboard_map.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -726,10 +726,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -770,10 +767,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;

@@ -16,6 +16,7 @@
 #import "UIView+frameOperations.h"
 #import "KZPMusicKeyboardSpellingViewController.h"
 
+
 @interface KZPMusicKeyboardViewController () <KZPMusicKeyboardMapDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *keyboardMainView;
@@ -33,8 +34,35 @@
 
 @end
 
+
 @implementation KZPMusicKeyboardViewController
 
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.localAudio = [[KZPMusicKeyboardAudio alloc] init];
+    self.localAudio.patch = [self.controlRibbon selectedPatch];
+
+    [self loadKeyboardMap];
+    [self loadControlRibbon];
+    [self setupKeyReleaseAction];
+    [self setupDefocusView];
+}
+
+- (void)loadKeyboardMap
+{
+    self.keyboardMapViewController = [[KZPMusicKeyboardMapViewController alloc] initWithNibName:@"KZPMusicKeyboardMapView" bundle:nil];
+    [self.keyboardMapViewController.view setFrameY:42];
+    [self.view addSubview:self.keyboardMapViewController.view];
+}
+
+- (void)loadControlRibbon
+{
+    self.controlRibbon = [[KZPMusicKeyboardRibbonViewController alloc] initWithNibName:@"KZPMusicKeyboardRibbonView" bundle:nil];
+    [self.view addSubview:self.controlRibbon.view];
+}
 
 #pragma mark - KZPMusicKeyboardMapDelegate -
 
@@ -59,17 +87,6 @@
         [self.controlRibbon resetSpelling];
     }
     _keyboardEnabled = keyboardEnabled;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.localAudio = [[KZPMusicKeyboardAudio alloc] init];
-    self.localAudio.patch = [self.controlRibbon selectedPatch];
-    
-    [self setupKeyReleaseAction];
-    [self setupDefocusView];
 }
 
 - (void)setupDefocusView

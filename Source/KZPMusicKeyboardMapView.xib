@@ -11,6 +11,7 @@
                 <outlet property="mapRegionLeftShadow" destination="bNG-cD-zNw" id="9an-MZ-GgH"/>
                 <outlet property="mapRegionRightShadow" destination="VJa-5K-XPK" id="Z95-im-seO"/>
                 <outlet property="mapRegionVisible" destination="yO8-0C-aOO" id="SKU-m5-jOq"/>
+                <outlet property="view" destination="iN0-l3-epB" id="ZwD-xg-tzU"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -42,19 +43,24 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="nPe-qt-kwV" appends="YES" id="WFr-pB-LOO"/>
+                <outletCollection property="gestureRecognizers" destination="y0M-lL-w38" appends="YES" id="vOF-RW-q2b"/>
+            </connections>
             <point key="canvasLocation" x="91.5" y="588"/>
         </view>
-        <tapGestureRecognizer id="Pfu-lb-PoD">
+        <tapGestureRecognizer id="nPe-qt-kwV">
             <connections>
-                <action selector="keyboardMapTapped:" destination="-1" id="vIq-Eg-BY4"/>
+                <action selector="keyboardMapTapped:" destination="-1" id="iWa-FM-7Ma"/>
             </connections>
         </tapGestureRecognizer>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="qNI-cc-54b">
+        <panGestureRecognizer minimumNumberOfTouches="1" id="y0M-lL-w38">
             <connections>
-                <action selector="keyboardMapPanned:" destination="-1" id="ICO-dd-neT"/>
+                <action selector="keyboardMapPanned:" destination="-1" id="svK-5g-wqE"/>
             </connections>
         </panGestureRecognizer>
     </objects>

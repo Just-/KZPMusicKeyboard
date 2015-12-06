@@ -15,7 +15,7 @@
 
 @end
 
-@interface KZPMusicKeyboardMapViewController : ViewController
+@interface KZPMusicKeyboardMapViewController : UIViewController
 
 @property (weak, nonatomic) id<KZPMusicKeyboardMapDelegate> delegate;
 

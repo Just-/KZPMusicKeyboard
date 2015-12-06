@@ -9,6 +9,10 @@
 #import "KZPMusicKeyboard.h"
 #import "UIView+frameOperations.h"
 #import "AGWindowView.h"
+#import "KZPMusicKeyboardMapViewController.h"
+
+static KZPMusicKeyboard *keyboardInstance;
+
 
 @interface KZPMusicKeyboard ()
 
@@ -17,9 +21,9 @@
 
 @end
 
+
 @implementation KZPMusicKeyboard
 
-static KZPMusicKeyboard *keyboardInstance;
 
 + (KZPMusicKeyboard *)keyboard
 {
@@ -27,13 +31,12 @@ static KZPMusicKeyboard *keyboardInstance;
     return keyboardInstance;
 }
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {
         self.keyboardViewController = [[KZPMusicKeyboardViewController alloc] initWithNibName:@"KZPMusicKeyboardView" bundle:nil];
         [self.keyboardViewController.view setFrameY:[[UIScreen mainScreen] bounds].size.width - self.keyboardViewController.view.frame.size.height];
-
     }
     return self;
 }

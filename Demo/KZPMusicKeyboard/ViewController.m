@@ -10,13 +10,16 @@
 #import "KZPMusicKeyboard.h"
 #import "NSArray+functions.h"
 
+
 @interface ViewController () <KZPMusicKeyboardDelegate>
 
 @property (weak, nonatomic) KZPMusicKeyboard *keyboard;
 
 @end
 
+
 @implementation ViewController
+
 
 - (void)viewDidLoad
 {
@@ -26,7 +29,7 @@
 
 - (IBAction)showKeyboard:(id)sender
 {
-    self.keyboard.delegate = self;
+//    self.keyboard.delegate = self;
     [self.keyboard showWithCompletion:^{
         [self enableHideKeyboard];
     }];
@@ -68,10 +71,10 @@
     self.showKeyboardButton.enabled = NO;
 }
 
+
 #pragma mark - KZPMusicKeyboardDelegate -
 
 
-// Ideal - put relevant enum etc into these new classes
 - (void)keyboardDidSendPitchData:(KZPMusicPitchData *)pitchData withDurationData:(KZPMusicDurationData *)durationData
 {
     if (durationData) {
