@@ -45,8 +45,8 @@
     self.localAudio = [[KZPMusicKeyboardAudio alloc] init];
     self.localAudio.patch = [self.controlRibbon selectedPatch];
 
-    [self loadKeyboardMap];
     [self loadControlRibbon];
+    [self loadKeyboardMap];
     [self setupKeyReleaseAction];
     [self setupDefocusView];
 }
@@ -55,7 +55,7 @@
 {
     self.keyboardMapViewController = [[KZPMusicKeyboardMapViewController alloc] initWithNibName:@"KZPMusicKeyboardMapView" bundle:nil];
     self.keyboardMapViewController.delegate = self;
-    [self.keyboardMapViewController.view setFrameY:42];
+    [self.keyboardMapViewController.view setFrameY:self.controlRibbon.view.frame.size.height];
     [self.view addSubview:self.keyboardMapViewController.view];
 }
 
@@ -64,6 +64,31 @@
     self.controlRibbon = [[KZPMusicKeyboardRibbonViewController alloc] initWithNibName:@"KZPMusicKeyboardRibbonView" bundle:nil];
     [self.view addSubview:self.controlRibbon.view];
 }
+
+- (void)hideControlRibbon
+{
+    self.controlRibbon.view.hidden = YES;
+    CGFloat controlRibbonHeight = self.controlRibbon.view.frame.size.height;
+    [self.keyboardMainView setFrameY:self.keyboardMainView.frame.origin.y - controlRibbonHeight + 3];
+    [self.keyboardMapViewController.view setFrameY:self.keyboardMapViewController.view.frame.origin.y - controlRibbonHeight + 3];
+}
+
+- (void)showControlRibbon
+{
+    self.controlRibbon.view.hidden = NO;
+    CGFloat controlRibbonHeight = self.controlRibbon.view.frame.size.height;
+    [self.keyboardMainView setFrameY:self.keyboardMainView.frame.origin.y + controlRibbonHeight - 3];
+    [self.keyboardMapViewController.view setFrameY:self.keyboardMapViewController.view.frame.origin.y + controlRibbonHeight - 3];
+}
+
+- (CGFloat)height
+{
+    CGFloat controlRibbonHeight = self.controlRibbon.view.frame.size.height;
+    CGFloat keyboardMapHeight = self.keyboardMapViewController.view.frame.size.height;
+    CGFloat keyboardHeight = self.keyboardMainView.frame.size.height;
+    return (self.controlRibbon.view.hidden ? 3 : controlRibbonHeight) + keyboardMapHeight + keyboardHeight;
+}
+
 
 #pragma mark - KZPMusicKeyboardMapDelegate -
 

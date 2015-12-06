@@ -36,7 +36,7 @@ static KZPMusicKeyboard *keyboardInstance;
     self = [super init];
     if (self) {
         self.keyboardViewController = [[KZPMusicKeyboardViewController alloc] initWithNibName:@"KZPMusicKeyboardView" bundle:nil];
-        [self.keyboardViewController.view setFrameY:[[UIScreen mainScreen] bounds].size.width - self.keyboardViewController.view.frame.size.height];
+        [self.keyboardViewController.view setFrameY:[[UIScreen mainScreen] bounds].size.width - [self.keyboardViewController height]];
     }
     return self;
 }
@@ -70,7 +70,7 @@ static KZPMusicKeyboard *keyboardInstance;
     
     [UIView animateWithDuration:self.shouldAnimate ? 0.3 : 0.0 animations:^{
         [self.keyboardViewController.view setFrameY:landscapeScreenHeight -
-         self.keyboardViewController.view.frame.size.height];
+         [self.keyboardViewController height]];
     }];
 //    self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.keyboardViewController.view.frame.origin.y);    
 }

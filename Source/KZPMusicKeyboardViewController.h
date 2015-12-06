@@ -34,6 +34,6 @@ typedef enum {
 
 - (void)recenter;
 
-- (IBAction)keyButtonPressed:(id)sender;
+- (CGFloat)height;
 
 @end
