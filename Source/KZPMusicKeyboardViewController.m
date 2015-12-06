@@ -10,7 +10,7 @@
 #import "UIView+frameOperations.h"
 #import "KZPMusicKeyboardManager.h"
 #import "SoundBankPlayer.h"
-#import "SciNotation.h"
+#import "KZPMusicSciNotation.h"
 #import "UIView+frameOperations.h"
 
 @interface KZPMusicKeyboardViewController ()
@@ -492,7 +492,7 @@
     BOOL isWhite;
     int offset, inset_h, inset_v, dim, buttonCount = 0;
     
-    if ([SciNotation noteIsWhite:noteID]) {
+    if ([KZPMusicSciNotation noteIsWhite:noteID]) {
         offset = IVORY_OFFSET;
         inset_h = IVORY_INSET_H;
         inset_v = IVORY_INSET_V;
@@ -516,7 +516,7 @@
     
     for (int i = 0; i < 5; i++) {
         int modifier = order[i];
-        if ([SciNotation modifier:modifier isLegalForPitch:noteID]) {
+        if ([KZPMusicSciNotation modifier:modifier isLegalForPitch:noteID]) {
             CGRect accidentalFrame = CGRectMake(keyFrame.origin.x + inset_h,
                                                 keyFrame.size.height - (buttonCount * offset) - inset_v - dim,
                                                 dim, dim);

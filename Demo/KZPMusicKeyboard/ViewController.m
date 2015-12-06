@@ -35,8 +35,10 @@
 
 - (IBAction)showKeyboard:(id)sender {
     [[KZPMusicKeyboardManager defaultManager] setResponder:self];
-    [[KZPMusicKeyboardManager defaultManager] showControllerWithRhythmControls:YES];
-    self.showKeyboardButton.enabled = NO;
+    NSDictionary *keyboardOptions = @{kENABLE_KEYBOARD: @(YES),
+                                      kENABLE_CHORDS: @(YES),
+                                      kENABLE_RHYTHM: @(NO)};
+    [[KZPMusicKeyboardManager defaultManager] showControllerWithOptions:keyboardOptions];
 }
 
 
@@ -45,6 +47,12 @@
 - (void)keyboardDidSendBackspace
 {
     self.outputLabel.text = @"";
+}
+
+// Ideal - put relevant enum etc into these new classes
+- (void)keyboardDidSendPitchData:(KZPMusicPitchData *)pitchData withDurationData:(KZPMusicDurationData *)rhythmData
+{
+    
 }
 
 - (void)keyboardDidSendSignal:(NSArray *)noteID

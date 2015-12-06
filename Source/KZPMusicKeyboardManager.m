@@ -67,7 +67,7 @@ static KZPMusicKeyboardManager *defaultManager;
     [UIView animateWithDuration:0.3 animations:^{
         [self.pianoKeyboard.view setFrameY:landscapeScreenHeight - self.pianoKeyboard.view.frame.size.height];
     }];
-    self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.pianoKeyboard.view.frame.origin.y);
+//    self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.pianoKeyboard.view.frame.origin.y);
     return self.windowView;
 }
 
