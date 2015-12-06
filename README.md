@@ -46,7 +46,7 @@ To receive data from the keyboard, assign an object (such as a view controller) 
 	[[KZPMusicKeyboard keyboard] setDelegate:self];
 ```
 
-Then implement the callback method `musicKeyboardDidSendPitchData:withDurationData:` to receive pitch and/or duration objects depending on the configuration. See the `KZPMusicPitchData` and `KZPMusicDurationData` headers for an explanation of how to use these objects.
+Then implement the `KZPMusicKeyboardDelegate` callback method `musicKeyboardDidSendPitchData:withDurationData:` to receive pitch and/or duration objects depending on the configuration. See the `KZPMusicPitchData` and `KZPMusicDurationData` headers for an explanation of how to use these objects.
 
 If you allow the keyboard to dismiss manually (see 'Configuring'), then it is a good idea to implement the `keyboardWasDismissed` delegate method in case that action means something. If you allow the user to send a 'backspace' message (e.g., when entering a sequence notes on a staff), then you need to implement the `keyboardDidSendBackspace` delegate method to handle this.
 

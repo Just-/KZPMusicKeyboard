@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "KZPMusicPitchData.h"
 #import "KZPMusicDurationData.h"
-
-@protocol KZPMusicKeyboardDelegate;
+#import "KZPMusicKeyboardViewController.h"
 
 @interface KZPMusicKeyboard : NSObject
 
@@ -20,12 +19,13 @@
 
 - (void)show;
 - (void)hide;
-- (void)showWithCompletion:(void (^)())completionBlock deactivate:(BOOL)deactivate; // ?? deactivate?
-- (void)hideWithCompletion:(void (^)())completionBlock deactivate:(BOOL)deactivate;
+- (void)showWithCompletion:(void (^)())completionBlock;
+- (void)hideWithCompletion:(void (^)())completionBlock;
 
 @property (nonatomic) BOOL shouldAnimate;
 @property (nonatomic) BOOL sendNoteOff;
 @property (nonatomic) BOOL allowSpelling;
+@property (nonatomic) BOOL allowPitchControl;
 @property (nonatomic) BOOL polyphonic;
 @property (nonatomic) BOOL useDurationControls;
 @property (nonatomic) BOOL durationControlsActive;

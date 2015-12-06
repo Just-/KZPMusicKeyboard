@@ -8,9 +8,9 @@
 
 #import "ViewController.h"
 #import "KZPMusicKeyboard.h"
-//#import "NSArray+functions"
+#import "NSArray+functions.h"
 
-@interface ViewController <KZPMusicKeyboardDelegate>
+@interface ViewController () <KZPMusicKeyboardDelegate>
 
 @property (weak, nonatomic) KZPMusicKeyboard *keyboard;
 
@@ -26,72 +26,60 @@
 
 - (IBAction)showKeyboard:(id)sender
 {
-    [[KZPMusicKeyboard keyboard] setDelegate:self];
-    [[KZPMusicKeyboard keyboard] show];
+    self.keyboard.delegate = self;
+    [self.keyboard showWithCompletion:^{
+        [self enableHideKeyboard];
+    }];
 }
 
 - (IBAction)hideKeyboard:(id)sender
 {
-    [[KZPMusicKeyboard keyboard] hide];
+    [self.keyboard hideWithCompletion:^{
+        [self enableShowKeyboard];
+    }];
 }
 
-- (IBAction)shouldAnimateSwitchDidChange:(UISwitch *)sender
+- (IBAction)configurationSwitchChanged:(UISwitch *)sender
 {
-    self.keyboard = [sender isOn];
+    [self applySettings];
 }
 
-- (IBAction)sendNoteOffSwitchDidChange:(UISwitch *)sender
+- (void)applySettings
 {
+    self.keyboard.shouldAnimate = [self.shouldAnimateSwitch isOn];
+    self.keyboard.sendNoteOff = [self.sendNoteOffSwitch isOn];
+    self.keyboard.allowPitchControl = [self.enablePitchControlSwitch isOn];
+    self.keyboard.polyphonic = [self.polyphonicSwitch isOn];
+    self.keyboard.allowSpelling = [self.enableSpellingSwitch isOn];
+    self.keyboard.useDurationControls = [self.enableDurationControlsSwitch isOn];
+    self.keyboard.durationControlsActive = [self.durationControlsActiveSwitch isOn];
+    self.keyboard.useLocalAudio = [self.localAudioSwitch isOn];
 }
 
-- (IBAction)enableKeyboardSwitchDidChange:(UISwitch *)sender
+- (void)enableShowKeyboard
 {
+    self.hideKeyboardButton.enabled = NO;
+    self.showKeyboardButton.enabled = YES;
 }
 
-- (IBAction)enablePolyphonySwitchDidChange:(UISwitch *)sender
+- (void)enableHideKeyboard
 {
+    self.hideKeyboardButton.enabled = YES;
+    self.showKeyboardButton.enabled = NO;
 }
-
-- (IBAction)enableSpellingSwitchDidChange:(UISwitch *)sender
-{
-}
-
-- (IBAction)enableDurationSwitchDidChange:(UISwitch *)sender
-{
-}
-
-- (IBAction)durationsActiveSwitchDidChange:(UISwitch *)sender
-{
-}
-
-- (IBAction)localSoundSwitchDidChange:(UISwitch *)sender
-{
-}
-
-- (IBAction)enableBackspaceSwitchDidChange:(UISwitch *)sender
-{
-}
-
-- (IBAction)enableDismissSwitchDidChange:(UISwitch *)sender
-{
-}
-
-- (IBAction)shouldAnimateDidChange:(id)sender
-{
-}
-
 
 #pragma mark - KZPMusicKeyboardDelegate -
+
 
 // Ideal - put relevant enum etc into these new classes
 - (void)keyboardDidSendPitchData:(KZPMusicPitchData *)pitchData withDurationData:(KZPMusicDurationData *)durationData
 {
     if (durationData) {
-        self.durationTextView.text = [NSString stringWithFormat:@"%d%@%@",
+        self.durationTextView.text = [NSString stringWithFormat:@"%u%@%@%@",
                                       durationData.duration,
                                       durationData.isRest ? @"\nRest": @"",
                                       durationData.isDotted ? @"\nDotted" : @"",
-                                      durationData.isTiedForward ? @"\Tied" : @""];
+                                      durationData.isTiedForward ? @"\nTied" : @""];
     }
     
     if (pitchData) {
@@ -102,10 +90,7 @@
 
 - (void)keyboardWasDismissed
 {
-    self.keyboard
-    [[KZPMusicKeyboardManager defaultManager] hideControllerWithCompletionBlock:^{
-        self.showKeyboardButton.enabled = YES;
-    } deactivate:YES];
+    [self enableShowKeyboard];
 }
 
 - (void)keyboardDidSendBackspace

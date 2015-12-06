@@ -8,7 +8,6 @@
 
 #import "KZPMusicKeyboardViewController.h"
 #import "UIView+frameOperations.h"
-#import "KZPMusicKeyboardManager.h"
 #import "SoundBankPlayer.h"
 #import "KZPMusicSciNotation.h"
 #import "UIView+frameOperations.h"
@@ -37,7 +36,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *backspaceButton;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *toneSelector;
-@property (strong, nonatomic) SoundBankPlayer *soundBankPlayer;
 
 // Aggregation of note information for the purpose of detecting chords
 @property (strong, nonatomic) NSMutableArray *noteIDs;

@@ -14,18 +14,25 @@
 @property (weak, nonatomic) IBOutlet UITextView *pitchTextView;
 @property (weak, nonatomic) IBOutlet UITextView *durationTextView;
 
+@property (weak, nonatomic) IBOutlet UIButton *showKeyboardButton;
+@property (weak, nonatomic) IBOutlet UIButton *hideKeyboardButton;
+
 - (IBAction)showKeyboard:(id)sender;
 - (IBAction)hideKeyboard:(id)sender;
 
-- (IBAction)shouldAnimateSwitchDidChange:(UISwitch *)sender;
-- (IBAction)sendNoteOffSwitchDidChange:(UISwitch *)sender;
-- (IBAction)enableKeyboardSwitchDidChange:(UISwitch *)sender;
-- (IBAction)enablePolyphonySwitchDidChange:(UISwitch *)sender;
-- (IBAction)enableSpellingSwitchDidChange:(UISwitch *)sender;
-- (IBAction)enableDurationSwitchDidChange:(UISwitch *)sender;
-- (IBAction)durationsActiveSwitchDidChange:(UISwitch *)sender;
-- (IBAction)localSoundSwitchDidChange:(UISwitch *)sender;
-- (IBAction)enableBackspaceSwitchDidChange:(UISwitch *)sender;
-- (IBAction)enableDismissSwitchDidChange:(UISwitch *)sender;
+- (IBAction)configurationSwitchChanged:(UISwitch *)sender;
+
+// TODO: chord sensitivity ?
+@property (weak, nonatomic) IBOutlet UISwitch *shouldAnimateSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *sendNoteOffSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *enablePitchControlSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *polyphonicSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *enableSpellingSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *enableDurationControlsSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *durationControlsActiveSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *localAudioSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *enableBackspaceSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *enableManualDismissSwitch;
+
 
 @end

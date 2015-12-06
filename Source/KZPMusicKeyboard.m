@@ -48,72 +48,59 @@ static KZPMusicKeyboard *keyboardInstance;
 
 - (void)show
 {
-    
+    [self showWithCompletion:^{}];
 }
 
-- (void)showWithCompletion:(void (^)())completionBlock deactivate:(BOOL)deactivate
-{
-    
-}
-
-- (void)hide
-{
-    
-}
-
-- (void)hideWithCompletion:(void (^)())completionBlock deactivate:(BOOL)deactivate
-{
-    
-}
-
-
-- (UIView *)showControllerWithOptions:(NSDictionary *)keyboardOptions
+// Make sure settings are passed to VC by this point?
+- (void)showWithCompletion:(void (^)())completionBlock
 {
     if (self.windowView == nil) {
         self.windowView = [[AGWindowView alloc] initAndAddToKeyWindow];
         self.windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskLandscape;
     }
-    self.pianoKeyboard.rhythmControlsEnabled = [[keyboardOptions valueForKey:kENABLE_RHYTHM] boolValue];
-    self.pianoKeyboard.keyboardEnabled = [[keyboardOptions valueForKey:kENABLE_KEYBOARD] boolValue];
-    self.pianoKeyboard.chordsEnabled = [[keyboardOptions valueForKey:kENABLE_CHORDS] boolValue];
-    self.pianoKeyboard.rhythmMode = self.pianoKeyboard.rhythmControlsEnabled && !self.pianoKeyboard.keyboardEnabled ?KZPMusicKeyboardRhythmMode_Active : KZPMusicKeyboardRhythmMode_Passive;
-    
-    // iOS7 and iOS8 have different notions of screen height
+    // iOS7 and iOS8+ have different notions of screen height
     CGFloat landscapeScreenHeight = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-    CGFloat landscapeScreenWidth = MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+//    CGFloat landscapeScreenWidth = MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    [self.keyboardViewController.view setFrameY:landscapeScreenHeight];
+    [self.windowView addSubview:self.keyboardViewController.view];
     
-    [self.pianoKeyboard.view setFrameY:landscapeScreenHeight];
-    [self.windowView addSubview:self.pianoKeyboard.view];
-    [UIView animateWithDuration:0.3 animations:^{
-        [self.pianoKeyboard.view setFrameY:landscapeScreenHeight - self.pianoKeyboard.view.frame.size.height];
+    [UIView animateWithDuration:self.shouldAnimate ? 0.3 : 0.0 animations:^{
+        [self.keyboardViewController.view setFrameY:landscapeScreenHeight -
+         self.keyboardViewController.view.frame.size.height];
     }];
-//    self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.pianoKeyboard.view.frame.origin.y);
-    return self.windowView;
+//    self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.keyboardViewController.view.frame.origin.y);    
 }
 
-- (void)hideControllerWithCompletionBlock:(void (^)())completionBlock deactivate:(BOOL)deactivate
+- (void)hide
 {
-    // iOS7 and iOS8 have different notions of screen height
+    [self hideWithCompletion:^{}];
+}
+
+- (void)hideWithCompletion:(void (^)())completionBlock
+{
+    // iOS7 and iOS8+ have different notions of screen height
     CGFloat landscapeScreenHeight = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     
-    [UIView animateWithDuration:0.3 animations:^{
-        [self.pianoKeyboard.view setFrameY:landscapeScreenHeight]; // landscape
+    [UIView animateWithDuration:self.shouldAnimate ? 0.3 : 0.0 animations:^{
+        [self.keyboardViewController.view setFrameY:landscapeScreenHeight];
     } completion:^(BOOL finished) {
-        UIView *windowView = [self.pianoKeyboard.view superview];
-        [self.pianoKeyboard.view removeFromSuperview];
-        if (deactivate) {
+        UIView *windowView = [self.keyboardViewController.view superview];
+        [self.keyboardViewController.view removeFromSuperview];
+        
+        // TODO: This is to do with switching between text fields without dismissing?
+//        if (deactivate) {
             [windowView removeFromSuperview];
             self.windowView = nil;
-        }
-        if (completionBlock) completionBlock();
+//        }
+        completionBlock();
     }];
 }
 
 // What is the purpose of this?
-- (void)removeImmediately
-{
-    [self.windowView removeFromSuperview];
-    self.windowView = nil;
-}
+//- (void)removeImmediately
+//{
+//    [self.windowView removeFromSuperview];
+//    self.windowView = nil;
+//}
 
 @end

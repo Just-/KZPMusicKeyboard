@@ -35,7 +35,8 @@ typedef enum {
 
 @protocol KZPMusicKeyboardDelegate <NSObject>
 
-- (void)musicKeyboardDidPitchData:(KZPMusicPitchData *)pitchData withDurationData:(KZPMusicDurationData *)durationoData;
+- (void)keyboardDidSendPitchData:(KZPMusicPitchData *)pitchData
+                withDurationData:(KZPMusicDurationData *)durationData;
 
 @optional
 - (void)keyboardWasDismissed;
