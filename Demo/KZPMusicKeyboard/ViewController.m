@@ -18,17 +18,10 @@
 
 @implementation ViewController
 
-- (void)loadView
-{
-    [super loadView];
-    NSLog(@"load view");    
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"Load?");
-//    self.keyboard = [KZPMusicKeyboard keyboard];
+    self.keyboard = [KZPMusicKeyboard keyboard];
 }
 
 - (IBAction)showKeyboard:(id)sender
