@@ -29,7 +29,7 @@
 
 - (IBAction)showKeyboard:(id)sender
 {
-//    self.keyboard.delegate = self;
+    self.keyboard.delegate = self;
     [self.keyboard showWithCompletion:^{
         [self enableHideKeyboard];
     }];

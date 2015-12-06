@@ -24,5 +24,6 @@ typedef enum {
 - (void)reset;
 - (void)receiveDuration:(unsigned int)duration;
 - (void)receiveSpelling:(MusicSpelling)spelling;
+- (void)receivePitch:(NSUInteger)pitch;
 
 @end

@@ -51,7 +51,7 @@
     if (spelling) [self.spellings addObject:@(spelling)];
 }
 
-- (void)receivePitch:(int)pitch
+- (void)receivePitch:(NSUInteger)pitch
 {
     [self.noteIDs addObject:@(pitch)];
     [self.inputTypes addObject:@(KBD__NOTE_ON)];
@@ -73,9 +73,10 @@
 - (void)flush
 {
     KZPMusicDurationData *durationData = [[KZPMusicDurationData alloc] init]; //initWithDuration:self.selectedDuration isTied:];
-    KZPMusicPitchData *pitchData = [[KZPMusicPitchData alloc] init];
+    KZPMusicPitchData *pitchData = [[KZPMusicPitchData alloc] initWithNoteData:self.noteIDs spellingData:self.spellings];
     
     [self.delegate keyboardDidSendPitchData:pitchData withDurationData:durationData];
+    [self reset];
 }
 
 - (void)chordDetected

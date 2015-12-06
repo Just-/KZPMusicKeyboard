@@ -10,6 +10,8 @@
 
 @interface KZPMusicDurationData : NSObject
 
+- (instancetype)initWithDuration:(unsigned int)duration rest:(BOOL)rest tied:(BOOL)tied dotted:(BOOL)dotted;
+
 @property (nonatomic, readonly) unsigned int duration;
 @property (nonatomic, readonly, getter=isRest) BOOL rest;
 @property (nonatomic, readonly, getter=isTiedForward) BOOL tiedForward;

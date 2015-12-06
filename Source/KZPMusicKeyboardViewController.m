@@ -44,11 +44,18 @@
     
     self.localAudio = [[KZPMusicKeyboardAudio alloc] init];
     self.localAudio.patch = [self.controlRibbon selectedPatch];
+    self.musicDataAggregator = [[KZPMusicKeyboardDataAggregator alloc] init];
 
     [self loadControlRibbon];
     [self loadKeyboardMap];
     [self setupKeyReleaseAction];
     [self setupDefocusView];
+}
+
+- (void)setDelegate:(id<KZPMusicKeyboardDelegate>)delegate
+{
+    self.musicDataAggregator.delegate = delegate;
+    self.controlRibbon.delegate = delegate;
 }
 
 - (void)loadKeyboardMap
@@ -133,8 +140,6 @@
     for (UIButton *keyButton in self.keyButtons) {
         [keyButton addTarget:self action:@selector(keyButtonReleased:) forControlEvents:UIControlEventTouchUpInside];
         [keyButton addTarget:self action:@selector(keyButtonReleased:) forControlEvents:UIControlEventTouchUpOutside];
-        
-        // TODO: What about drag events?
     }
 }
 
@@ -158,6 +163,7 @@
     [self.localAudio noteOn:noteID];
     [self.musicDataAggregator receiveDuration:[self.controlRibbon selectedDuration]];
     [self.musicDataAggregator receiveSpelling:[self.controlRibbon selectedAccidental]];
+    [self.musicDataAggregator receivePitch:noteID];
     [self.controlRibbon resetSpelling];
 }
 

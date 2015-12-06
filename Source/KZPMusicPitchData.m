@@ -10,4 +10,14 @@
 
 @implementation KZPMusicPitchData
 
+- (instancetype)initWithNoteData:(NSArray *)noteData spellingData:(NSArray *)spellingData
+{
+    self = [super init];
+    if (self) {
+        _noteValues = noteData;
+        _spellings = spellingData;
+    }
+    return self;
+}
+
 @end

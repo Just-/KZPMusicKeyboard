@@ -10,4 +10,16 @@
 
 @implementation KZPMusicDurationData
 
+- (instancetype)initWithDuration:(unsigned int)duration rest:(BOOL)rest tied:(BOOL)tied dotted:(BOOL)dotted
+{
+    self = [super init];
+    if (self) {
+        _duration = duration;
+        _rest = rest;
+        _tiedForward = tied;
+        _dotted = dotted;
+    }
+    return self;
+}
+
 @end
