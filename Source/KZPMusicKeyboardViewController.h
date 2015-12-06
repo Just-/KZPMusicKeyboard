@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KZPMusicDurationData.h"
+#import "KZPMusicPitchData.h"
 
 typedef enum {
     SP__DOUBLE_FLAT = -2,

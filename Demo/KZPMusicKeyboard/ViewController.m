@@ -41,6 +41,42 @@
     [[KZPMusicKeyboardManager defaultManager] showControllerWithOptions:keyboardOptions];
 }
 
+- (IBAction)hideKeyboard:(id)sender {
+}
+
+- (IBAction)shouldAnimateSwitchDidChange:(UISwitch *)sender {
+}
+
+- (IBAction)sendNoteOffSwitchDidChange:(UISwitch *)sender {
+}
+
+- (IBAction)enableKeyboardSwitchDidChange:(UISwitch *)sender {
+}
+
+- (IBAction)enablePolyphonySwitchDidChange:(UISwitch *)sender {
+}
+
+- (IBAction)enableSpellingSwitchDidChange:(UISwitch *)sender {
+}
+
+- (IBAction)enableDurationSwitchDidChange:(UISwitch *)sender {
+}
+
+- (IBAction)durationsActiveSwitchDidChange:(UISwitch *)sender {
+}
+
+- (IBAction)localSoundSwitchDidChange:(UISwitch *)sender {
+}
+
+- (IBAction)enableBackspaceSwitchDidChange:(UISwitch *)sender {
+}
+
+- (IBAction)enableDismissSwitchDidChange:(UISwitch *)sender {
+}
+
+- (IBAction)shouldAnimateDidChange:(id)sender {
+}
+
 
 #pragma mark - KZPMusicKeyboardDelegate -
 
@@ -77,4 +113,6 @@
     } deactivate:YES];
 }
 
+- (IBAction)showKeyboard:(id)sender {
+}
 @end

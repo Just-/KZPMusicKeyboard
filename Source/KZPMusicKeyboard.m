@@ -1,31 +1,31 @@
 //
-//  KZPMusicKeyboardManager.m
+//  KZPMusicKeyboard.m
 //  KZPMusicKeyboard
 //
 //  Created by Matt Rankin on 1/07/2014.
 //  Copyright (c) 2014 Matt Rankin. All rights reserved.
 //
 
-#import "KZPMusicKeyboardManager.h"
+#import "KZPMusicKeyboard.h"
 #import "UIView+frameOperations.h"
 #import "AGWindowView.h"
 #import "KZPMusicTextField.h"
 
-@interface KZPMusicKeyboardManager ()
+@interface KZPMusicKeyboard ()
 
 @property (strong, nonatomic) KZPMusicKeyboardViewController *pianoKeyboard;
 @property (strong, nonatomic) AGWindowView *windowView;
 
 @end
 
-@implementation KZPMusicKeyboardManager
+@implementation KZPMusicKeyboard
 
-static KZPMusicKeyboardManager *defaultManager;
+static KZPMusicKeyboard *default;
 
-+ (KZPMusicKeyboardManager *)defaultManager
++ (KZPMusicKeyboard *)default
 {
-    if (!defaultManager) defaultManager = [[KZPMusicKeyboardManager alloc] init];
-    return defaultManager;
+    if (!default) default = [[KZPMusicKeyboard alloc] init];
+    return default;
 }
 
 - (id)init
@@ -89,6 +89,7 @@ static KZPMusicKeyboardManager *defaultManager;
     }];
 }
 
+// What is the purpose of this?
 - (void)removeImmediately
 {
     [self.windowView removeFromSuperview];

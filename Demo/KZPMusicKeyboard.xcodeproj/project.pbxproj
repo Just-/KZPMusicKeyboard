@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		60994138E94727FBF750C5FD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB1C342A76DF1A765EA10ED /* libPods.a */; };
+		A1EFF8611C142C7E005636E5 /* KZPMusicDurationData.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF85F1C142C7D005636E5 /* KZPMusicDurationData.h */; };
+		A1EFF8621C142C7E005636E5 /* KZPMusicDurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */; };
+		A1EFF8631C142C7E005636E5 /* KZPMusicDurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */; };
+		A1EFF8661C142C9B005636E5 /* KZPMusicPitchData.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF8641C142C9B005636E5 /* KZPMusicPitchData.h */; };
+		A1EFF8671C142C9B005636E5 /* KZPMusicPitchData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8651C142C9B005636E5 /* KZPMusicPitchData.m */; };
+		A1EFF8681C142C9B005636E5 /* KZPMusicPitchData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8651C142C9B005636E5 /* KZPMusicPitchData.m */; };
 		C94162AA1AC16BED00E7BFDF /* dismiss.png in Resources */ = {isa = PBXBuildFile; fileRef = C94162A91AC16BED00E7BFDF /* dismiss.png */; };
 		C989F1C119AF07AB002608F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C019AF07AB002608F7 /* Foundation.framework */; };
 		C989F1C319AF07AC002608F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C219AF07AC002608F7 /* CoreGraphics.framework */; };
@@ -25,7 +31,7 @@
 		C989F1EC19AF07AC002608F7 /* KZPMusicKeyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C989F1EB19AF07AC002608F7 /* KZPMusicKeyboardTests.m */; };
 		C989F2B019AF0A8E002608F7 /* KZPMusicKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C989F2A719AF0A8E002608F7 /* KZPMusicKeyboardView.xib */; };
 		C989F2B119AF0A8E002608F7 /* KZPMusicKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C989F2A919AF0A8E002608F7 /* KZPMusicKeyboardViewController.m */; };
-		C989F2B319AF0A8E002608F7 /* KZPMusicKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C989F2AD19AF0A8E002608F7 /* KZPMusicKeyboardManager.m */; };
+		C989F2B319AF0A8E002608F7 /* KZPMusicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = C989F2AD19AF0A8E002608F7 /* KZPMusicKeyboard.m */; };
 		C989F2B419AF0A8E002608F7 /* KZPMusicTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C989F2AF19AF0A8E002608F7 /* KZPMusicTextField.m */; };
 		C989F2BE19AF0C2F002608F7 /* UIView+frameOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = C989F2BD19AF0C2F002608F7 /* UIView+frameOperations.m */; };
 		C989F2E119AF1D63002608F7 /* backspace.png in Resources */ = {isa = PBXBuildFile; fileRef = C989F2CA19AF1D63002608F7 /* backspace.png */; };
@@ -112,6 +118,10 @@
 /* Begin PBXFileReference section */
 		26BDAF1873AC7170CC619915 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8F7A20FB70E3F1CF3440ABB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A1EFF85F1C142C7D005636E5 /* KZPMusicDurationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicDurationData.h; path = ../Source/KZPMusicDurationData.h; sourceTree = "<group>"; };
+		A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicDurationData.m; path = ../Source/KZPMusicDurationData.m; sourceTree = "<group>"; };
+		A1EFF8641C142C9B005636E5 /* KZPMusicPitchData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicPitchData.h; path = ../Source/KZPMusicPitchData.h; sourceTree = "<group>"; };
+		A1EFF8651C142C9B005636E5 /* KZPMusicPitchData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicPitchData.m; path = ../Source/KZPMusicPitchData.m; sourceTree = "<group>"; };
 		AAB1C342A76DF1A765EA10ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94162A91AC16BED00E7BFDF /* dismiss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dismiss.png; path = ../Assets/Images/dismiss.png; sourceTree = "<group>"; };
 		C989F1BD19AF07AB002608F7 /* KZPMusicKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KZPMusicKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,8 +146,8 @@
 		C989F2A719AF0A8E002608F7 /* KZPMusicKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KZPMusicKeyboardView.xib; path = ../Source/KZPMusicKeyboardView.xib; sourceTree = "<group>"; };
 		C989F2A819AF0A8E002608F7 /* KZPMusicKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardViewController.h; path = ../Source/KZPMusicKeyboardViewController.h; sourceTree = "<group>"; };
 		C989F2A919AF0A8E002608F7 /* KZPMusicKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardViewController.m; path = ../Source/KZPMusicKeyboardViewController.m; sourceTree = "<group>"; };
-		C989F2AC19AF0A8E002608F7 /* KZPMusicKeyboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardManager.h; path = ../Source/KZPMusicKeyboardManager.h; sourceTree = "<group>"; };
-		C989F2AD19AF0A8E002608F7 /* KZPMusicKeyboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardManager.m; path = ../Source/KZPMusicKeyboardManager.m; sourceTree = "<group>"; };
+		C989F2AC19AF0A8E002608F7 /* KZPMusicKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboard.h; path = ../Source/KZPMusicKeyboard.h; sourceTree = "<group>"; };
+		C989F2AD19AF0A8E002608F7 /* KZPMusicKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboard.m; path = ../Source/KZPMusicKeyboard.m; sourceTree = "<group>"; };
 		C989F2AE19AF0A8E002608F7 /* KZPMusicTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicTextField.h; path = ../Source/KZPMusicTextField.h; sourceTree = "<group>"; };
 		C989F2AF19AF0A8E002608F7 /* KZPMusicTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicTextField.m; path = ../Source/KZPMusicTextField.m; sourceTree = "<group>"; };
 		C989F2BC19AF0C2F002608F7 /* UIView+frameOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+frameOperations.h"; path = "../Source/UIView+frameOperations.h"; sourceTree = "<group>"; };
@@ -239,6 +249,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1EFF85E1C142C58005636E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A1EFF85F1C142C7D005636E5 /* KZPMusicDurationData.h */,
+				A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */,
+				A1EFF8641C142C9B005636E5 /* KZPMusicPitchData.h */,
+				A1EFF8651C142C9B005636E5 /* KZPMusicPitchData.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		C989F1B419AF07AB002608F7 = {
 			isa = PBXGroup;
 			children = (
@@ -320,13 +341,14 @@
 		C989F1F519AF099F002608F7 /* KZPMusicKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				A1EFF85E1C142C58005636E5 /* Data */,
 				C9A2FD071A5D68D800B92463 /* SoundBank */,
 				C989F1F619AF0A6B002608F7 /* Assets */,
 				C989F2A719AF0A8E002608F7 /* KZPMusicKeyboardView.xib */,
 				C989F2A819AF0A8E002608F7 /* KZPMusicKeyboardViewController.h */,
 				C989F2A919AF0A8E002608F7 /* KZPMusicKeyboardViewController.m */,
-				C989F2AC19AF0A8E002608F7 /* KZPMusicKeyboardManager.h */,
-				C989F2AD19AF0A8E002608F7 /* KZPMusicKeyboardManager.m */,
+				C989F2AC19AF0A8E002608F7 /* KZPMusicKeyboard.h */,
+				C989F2AD19AF0A8E002608F7 /* KZPMusicKeyboard.m */,
 				C989F2AE19AF0A8E002608F7 /* KZPMusicTextField.h */,
 				C989F2AF19AF0A8E002608F7 /* KZPMusicTextField.m */,
 				C989F2BC19AF0C2F002608F7 /* UIView+frameOperations.h */,
@@ -477,6 +499,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1EFF8611C142C7E005636E5 /* KZPMusicDurationData.h in Headers */,
+				A1EFF8661C142C9B005636E5 /* KZPMusicPitchData.h in Headers */,
 				C9A2FD0E1A5D68D800B92463 /* SoundBankPlayer.h in Headers */,
 				C9A2FD0D1A5D68D800B92463 /* OpenALSupport.h in Headers */,
 			);
@@ -702,8 +726,10 @@
 				C989F2B119AF0A8E002608F7 /* KZPMusicKeyboardViewController.m in Sources */,
 				C989F1D719AF07AC002608F7 /* ViewController.m in Sources */,
 				C9A2FD0F1A5D68D800B92463 /* SoundBankPlayer.m in Sources */,
-				C989F2B319AF0A8E002608F7 /* KZPMusicKeyboardManager.m in Sources */,
+				A1EFF8671C142C9B005636E5 /* KZPMusicPitchData.m in Sources */,
+				C989F2B319AF0A8E002608F7 /* KZPMusicKeyboard.m in Sources */,
 				C989F2B419AF0A8E002608F7 /* KZPMusicTextField.m in Sources */,
+				A1EFF8621C142C7E005636E5 /* KZPMusicDurationData.m in Sources */,
 				C989F1D119AF07AC002608F7 /* AppDelegate.m in Sources */,
 				C9A2FD0C1A5D68D800B92463 /* OpenALSupport.c in Sources */,
 				C989F1CD19AF07AC002608F7 /* main.m in Sources */,
@@ -716,6 +742,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C989F1EC19AF07AC002608F7 /* KZPMusicKeyboardTests.m in Sources */,
+				A1EFF8681C142C9B005636E5 /* KZPMusicPitchData.m in Sources */,
+				A1EFF8631C142C7E005636E5 /* KZPMusicDurationData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
