@@ -54,6 +54,7 @@
 - (void)loadKeyboardMap
 {
     self.keyboardMapViewController = [[KZPMusicKeyboardMapViewController alloc] initWithNibName:@"KZPMusicKeyboardMapView" bundle:nil];
+    self.keyboardMapViewController.delegate = self;
     [self.keyboardMapViewController.view setFrameY:42];
     [self.view addSubview:self.keyboardMapViewController.view];
 }
