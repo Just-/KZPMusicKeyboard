@@ -44,7 +44,7 @@ static KZPMusicKeyboard *keyboardInstance;
 }
 
 
-#pragma mark - Show / Hide -
+#pragma mark - Interface -
 
 - (void)show
 {

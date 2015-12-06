@@ -69,4 +69,4 @@ By default the keyboard will display all of its controls and make them active. B
 	[keyboard show];
 ```
 
-In this case, because none of the additional controls are active and chord sensitivity is fixed programmatically, the keyboard's top ribbon is hidden automatically. 
+In this case, because none of the additional controls are active and chord sensitivity is fixed programmatically, the keyboard's top ribbon of controls is hidden automatically. 
