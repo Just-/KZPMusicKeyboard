@@ -9,8 +9,14 @@
 #import "ViewController.h"
 #import "KZPMusicKeyboardDelegate.h"
 
+@protocol KZPMusicKeyboardMapDelegate <NSObject>
+
+- (void)updateKeyboardPosition:(float)relativePosition;
+
+@end
+
 @interface KZPMusicKeyboardMapViewController : ViewController
 
-@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
+@property (weak, nonatomic) id<KZPMusicKeyboardMapDelegate> delegate;
 
 @end

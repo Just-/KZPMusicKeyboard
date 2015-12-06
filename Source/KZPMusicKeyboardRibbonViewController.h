@@ -8,9 +8,14 @@
 
 #import "ViewController.h"
 #import "KZPMusicKeyboardDelegate.h"
+#import "KZPMusicSciNotation.h"
 
 @interface KZPMusicKeyboardRibbonViewController : ViewController
 
 @property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
+
+- (MusicSpelling)selectedAccidental;
+- (void)resetSpelling;
+- (unsigned int)selectedDuration;
 
 @end

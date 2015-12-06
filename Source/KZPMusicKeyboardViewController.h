@@ -38,8 +38,5 @@ typedef enum {
 - (void)panToRangeWithCenterNote:(NSUInteger)noteID animated:(BOOL)animated;
 
 - (IBAction)keyButtonPressed:(id)sender;
-- (IBAction)durationButtonPress:(id)sender;
-- (IBAction)durationButtonTouch:(id)sender;
-- (IBAction)accidentalButtonPress:(id)sender;
 
 @end

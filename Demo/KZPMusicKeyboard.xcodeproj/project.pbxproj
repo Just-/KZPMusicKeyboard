@@ -264,7 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				A1EFF8C31C145BBD005636E5 /* KZPMusicKeyboardDelegate.h */,
-				A1EFF8C51C145CE3005636E5 /* Data Aggregator */,
+				A1EFF8C51C145CE3005636E5 /* Music Data Aggregator */,
 				A1EFF8BA1C145A26005636E5 /* Spelling Surface */,
 				A1EFF8B91C145A12005636E5 /* Keyboard Map Ribbon */,
 				A1EFF8B41C145756005636E5 /* Main Interface */,
@@ -331,13 +331,13 @@
 			name = "Spelling Surface";
 			sourceTree = "<group>";
 		};
-		A1EFF8C51C145CE3005636E5 /* Data Aggregator */ = {
+		A1EFF8C51C145CE3005636E5 /* Music Data Aggregator */ = {
 			isa = PBXGroup;
 			children = (
 				A1EFF8CA1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.h */,
 				A1EFF8CB1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.m */,
 			);
-			name = "Data Aggregator";
+			name = "Music Data Aggregator";
 			sourceTree = "<group>";
 		};
 		C989F1B419AF07AB002608F7 = {

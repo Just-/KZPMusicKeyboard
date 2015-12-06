@@ -47,6 +47,16 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="91.5" y="588"/>
         </view>
+        <tapGestureRecognizer id="Pfu-lb-PoD">
+            <connections>
+                <action selector="keyboardMapTapped:" destination="-1" id="vIq-Eg-BY4"/>
+            </connections>
+        </tapGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="qNI-cc-54b">
+            <connections>
+                <action selector="keyboardMapPanned:" destination="-1" id="ICO-dd-neT"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
     <resources>
         <image name="keyboard_map.jpeg" width="600" height="72"/>

@@ -49,7 +49,7 @@
     self.keyboard.shouldAnimate = [self.shouldAnimateSwitch isOn];
     self.keyboard.sendNoteOff = [self.sendNoteOffSwitch isOn];
     self.keyboard.allowPitchControl = [self.enablePitchControlSwitch isOn];
-    self.keyboard.polyphonic = [self.polyphonicSwitch isOn];
+    self.keyboard.useChordDetection = [self.polyphonicSwitch isOn];
     self.keyboard.allowSpelling = [self.enableSpellingSwitch isOn];
     self.keyboard.useDurationControls = [self.enableDurationControlsSwitch isOn];
     self.keyboard.durationControlsActive = [self.durationControlsActiveSwitch isOn];

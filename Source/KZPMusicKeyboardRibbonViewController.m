@@ -7,7 +7,6 @@
 //
 
 #import "KZPMusicKeyboardRibbonViewController.h"
-#import "KZPMusicSciNotation.h"
 
 @interface KZPMusicKeyboardRibbonViewController ()
 

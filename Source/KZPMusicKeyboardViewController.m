@@ -10,9 +10,11 @@
 #import "UIView+frameOperations.h"
 #import "KZPMusicKeyboardAudio.h"
 #import "KZPMusicSciNotation.h"
+#import "KZPMusicKeyboardMapViewController.h"
+#import "KZPMusicKeyboardRibbonViewController.h"
 #import "UIView+frameOperations.h"
 
-@interface KZPMusicKeyboardViewController ()
+@interface KZPMusicKeyboardViewController () <KZPMusicKeyboardMapDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *keyboardMainView;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyButtons;
@@ -20,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIView *keyboardDefocusView;
 
 @property (strong, nonatomic) KZPMusicKeyboardAudio *localAudio;
+@property (strong, nonatomic) KZPMusicKeyboardRibbonViewController *controlRibbon;
 
 @end
 
@@ -31,23 +34,23 @@
 //    return _spellingButtons;
 //}
 //
-//- (NSMutableArray *)noteIDs
-//{
-//    if (!_noteIDs) _noteIDs = [NSMutableArray array];
-//    return _noteIDs;
-//}
-//
-//- (NSMutableArray *)inputTypes
-//{
-//    if (!_inputTypes) _inputTypes = [NSMutableArray array];
-//    return _inputTypes;
-//}
+
 //
 //- (NSMutableArray *)spellings
 //{
 //    if (!_spellings) _spellings = [NSMutableArray array];
 //    return _spellings;
 //}
+
+
+#pragma mark - KZPMusicKeyboardMapDelegate -
+
+- (void)updateKeyboardPosition:(float)relativePosition
+{
+    [self.keyboardMainView setFrameX:-( (self.keyboardMainView.frame.size.width - self.view.frame.size.width) * relativePosition )];
+}
+
+#pragma mark -
 
 
 - (void)setKeyboardEnabled:(BOOL)keyboardEnabled
@@ -58,10 +61,7 @@
     } else {
         self.keyboardDefocusView.hidden = NO;
         self.keyboardDefocusView.alpha = 0.5;
-        for (UIButton *accidental in self.accidentalButtons) {
-            accidental.selected = NO;
-            accidental.layer.opacity = 0.5;
-        }
+        [self.controlRibbon resetSpelling];
     }
     _keyboardEnabled = keyboardEnabled;
 }
