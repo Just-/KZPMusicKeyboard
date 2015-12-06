@@ -7,20 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KZPMusicKeyboard.h"
 
-@interface ViewController : UIViewController <KZPMusicKeyboardDelegate>
-
-@property (weak, nonatomic) IBOutlet KZPMusicTextField *musicTextFieldIB;
-
-@property (strong, nonatomic) KZPMusicTextField *musicTextField;
-@property (weak, nonatomic) IBOutlet UIView *middlePanel;
-
-- (IBAction)showKeyboard:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *showKeyboardButton;
-@property (weak, nonatomic) IBOutlet UILabel *outputLabel;
-@property (weak, nonatomic) IBOutlet UIView *textFieldFrame;
-
+@interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *spellingTextView;
 @property (weak, nonatomic) IBOutlet UITextView *pitchTextView;

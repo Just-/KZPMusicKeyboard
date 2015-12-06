@@ -9,7 +9,6 @@
 #import "KZPMusicKeyboard.h"
 #import "UIView+frameOperations.h"
 #import "AGWindowView.h"
-#import "KZPMusicTextField.h"
 
 @interface KZPMusicKeyboard ()
 

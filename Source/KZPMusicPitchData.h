@@ -10,4 +10,7 @@
 
 @interface KZPMusicPitchData : NSObject
 
+@property (strong, readonly) NSArray *spellings;
+@property (strong, readonly) NSArray *noteValues;
+
 @end

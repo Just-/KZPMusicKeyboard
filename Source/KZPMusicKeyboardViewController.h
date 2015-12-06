@@ -35,16 +35,9 @@ typedef enum {
 
 @protocol KZPMusicKeyboardDelegate <NSObject>
 
-@optional
 - (void)musicKeyboardDidPitchData:(KZPMusicPitchData *)pitchData withDurationData:(KZPMusicDurationData *)durationoData;
-                    inputType:(NSArray *)type
-                     spelling:(NSArray *)spelling
-                     duration:(NSNumber *)duration
-                       dotted:(BOOL)dotted
-                         tied:(BOOL)tied
-                   midiPacket:(NSArray *)MIDI
-                    oscPacket:(NSArray *)OSC;
 
+@optional
 - (void)keyboardWasDismissed;
 - (void)keyboardDidSendBackspace;
 

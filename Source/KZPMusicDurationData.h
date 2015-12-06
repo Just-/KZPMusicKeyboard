@@ -10,4 +10,8 @@
 
 @interface KZPMusicDurationData : NSObject
 
+@property (nonatomic, readonly, getter=isRest) BOOL rest;
+@property (nonatomic, readonly, getter=isTiedForward) BOOL tiedForward;
+@property (nonatomic, readonly, getter=isDotted) BOOL dotted;
+
 @end
