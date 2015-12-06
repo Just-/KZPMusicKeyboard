@@ -27,29 +27,21 @@
 
 @implementation KZPMusicKeyboardRibbonViewController
 
-- (void)loadView
+- (void)viewDidLoad
 {
-    [super loadView];
-    NSLog(@"loaded view");
-}
-
-- (void)viewDidLoad {
-    
     [super viewDidLoad];
     
-    NSLog(@"loaded view: %@", self.view);
+    for (UIButton *keyboardControl in self.keyboardControlButtons) {
+        keyboardControl.layer.borderWidth = 1.0;
+        keyboardControl.layer.cornerRadius = 5.0;
+        keyboardControl.clipsToBounds = YES;
+        keyboardControl.layer.borderColor = [UIColor darkGrayColor].CGColor;
+        if (keyboardControl != self.backspaceButton && keyboardControl != self.dismissButton) {
+            keyboardControl.layer.opacity = 0.5;
+        }
+    }
     
-//    for (UIButton *keyboardControl in self.keyboardControlButtons) {
-//        keyboardControl.layer.borderWidth = 1.0;
-//        keyboardControl.layer.cornerRadius = 5.0;
-//        keyboardControl.clipsToBounds = YES;
-//        keyboardControl.layer.borderColor = [UIColor darkGrayColor].CGColor;
-//        if (keyboardControl != self.backspaceButton && keyboardControl != self.dismissButton) {
-//            keyboardControl.layer.opacity = 0.5;
-//        }
-//    }
-//    
-//        [self chordThresholdSliderValueChanged:self.chordThresholdSlider];
+    [self chordThresholdSliderValueChanged:self.chordThresholdSlider];
 }
 
 
