@@ -12,7 +12,9 @@
 #import "KZPMusicSciNotation.h"
 #import "KZPMusicKeyboardMapViewController.h"
 #import "KZPMusicKeyboardRibbonViewController.h"
+#import "KZPMusicKeyboardDataAggregator.h"
 #import "UIView+frameOperations.h"
+#import "KZPMusicKeyboardSpellingViewController.h"
 
 @interface KZPMusicKeyboardViewController () <KZPMusicKeyboardMapDelegate>
 
@@ -24,31 +26,24 @@
 @property (strong, nonatomic) KZPMusicKeyboardAudio *localAudio;
 @property (strong, nonatomic) KZPMusicKeyboardRibbonViewController *controlRibbon;
 
+@property (strong, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
+@property (strong, nonatomic) KZPMusicKeyboardSpellingViewController *spellingSurface;
+
+@property (strong, nonatomic) KZPMusicKeyboardMapViewController *keyboardMapViewController;
+
 @end
 
 @implementation KZPMusicKeyboardViewController
 
-//- (NSMutableDictionary *)spellingButtons
-//{
-//    if (!_spellingButtons) _spellingButtons = [NSMutableDictionary dictionary];
-//    return _spellingButtons;
-//}
-//
-
-//
-//- (NSMutableArray *)spellings
-//{
-//    if (!_spellings) _spellings = [NSMutableArray array];
-//    return _spellings;
-//}
-
 
 #pragma mark - KZPMusicKeyboardMapDelegate -
+
 
 - (void)updateKeyboardPosition:(float)relativePosition
 {
     [self.keyboardMainView setFrameX:-( (self.keyboardMainView.frame.size.width - self.view.frame.size.width) * relativePosition )];
 }
+
 
 #pragma mark -
 
@@ -69,41 +64,48 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.soundBankPlayer = [[SoundBankPlayer alloc] init];
-    [self.soundBankPlayer setSoundBank:[self.toneSelector titleForSegmentAtIndex:[self.toneSelector selectedSegmentIndex]]];
     
-    for (UIButton *keyButton in self.keyButtons) {
-        [keyButton addTarget:self action:@selector(keyButtonReleased:) forControlEvents:UIControlEventTouchUpInside];
-        [keyButton addTarget:self action:@selector(keyButtonReleased:) forControlEvents:UIControlEventTouchUpOutside];
-        
-        //  What about drag events?
-    }
+    self.localAudio = [[KZPMusicKeyboardAudio alloc] init];
+    self.localAudio.patch = [self.controlRibbon selectedPatch];
     
-    self.mapRegionVisible.layer.borderWidth = 2.0;
-    self.mapRegionVisible.layer.borderColor = [UIColor yellowColor].CGColor;
+    [self setupKeyReleaseAction];
+    [self setupDefocusView];
+}
+
+- (void)setupDefocusView
+{
     self.keyboardDefocusView.hidden = YES;
     self.keyboardDefocusView.alpha = 0.0;
     UITapGestureRecognizer *refocusGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refocusKeyboard)];
     [self.keyboardDefocusView addGestureRecognizer:refocusGesture];
-
-    [self aggregatorThresholdSliderValueChanged:self.aggregatorThresholdSlider];
 }
 
-- (IBAction)toneSelected:(id)sender {
-    self.soundBankPlayer = [[SoundBankPlayer alloc] init];
-    [self.soundBankPlayer setSoundBank:[self.toneSelector titleForSegmentAtIndex:[self.toneSelector selectedSegmentIndex]]];
+- (void)recenter
+{
+    [self.keyboardMapViewController panToRangeWithCenterNote:60 animated:NO];
+}
+
+- (void)setupKeyReleaseAction
+{
+    for (UIButton *keyButton in self.keyButtons) {
+        [keyButton addTarget:self action:@selector(keyButtonReleased:) forControlEvents:UIControlEventTouchUpInside];
+        [keyButton addTarget:self action:@selector(keyButtonReleased:) forControlEvents:UIControlEventTouchUpOutside];
+        
+        // TODO: What about drag events?
+    }
 }
 
 
-
-
-
-
-
-
-
-
-#pragma mark - Pitch -
+- (void)refocusKeyboard
+{
+    if (!self.keyboardEnabled) return;
+    
+    [self.musicDataAggregator reset];
+    [self.controlRibbon resetDuration];
+    [self.spellingSurface dismissWithCompletion:^{
+        self.keyboardDefocusView.hidden = YES;
+    }];
+}
 
 
 // TODO: separate note on/off eventually
@@ -114,27 +116,6 @@
     [self.musicDataAggregator receiveDuration:[self.controlRibbon selectedDuration]];
     [self.musicDataAggregator receiveSpelling:[self.controlRibbon selectedAccidental]];
     [self.controlRibbon resetSpelling];
-    
-    
-
-    
-    [self.noteIDs addObject:@(noteID)];
-    [self.inputTypes addObject:@(KBD__NOTE_ON)];
-    if (selectedAccidental) [self.spellings addObject:selectedAccidental];
-    self.selectedDuration = selectedDuration;
-    
-    [self.chordTimer invalidate];
-    
-    if (self.chordsEnabled) {
-        NSUInteger sliderSetting = (NSUInteger)round([self.aggregatorThresholdSlider value]);
-        self.chordTimer = [NSTimer scheduledTimerWithTimeInterval:(double)sliderSetting / 1000
-                                                           target:self
-                                                         selector:@selector(flushAggregatedNoteInformation)
-                                                         userInfo:nil
-                                                          repeats:NO];
-    } else {
-        [self flushAggregatedNoteInformation];
-    }
 }
 
 - (IBAction)keyButtonReleased:(id)sender
@@ -142,18 +123,5 @@
     NSUInteger noteID = [sender tag];
     [self.localAudio noteOff:noteID];
 }
-
-
-
-#pragma mark - Rhythm -
-
-
-
-
-
-
-
-
-
 
 @end

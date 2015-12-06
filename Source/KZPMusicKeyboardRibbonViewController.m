@@ -39,42 +39,44 @@
             keyboardControl.layer.opacity = 0.5;
         }
     }
+    
+        [self chordThresholdSliderValueChanged:self.chordThresholdSlider];
 }
 
 
-- (void)setRhythmControlsEnabled:(BOOL)rhythmControlsEnabled
-{
-    for (UIButton *duration in self.durationButtons) {
-        duration.selected = NO;
-        duration.layer.opacity = 0.5;
-    }
-    if (rhythmControlsEnabled) {
-        for (UIButton *duration in self.durationButtons) {
-            if ([duration tag] == 1) {
-                duration.selected = YES;
-                duration.layer.opacity = 1.0;
-            }
-        }
-    }
-    _rhythmControlsEnabled = rhythmControlsEnabled;
-}
+//- (void)setRhythmControlsEnabled:(BOOL)rhythmControlsEnabled
+//{
+//    for (UIButton *duration in self.durationButtons) {
+//        duration.selected = NO;
+//        duration.layer.opacity = 0.5;
+//    }
+//    if (rhythmControlsEnabled) {
+//        for (UIButton *duration in self.durationButtons) {
+//            if ([duration tag] == 1) {
+//                duration.selected = YES;
+//                duration.layer.opacity = 1.0;
+//            }
+//        }
+//    }
+//    _rhythmControlsEnabled = rhythmControlsEnabled;
+//}
 
 
 #pragma mark - Actions -
 
 
 - (IBAction)accidentalButtonPress:(id)sender {
-    if (!self.keyboardEnabled) return;
-    
-    UIButton *accidentalButton = (UIButton*)sender;
-    for (UIButton *accidental in self.accidentalButtons) {
-        if (accidental == accidentalButton) {
-            accidentalButton.selected = !accidentalButton.selected;
-        } else {
-            accidental.selected = NO;
-        }
-        accidental.layer.opacity = accidental.selected ? 1.0 : 0.5;
-    }
+//    if (!self.keyboardEnabled) return;
+//    
+//    UIButton *accidentalButton = (UIButton*)sender;
+//    for (UIButton *accidental in self.accidentalButtons) {
+//        if (accidental == accidentalButton) {
+//            accidentalButton.selected = !accidentalButton.selected;
+//        } else {
+//            accidental.selected = NO;
+//        }
+//        accidental.layer.opacity = accidental.selected ? 1.0 : 0.5;
+//    }
 }
 
 - (IBAction)backButtonPressed:(id)sender {
@@ -92,109 +94,114 @@
 
 - (IBAction)durationButtonPress:(id)sender
 {
-    if (!self.rhythmControlsEnabled) return;
+//    if (!self.rhythmControlsEnabled) return;
     
     // Rhythm controls are treated as settings for pitch durations
-    if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
-        UIButton *durationButton = (UIButton*)sender;
-        
-        for (UIButton *duration in self.durationButtons) {
-            if (duration == durationButton) {
-                durationButton.selected = !durationButton.selected;
-            } else {
-                if (duration.selected) {
-                    self.dotButton.selected = NO;
-                    self.dotButton.layer.opacity = 0.5;
-                }
-                duration.selected = NO;
-            }
-            duration.layer.opacity = duration.selected ? 1.0 : 0.5;
-        }
-    }
+//    if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
+//        UIButton *durationButton = (UIButton*)sender;
+//        
+//        for (UIButton *duration in self.durationButtons) {
+//            if (duration == durationButton) {
+//                durationButton.selected = !durationButton.selected;
+//            } else {
+//                if (duration.selected) {
+//                    self.dotButton.selected = NO;
+//                    self.dotButton.layer.opacity = 0.5;
+//                }
+//                duration.selected = NO;
+//            }
+//            duration.layer.opacity = duration.selected ? 1.0 : 0.5;
+//        }
+//    }
     
     // Rhythm controls are used to express rhythms on their own, without pitch information
-    else {
-        [(UIButton *)sender layer].opacity = 0.5;
-        int duration = [(UIButton *)sender tag];
-        if (self.restButton.selected) {
-            duration = -duration;
-        }
-        NSNumber *selectedDuration = @(duration);
-        [self.delegate keyboardDidSendSignal:nil
-                                   inputType:nil
-                                    spelling:nil
-                                    duration:selectedDuration
-                                      dotted:self.dotButton.selected
-                                        tied:self.tieButton.selected
-                                  midiPacket:nil
-                                   oscPacket:nil];
-        
-    }
+//    else {
+//        [(UIButton *)sender layer].opacity = 0.5;
+//        int duration = [(UIButton *)sender tag];
+//        if (self.restButton.selected) {
+//            duration = -duration;
+//        }
+//        NSNumber *selectedDuration = @(duration);
+//        [self.delegate keyboardDidSendSignal:nil
+//                                   inputType:nil
+//                                    spelling:nil
+//                                    duration:selectedDuration
+//                                      dotted:self.dotButton.selected
+//                                        tied:self.tieButton.selected
+//                                  midiPacket:nil
+//                                   oscPacket:nil];
+//        
+//    }
     
 }
 
 - (IBAction)durationButtonTouch:(id)sender {
-    if (self.rhythmControlsEnabled) {
-        [(UIButton *)sender layer].opacity = 1.0;
-    }
+//    if (self.rhythmControlsEnabled) {
+//        [(UIButton *)sender layer].opacity = 1.0;
+//    }
+}
+
+- (IBAction)toneSelected:(id)sender {
+//    self.soundBankPlayer = [[SoundBankPlayer alloc] init];
+//    [self.soundBankPlayer setSoundBank:[self.toneSelector titleForSegmentAtIndex:[self.toneSelector selectedSegmentIndex]]];
 }
 
 - (IBAction)dotButtonPress:(id)sender
 {
-    if (!self.rhythmControlsEnabled) return;
-    self.dotButton.selected = !self.dotButton.selected;
-    self.dotButton.layer.opacity = self.dotButton.selected ? 1.0 : 0.5;
+//    if (!self.rhythmControlsEnabled) return;
+//    self.dotButton.selected = !self.dotButton.selected;
+//    self.dotButton.layer.opacity = self.dotButton.selected ? 1.0 : 0.5;
 }
 
 - (IBAction)tieButtonPress:(id)sender
 {
-    if (!self.rhythmControlsEnabled) return;
+//    if (!self.rhythmControlsEnabled) return;
     self.tieButton.selected = !self.tieButton.selected;
     self.tieButton.layer.opacity = self.tieButton.selected ? 1.0 : 0.5;
 }
 
 - (IBAction)restButtonPress:(id)sender
 {
-    if (!self.rhythmControlsEnabled) return;
+//    if (!self.rhythmControlsEnabled) return;
     
     self.tieButton.selected = NO;
     self.tieButton.layer.opacity = 0.5;
     
     // Rest is acknowledged immediately
-    if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
-        [(UIButton *)sender layer].opacity = 0.5;
-        for (UIButton *duration in self.durationButtons) {
-            if (duration.selected) {
-                NSNumber *selectedDuration = @(-[duration tag]);
-                [self.delegate keyboardDidSendSignal:nil
-                                           inputType:nil
-                                            spelling:nil
-                                            duration:selectedDuration
-                                              dotted:self.dotButton.selected
-                                                tied:NO
-                                          midiPacket:nil
-                                           oscPacket:nil];
-            }
-        }
-    }
-    
-    // Rest is treated as a toggle
-    else if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Active) {
-        self.restButton.selected = !self.restButton.selected;
-        self.restButton.layer.opacity = self.restButton.selected ? 1.0 : 0.5;
-    }
+//    if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
+//        [(UIButton *)sender layer].opacity = 0.5;
+//        for (UIButton *duration in self.durationButtons) {
+//            if (duration.selected) {
+//                NSNumber *selectedDuration = @(-[duration tag]);
+//                [self.delegate keyboardDidSendSignal:nil
+//                                           inputType:nil
+//                                            spelling:nil
+//                                            duration:selectedDuration
+//                                              dotted:self.dotButton.selected
+//                                                tied:NO
+//                                          midiPacket:nil
+//                                           oscPacket:nil];
+//            }
+//        }
+//    }
+//    
+//    // Rest is treated as a toggle
+//    else if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Active) {
+//        self.restButton.selected = !self.restButton.selected;
+//        self.restButton.layer.opacity = self.restButton.selected ? 1.0 : 0.5;
+//    }
     
 }
 
 - (IBAction)restButtonTouch:(id)sender {
-    if (self.rhythmControlsEnabled) {
-        [(UIButton *)sender layer].opacity = 1.0;
-    }
+//    if (self.rhythmControlsEnabled) {
+//        [(UIButton *)sender layer].opacity = 1.0;
+//    }
 }
 
-- (IBAction)aggregatorThresholdSliderValueChanged:(id)sender {
+- (IBAction)chordThresholdSliderValueChanged:(id)sender {
     NSUInteger sliderSetting = (NSUInteger)round([(UISlider *)sender value]);
-    self.aggregatorThresholdLabel.text = [NSString stringWithFormat:@"Chord: %dms", sliderSetting];
+    self.chordThresholdLabel.text = [NSString stringWithFormat:@"Chord: %dms", sliderSetting];
 }
 
 - (MusicSpelling)selectedAccidental {
@@ -214,6 +221,14 @@
     }
 }
 
+- (void)resetDuration
+{
+    self.tieButton.selected = NO;
+    self.tieButton.layer.opacity = 0.5;
+    self.manualSpellButton.selected = NO;
+    self.manualSpellButton.layer.opacity = 0.5;
+}
+
 - (unsigned int)selectedDuration
 {
     for (UIButton *duration in self.durationButtons) {
@@ -224,5 +239,9 @@
     return 0;
 }
 
+- (NSString *)selectedPatch
+{
+    return [self.toneSelector titleForSegmentAtIndex:[self.toneSelector selectedSegmentIndex]];
+}
 
 @end

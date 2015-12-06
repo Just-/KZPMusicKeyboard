@@ -19,4 +19,6 @@
 
 @property (weak, nonatomic) id<KZPMusicKeyboardMapDelegate> delegate;
 
+- (void)panToRangeWithCenterNote:(NSUInteger)noteID animated:(BOOL)animated;
+
 @end

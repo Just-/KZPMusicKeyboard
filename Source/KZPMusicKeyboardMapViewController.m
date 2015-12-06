@@ -20,6 +20,12 @@
 
 @implementation KZPMusicKeyboardMapViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.mapRegionVisible.layer.borderWidth = 2.0;
+    self.mapRegionVisible.layer.borderColor = [UIColor yellowColor].CGColor;
+}
 
 #pragma mark - Actions -
 

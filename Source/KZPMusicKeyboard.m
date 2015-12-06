@@ -41,6 +41,7 @@ static KZPMusicKeyboard *keyboardInstance;
 - (void)setDelegate:(id<KZPMusicKeyboardDelegate>)delegate
 {
     self.keyboardViewController.delegate = delegate;
+    _delegate = delegate;
 }
 
 

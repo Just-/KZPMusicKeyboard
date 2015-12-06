@@ -7,6 +7,7 @@
 //
 
 #import "KZPMusicKeyboardSpellingViewController.h"
+#import "KZPMusicSciNotation.h"
 
 @interface KZPMusicKeyboardSpellingViewController ()
 
@@ -21,6 +22,20 @@
 
 @implementation KZPMusicKeyboardSpellingViewController
 
+//- (NSMutableDictionary *)spellingButtons
+//{
+//    if (!_spellingButtons) _spellingButtons = [NSMutableDictionary dictionary];
+//    return _spellingButtons;
+//}
+//
+
+//
+//- (NSMutableArray *)spellings
+//{
+//    if (!_spellings) _spellings = [NSMutableArray array];
+//    return _spellings;
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -33,31 +48,7 @@
     
 }
 
-- (void)refocusKeyboard
-{
-    if (!self.keyboardEnabled) return;
-    
-    [self resetAggregation];
-    
-    [UIView animateWithDuration:0.2 animations:^{
-        self.keyboardDefocusView.alpha = 0.0;
-        for (NSArray *buttonSet in [self.spellingButtons allValues]) {
-            for (UIButton *button in buttonSet) {
-                button.alpha = 0.0;
-            }
-        }
-        
-    } completion:^(BOOL finished) {
-        self.keyboardDefocusView.hidden = YES;
-        for (NSArray *buttonSet in [self.spellingButtons allValues]) {
-            for (UIButton *button in buttonSet) {
-                [button removeFromSuperview];
-            }
-        }
-    }];
-    
-    self.spellingButtons = nil;
-}
+
 
 #pragma mark - Manual Spelling -
 
@@ -72,9 +63,9 @@
 
 - (void)displayAccidentalOptionsForNoteID:(int)noteID
 {
-    self.keyboardDefocusView.hidden = NO;
+    self.spellingSurface.hidden = NO;
     [UIView animateWithDuration:0.2 animations:^{
-        self.keyboardDefocusView.alpha = 0.3;
+        self.spellingSurface.alpha = 0.3;
     }];
     
     int order[5] = {-2, 2, -1, 1, 0};
@@ -97,9 +88,9 @@
     }
     
     UIButton *key;
-    for (UIButton *k in self.keyButtons) {
-        if ([k tag] == noteID) key = k;
-    }
+//    for (UIButton *k in self.keyButtons) {
+//        if ([k tag] == noteID) key = k;
+//    }
     
     CGRect keyFrame = [key frame];
     NSMutableArray *spellingButtons = [NSMutableArray array];
@@ -127,8 +118,8 @@
             }];
             buttonCount++;
             [spellingButtons addObject:button];
-            [self.keyboardMainView addSubview:button];
-            [self.keyboardMainView bringSubviewToFront:button];
+            [self.spellingSurface addSubview:button];
+            [self.spellingSurface bringSubviewToFront:button];
         }
     }
     
@@ -160,16 +151,37 @@
     
     // Reflush note info with chosen accidentals
     self.spellingButtons = nil;
-    self.manualSpellButton.selected = NO;
-    self.manualSpellButton.layer.opacity = 0.5;
-    self.noteIDs = [NSMutableArray arrayWithArray:[self.spellingChoices allKeys]];
-    self.spellings = [NSMutableArray arrayWithArray:[self.spellingChoices allValues]];
-    [self flushAggregatedNoteInformation];
-    
+//    self.manualSpellButton.selected = NO;
+//    self.manualSpellButton.layer.opacity = 0.5;
+//    self.noteIDs = [NSMutableArray arrayWithArray:[self.spellingChoices allKeys]];
+//    self.spellings = [NSMutableArray arrayWithArray:[self.spellingChoices allValues]];
+//    [self flushAggregatedNoteInformation];
+//    
+//    [UIView animateWithDuration:0.2 animations:^{
+//        self.keyboardDefocusView.alpha = 0.0;
+//    } completion:^(BOOL finished) {
+//        self.keyboardDefocusView.hidden = YES;
+//    }];
+}
+
+- (void)dismissWithCompletion:(void (^)())completionBlock
+{
     [UIView animateWithDuration:0.2 animations:^{
-        self.keyboardDefocusView.alpha = 0.0;
+        self.spellingSurface.alpha = 0.0;
+        for (NSArray *buttonSet in [self.spellingButtons allValues]) {
+            for (UIButton *button in buttonSet) {
+                button.alpha = 0.0;
+            }
+        }
+        
     } completion:^(BOOL finished) {
-        self.keyboardDefocusView.hidden = YES;
+        for (NSArray *buttonSet in [self.spellingButtons allValues]) {
+            for (UIButton *button in buttonSet) {
+                [button removeFromSuperview];
+            }
+        }
+        self.spellingButtons = nil;
+        completionBlock();
     }];
 }
 

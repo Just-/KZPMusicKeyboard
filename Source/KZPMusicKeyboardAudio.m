@@ -10,4 +10,20 @@
 
 @implementation KZPMusicKeyboardAudio
 
+- (void)setPatch:(NSString *)patch
+{
+    _patch = patch;
+    // Load patch
+}
+
+- (void)noteOn:(NSUInteger)noteID
+{
+    
+}
+
+- (void)noteOff:(NSUInteger)noteID
+{
+    
+}
+
 @end

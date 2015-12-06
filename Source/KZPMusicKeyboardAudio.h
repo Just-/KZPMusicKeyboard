@@ -10,4 +10,9 @@
 
 @interface KZPMusicKeyboardAudio : NSObject
 
+@property (strong, nonatomic) NSString *patch;
+
+- (void)noteOn:(NSUInteger)noteID;
+- (void)noteOff:(NSUInteger)noteID;
+
 @end

@@ -15,11 +15,6 @@ typedef enum {
 } SpellingOperation;
 
 typedef enum {
-    KBD__NOTE_ON,
-    KBD__NOTE_OFF
-} inputType;
-
-typedef enum {
     KZPMusicKeyboardRhythmMode_Passive,   // Rhythm is set prior to applying to pitch data
     KZPMusicKeyboardRhythmMode_Active     // Rhythm interactions are sent as keyboard signals with null pitch data
 } KZPMusicKeyboardRhythmMode;
@@ -28,6 +23,8 @@ typedef enum {
 
 @interface KZPMusicKeyboardViewController : UIViewController
 
+@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
+
 @property (nonatomic) BOOL keyboardEnabled;
 @property (nonatomic) BOOL chordsEnabled;
 @property (nonatomic) BOOL rhythmControlsEnabled;
@@ -35,7 +32,7 @@ typedef enum {
 
 @property (nonatomic) SpellingOperation spellingOperation;
 
-- (void)panToRangeWithCenterNote:(NSUInteger)noteID animated:(BOOL)animated;
+- (void)recenter;
 
 - (IBAction)keyButtonPressed:(id)sender;
 

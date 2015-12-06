@@ -15,4 +15,6 @@
 
 @property (weak, nonatomic) UIView *spellingSurface;
 
+- (void)dismissWithCompletion:(void (^)())completionBlock;
+
 @end
