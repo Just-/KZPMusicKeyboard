@@ -10,14 +10,6 @@
 #import "KZPMusicKeyboardDelegate.h"
 
 typedef enum {
-    SP__DOUBLE_FLAT = -2,
-    SP__FLAT,
-    SP__NATURAL,
-    SP__SHARP,
-    SP__DOUBLE_SHARP
-} noteSpelling;
-
-typedef enum {
     SPELLING_OP__POST,
     SPELLING_OP__PRE
 } SpellingOperation;

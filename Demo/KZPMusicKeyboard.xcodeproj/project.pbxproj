@@ -55,6 +55,9 @@
 		A1EFF8C11C145B43005636E5 /* KZPMusicKeyboardSpellingViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF8BF1C145B43005636E5 /* KZPMusicKeyboardSpellingViewController.h */; };
 		A1EFF8C21C145B43005636E5 /* KZPMusicKeyboardSpellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8C01C145B43005636E5 /* KZPMusicKeyboardSpellingViewController.m */; };
 		A1EFF8C41C145BBD005636E5 /* KZPMusicKeyboardDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF8C31C145BBD005636E5 /* KZPMusicKeyboardDelegate.h */; };
+		A1EFF8CC1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF8CA1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.h */; };
+		A1EFF8CD1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8CB1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.m */; };
+		A1EFF8D11C14630E005636E5 /* KZPMusicKeyboardMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8D01C14630E005636E5 /* KZPMusicKeyboardMapView.xib */; };
 		C989F1C119AF07AB002608F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C019AF07AB002608F7 /* Foundation.framework */; };
 		C989F1C319AF07AC002608F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C219AF07AC002608F7 /* CoreGraphics.framework */; };
 		C989F1C519AF07AC002608F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C989F1C419AF07AC002608F7 /* UIKit.framework */; };
@@ -133,6 +136,9 @@
 		A1EFF8BF1C145B43005636E5 /* KZPMusicKeyboardSpellingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardSpellingViewController.h; path = ../Source/KZPMusicKeyboardSpellingViewController.h; sourceTree = "<group>"; };
 		A1EFF8C01C145B43005636E5 /* KZPMusicKeyboardSpellingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardSpellingViewController.m; path = ../Source/KZPMusicKeyboardSpellingViewController.m; sourceTree = "<group>"; };
 		A1EFF8C31C145BBD005636E5 /* KZPMusicKeyboardDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardDelegate.h; path = ../Source/KZPMusicKeyboardDelegate.h; sourceTree = "<group>"; };
+		A1EFF8CA1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardDataAggregator.h; path = ../Source/KZPMusicKeyboardDataAggregator.h; sourceTree = "<group>"; };
+		A1EFF8CB1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardDataAggregator.m; path = ../Source/KZPMusicKeyboardDataAggregator.m; sourceTree = "<group>"; };
+		A1EFF8D01C14630E005636E5 /* KZPMusicKeyboardMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KZPMusicKeyboardMapView.xib; path = ../Source/KZPMusicKeyboardMapView.xib; sourceTree = "<group>"; };
 		AAB1C342A76DF1A765EA10ED /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C989F1BD19AF07AB002608F7 /* KZPMusicKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KZPMusicKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C989F1C019AF07AB002608F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -258,9 +264,10 @@
 			isa = PBXGroup;
 			children = (
 				A1EFF8C31C145BBD005636E5 /* KZPMusicKeyboardDelegate.h */,
+				A1EFF8C51C145CE3005636E5 /* Data Aggregator */,
 				A1EFF8BA1C145A26005636E5 /* Spelling Surface */,
 				A1EFF8B91C145A12005636E5 /* Keyboard Map Ribbon */,
-				A1EFF8B41C145756005636E5 /* Playing Surface */,
+				A1EFF8B41C145756005636E5 /* Main Interface */,
 				A1EFF8B11C145436005636E5 /* Control Ribbon */,
 			);
 			name = Keyboard;
@@ -295,14 +302,14 @@
 			name = "Control Ribbon";
 			sourceTree = "<group>";
 		};
-		A1EFF8B41C145756005636E5 /* Playing Surface */ = {
+		A1EFF8B41C145756005636E5 /* Main Interface */ = {
 			isa = PBXGroup;
 			children = (
 				C989F2A719AF0A8E002608F7 /* KZPMusicKeyboardView.xib */,
 				C989F2A819AF0A8E002608F7 /* KZPMusicKeyboardViewController.h */,
 				C989F2A919AF0A8E002608F7 /* KZPMusicKeyboardViewController.m */,
 			);
-			name = "Playing Surface";
+			name = "Main Interface";
 			sourceTree = "<group>";
 		};
 		A1EFF8B91C145A12005636E5 /* Keyboard Map Ribbon */ = {
@@ -310,6 +317,7 @@
 			children = (
 				A1EFF8BB1C145B2E005636E5 /* KZPMusicKeyboardMapViewController.h */,
 				A1EFF8BC1C145B2E005636E5 /* KZPMusicKeyboardMapViewController.m */,
+				A1EFF8D01C14630E005636E5 /* KZPMusicKeyboardMapView.xib */,
 			);
 			name = "Keyboard Map Ribbon";
 			sourceTree = "<group>";
@@ -321,6 +329,15 @@
 				A1EFF8C01C145B43005636E5 /* KZPMusicKeyboardSpellingViewController.m */,
 			);
 			name = "Spelling Surface";
+			sourceTree = "<group>";
+		};
+		A1EFF8C51C145CE3005636E5 /* Data Aggregator */ = {
+			isa = PBXGroup;
+			children = (
+				A1EFF8CA1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.h */,
+				A1EFF8CB1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.m */,
+			);
+			name = "Data Aggregator";
 			sourceTree = "<group>";
 		};
 		C989F1B419AF07AB002608F7 = {
@@ -435,6 +452,7 @@
 				A1EFF8AC1C1452CB005636E5 /* KZPMusicKeyboardAudio.h in Headers */,
 				A1EFF8C41C145BBD005636E5 /* KZPMusicKeyboardDelegate.h in Headers */,
 				A1EFF8B71C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.h in Headers */,
+				A1EFF8CC1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.h in Headers */,
 				A1EFF8BD1C145B2E005636E5 /* KZPMusicKeyboardMapViewController.h in Headers */,
 				A1EFF8C11C145B43005636E5 /* KZPMusicKeyboardSpellingViewController.h in Headers */,
 				A1EFF8661C142C9B005636E5 /* KZPMusicPitchData.h in Headers */,
@@ -546,6 +564,7 @@
 				A1EFF8A51C144910005636E5 /* musis-rests.png in Resources */,
 				A1EFF8A11C144910005636E5 /* music-sharp.png in Resources */,
 				C989F1D419AF07AC002608F7 /* Main.storyboard in Resources */,
+				A1EFF8D11C14630E005636E5 /* KZPMusicKeyboardMapView.xib in Resources */,
 				A1EFF89E1C144910005636E5 /* music-natural.png in Resources */,
 				A1EFF88C1C144910005636E5 /* dismiss.png in Resources */,
 				A1EFF8931C144910005636E5 /* music-crotchet.png in Resources */,
@@ -628,6 +647,7 @@
 				A1EFF8B81C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.m in Sources */,
 				A1EFF8AD1C1452CB005636E5 /* KZPMusicKeyboardAudio.m in Sources */,
 				C989F1D719AF07AC002608F7 /* ViewController.m in Sources */,
+				A1EFF8CD1C145E06005636E5 /* KZPMusicKeyboardDataAggregator.m in Sources */,
 				A1EFF8671C142C9B005636E5 /* KZPMusicPitchData.m in Sources */,
 				A1EFF8BE1C145B2E005636E5 /* KZPMusicKeyboardMapViewController.m in Sources */,
 				C989F2B319AF0A8E002608F7 /* KZPMusicKeyboard.m in Sources */,

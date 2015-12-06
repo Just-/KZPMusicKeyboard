@@ -7,6 +7,7 @@
 //
 
 #import "KZPMusicKeyboardRibbonViewController.h"
+#import "KZPMusicSciNotation.h"
 
 @interface KZPMusicKeyboardRibbonViewController ()
 
@@ -29,7 +30,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    for (UIButton *keyboardControl in self.keyboardControlButtons) {
+        keyboardControl.layer.borderWidth = 1.0;
+        keyboardControl.layer.cornerRadius = 5.0;
+        keyboardControl.clipsToBounds = YES;
+        keyboardControl.layer.borderColor = [UIColor darkGrayColor].CGColor;
+        if (keyboardControl != self.backspaceButton && keyboardControl != self.dismissButton) {
+            keyboardControl.layer.opacity = 0.5;
+        }
+    }
+}
+
+
+- (void)setRhythmControlsEnabled:(BOOL)rhythmControlsEnabled
+{
+    for (UIButton *duration in self.durationButtons) {
+        duration.selected = NO;
+        duration.layer.opacity = 0.5;
+    }
+    if (rhythmControlsEnabled) {
+        for (UIButton *duration in self.durationButtons) {
+            if ([duration tag] == 1) {
+                duration.selected = YES;
+                duration.layer.opacity = 1.0;
+            }
+        }
+    }
+    _rhythmControlsEnabled = rhythmControlsEnabled;
 }
 
 
@@ -168,6 +196,33 @@
 - (IBAction)aggregatorThresholdSliderValueChanged:(id)sender {
     NSUInteger sliderSetting = (NSUInteger)round([(UISlider *)sender value]);
     self.aggregatorThresholdLabel.text = [NSString stringWithFormat:@"Chord: %dms", sliderSetting];
+}
+
+- (MusicSpelling)selectedAccidental {
+    for (UIButton *accidental in self.spellingButtons) {
+        if (accidental.selected && accidental.tag) {
+            return (MusicSpelling)[accidental tag];
+        }
+    }
+    return MusicSpelling_Natural;
+}
+
+- (void)resetSpelling
+{
+    for (UIButton *accidental in self.spellingButtons) {
+        accidental.selected = NO;
+        accidental.layer.opacity = 0.5;
+    }
+}
+
+- (unsigned int)selectedDuration
+{
+    for (UIButton *duration in self.durationButtons) {
+        if (duration.selected) {
+            return [duration tag];
+        }
+    }
+    return 0;
 }
 
 
