@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KZPMusicDurationData.h"
-#import "KZPMusicPitchData.h"
+#import "KZPMusicKeyboardDelegate.h"
 
 typedef enum {
     SP__DOUBLE_FLAT = -2,
@@ -33,20 +32,9 @@ typedef enum {
     KZPMusicKeyboardRhythmMode_Active     // Rhythm interactions are sent as keyboard signals with null pitch data
 } KZPMusicKeyboardRhythmMode;
 
-@protocol KZPMusicKeyboardDelegate <NSObject>
 
-- (void)keyboardDidSendPitchData:(KZPMusicPitchData *)pitchData
-                withDurationData:(KZPMusicDurationData *)durationData;
-
-@optional
-- (void)keyboardWasDismissed;
-- (void)keyboardDidSendBackspace;
-
-@end
 
 @interface KZPMusicKeyboardViewController : UIViewController
-
-@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
 
 @property (nonatomic) BOOL keyboardEnabled;
 @property (nonatomic) BOOL chordsEnabled;

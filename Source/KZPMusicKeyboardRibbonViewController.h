@@ -7,7 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "KZPMusicKeyboardDelegate.h"
 
 @interface KZPMusicKeyboardRibbonViewController : ViewController
+
+@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
 
 @end
