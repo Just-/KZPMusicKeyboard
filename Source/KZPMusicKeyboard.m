@@ -87,7 +87,7 @@ static KZPMusicKeyboard *keyboardInstance;
     [self.keyboardViewController.view setFrameY:[self screenHeight]];
     [self.windowView addSubview:self.keyboardViewController.view];
     
-    if (self.shouldAnimate) {
+    if ([self shouldAnimate]) {
         [UIView animateWithDuration:0.3 animations:^{
             [self moveKeyboardViewOnscreen];
         } completion:^(BOOL finished) {
@@ -110,7 +110,7 @@ static KZPMusicKeyboard *keyboardInstance;
 
 - (void)hideWithCompletion:(void (^)())completionBlock
 {
-    if (self.shouldAnimate) {
+    if ([self shouldAnimate]) {
         [UIView animateWithDuration:0.3 animations:^{
             [self moveKeyboardViewOffscreen];
         } completion:^(BOOL finished) {
@@ -157,5 +157,18 @@ static KZPMusicKeyboard *keyboardInstance;
 //    [self.windowView removeFromSuperview];
 //    self.windowView = nil;
 //}
+
+
+#pragma mark - User Settings -
+
+- (void)enableSpelling:(BOOL)setting { [self.keyboardViewController enableSpelling:setting]; }
+- (void)enablePitchControl:(BOOL)setting { [self.keyboardViewController enablePitchControl:setting]; }
+- (void)enableChordDetection:(BOOL)setting { [self.keyboardViewController enableChordDetection:setting]; }
+- (void)enableDurationControls:(BOOL)setting { [self.keyboardViewController enableDurationControls:setting]; }
+- (void)durationControlsActive:(BOOL)setting { [self.keyboardViewController durationControlsActive:setting]; }
+- (void)enableLocalAudio:(BOOL)setting { [self.keyboardViewController enableLocalAudio:setting]; }
+- (void)enableManualDismiss:(BOOL)setting { [self.keyboardViewController enableManualDismiss:setting]; }
+- (void)enableBackspaceControl:(BOOL)setting { [self.keyboardViewController enableBackspaceControl:setting]; }
+- (void)chordSensitivity:(NSUInteger)setting { [self.keyboardViewController chordSensitivity:setting]; }
 
 @end

@@ -21,9 +21,9 @@
 @property (weak, nonatomic) id<KZPMusicKeyboardDelegate> musicalDelegate;
 @property (weak, nonatomic) id<KZPMusicDataAggregatorDelegate> delegate;
 
-@property (nonatomic, getter=chordDetectionEnabled, setter=enableChordDetection:) BOOL chordDetection;
+@property (nonatomic, setter=enableChordDetection:) BOOL chordDetectionEnabled;
 @property (nonatomic) NSUInteger chordSensitivity;
-@property (nonatomic, getter=manualSpellingEnabled, setter=enableManualSpelling:) BOOL manualSpelling;
+@property (nonatomic, setter=enableManualSpelling:) BOOL manualSpellingEnabled;
 @property (nonatomic) MusicSpelling spellingBias;
 
 - (void)reset;

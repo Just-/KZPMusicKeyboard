@@ -50,14 +50,15 @@
 
 - (void)applySettings
 {
-    self.keyboard.shouldAnimate = [self.shouldAnimateSwitch isOn];
-    self.keyboard.sendNoteOff = [self.sendNoteOffSwitch isOn];
-    self.keyboard.allowPitchControl = [self.enablePitchControlSwitch isOn];
-    self.keyboard.useChordDetection = [self.polyphonicSwitch isOn];
-    self.keyboard.allowSpelling = [self.enableSpellingSwitch isOn];
-    self.keyboard.useDurationControls = [self.enableDurationControlsSwitch isOn];
-    self.keyboard.durationControlsActive = [self.durationControlsActiveSwitch isOn];
-    self.keyboard.useLocalAudio = [self.localAudioSwitch isOn];
+    [self.keyboard shouldAnimate:[self.shouldAnimateSwitch isOn]];
+    [self.keyboard enablePitchControl:[self.enablePitchControlSwitch isOn]];
+    [self.keyboard enableChordDetection:[self.polyphonicSwitch isOn]];
+    [self.keyboard enableSpelling:[self.enableSpellingSwitch isOn]];
+    [self.keyboard enableDurationControls:[self.enableDurationControlsSwitch isOn]];
+    [self.keyboard durationControlsActive:[self.durationControlsActiveSwitch isOn]];
+    [self.keyboard enableLocalAudio:[self.localAudioSwitch isOn]];
+    [self.keyboard enableManualDismiss:[self.enableManualDismissSwitch isOn]];
+    [self.keyboard enableBackspaceControl:[self.enableBackspaceSwitch isOn]];
 }
 
 - (void)enableShowKeyboard

@@ -24,7 +24,6 @@
 
 // TODO: chord sensitivity ?
 @property (weak, nonatomic) IBOutlet UISwitch *shouldAnimateSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *sendNoteOffSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *enablePitchControlSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *polyphonicSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *enableSpellingSwitch;

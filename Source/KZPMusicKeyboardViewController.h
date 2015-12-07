@@ -14,26 +14,26 @@ typedef enum {
     SPELLING_OP__PRE
 } SpellingOperation;
 
-typedef enum {
-    KZPMusicKeyboardRhythmMode_Passive,   // Rhythm is set prior to applying to pitch data
-    KZPMusicKeyboardRhythmMode_Active     // Rhythm interactions are sent as keyboard signals with null pitch data
-} KZPMusicKeyboardRhythmMode;
-
-
-
 @interface KZPMusicKeyboardViewController : UIViewController
 
-- (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate controlDelegate:(id<KZPMusicKeyboardControlDelegate>)controlDelegate;
+- (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate
+              controlDelegate:(id<KZPMusicKeyboardControlDelegate>)controlDelegate;
 
-@property (nonatomic) BOOL keyboardEnabled;
-@property (nonatomic) BOOL chordsEnabled;
-@property (nonatomic) BOOL rhythmControlsEnabled;
-@property (nonatomic) KZPMusicKeyboardRhythmMode rhythmMode;
-
-@property (nonatomic) SpellingOperation spellingOperation;
+@property (nonatomic) SpellingOperation spellingOperation; // ??
 
 - (void)recenter;
 
 - (CGFloat)height;
+
+@property (nonatomic, setter=enablePitchControl:) BOOL pitchControlEnabled;
+@property (nonatomic, setter=enableLocalAudio:) BOOL localAudioEnabled;
+
+- (void)enableSpelling:(BOOL)setting;
+- (void)enableChordDetection:(BOOL)setting;
+- (void)enableDurationControls:(BOOL)setting;
+- (void)durationControlsActive:(BOOL)setting;
+- (void)enableManualDismiss:(BOOL)setting;
+- (void)enableBackspaceControl:(BOOL)setting;
+- (void)chordSensitivity:(NSUInteger)setting;
 
 @end

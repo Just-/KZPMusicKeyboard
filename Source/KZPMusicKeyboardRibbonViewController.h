@@ -26,7 +26,11 @@
 
 @property (weak, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
 
-@property (nonatomic, setter=enableManualSpelling:, getter=manualSpellingEnabled) BOOL manualSpelling;
+@property (nonatomic, setter=enableSpelling:) BOOL spellingEnabled;
+@property (nonatomic, setter=enableDurationControls:) BOOL durationControlsEnabled;
+@property (nonatomic, setter=enableDismiss:) BOOL dismissEnabled;
+@property (nonatomic, setter=enableBackspace:) BOOL backspaceEnabled;
+@property (nonatomic) BOOL durationControlsActive;
 
 - (MusicSpelling)selectedAccidental;
 - (void)resetSpelling;

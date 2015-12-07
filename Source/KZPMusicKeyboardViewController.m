@@ -24,7 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *keyboardDefocusView;
 
-@property (strong, nonatomic) KZPMusicKeyboardAudio *localAudio;
+@property (strong, nonatomic) KZPMusicKeyboardAudio *localAudioPlayer;
 @property (strong, nonatomic) KZPMusicKeyboardRibbonViewController *controlRibbon;
 
 @property (strong, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
@@ -141,18 +141,18 @@
 #pragma mark -
 
 
-- (void)setKeyboardEnabled:(BOOL)keyboardEnabled
-{
-    if (keyboardEnabled) {
-        self.keyboardDefocusView.hidden = YES;
-        self.keyboardDefocusView.alpha = 0.0;
-    } else {
-        self.keyboardDefocusView.hidden = NO;
-        self.keyboardDefocusView.alpha = 0.5;
-        [self.controlRibbon resetSpelling];
-    }
-    _keyboardEnabled = keyboardEnabled;
-}
+//- (void)setKeyboardEnabled:(BOOL)keyboardEnabled
+//{
+//    if (keyboardEnabled) {
+//        self.keyboardDefocusView.hidden = YES;
+//        self.keyboardDefocusView.alpha = 0.0;
+//    } else {
+//        self.keyboardDefocusView.hidden = NO;
+//        self.keyboardDefocusView.alpha = 0.5;
+//        [self.controlRibbon resetSpelling];
+//    }
+//    _keyboardEnabled = keyboardEnabled;
+//}
 
 - (void)setupDefocusView
 {
@@ -178,7 +178,7 @@
 
 - (void)refocusKeyboard
 {
-    if (!self.keyboardEnabled) return;
+    if (![self pitchControlEnabled]) return;
     
     [self.musicDataAggregator reset];
     [self.controlRibbon resetDuration];
@@ -190,7 +190,9 @@
 - (IBAction)keyButtonPressed:(id)sender
 {
     NSUInteger noteID = [sender tag];
-    [self.localAudio noteOn:noteID];
+    if ([self localAudioEnabled]) {
+        [self.localAudioPlayer noteOn:noteID];
+    }
     [self.controlRibbon sendDurationAndSpelling];
     [self.musicDataAggregator receivePitch:noteID];
     if ([self.musicalDelegate respondsToSelector:@selector(keyboardDidSendNoteOn:noteOff:)]) {
@@ -201,10 +203,24 @@
 - (IBAction)keyButtonReleased:(id)sender
 {
     NSUInteger noteID = [sender tag];
-    [self.localAudio noteOff:noteID];
+    if ([self localAudioEnabled]) {
+        [self.localAudioPlayer noteOff:noteID];
+    }
     if ([self.musicalDelegate respondsToSelector:@selector(keyboardDidSendNoteOn:noteOff:)]) {
         [self.musicalDelegate keyboardDidSendNoteOn:nil noteOff:@(noteID)];
     }
 }
+
+
+#pragma mark - User Settings -
+
+
+- (void)enableSpelling:(BOOL)setting { [self.controlRibbon enableSpelling:YES]; }
+- (void)enableDurationControls:(BOOL)setting { [self.controlRibbon enableDurationControls:YES]; }
+- (void)durationControlsActive:(BOOL)setting { [self.controlRibbon setDurationControlsActive:YES]; }
+- (void)enableManualDismiss:(BOOL)setting { [self.controlRibbon enableDismiss:YES]; }
+- (void)enableBackspaceControl:(BOOL)setting { [self.controlRibbon enableBackspace:YES]; }
+- (void)enableChordDetection:(BOOL)setting { [self.musicDataAggregator enableChordDetection:YES]; }
+- (void)chordSensitivity:(NSUInteger)setting { [self.musicDataAggregator setChordSensitivity:setting]; }
 
 @end

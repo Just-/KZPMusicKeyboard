@@ -22,16 +22,17 @@
 - (void)showWithCompletion:(void (^)())completionBlock;
 - (void)hideWithCompletion:(void (^)())completionBlock;
 
-@property (nonatomic) BOOL shouldAnimate;
-@property (nonatomic) BOOL sendNoteOff;
-@property (nonatomic) BOOL allowSpelling;
-@property (nonatomic) BOOL allowPitchControl;
-@property (nonatomic) BOOL useChordDetection;
-@property (nonatomic) BOOL useDurationControls;
-@property (nonatomic) BOOL durationControlsActive;
-@property (nonatomic) BOOL useLocalAudio;
-@property (nonatomic) BOOL allowDismiss;
-@property (nonatomic) BOOL allowBackspace;
-@property (nonatomic) float chordSensitivity;
+
+@property (nonatomic, setter=shouldAnimate:) BOOL shouldAnimate;
+
+- (void)enablePitchControl:(BOOL)setting;
+- (void)enableChordDetection:(BOOL)setting;
+- (void)enableDurationControls:(BOOL)setting;
+- (void)enableSpelling:(BOOL)setting;
+- (void)durationControlsActive:(BOOL)setting;
+- (void)enableLocalAudio:(BOOL)setting;
+- (void)enableManualDismiss:(BOOL)setting;
+- (void)enableBackspaceControl:(BOOL)setting;
+- (void)chordSensitivity:(NSUInteger)setting;
 
 @end
