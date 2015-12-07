@@ -23,7 +23,7 @@
 
 @property (nonatomic, setter=enableChordDetection:) BOOL chordDetectionEnabled;
 @property (nonatomic) NSUInteger chordSensitivity;
-@property (nonatomic, setter=enableManualSpelling:) BOOL manualSpellingEnabled;
+@property (nonatomic) BOOL manualSpellingEnabled;
 @property (nonatomic) MusicSpelling spellingBias;
 
 - (void)reset;

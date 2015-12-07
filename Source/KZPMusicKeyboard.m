@@ -61,6 +61,7 @@ static KZPMusicKeyboard *keyboardInstance;
     [self enableManualDismiss:YES];
 }
 
+
 #pragma mark - KZPMusicKeyboardControlDelegate -
 
 
@@ -89,7 +90,6 @@ static KZPMusicKeyboard *keyboardInstance;
     [self showWithCompletion:^{}];
 }
 
-// Make sure settings are passed to VC by this point?
 - (void)showWithCompletion:(void (^)())completionBlock
 {
     [self.keyboardViewController reconfigureForSettings];

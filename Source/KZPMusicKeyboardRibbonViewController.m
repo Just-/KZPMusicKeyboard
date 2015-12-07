@@ -77,6 +77,7 @@
     for (UIButton *spelling in self.spellingButtons) {
         spellingEnabled ? [self enableControl:spelling] : [self disableControl:spelling];
     }
+    if (!spellingEnabled) self.musicDataAggregator.manualSpellingEnabled = NO;
 }
 
 - (void)setDurationControlsActive:(BOOL)durationControlsActive
@@ -113,6 +114,7 @@
             [self deselectControl:accidental];
         }
     }
+    self.musicDataAggregator.manualSpellingEnabled = self.manualSpellButton.selected;
 }
 
 - (IBAction)restButtonTouch:(UIButton *)sender
