@@ -166,15 +166,6 @@
 
 #pragma mark -
 
-- (void)enablePitchControl:(BOOL)pitchControlEnabled
-{
-    if (pitchControlEnabled) {
-        [self focusKeyboard];
-    } else {
-//        [self defocusKeyboard];
-    }
-    _pitchControlEnabled = pitchControlEnabled;
-}
 
 - (void)focusKeyboard
 {
@@ -248,6 +239,15 @@
 
 #pragma mark - Developer Settings -
 
+- (void)enablePitchControl:(BOOL)pitchControlEnabled
+{
+    if (pitchControlEnabled) {
+        [self focusKeyboard];
+    } else {
+        //        [self defocusKeyboard];
+    }
+    _pitchControlEnabled = pitchControlEnabled;
+}
 
 - (void)enableSpelling:(BOOL)setting { [self.controlRibbon enableSpelling:setting]; }
 - (void)enableDurationControls:(BOOL)setting { [self.controlRibbon enableDurationControls:setting]; }

@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *spellingTextView;
 @property (weak, nonatomic) IBOutlet UITextView *pitchTextView;
 @property (weak, nonatomic) IBOutlet UITextView *durationTextView;
+@property (weak, nonatomic) IBOutlet UITextView *sciNotationView;
 
 @property (weak, nonatomic) IBOutlet UIButton *showKeyboardButton;
 @property (weak, nonatomic) IBOutlet UIButton *hideKeyboardButton;

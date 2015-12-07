@@ -85,11 +85,15 @@
                                       durationData.isRest ? @"\nRest": @"",
                                       durationData.isDotted ? @"\nDotted" : @"",
                                       durationData.isTiedForward ? @"\nTied" : @""];
+    } else {
+        self.durationTextView.text = nil;
     }
     
     if (pitchData) {
         self.pitchTextView.text = [pitchData.noteValues oneLineDescriptionUsingDelimiter:@"\n"];
         self.spellingTextView.text = [pitchData.spellings oneLineDescriptionUsingDelimiter:@"\n"];
+    } else {
+        self.pitchTextView.text = nil;
     }
 }
 

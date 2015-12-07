@@ -196,9 +196,13 @@
 
 - (void)sendDurationAndSpelling
 {
-    [self sendDuration];
-    [self.musicDataAggregator receiveSpelling:[self selectedAccidental]];
-    [self resetSpelling];
+    if ([self durationControlsEnabled]) {
+        [self sendDuration];
+    }
+    if ([self spellingEnabled]) {
+        [self.musicDataAggregator receiveSpelling:[self selectedAccidental]];
+        [self resetSpelling];        
+    }
 }
 
 - (void)sendDuration
