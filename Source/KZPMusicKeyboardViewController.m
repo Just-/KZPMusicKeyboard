@@ -34,6 +34,8 @@
 
 @property (weak, nonatomic) id<KZPMusicKeyboardDelegate> musicalDelegate;
 
+@property (nonatomic) BOOL ribbonVisible;
+
 @end
 
 
@@ -80,6 +82,7 @@
     self.controlRibbon.musicDataAggregator = self.musicDataAggregator;
     self.controlRibbon.delegate = self;
     [self.view addSubview:self.controlRibbon.view];
+    self.ribbonVisible = YES;
 }
 
 - (void)loadSpellingSurface
@@ -101,9 +104,9 @@
         ![self.controlRibbon dismissEnabled] &&
         ![self.controlRibbon backspaceEnabled] &&
         ![self.musicDataAggregator chordDetectionEnabled]) {
-        [self hideControlRibbon];
+        if (self.ribbonVisible) [self hideControlRibbon];
     } else {
-        [self showControlRibbon];
+        if (!self.ribbonVisible) [self showControlRibbon];
     }
 }
 
@@ -113,6 +116,7 @@
     CGFloat controlRibbonHeight = self.controlRibbon.view.frame.size.height;
     [self.keyboardMainView setFrameY:self.keyboardMainView.frame.origin.y - controlRibbonHeight + 3];
     [self.keyboardMapViewController.view setFrameY:self.keyboardMapViewController.view.frame.origin.y - controlRibbonHeight + 3];
+    self.ribbonVisible = NO;
 }
 
 - (void)showControlRibbon
@@ -121,6 +125,7 @@
     CGFloat controlRibbonHeight = self.controlRibbon.view.frame.size.height;
     [self.keyboardMainView setFrameY:self.keyboardMainView.frame.origin.y + controlRibbonHeight - 3];
     [self.keyboardMapViewController.view setFrameY:self.keyboardMapViewController.view.frame.origin.y + controlRibbonHeight - 3];
+    self.ribbonVisible = YES;
 }
 
 - (CGFloat)height
@@ -138,6 +143,15 @@
 - (void)updateKeyboardPosition:(float)relativePosition
 {
     [self.keyboardMainView setFrameX:-( (self.keyboardMainView.frame.size.width - self.view.frame.size.width) * relativePosition )];
+}
+
+
+#pragma mark - KZPMusicKeyboardRibbonControlDelegate -
+
+
+- (void)playbackToneChanged
+{
+    self.localAudioPlayer.patch = [self.controlRibbon selectedPatch];
 }
 
 

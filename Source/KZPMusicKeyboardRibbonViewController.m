@@ -173,8 +173,7 @@
 
 - (IBAction)toneSelected:(id)sender
 {
-    //    self.soundBankPlayer = [[SoundBankPlayer alloc] init];
-    //    [self.soundBankPlayer setSoundBank:[self.toneSelector titleForSegmentAtIndex:[self.toneSelector selectedSegmentIndex]]];
+    [self.delegate playbackToneChanged];
 }
 
 - (IBAction)dismissButtonPressed:(UIButton *)sender

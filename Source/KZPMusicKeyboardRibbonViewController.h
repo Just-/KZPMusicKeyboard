@@ -13,7 +13,7 @@
 
 @protocol KZPMusicKeyboardRibbonControlDelegate <NSObject>
 
-- (void)deferToManualSpelling;
+- (void)playbackToneChanged;
 
 @end
 
