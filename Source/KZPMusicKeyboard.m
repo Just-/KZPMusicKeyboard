@@ -14,7 +14,7 @@
 static KZPMusicKeyboard *keyboardInstance;
 
 
-@interface KZPMusicKeyboard ()
+@interface KZPMusicKeyboard () <KZPMusicKeyboardControlDelegate>
 
 @property (strong, nonatomic) KZPMusicKeyboardViewController *keyboardViewController;
 @property (strong, nonatomic) AGWindowView *windowView;
@@ -41,14 +41,35 @@ static KZPMusicKeyboard *keyboardInstance;
     return self;
 }
 
-- (void)setDelegate:(id<KZPMusicKeyboardDelegate>)delegate
+- (void)setDelegate:(id<KZPMusicKeyboardDelegate, KZPMusicKeyboardControlDelegate>)delegate
 {
-    self.keyboardViewController.delegate = delegate;
+    [self.keyboardViewController registerMusicDelegate:delegate controlDelegate:self];
     _delegate = delegate;
 }
 
 
+#pragma mark - KZPMusicKeyboardControlDelegate -
+
+
+- (void)keyboardWasDismissed
+{
+    [self hideWithCompletion:^{
+        if ([self.delegate respondsToSelector:@selector(keyboardWasDismissed)]) {
+            [self.delegate keyboardWasDismissed];
+        }
+    }];
+}
+
+- (void)keyboardDidSendBackspace
+{
+    if ([self.delegate respondsToSelector:@selector(keyboardDidSendBackspace)]) {
+        [self.delegate keyboardDidSendBackspace];
+    }
+}
+
+
 #pragma mark - Interface -
+
 
 - (void)show
 {
@@ -62,17 +83,24 @@ static KZPMusicKeyboard *keyboardInstance;
         self.windowView = [[AGWindowView alloc] initAndAddToKeyWindow];
         self.windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskLandscape;
     }
-    // iOS7 and iOS8+ have different notions of screen height
-    CGFloat landscapeScreenHeight = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-//    CGFloat landscapeScreenWidth = MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-    [self.keyboardViewController.view setFrameY:landscapeScreenHeight];
+    
+    [self.keyboardViewController.view setFrameY:[self screenHeight]];
     [self.windowView addSubview:self.keyboardViewController.view];
-    [UIView animateWithDuration:self.shouldAnimate ? 0.3 : 0.0 animations:^{
-        [self.keyboardViewController.view setFrameY:landscapeScreenHeight - [self.keyboardViewController height]];
-    } completion:^(BOOL finished) {
+    
+    if (self.shouldAnimate) {
+        [UIView animateWithDuration:0.3 animations:^{
+            [self moveKeyboardViewOnscreen];
+        } completion:^(BOOL finished) {
+            completionBlock();
+        }];
+    } else {
+        [self moveKeyboardViewOnscreen];
         completionBlock();
-    }];
-//    self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.keyboardViewController.view.frame.origin.y);    
+    }
+    
+    
+//    CGFloat landscapeScreenWidth = MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+//    self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.keyboardViewController.view.frame.origin.y);
 }
 
 - (void)hide
@@ -82,23 +110,46 @@ static KZPMusicKeyboard *keyboardInstance;
 
 - (void)hideWithCompletion:(void (^)())completionBlock
 {
-    // iOS7 and iOS8+ have different notions of screen height
-    CGFloat landscapeScreenHeight = MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-    
-    [UIView animateWithDuration:self.shouldAnimate ? 0.3 : 0.0 animations:^{
-        [self.keyboardViewController.view setFrameY:landscapeScreenHeight];
-    } completion:^(BOOL finished) {
-        UIView *windowView = [self.keyboardViewController.view superview];
-        [self.keyboardViewController.view removeFromSuperview];
-        
-        // TODO: This is to do with switching between text fields without dismissing?
-//        if (deactivate) {
-            [windowView removeFromSuperview];
-            self.windowView = nil;
-//        }
+    if (self.shouldAnimate) {
+        [UIView animateWithDuration:0.3 animations:^{
+            [self moveKeyboardViewOffscreen];
+        } completion:^(BOOL finished) {
+            [self destroyWindowView];
+            completionBlock();
+        }];
+    } else {
+        [self destroyWindowView];
         completionBlock();
-    }];
+    }
 }
+
+- (CGFloat)screenHeight
+{
+    return MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+}
+
+- (void)moveKeyboardViewOnscreen
+{
+    [self.keyboardViewController.view setFrameY:[self screenHeight] - [self.keyboardViewController height]];
+}
+
+- (void)moveKeyboardViewOffscreen
+{
+    [self.keyboardViewController.view setFrameY:[self screenHeight]];
+}
+
+- (void)destroyWindowView
+{
+//    self.windowView = [self.keyboardViewController.view superview];
+    [self.keyboardViewController.view removeFromSuperview];
+    
+    // TODO: This is to do with switching between text fields without dismissing?
+    //        if (deactivate) {
+    [self.windowView removeFromSuperview];
+    self.windowView = nil;
+}
+
+
 
 // What is the purpose of this?
 //- (void)removeImmediately

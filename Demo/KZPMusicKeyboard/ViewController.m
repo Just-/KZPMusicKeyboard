@@ -11,7 +11,7 @@
 #import "NSArray+functions.h"
 
 
-@interface ViewController () <KZPMusicKeyboardDelegate>
+@interface ViewController () <KZPMusicKeyboardDelegate, KZPMusicKeyboardControlDelegate>
 
 @property (weak, nonatomic) KZPMusicKeyboard *keyboard;
 
@@ -25,11 +25,12 @@
 {
     [super viewDidLoad];
     self.keyboard = [KZPMusicKeyboard keyboard];
+    self.keyboard.delegate = self;    
+    [self applySettings];
 }
 
 - (IBAction)showKeyboard:(id)sender
 {
-    self.keyboard.delegate = self;
     [self.keyboard showWithCompletion:^{
         [self enableHideKeyboard];
     }];
@@ -90,6 +91,15 @@
         self.spellingTextView.text = [pitchData.spellings oneLineDescriptionUsingDelimiter:@"\n"];
     }
 }
+
+- (void)keyboardDidSendNoteOn:(NSNumber *)noteOnPitch noteOff:(NSNumber *)noteOffPitch
+{
+    
+}
+
+
+#pragma mark - KZPMusicKeyboardControlDelegate
+
 
 - (void)keyboardWasDismissed
 {

@@ -64,7 +64,7 @@
     if ([[self.pitchData spellings] count] == 0) {
         [self.pitchData addSpelling:MusicSpelling_Natural];
     }
-    [self.delegate keyboardDidSendPitchData:self.pitchData withDurationData:self.durationData];
+    [self.musicalDelegate keyboardDidSendPitchData:self.pitchData withDurationData:self.durationData];
     [self reset];
 }
 

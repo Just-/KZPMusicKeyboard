@@ -17,7 +17,7 @@ typedef enum {
 
 @interface KZPMusicKeyboardDataAggregator : NSObject
 
-@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
+@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> musicalDelegate;
 
 @property (nonatomic, getter=chordDetectionEnabled, setter=enableChordDetection:) BOOL chordDetection;
 @property (nonatomic) NSUInteger chordSensitivity;

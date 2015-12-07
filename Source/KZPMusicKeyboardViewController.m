@@ -17,7 +17,7 @@
 #import "KZPMusicKeyboardSpellingViewController.h"
 
 
-@interface KZPMusicKeyboardViewController () <KZPMusicKeyboardMapDelegate>
+@interface KZPMusicKeyboardViewController () <KZPMusicKeyboardMapDelegate, KZPMusicKeyboardRibbonControlDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *keyboardMainView;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyButtons;
@@ -52,10 +52,10 @@
     [self setupDefocusView];
 }
 
-- (void)setDelegate:(id<KZPMusicKeyboardDelegate>)delegate
+- (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate controlDelegate:(id<KZPMusicKeyboardControlDelegate>)controlDelegate
 {
-    self.musicDataAggregator.delegate = delegate;
-    self.controlRibbon.delegate = delegate;
+    self.musicDataAggregator.musicalDelegate = musicalDelegate;
+    self.controlRibbon.controlDelegate = controlDelegate;
 }
 
 - (void)loadKeyboardMap
@@ -70,6 +70,7 @@
 {
     self.controlRibbon = [[KZPMusicKeyboardRibbonViewController alloc] initWithNibName:@"KZPMusicKeyboardRibbonView" bundle:nil];
     self.controlRibbon.musicDataAggregator = self.musicDataAggregator;
+    self.controlRibbon.delegate = self;
     [self.view addSubview:self.controlRibbon.view];
 }
 
@@ -107,13 +108,12 @@
 }
 
 
-#pragma mark - KZPMusicKeyboardRibbonDelegate -
+#pragma mark - KZPMusicKeyboardControlRibbonDelegate -
 
-- (void)dismissManually
+- (void)deferToManualSpelling
 {
-    [self.delegate ]
+    // call spelling surface
 }
-
 
 - (void)setKeyboardEnabled:(BOOL)keyboardEnabled
 {

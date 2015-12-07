@@ -91,16 +91,15 @@
 }
 
 - (IBAction)backButtonPressed:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(keyboardDidSendBackspace)]) {
-        [self.delegate keyboardDidSendBackspace];
+    if ([self.controlDelegate respondsToSelector:@selector(keyboardDidSendBackspace)]) {
+        [self.controlDelegate keyboardDidSendBackspace];
     }
 }
 
 - (IBAction)dismissButtonPressed:(id)sender
 {
-//    self.delegate
-    if ([self.delegate respondsToSelector:@selector(keyboardWasDismissed)]) {
-        [self.delegate keyboardWasDismissed];
+    if ([self.controlDelegate respondsToSelector:@selector(keyboardWasDismissed)]) {
+        [self.controlDelegate keyboardWasDismissed];
     }
 }
 

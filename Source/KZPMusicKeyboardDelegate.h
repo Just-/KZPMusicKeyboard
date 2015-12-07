@@ -12,9 +12,15 @@
 
 @protocol KZPMusicKeyboardDelegate <NSObject>
 
-@required
+@optional
 - (void)keyboardDidSendPitchData:(KZPMusicPitchData *)pitchData
                 withDurationData:(KZPMusicDurationData *)durationData;
+
+- (void)keyboardDidSendNoteOn:(NSNumber *)noteOnPitch noteOff:(NSNumber *)noteOffPitch;
+
+@end
+
+@protocol KZPMusicKeyboardControlDelegate <NSObject>
 
 @optional
 - (void)keyboardWasDismissed;

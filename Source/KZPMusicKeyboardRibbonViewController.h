@@ -11,9 +11,18 @@
 #import "KZPMusicSciNotation.h"
 #import "KZPMusicKeyboardDataAggregator.h"
 
+
+@protocol KZPMusicKeyboardRibbonControlDelegate <NSObject>
+
+- (void)deferToManualSpelling;
+
+@end
+
+
 @interface KZPMusicKeyboardRibbonViewController : UIViewController
 
-@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
+@property (weak, nonatomic) id<KZPMusicKeyboardControlDelegate> controlDelegate;
+@property (weak, nonatomic) id<KZPMusicKeyboardRibbonControlDelegate> delegate;
 
 @property (weak, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
 

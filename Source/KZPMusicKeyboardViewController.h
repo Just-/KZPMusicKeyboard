@@ -23,7 +23,7 @@ typedef enum {
 
 @interface KZPMusicKeyboardViewController : UIViewController
 
-@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
+- (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate controlDelegate:(id<KZPMusicKeyboardControlDelegate>)controlDelegate;
 
 @property (nonatomic) BOOL keyboardEnabled;
 @property (nonatomic) BOOL chordsEnabled;
