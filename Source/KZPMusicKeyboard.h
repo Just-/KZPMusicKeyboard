@@ -22,7 +22,6 @@
 - (void)showWithCompletion:(void (^)())completionBlock;
 - (void)hideWithCompletion:(void (^)())completionBlock;
 
-
 @property (nonatomic, setter=shouldAnimate:) BOOL shouldAnimate;
 
 - (void)enablePitchControl:(BOOL)setting;

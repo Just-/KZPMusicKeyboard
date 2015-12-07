@@ -50,10 +50,7 @@
     [self.pitchData addPitch:pitch];
     [self.chordTimer invalidate];
     
-    NSLog(@"chord sensitivity: %lu", (unsigned long)self.chordSensitivity);
-    
     if (self.chordDetectionEnabled) {
-        NSLog(@"start timer");
         self.chordTimer = [NSTimer scheduledTimerWithTimeInterval:(double)self.chordSensitivity / 1000
                                                            target:self
                                                          selector:@selector(chordDetected)

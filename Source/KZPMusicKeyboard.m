@@ -79,6 +79,8 @@ static KZPMusicKeyboard *keyboardInstance;
 // Make sure settings are passed to VC by this point?
 - (void)showWithCompletion:(void (^)())completionBlock
 {
+    [self.keyboardViewController reconfigureForSettings];
+    
     if (self.windowView == nil) {
         self.windowView = [[AGWindowView alloc] initAndAddToKeyWindow];
         self.windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskLandscape;
@@ -159,7 +161,8 @@ static KZPMusicKeyboard *keyboardInstance;
 //}
 
 
-#pragma mark - User Settings -
+#pragma mark - Developer Settings -
+
 
 - (void)enableSpelling:(BOOL)setting { [self.keyboardViewController enableSpelling:setting]; }
 - (void)enablePitchControl:(BOOL)setting { [self.keyboardViewController enablePitchControl:setting]; }

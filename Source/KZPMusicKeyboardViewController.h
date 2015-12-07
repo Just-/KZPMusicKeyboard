@@ -36,4 +36,6 @@ typedef enum {
 - (void)enableBackspaceControl:(BOOL)setting;
 - (void)chordSensitivity:(NSUInteger)setting;
 
+- (void)reconfigureForSettings;
+
 @end

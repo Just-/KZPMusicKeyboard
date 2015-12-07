@@ -62,8 +62,8 @@
 
 - (void)loadLocalAudio
 {
-    self.localAudio = [[KZPMusicKeyboardAudio alloc] init];
-    self.localAudio.patch = [self.controlRibbon selectedPatch];
+    self.localAudioPlayer = [[KZPMusicKeyboardAudio alloc] init];
+    self.localAudioPlayer.patch = [self.controlRibbon selectedPatch];
 }
 
 - (void)loadKeyboardMap
@@ -94,6 +94,19 @@
     self.spellingSurfaceViewController.keyButtonsByNoteID = [NSDictionary dictionaryWithDictionary:keyButtonsByNoteID];
 }
 
+- (void)reconfigureForSettings
+{
+    NSLog(@"%d, %d, %d, %d, %d", [self.controlRibbon spellingEnabled], [self.controlRibbon durationControlsEnabled], [self.controlRibbon dismissEnabled], [self.controlRibbon backspaceEnabled], [self.musicDataAggregator chordDetectionEnabled]);
+    if (![self.controlRibbon spellingEnabled] &&
+        ![self.controlRibbon durationControlsEnabled] &&
+        ![self.controlRibbon dismissEnabled] &&
+        ![self.controlRibbon backspaceEnabled] &&
+        ![self.musicDataAggregator chordDetectionEnabled]) {
+        [self hideControlRibbon];
+    } else {
+        [self showControlRibbon];
+    }
+}
 
 - (void)hideControlRibbon
 {
@@ -140,6 +153,26 @@
 
 #pragma mark -
 
+- (void)enablePitchControl:(BOOL)pitchControlEnabled
+{
+    if (pitchControlEnabled) {
+        [self focusKeyboard];
+    } else {
+//        [self defocusKeyboard];
+    }
+    _pitchControlEnabled = pitchControlEnabled;
+}
+
+- (void)focusKeyboard
+{
+    if (![self pitchControlEnabled]) return;
+    
+    [self.musicDataAggregator reset];
+    [self.controlRibbon resetDuration];
+    [self.spellingSurfaceViewController dismissWithCompletion:^{
+        self.keyboardDefocusView.hidden = YES;
+    }];
+}
 
 //- (void)setKeyboardEnabled:(BOOL)keyboardEnabled
 //{
@@ -158,7 +191,7 @@
 {
     self.keyboardDefocusView.hidden = YES;
     self.keyboardDefocusView.alpha = 0.0;
-    UITapGestureRecognizer *refocusGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refocusKeyboard)];
+    UITapGestureRecognizer *refocusGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(focusKeyboard)];
     [self.keyboardDefocusView addGestureRecognizer:refocusGesture];
 }
 
@@ -173,18 +206,6 @@
         [keyButton addTarget:self action:@selector(keyButtonReleased:) forControlEvents:UIControlEventTouchUpInside];
         [keyButton addTarget:self action:@selector(keyButtonReleased:) forControlEvents:UIControlEventTouchUpOutside];
     }
-}
-
-
-- (void)refocusKeyboard
-{
-    if (![self pitchControlEnabled]) return;
-    
-    [self.musicDataAggregator reset];
-    [self.controlRibbon resetDuration];
-    [self.spellingSurfaceViewController dismissWithCompletion:^{
-        self.keyboardDefocusView.hidden = YES;
-    }];
 }
 
 - (IBAction)keyButtonPressed:(id)sender
@@ -212,15 +233,15 @@
 }
 
 
-#pragma mark - User Settings -
+#pragma mark - Developer Settings -
 
 
-- (void)enableSpelling:(BOOL)setting { [self.controlRibbon enableSpelling:YES]; }
-- (void)enableDurationControls:(BOOL)setting { [self.controlRibbon enableDurationControls:YES]; }
-- (void)durationControlsActive:(BOOL)setting { [self.controlRibbon setDurationControlsActive:YES]; }
-- (void)enableManualDismiss:(BOOL)setting { [self.controlRibbon enableDismiss:YES]; }
-- (void)enableBackspaceControl:(BOOL)setting { [self.controlRibbon enableBackspace:YES]; }
-- (void)enableChordDetection:(BOOL)setting { [self.musicDataAggregator enableChordDetection:YES]; }
+- (void)enableSpelling:(BOOL)setting { [self.controlRibbon enableSpelling:setting]; }
+- (void)enableDurationControls:(BOOL)setting { [self.controlRibbon enableDurationControls:setting]; }
+- (void)durationControlsActive:(BOOL)setting { [self.controlRibbon setDurationControlsActive:setting]; }
+- (void)enableManualDismiss:(BOOL)setting { [self.controlRibbon enableDismiss:setting]; }
+- (void)enableBackspaceControl:(BOOL)setting { [self.controlRibbon enableBackspace:setting]; }
+- (void)enableChordDetection:(BOOL)setting { [self.musicDataAggregator enableChordDetection:setting]; }
 - (void)chordSensitivity:(NSUInteger)setting { [self.musicDataAggregator setChordSensitivity:setting]; }
 
 @end
