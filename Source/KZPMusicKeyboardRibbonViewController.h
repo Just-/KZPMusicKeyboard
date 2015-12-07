@@ -31,15 +31,9 @@
 @property (nonatomic, setter=enableBackspace:) BOOL backspaceEnabled;
 @property (nonatomic) BOOL durationControlsActive;
 
-- (MusicSpelling)selectedAccidental;
-- (void)resetSpelling;
-
 - (NSString *)selectedPatch;
-
 - (void)resetDuration;
-
 - (void)sendDurationAndSpelling;
-
 - (void)resetChordSensitivitySlider;
 
 @end

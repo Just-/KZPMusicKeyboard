@@ -163,7 +163,7 @@
 
 - (void)manualSpellingComplete
 {
-    [self.controlRibbon resetSpelling];
+
 }
 
 

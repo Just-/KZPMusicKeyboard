@@ -206,7 +206,6 @@
     }
     if ([self spellingEnabled]) {
         [self.musicDataAggregator receiveSpelling:[self selectedAccidental]];
-        [self resetSpelling];        
     }
 }
 
@@ -239,14 +238,7 @@
     return MusicSpelling_Natural;
 }
 
-- (void)resetSpelling
-{
-    for (UIButton *accidental in self.spellingButtons) {
-        accidental.selected = NO;
-        accidental.alpha = 0.5;
-    }
-}
-
+// TODO: What is this for?
 - (void)resetDuration
 {
     self.tieButton.selected = NO;
