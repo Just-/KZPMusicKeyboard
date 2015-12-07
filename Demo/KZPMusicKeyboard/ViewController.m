@@ -59,6 +59,9 @@
     [self.keyboard enableLocalAudio:[self.localAudioSwitch isOn]];
     [self.keyboard enableManualDismiss:[self.enableManualDismissSwitch isOn]];
     [self.keyboard enableBackspaceControl:[self.enableBackspaceSwitch isOn]];
+    if ([self.defaultSensitivitySwitch isOn]) {
+        [self.keyboard chordSensitivity:50];
+    }
 }
 
 - (void)enableShowKeyboard

@@ -36,6 +36,8 @@
 
 @property (nonatomic) BOOL ribbonVisible;
 
+@property (nonatomic) BOOL chordSensitivityWasSetProgrammatically;
+
 @end
 
 
@@ -103,11 +105,12 @@
         ![self.controlRibbon durationControlsEnabled] &&
         ![self.controlRibbon dismissEnabled] &&
         ![self.controlRibbon backspaceEnabled] &&
-        ![self.musicDataAggregator chordDetectionEnabled]) {
+        (![self.musicDataAggregator chordDetectionEnabled] || self.chordSensitivityWasSetProgrammatically)) {
         if (self.ribbonVisible) [self hideControlRibbon];
     } else {
         if (!self.ribbonVisible) [self showControlRibbon];
     }
+    self.chordSensitivityWasSetProgrammatically = NO;
 }
 
 - (void)hideControlRibbon
@@ -255,6 +258,9 @@
 - (void)enableManualDismiss:(BOOL)setting { [self.controlRibbon enableDismiss:setting]; }
 - (void)enableBackspaceControl:(BOOL)setting { [self.controlRibbon enableBackspace:setting]; }
 - (void)enableChordDetection:(BOOL)setting { [self.musicDataAggregator enableChordDetection:setting]; }
-- (void)chordSensitivity:(NSUInteger)setting { [self.musicDataAggregator setChordSensitivity:setting]; }
+- (void)chordSensitivity:(NSUInteger)setting {
+    [self.musicDataAggregator setChordSensitivity:setting];
+    self.chordSensitivityWasSetProgrammatically = YES;
+}
 
 @end

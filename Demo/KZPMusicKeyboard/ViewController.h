@@ -23,7 +23,6 @@
 
 - (IBAction)configurationSwitchChanged:(UISwitch *)sender;
 
-// TODO: chord sensitivity ?
 @property (weak, nonatomic) IBOutlet UISwitch *shouldAnimateSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *enablePitchControlSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *polyphonicSwitch;
@@ -33,6 +32,6 @@
 @property (weak, nonatomic) IBOutlet UISwitch *localAudioSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *enableBackspaceSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *enableManualDismissSwitch;
-
+@property (weak, nonatomic) IBOutlet UISwitch *defaultSensitivitySwitch;
 
 @end
