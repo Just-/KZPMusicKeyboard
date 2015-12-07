@@ -37,7 +37,7 @@
 
 - (void)receiveDuration:(unsigned int)duration rest:(BOOL)rest dotted:(BOOL)dotted tied:(BOOL)tied
 {
-    self.durationData = [[KZPMusicDurationData alloc] initWithDuration:duration rest:rest tied:dotted dotted:tied];
+    self.durationData = [[KZPMusicDurationData alloc] initWithDuration:duration rest:rest tied:tied dotted:dotted];
 }
 
 - (void)receiveSpelling:(MusicSpelling)spelling

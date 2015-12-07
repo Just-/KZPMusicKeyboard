@@ -42,35 +42,58 @@
     [self chordThresholdSliderValueChanged:self.chordThresholdSlider];
 }
 
+
+#pragma mark - Properties -
+
+
 - (void)enableBackspace:(BOOL)backspaceEnabled
 {
-    backspaceEnabled ? [self enableControl:self.backspaceButton] : [self disableControl:self.backspaceButton];
     _backspaceEnabled = backspaceEnabled;
+    backspaceEnabled ? [self enableControl:self.backspaceButton] : [self disableControl:self.backspaceButton];
 }
 
 - (void)enableDismiss:(BOOL)dismissEnabled
 {
-    dismissEnabled ? [self enableControl:self.dismissButton] : [self disableControl:self.dismissButton];
     _dismissEnabled = dismissEnabled;
+    dismissEnabled ? [self enableControl:self.dismissButton] : [self disableControl:self.dismissButton];
 }
 
 - (void)enableDurationControls:(BOOL)durationControlsEnabled
 {
+    _durationControlsEnabled = durationControlsEnabled;
     for (UIButton *duration in self.durationControlButtons) {
         durationControlsEnabled ? [self enableControl:duration] : [self disableControl:duration];
-        if ([duration tag] == 1 && [self durationControlsActive]) {
-            [self selectControl:duration];
-        }
     }
-    _durationControlsEnabled = durationControlsEnabled;
+    [self resetDefaultDuration];
 }
 
 - (void)enableSpelling:(BOOL)spellingEnabled
 {
+    _spellingEnabled = spellingEnabled;
     for (UIButton *spelling in self.spellingButtons) {
         spellingEnabled ? [self enableControl:spelling] : [self disableControl:spelling];
     }
-    _spellingEnabled = spellingEnabled;
+}
+
+- (void)setDurationControlsActive:(BOOL)durationControlsActive
+{
+    _durationControlsActive = durationControlsActive;
+    if (durationControlsActive) {
+        for (UIButton *duration in self.durationControlButtons) {
+            [self deselectControl:duration];
+        }
+    } else {
+        [self resetDefaultDuration];
+    }
+}
+
+- (void)resetDefaultDuration
+{
+    for (UIButton *duration in self.durationControlButtons) {
+        if ([duration tag] == 1 && ![self durationControlsActive]) {
+            [self selectControl:duration];
+        }
+    }
 }
 
 
@@ -95,6 +118,7 @@
     } else {
         [self selectControl:sender];
         [self sendDuration];
+        [self.musicDataAggregator flush];
     }
 }
 
@@ -110,6 +134,7 @@
     if ([self durationControlsActive]) {
         [self selectControl:sender];
         [self sendDuration];
+        [self.musicDataAggregator flush];
     } else {
         for (UIButton *duration in self.durationButtons) {
             if (duration == sender) {
@@ -180,10 +205,10 @@
 - (void)sendDuration
 {
     unsigned int duration = [self selectedDuration];
-    [self.musicDataAggregator receiveDuration:self.restButton.selected ? -duration : duration
+    [self.musicDataAggregator receiveDuration:duration
                                          rest:self.restButton.selected
                                        dotted:self.dottedButton.selected
-                                         tied:self.tieButton.selected];
+                                         tied:self.restButton.selected ? NO : self.tieButton.selected];
 }
 
 - (unsigned int)selectedDuration
@@ -250,8 +275,10 @@
 
 - (void)deselectControl:(UIButton *)control
 {
-    control.selected = NO;
-    control.alpha = 0.5;
+    if (control.enabled) {
+        control.selected = NO;
+        control.alpha = 0.5;
+    }
 }
 
 - (void)disableControl:(UIButton *)control
