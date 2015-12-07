@@ -95,8 +95,11 @@
     if (pitchData) {
         self.pitchTextView.text = [pitchData.noteValues oneLineDescriptionUsingDelimiter:@"\n"];
         self.spellingTextView.text = [pitchData.spellings oneLineDescriptionUsingDelimiter:@"\n"];
+        self.sciNotationView.text = [pitchData.sciNotations oneLineDescriptionUsingDelimiter:@"\n"];
     } else {
         self.pitchTextView.text = nil;
+        self.spellingTextView.text = nil;
+        self.sciNotationView.text = nil;
     }
 }
 

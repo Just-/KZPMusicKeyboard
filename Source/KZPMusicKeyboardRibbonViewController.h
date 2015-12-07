@@ -40,4 +40,6 @@
 
 - (void)sendDurationAndSpelling;
 
+- (void)resetChordSensitivitySlider;
+
 @end

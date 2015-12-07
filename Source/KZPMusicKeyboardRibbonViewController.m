@@ -186,8 +186,13 @@
 - (IBAction)chordThresholdSliderValueChanged:(UISlider *)sender
 {
     NSUInteger sliderSetting = (NSUInteger)round([sender value]);
-    self.chordThresholdLabel.text = [NSString stringWithFormat:@"Chord: %lums", (unsigned long)sliderSetting];
     self.musicDataAggregator.chordSensitivity = sliderSetting;
+    [self displayChordSensitivity:sliderSetting];
+}
+
+- (void)displayChordSensitivity:(NSUInteger)sensitivity
+{
+    self.chordThresholdLabel.text = [NSString stringWithFormat:@"Chord: %lums", (unsigned long)sensitivity];
 }
 
 
@@ -248,6 +253,13 @@
     self.tieButton.layer.opacity = 0.5;
     self.manualSpellButton.selected = NO;
     self.manualSpellButton.layer.opacity = 0.5;
+}
+
+- (void)resetChordSensitivitySlider
+{
+    NSUInteger sensitivity = [self.musicDataAggregator chordSensitivity];
+    [self.chordThresholdSlider setValue:sensitivity];
+    [self displayChordSensitivity:sensitivity];
 }
 
 - (NSString *)selectedPatch

@@ -260,6 +260,7 @@
 - (void)enableChordDetection:(BOOL)setting { [self.musicDataAggregator enableChordDetection:setting]; }
 - (void)chordSensitivity:(NSUInteger)setting {
     [self.musicDataAggregator setChordSensitivity:setting];
+    [self.controlRibbon resetChordSensitivitySlider];
     self.chordSensitivityWasSetProgrammatically = YES;
 }
 

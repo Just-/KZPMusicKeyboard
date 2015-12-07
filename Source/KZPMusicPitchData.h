@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) NSArray *spellings;
 @property (strong, nonatomic) NSArray *noteValues;
+@property (strong, nonatomic) NSArray *sciNotations;
 
 - (void)addPitch:(NSUInteger)pitch;
 - (void)addSpelling:(MusicSpelling)spelling;

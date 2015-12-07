@@ -8,7 +8,7 @@
 
 #import "KZPMusicKeyboard.h"
 #import "UIView+frameOperations.h"
-#import "AGWindowView.h"
+#import "KZPKeyboardSuperview.h"
 #import "KZPMusicKeyboardMapViewController.h"
 
 static KZPMusicKeyboard *keyboardInstance;
@@ -17,7 +17,7 @@ static KZPMusicKeyboard *keyboardInstance;
 @interface KZPMusicKeyboard () <KZPMusicKeyboardControlDelegate>
 
 @property (strong, nonatomic) KZPMusicKeyboardViewController *keyboardViewController;
-@property (strong, nonatomic) AGWindowView *windowView;
+@property (strong, nonatomic) KZPKeyboardSuperview *windowView;
 
 @end
 
@@ -82,7 +82,7 @@ static KZPMusicKeyboard *keyboardInstance;
     [self.keyboardViewController reconfigureForSettings];
     
     if (self.windowView == nil) {
-        self.windowView = [[AGWindowView alloc] initAndAddToKeyWindow];
+        self.windowView = [[KZPKeyboardSuperview alloc] initAndAddToKeyWindow];
         self.windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskLandscape;
     }
     
@@ -101,8 +101,8 @@ static KZPMusicKeyboard *keyboardInstance;
     }
     
     
-//    CGFloat landscapeScreenWidth = MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-//    self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.keyboardViewController.view.frame.origin.y);
+    CGFloat landscapeScreenWidth = MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.keyboardViewController.view.frame.origin.y);
 }
 
 - (void)hide
