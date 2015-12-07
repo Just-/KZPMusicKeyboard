@@ -31,13 +31,10 @@
 {
     [super viewDidLoad];
     
-    for (UIButton *keyboardControl in self.keyboardControlButtons) {
-        keyboardControl.layer.borderWidth = 1.0;
-        keyboardControl.layer.cornerRadius = 5.0;
-        keyboardControl.clipsToBounds = YES;
-        keyboardControl.layer.borderColor = [UIColor darkGrayColor].CGColor;
-        if (keyboardControl != self.backspaceButton && keyboardControl != self.dismissButton) {
-            keyboardControl.layer.opacity = 0.5;
+    for (UIButton *control in self.keyboardControlButtons) {
+        [self styleControl:control];
+        if (control != self.backspaceButton && control != self.dismissButton) {
+            [self deselectControl:control];
         }
     }
     
@@ -46,191 +43,160 @@
 
 - (void)enableBackspace:(BOOL)backspaceEnabled
 {
-    self.backspaceButton.enabled = backspaceEnabled;
-    self.backspaceButton.alpha = backspaceEnabled ? 1.0 : 0.3;
+    backspaceEnabled ? [self enableControl:self.backspaceButton] : [self disableControl:self.backspaceButton];
     _backspaceEnabled = backspaceEnabled;
 }
 
 - (void)enableDismiss:(BOOL)dismissEnabled
 {
-    self.dismissButton.enabled = dismissEnabled;
-    self.dismissButton.alpha = dismissEnabled ? 1.0 : 0.3;
+    dismissEnabled ? [self enableControl:self.dismissButton] : [self disableControl:self.dismissButton];
     _dismissEnabled = dismissEnabled;
 }
 
-
-//- (void)setRhythmControlsEnabled:(BOOL)rhythmControlsEnabled
-//{
-//    for (UIButton *duration in self.durationButtons) {
-//        duration.selected = NO;
-//        duration.layer.opacity = 0.5;
-//    }
-//    if (rhythmControlsEnabled) {
-//        for (UIButton *duration in self.durationButtons) {
-//            if ([duration tag] == 1) {
-//                duration.selected = YES;
-//                duration.layer.opacity = 1.0;
-//            }
-//        }
-//    }
-//    _rhythmControlsEnabled = rhythmControlsEnabled;
-//}
-
-
-- (void)sendDurationAndSpelling
+- (void)enableDurationControls:(BOOL)durationControlsEnabled
 {
-    [self.musicDataAggregator receiveDuration:[self selectedDuration]
-                                         rest:self.restButton.selected
-                                       dotted:self.dottedButton.selected
-                                         tied:self.tieButton.selected];
-    [self.musicDataAggregator receiveSpelling:[self selectedAccidental]];
-    [self resetSpelling];
+    for (UIButton *duration in self.durationButtons) {
+        durationControlsEnabled ? [self enableControl:duration] : [self disableControl:duration];
+        if ([duration tag] == 1 && [self durationControlsActive]) {
+            [self selectControl:duration];
+        }
+    }
+    _durationControlsEnabled = durationControlsEnabled;
 }
+
+- (void)enableSpelling:(BOOL)spellingEnabled
+{
+    for (UIButton *spelling in self.spellingButtons) {
+        [self enableControl:spelling];
+    }
+    _spellingEnabled = spellingEnabled;
+}
+
 
 #pragma mark - Actions -
 
 
-- (IBAction)accidentalButtonPress:(id)sender {
-//    if (!self.keyboardEnabled) return;
-//    
-//    UIButton *accidentalButton = (UIButton*)sender;
-//    for (UIButton *accidental in self.accidentalButtons) {
-//        if (accidental == accidentalButton) {
-//            accidentalButton.selected = !accidentalButton.selected;
-//        } else {
-//            accidental.selected = NO;
-//        }
-//        accidental.layer.opacity = accidental.selected ? 1.0 : 0.5;
-//    }
+- (IBAction)accidentalButtonPress:(UIButton *)sender
+{
+    for (UIButton *accidental in self.spellingButtons) {
+        if (sender == accidental) {
+            [self toggleControl:sender];
+        } else {
+            [self deselectControl:sender];
+        }
+    }
 }
 
-- (IBAction)backButtonPressed:(id)sender {
+- (IBAction)restButtonTouch:(UIButton *)sender
+{
+    if ([self durationControlsActive]) {
+        [self toggleControl:sender];
+    } else {
+        [self selectControl:sender];
+        [self sendDuration];
+    }
+}
+
+- (IBAction)restButtonPress:(UIButton *)sender
+{
+    if (![self durationControlsActive]) {
+        [self deselectControl:sender];
+    }
+}
+
+- (IBAction)durationButtonTouch:(UIButton *)sender
+{
+    if ([self durationControlsActive]) {
+        [self selectControl:sender];
+        [self sendDuration];
+    } else {
+        for (UIButton *duration in self.durationButtons) {
+            if (duration == sender) {
+                [self selectControl:duration];
+            } else {
+                [self deselectControl:duration];
+            }
+        }
+    }
+}
+
+- (IBAction)durationButtonPress:(UIButton *)sender
+{
+    if ([self durationControlsActive]) {
+        [self deselectControl:sender];
+    }
+}
+
+- (IBAction)dotButtonPress:(UIButton *)sender
+{
+    [self toggleControl:sender];
+}
+
+- (IBAction)tieButtonPress:(UIButton *)sender
+{
+    [self toggleControl:sender];
+}
+
+
+- (IBAction)backButtonPressed:(UIButton *)sender
+{
     if ([self.controlDelegate respondsToSelector:@selector(keyboardDidSendBackspace)]) {
         [self.controlDelegate keyboardDidSendBackspace];
     }
 }
 
-- (IBAction)dismissButtonPressed:(id)sender
+- (IBAction)toneSelected:(id)sender
+{
+    //    self.soundBankPlayer = [[SoundBankPlayer alloc] init];
+    //    [self.soundBankPlayer setSoundBank:[self.toneSelector titleForSegmentAtIndex:[self.toneSelector selectedSegmentIndex]]];
+}
+
+- (IBAction)dismissButtonPressed:(UIButton *)sender
 {
     if ([self.controlDelegate respondsToSelector:@selector(keyboardWasDismissed)]) {
         [self.controlDelegate keyboardWasDismissed];
     }
 }
 
-- (IBAction)durationButtonPress:(id)sender
+- (IBAction)chordThresholdSliderValueChanged:(UISlider *)sender
 {
-//    if (!self.rhythmControlsEnabled) return;
-    
-    // Rhythm controls are treated as settings for pitch durations
-//    if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
-//        UIButton *durationButton = (UIButton*)sender;
-//        
-//        for (UIButton *duration in self.durationButtons) {
-//            if (duration == durationButton) {
-//                durationButton.selected = !durationButton.selected;
-//            } else {
-//                if (duration.selected) {
-//                    self.dotButton.selected = NO;
-//                    self.dotButton.layer.opacity = 0.5;
-//                }
-//                duration.selected = NO;
-//            }
-//            duration.layer.opacity = duration.selected ? 1.0 : 0.5;
-//        }
-//    }
-    
-    // Rhythm controls are used to express rhythms on their own, without pitch information
-//    else {
-//        [(UIButton *)sender layer].opacity = 0.5;
-//        int duration = [(UIButton *)sender tag];
-//        if (self.restButton.selected) {
-//            duration = -duration;
-//        }
-//        NSNumber *selectedDuration = @(duration);
-//        [self.delegate keyboardDidSendSignal:nil
-//                                   inputType:nil
-//                                    spelling:nil
-//                                    duration:selectedDuration
-//                                      dotted:self.dotButton.selected
-//                                        tied:self.tieButton.selected
-//                                  midiPacket:nil
-//                                   oscPacket:nil];
-//        
-//    }
-    
-}
-
-- (IBAction)durationButtonTouch:(id)sender {
-//    if (self.rhythmControlsEnabled) {
-//        [(UIButton *)sender layer].opacity = 1.0;
-//    }
-}
-
-- (IBAction)toneSelected:(id)sender {
-//    self.soundBankPlayer = [[SoundBankPlayer alloc] init];
-//    [self.soundBankPlayer setSoundBank:[self.toneSelector titleForSegmentAtIndex:[self.toneSelector selectedSegmentIndex]]];
-}
-
-- (IBAction)dotButtonPress:(id)sender
-{
-//    if (!self.rhythmControlsEnabled) return;
-//    self.dotButton.selected = !self.dotButton.selected;
-//    self.dotButton.layer.opacity = self.dotButton.selected ? 1.0 : 0.5;
-}
-
-- (IBAction)tieButtonPress:(id)sender
-{
-//    if (!self.rhythmControlsEnabled) return;
-    self.tieButton.selected = !self.tieButton.selected;
-    self.tieButton.layer.opacity = self.tieButton.selected ? 1.0 : 0.5;
-}
-
-- (IBAction)restButtonPress:(id)sender
-{
-//    if (!self.rhythmControlsEnabled) return;
-    
-    self.tieButton.selected = NO;
-    self.tieButton.layer.opacity = 0.5;
-    
-    // Rest is acknowledged immediately
-//    if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Passive) {
-//        [(UIButton *)sender layer].opacity = 0.5;
-//        for (UIButton *duration in self.durationButtons) {
-//            if (duration.selected) {
-//                NSNumber *selectedDuration = @(-[duration tag]);
-//                [self.delegate keyboardDidSendSignal:nil
-//                                           inputType:nil
-//                                            spelling:nil
-//                                            duration:selectedDuration
-//                                              dotted:self.dotButton.selected
-//                                                tied:NO
-//                                          midiPacket:nil
-//                                           oscPacket:nil];
-//            }
-//        }
-//    }
-//    
-//    // Rest is treated as a toggle
-//    else if (self.rhythmMode == KZPMusicKeyboardRhythmMode_Active) {
-//        self.restButton.selected = !self.restButton.selected;
-//        self.restButton.layer.opacity = self.restButton.selected ? 1.0 : 0.5;
-//    }
-    
-}
-
-- (IBAction)restButtonTouch:(id)sender {
-//    if (self.rhythmControlsEnabled) {
-//        [(UIButton *)sender layer].opacity = 1.0;
-//    }
-}
-
-- (IBAction)chordThresholdSliderValueChanged:(UISlider *)sender {
     NSUInteger sliderSetting = (NSUInteger)round([sender value]);
     self.chordThresholdLabel.text = [NSString stringWithFormat:@"Chord: %lums", (unsigned long)sliderSetting];
     self.musicDataAggregator.chordSensitivity = sliderSetting;
 }
 
-- (MusicSpelling)selectedAccidental {
+
+#pragma mark -
+
+
+- (void)sendDurationAndSpelling
+{
+    [self sendDuration];
+    [self.musicDataAggregator receiveSpelling:[self selectedAccidental]];
+    [self resetSpelling];
+}
+
+- (void)sendDuration
+{
+    unsigned int duration = [self selectedDuration];
+    [self.musicDataAggregator receiveDuration:self.restButton.selected ? -duration : duration
+                                         rest:self.restButton.selected
+                                       dotted:self.dottedButton.selected
+                                         tied:self.tieButton.selected];
+}
+
+- (unsigned int)selectedDuration
+{
+    for (UIButton *duration in self.durationButtons) {
+        if (duration.selected) {
+            return (unsigned int)[duration tag];
+        }
+    }
+    return 0;
+}
+
+- (MusicSpelling)selectedAccidental
+{
     for (UIButton *accidental in self.spellingButtons) {
         if (accidental.selected && accidental.tag) {
             return (MusicSpelling)[accidental tag];
@@ -243,7 +209,7 @@
 {
     for (UIButton *accidental in self.spellingButtons) {
         accidental.selected = NO;
-        accidental.layer.opacity = 0.5;
+        accidental.alpha = 0.5;
     }
 }
 
@@ -255,19 +221,50 @@
     self.manualSpellButton.layer.opacity = 0.5;
 }
 
-- (unsigned int)selectedDuration
-{
-    for (UIButton *duration in self.durationButtons) {
-        if (duration.selected) {
-            return [duration tag];
-        }
-    }
-    return 0;
-}
-
 - (NSString *)selectedPatch
 {
     return [self.toneSelector titleForSegmentAtIndex:[self.toneSelector selectedSegmentIndex]];
+}
+
+- (void)styleControl:(UIButton *)control
+{
+    control.layer.borderWidth = 1.0;
+    control.layer.cornerRadius = 5.0;
+    control.clipsToBounds = YES;
+    control.layer.borderColor = [UIColor darkGrayColor].CGColor;
+}
+
+- (void)toggleControl:(UIButton *)control
+{
+    control.selected ? [self deselectControl:control] : [self selectControl:control];
+}
+
+- (void)selectControl:(UIButton *)control
+{
+    if (control.enabled) {
+        control.selected = YES;
+        control.alpha = 1.0;
+    }
+}
+
+- (void)deselectControl:(UIButton *)control
+{
+    control.selected = NO;
+    control.alpha = 0.5;
+}
+
+- (void)disableControl:(UIButton *)control
+{
+    control.selected = NO;
+    control.enabled = NO;
+    control.alpha = 0.1;
+}
+
+- (void)enableControl:(UIButton *)control
+{
+    control.selected = NO;
+    control.enabled = YES;
+    control.alpha = 0.5;
 }
 
 @end
