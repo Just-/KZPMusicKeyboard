@@ -220,7 +220,7 @@
     if ([self localAudioEnabled]) {
         [self.localAudioPlayer noteOn:noteID];
     }
-    [self.controlRibbon sendDurationAndSpelling];
+    [self.controlRibbon sendDurationAndSpelling];    
     [self.musicDataAggregator receivePitch:noteID];
     if ([self.musicalDelegate respondsToSelector:@selector(keyboardDidSendNoteOn:noteOff:)]) {
         [self.musicalDelegate keyboardDidSendNoteOn:@(noteID) noteOff:nil];

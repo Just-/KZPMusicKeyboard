@@ -11,32 +11,26 @@
 
 @implementation KZPMusicPitchData
 
-- (NSArray *)noteValues
-{
-    if (!_noteValues) _noteValues = [NSArray array];
-    return _noteValues;
-}
-
-- (NSArray *)spellings
-{
-    if (!_spellings) _spellings = [NSArray array];
-    return _spellings;
-}
-
-- (NSArray *)sciNotations
-{
-    if (!_sciNotations) _sciNotations = [NSArray array];
-    return _sciNotations;
-}
-
 - (instancetype)initWithNoteData:(NSArray *)noteData spellingData:(NSArray *)spellingData
 {
     self = [super init];
     if (self) {
-        _noteValues = noteData;
-        _spellings = spellingData;
+        if ([noteData count] != [spellingData count]) {
+            NSLog(@"Error: note and spelling data don't match");
+            return nil;
+        }
+        [self addNoteData:noteData withSpellingData:spellingData];
     }
     return self;
+}
+
+- (void)addNoteData:(NSArray *)noteData withSpellingData:(NSArray *)spellingData
+{
+    for (int i = 0; i < [noteData count]; i++) {
+        NSUInteger pitch = [noteData[i] integerValue];
+        MusicSpelling spelling = (MusicSpelling)[spellingData[i] intValue];
+        [self addPitch:pitch withSpelling:spelling];
+    }
 }
 
 - (void)addPitch:(NSUInteger)pitch withSpelling:(MusicSpelling)spelling
@@ -44,18 +38,23 @@
     NSString *sciNotation = [KZPMusicSciNotation sciNotationForPitch:(int)pitch modifier:(int)spelling resolve:YES];
     int resolvedSpelling;
     [KZPMusicSciNotation pitchValueForSciNotation:sciNotation modifier:&resolvedSpelling];
-    self.spellings = [self.spellings arrayByAddingObject:@(resolvedSpelling)];
-    self.noteValues = [self.noteValues arrayByAddingObject:@(pitch)];
+    
+    [self addPitch:pitch];
+    [self addSpelling:resolvedSpelling];
+    
+    if (!_sciNotations) _sciNotations = [NSArray array];
     self.sciNotations = [self.sciNotations arrayByAddingObject:sciNotation];
 }
 
 - (void)addPitch:(NSUInteger)pitch
 {
+    if (!_noteValues) _noteValues = [NSArray array];
     self.noteValues = [self.noteValues arrayByAddingObject:@(pitch)];
 }
 
 - (void)addSpelling:(MusicSpelling)spelling
 {
+    if (!_spellings) _spellings = [NSArray array];
     self.spellings = [self.spellings arrayByAddingObject:@(spelling)];
 }
 

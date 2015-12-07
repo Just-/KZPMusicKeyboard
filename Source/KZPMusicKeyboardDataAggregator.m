@@ -14,6 +14,8 @@
 @property (strong, nonatomic) KZPMusicDurationData *durationData;
 @property (strong, nonatomic) KZPMusicPitchData *pitchData;
 
+@property (nonatomic) MusicSpelling currentSpelling;
+
 @end
 
 @implementation KZPMusicKeyboardDataAggregator
@@ -42,12 +44,12 @@
 
 - (void)receiveSpelling:(MusicSpelling)spelling
 {
-    [self.pitchData addSpelling:spelling];
+    self.currentSpelling = spelling;
 }
 
 - (void)receivePitch:(NSUInteger)pitch
 {
-    [self.pitchData addPitch:pitch];
+    [self.pitchData addPitch:pitch withSpelling:self.currentSpelling];
     [self.chordTimer invalidate];
     
     if (self.chordDetectionEnabled) {
@@ -73,9 +75,6 @@
 
 - (void)flush
 {
-    if ([[self.pitchData spellings] count] == 0) {
-        [self.pitchData addSpelling:MusicSpelling_Natural];
-    }
     if ([self.musicalDelegate respondsToSelector:@selector(keyboardDidSendPitchData:withDurationData:)]) {
         [self.musicalDelegate keyboardDidSendPitchData:self.pitchData withDurationData:self.durationData];
     }

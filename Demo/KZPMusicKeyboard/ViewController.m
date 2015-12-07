@@ -124,6 +124,7 @@
     self.spellingTextView.text = nil;
     self.pitchTextView.text = nil;
     self.durationTextView.text = nil;
+    self.sciNotationView.text = nil;
 }
 
 

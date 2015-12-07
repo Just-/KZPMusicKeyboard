@@ -65,7 +65,7 @@ By default the keyboard will display all of its controls and make them active. B
 	keyboard.sendNoteOff = YES;
 	keyboard.allowSpelling = NO;
 	keyboard.chordDetection = YES;
-	keyboard.chordSensitivity = 20.0f; // Milliseconds. When a chord is detected, all its notes are delivered in a single pitch data object.
+	keyboard.chordSensitivity = 20; // milliseconds. When a chord is detected, all its notes are delivered in a single pitch data object.
 	keyboard.useDurationControls = NO;
 	keyboard.useLocalAudio = YES;
 	keyboard.allowDismiss = NO;
