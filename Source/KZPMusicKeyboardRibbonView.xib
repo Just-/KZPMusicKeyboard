@@ -32,7 +32,6 @@
                 <outletCollection property="keyboardControlButtons" destination="loj-Qv-lHw" id="CTp-tm-8su"/>
                 <outletCollection property="keyboardControlButtons" destination="tT7-hb-Tzx" id="HsJ-JS-uMq"/>
                 <outletCollection property="keyboardControlButtons" destination="mE2-D2-t7a" id="Jdj-sD-0XH"/>
-                <outletCollection property="keyboardControlButtons" destination="zSx-rk-BIJ" id="BbS-ES-Vak"/>
                 <outletCollection property="durationButtons" destination="GVF-zd-6lN" id="cPq-Ng-ov5"/>
                 <outletCollection property="durationButtons" destination="toB-hg-Wxn" id="Mm8-4H-h9t"/>
                 <outletCollection property="durationButtons" destination="0gw-uD-hBY" id="4bD-zT-koR"/>
@@ -53,6 +52,7 @@
                 <outletCollection property="durationControlButtons" destination="GVF-zd-6lN" id="KkO-ok-uNa"/>
                 <outletCollection property="durationControlButtons" destination="loj-Qv-lHw" id="Qxx-et-0qj"/>
                 <outletCollection property="durationControlButtons" destination="tT7-hb-Tzx" id="1Vq-Fv-a4w"/>
+                <outletCollection property="keyboardControlButtons" destination="zSx-rk-BIJ" id="qF9-if-OcV"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -258,6 +258,12 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" image="dismiss.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="focused">
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="dismissButtonPressed:" destination="-1" eventType="touchUpInside" id="gib-Cc-1Aj"/>

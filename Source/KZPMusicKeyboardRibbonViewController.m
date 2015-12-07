@@ -52,12 +52,14 @@
 {
     _backspaceEnabled = backspaceEnabled;
     backspaceEnabled ? [self enableControl:self.backspaceButton] : [self disableControl:self.backspaceButton];
+    [self selectControl:self.backspaceButton];
 }
 
 - (void)enableDismiss:(BOOL)dismissEnabled
 {
     _dismissEnabled = dismissEnabled;
     dismissEnabled ? [self enableControl:self.dismissButton] : [self disableControl:self.dismissButton];
+    [self selectControl:self.dismissButton];
 }
 
 - (void)enableDurationControls:(BOOL)durationControlsEnabled
@@ -243,10 +245,8 @@
 // TODO: What is this for?
 - (void)resetDuration
 {
-    self.tieButton.selected = NO;
-    self.tieButton.layer.opacity = 0.5;
-    self.manualSpellButton.selected = NO;
-    self.manualSpellButton.layer.opacity = 0.5;
+    [self deselectControl:self.tieButton];
+    [self deselectControl:self.manualSpellButton];
 }
 
 - (void)resetChordSensitivitySlider
