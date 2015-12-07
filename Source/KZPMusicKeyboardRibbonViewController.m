@@ -44,6 +44,20 @@
     [self chordThresholdSliderValueChanged:self.chordThresholdSlider];
 }
 
+- (void)enableBackspace:(BOOL)backspaceEnabled
+{
+    self.backspaceButton.enabled = backspaceEnabled;
+    self.backspaceButton.alpha = backspaceEnabled ? 1.0 : 0.3;
+    _backspaceEnabled = backspaceEnabled;
+}
+
+- (void)enableDismiss:(BOOL)dismissEnabled
+{
+    self.dismissButton.enabled = dismissEnabled;
+    self.dismissButton.alpha = dismissEnabled ? 1.0 : 0.3;
+    _dismissEnabled = dismissEnabled;
+}
+
 
 //- (void)setRhythmControlsEnabled:(BOOL)rhythmControlsEnabled
 //{
