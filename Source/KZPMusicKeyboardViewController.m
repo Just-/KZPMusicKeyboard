@@ -17,7 +17,7 @@
 #import "KZPMusicKeyboardSpellingViewController.h"
 
 
-@interface KZPMusicKeyboardViewController () <KZPMusicKeyboardMapDelegate, KZPMusicKeyboardRibbonControlDelegate>
+@interface KZPMusicKeyboardViewController () <KZPMusicKeyboardMapDelegate, KZPMusicKeyboardRibbonControlDelegate, KZPMusicKeyboardSpellingDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *keyboardMainView;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyButtons;
@@ -28,7 +28,7 @@
 @property (strong, nonatomic) KZPMusicKeyboardRibbonViewController *controlRibbon;
 
 @property (strong, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
-@property (strong, nonatomic) KZPMusicKeyboardSpellingViewController *spellingSurface;
+@property (strong, nonatomic) KZPMusicKeyboardSpellingViewController *spellingSurfaceViewController;
 
 @property (strong, nonatomic) KZPMusicKeyboardMapViewController *keyboardMapViewController;
 
@@ -43,13 +43,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.localAudio = [[KZPMusicKeyboardAudio alloc] init];
-    self.localAudio.patch = [self.controlRibbon selectedPatch];
     self.musicDataAggregator = [[KZPMusicKeyboardDataAggregator alloc] init];
 
+    [self loadLocalAudio];
     [self loadControlRibbon];
     [self loadKeyboardMap];
+    [self loadSpellingSurface];
     [self setupKeyReleaseAction];
     [self setupDefocusView];
 }
@@ -59,6 +58,12 @@
     self.musicalDelegate = musicalDelegate;
     self.musicDataAggregator.musicalDelegate = musicalDelegate;
     self.controlRibbon.controlDelegate = controlDelegate;
+}
+
+- (void)loadLocalAudio
+{
+    self.localAudio = [[KZPMusicKeyboardAudio alloc] init];
+    self.localAudio.patch = [self.controlRibbon selectedPatch];
 }
 
 - (void)loadKeyboardMap
@@ -76,6 +81,19 @@
     self.controlRibbon.delegate = self;
     [self.view addSubview:self.controlRibbon.view];
 }
+
+- (void)loadSpellingSurface
+{
+    self.spellingSurfaceViewController = [[KZPMusicKeyboardSpellingViewController alloc] init];
+    self.spellingSurfaceViewController.musicDataAggregator = self.musicDataAggregator;
+    self.spellingSurfaceViewController.delegate = self;
+    NSMutableDictionary *keyButtonsByNoteID = [NSMutableDictionary dictionary];
+    for (UIButton *key in self.keyButtons) {
+        [keyButtonsByNoteID setObject:key forKey:[NSString stringWithFormat:@"%ld", (long)[key tag]]];
+    }
+    self.spellingSurfaceViewController.keyButtonsByNoteID = [NSDictionary dictionaryWithDictionary:keyButtonsByNoteID];
+}
+
 
 - (void)hideControlRibbon
 {
@@ -111,12 +129,17 @@
 }
 
 
-#pragma mark - KZPMusicKeyboardControlRibbonDelegate -
+#pragma mark - KZPMusicKeyboardSpellingDelegate -
 
-- (void)deferToManualSpelling
+
+- (void)manualSpellingComplete
 {
-    // call spelling surface
+    [self.controlRibbon resetSpelling];
 }
+
+
+#pragma mark -
+
 
 - (void)setKeyboardEnabled:(BOOL)keyboardEnabled
 {
@@ -159,13 +182,11 @@
     
     [self.musicDataAggregator reset];
     [self.controlRibbon resetDuration];
-    [self.spellingSurface dismissWithCompletion:^{
+    [self.spellingSurfaceViewController dismissWithCompletion:^{
         self.keyboardDefocusView.hidden = YES;
     }];
 }
 
-
-// TODO: separate note on/off eventually
 - (IBAction)keyButtonPressed:(id)sender
 {
     NSUInteger noteID = [sender tag];

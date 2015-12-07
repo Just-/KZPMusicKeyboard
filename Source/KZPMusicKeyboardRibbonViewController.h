@@ -26,6 +26,8 @@
 
 @property (weak, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
 
+@property (nonatomic, setter=enableManualSpelling:, getter=manualSpellingEnabled) BOOL manualSpelling;
+
 - (MusicSpelling)selectedAccidental;
 - (void)resetSpelling;
 

@@ -11,8 +11,8 @@
 
 @interface KZPMusicPitchData : NSObject
 
-@property (strong, readonly) NSArray *spellings;
-@property (strong, readonly) NSArray *noteValues;
+@property (strong, nonatomic) NSArray *spellings;
+@property (strong, nonatomic) NSArray *noteValues;
 
 - (void)addPitch:(NSUInteger)pitch;
 - (void)addSpelling:(MusicSpelling)spelling;

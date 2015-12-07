@@ -30,6 +30,11 @@
     self.pitchData = nil;
 }
 
+- (void)resetPitchData
+{
+    self.pitchData = nil;
+}
+
 - (void)receiveDuration:(unsigned int)duration rest:(BOOL)rest dotted:(BOOL)dotted tied:(BOOL)tied
 {
     self.durationData = [[KZPMusicDurationData alloc] initWithDuration:duration rest:rest tied:dotted dotted:tied];
@@ -43,12 +48,12 @@
 - (void)receivePitch:(NSUInteger)pitch
 {
     [self.pitchData addPitch:pitch];
-    
-//    [self.inputTypes addObject:@(KBD__NOTE_ON)];
-    
     [self.chordTimer invalidate];
     
+    NSLog(@"chord sensitivity: %lu", (unsigned long)self.chordSensitivity);
+    
     if (self.chordDetectionEnabled) {
+        NSLog(@"start timer");
         self.chordTimer = [NSTimer scheduledTimerWithTimeInterval:(double)self.chordSensitivity / 1000
                                                            target:self
                                                          selector:@selector(chordDetected)
@@ -57,6 +62,16 @@
     } else {
         [self flush];
     }
+}
+
+- (void)receiveSpellingArray:(NSArray *)spellings
+{
+    self.pitchData.spellings = spellings;
+}
+
+- (void)receivePitchArray:(NSArray *)pitches
+{
+    self.pitchData.noteValues = pitches;
 }
 
 - (void)flush
@@ -72,14 +87,11 @@
 
 - (void)chordDetected
 {
-//    if (self.manualSpellButton.selected) {
-//        self.spellingChoices = [NSMutableDictionary dictionary];
-//        for (NSNumber *noteID in self.noteIDs) {
-//            [self displayAccidentalOptionsForNoteID:[noteID intValue]];
-//            [self.spellingChoices setObject:[NSNull null] forKey:noteID];
-//        }
-//        return;
-//    }
+    if ([self manualSpellingEnabled]) {
+        [self.delegate provideManualSpellingForNoteValues:[self.pitchData noteValues]];
+    } else {
+        [self flush];
+    }
 }
 
 

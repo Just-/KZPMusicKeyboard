@@ -9,8 +9,7 @@
 #import "KZPMusicKeyboardSpellingViewController.h"
 #import "KZPMusicSciNotation.h"
 
-@interface KZPMusicKeyboardSpellingViewController ()
-
+@interface KZPMusicKeyboardSpellingViewController () <KZPMusicDataAggregatorDelegate>
 
 // Spelling
 @property (strong, nonatomic) NSArray *imageNames;
@@ -48,9 +47,25 @@
     
 }
 
+- (void)setMusicDataAggregator:(id<KZPMusicKeyboardDelegate>)musicDataAggregator
+{
+    _musicDataAggregator = musicDataAggregator;
+    _musicDataAggregator.delegate = self;
+}
 
 
-#pragma mark - Manual Spelling -
+#pragma mark - KZPMusicDataAggregatorDelegate -
+
+
+- (void)provideManualSpellingForNoteValues:(NSArray *)noteValues
+{
+    self.spellingChoices = [NSMutableDictionary dictionary];
+    for (NSNumber *noteID in noteValues) {
+        [self displayAccidentalOptionsForNoteID:[noteID intValue]];
+        [self.spellingChoices setObject:[NSNull null] forKey:noteID];
+    }
+}
+
 
 #define EBONY_DIM       31
 #define IVORY_DIM       34
@@ -87,19 +102,16 @@
         isWhite = NO;
     }
     
-    UIButton *key;
-//    for (UIButton *k in self.keyButtons) {
-//        if ([k tag] == noteID) key = k;
-//    }
     
-    CGRect keyFrame = [key frame];
+    UIButton *keyButton = [self.keyButtonsByNoteID objectForKey:[NSString stringWithFormat:@"%d", noteID]];
+    CGRect keyButtonFrame = [keyButton frame];
     NSMutableArray *spellingButtons = [NSMutableArray array];
     
     for (int i = 0; i < 5; i++) {
         int modifier = order[i];
         if ([KZPMusicSciNotation modifier:modifier isLegalForPitch:noteID]) {
-            CGRect accidentalFrame = CGRectMake(keyFrame.origin.x + inset_h,
-                                                keyFrame.size.height - (buttonCount * offset) - inset_v - dim,
+            CGRect accidentalFrame = CGRectMake(keyButtonFrame.origin.x + inset_h,
+                                                keyButtonFrame.size.height - (buttonCount * offset) - inset_v - dim,
                                                 dim, dim);
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"music-%@%@", self.imageNames[modifier + 2], isWhite ? @"" : @"-inverted"]];
             UIButton *button = [[UIButton alloc] initWithFrame:accidentalFrame];
@@ -128,7 +140,7 @@
 
 - (void)spellingButtonPressed:(UIButton *)sender
 {
-    NSNumber *key = [NSNumber numberWithInt:[sender tag]];
+    NSNumber *key = [NSNumber numberWithLong:[sender tag]];
     NSArray *buttonSet = [self.spellingButtons objectForKey:key];
     [self.spellingButtons removeObjectForKey:key];
     [UIView animateWithDuration:0.3 animations:^{
@@ -142,26 +154,16 @@
     }];
     [self.spellingChoices setObject:[self.imageNameMap valueForKey:sender.titleLabel.text] forKey:key];
     
-    // Check if all accidentals are picked
-    for (NSNumber *k in [self.spellingChoices allKeys]) {
-        if ([[self.spellingChoices objectForKey:k] isEqual:[NSNull null]]) {
-            return;
-        }
+    if ([self spellingSelectionsComplete]) {
+        [self sendPitchAndSpellingData];
+        self.spellingButtons = nil;
+        [self.delegate manualSpellingComplete];
+        [UIView animateWithDuration:0.2 animations:^{
+            self.spellingSurface.alpha = 0.0;
+        } completion:^(BOOL finished) {
+            self.spellingSurface.hidden = YES;
+        }];
     }
-    
-    // Reflush note info with chosen accidentals
-    self.spellingButtons = nil;
-//    self.manualSpellButton.selected = NO;
-//    self.manualSpellButton.layer.opacity = 0.5;
-//    self.noteIDs = [NSMutableArray arrayWithArray:[self.spellingChoices allKeys]];
-//    self.spellings = [NSMutableArray arrayWithArray:[self.spellingChoices allValues]];
-//    [self flushAggregatedNoteInformation];
-//    
-//    [UIView animateWithDuration:0.2 animations:^{
-//        self.keyboardDefocusView.alpha = 0.0;
-//    } completion:^(BOOL finished) {
-//        self.keyboardDefocusView.hidden = YES;
-//    }];
 }
 
 - (void)dismissWithCompletion:(void (^)())completionBlock
@@ -183,6 +185,24 @@
         self.spellingButtons = nil;
         completionBlock();
     }];
+}
+
+- (BOOL)spellingSelectionsComplete
+{
+    for (NSNumber *k in [self.spellingChoices allKeys]) {
+        if ([[self.spellingChoices objectForKey:k] isEqual:[NSNull null]]) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (void)sendPitchAndSpellingData
+{
+    [self.musicDataAggregator resetPitchData];
+    [self.musicDataAggregator receivePitchArray:[self.spellingChoices allKeys]];
+    [self.musicDataAggregator receiveSpellingArray:[self.spellingChoices allValues]];
+    [self.musicDataAggregator flush];
 }
 
 @end

@@ -43,6 +43,7 @@
                 <outletCollection property="spellingButtons" destination="Svz-7a-oAK" id="qOo-jX-46F"/>
                 <outletCollection property="spellingButtons" destination="0zj-aL-ekj" id="8Tl-Dr-ugi"/>
                 <outletCollection property="spellingButtons" destination="e2f-hn-kXv" id="829-GV-UQs"/>
+                <outletCollection property="spellingButtons" destination="EAb-Sg-zUD" id="M0X-dq-Y1r"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
