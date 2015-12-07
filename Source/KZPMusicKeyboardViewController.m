@@ -110,7 +110,6 @@
     } else {
         if (!self.ribbonVisible) [self showControlRibbon];
     }
-    self.chordSensitivityWasSetProgrammatically = NO;
 }
 
 - (void)hideControlRibbon
@@ -259,9 +258,13 @@
 - (void)enableBackspaceControl:(BOOL)setting { [self.controlRibbon enableBackspace:setting]; }
 - (void)enableChordDetection:(BOOL)setting { [self.musicDataAggregator enableChordDetection:setting]; }
 - (void)chordSensitivity:(NSUInteger)setting {
-    [self.musicDataAggregator setChordSensitivity:setting];
-    [self.controlRibbon resetChordSensitivitySlider];
-    self.chordSensitivityWasSetProgrammatically = YES;
+    if (setting != 0) {
+        [self.musicDataAggregator setChordSensitivity:setting];
+        [self.controlRibbon resetChordSensitivitySlider];
+        self.chordSensitivityWasSetProgrammatically = YES;
+    } else {
+        self.chordSensitivityWasSetProgrammatically = NO;
+    }
 }
 
 @end

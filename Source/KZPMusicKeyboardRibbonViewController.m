@@ -8,6 +8,7 @@
 
 #import "KZPMusicKeyboardRibbonViewController.h"
 
+
 @interface KZPMusicKeyboardRibbonViewController ()
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyboardControlButtons;
@@ -25,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *toneSelector;
 
 @end
+
 
 @implementation KZPMusicKeyboardRibbonViewController
 

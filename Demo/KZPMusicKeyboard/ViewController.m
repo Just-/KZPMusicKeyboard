@@ -61,6 +61,8 @@
     [self.keyboard enableBackspaceControl:[self.enableBackspaceSwitch isOn]];
     if ([self.defaultSensitivitySwitch isOn]) {
         [self.keyboard chordSensitivity:50];
+    } else {
+        [self.keyboard chordSensitivity:0];
     }
 }
 
