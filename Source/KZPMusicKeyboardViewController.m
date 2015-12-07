@@ -69,6 +69,7 @@
 - (void)loadControlRibbon
 {
     self.controlRibbon = [[KZPMusicKeyboardRibbonViewController alloc] initWithNibName:@"KZPMusicKeyboardRibbonView" bundle:nil];
+    self.controlRibbon.musicDataAggregator = self.musicDataAggregator;
     [self.view addSubview:self.controlRibbon.view];
 }
 
@@ -106,7 +107,12 @@
 }
 
 
-#pragma mark -
+#pragma mark - KZPMusicKeyboardRibbonDelegate -
+
+- (void)dismissManually
+{
+    [self.delegate ]
+}
 
 
 - (void)setKeyboardEnabled:(BOOL)keyboardEnabled
@@ -161,15 +167,8 @@
 {
     NSUInteger noteID = [sender tag];
     [self.localAudio noteOn:noteID];
-    
-    // TODO: Give aggregator to control ribbon. Have a rule for flush.
-    [self.musicDataAggregator receiveDuration:[self.controlRibbon selectedDuration]
-                                         rest:[self.controlRibbon isRest]
-                                       dotted:[self.controlRibbon isDotted]
-                                         tied:[self.controlRibbon isTied]];
-    [self.musicDataAggregator receiveSpelling:[self.controlRibbon selectedAccidental]];
+    [self.controlRibbon sendDurationAndSpelling];
     [self.musicDataAggregator receivePitch:noteID];
-    [self.controlRibbon resetSpelling];
 }
 
 - (IBAction)keyButtonReleased:(id)sender

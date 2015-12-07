@@ -9,20 +9,21 @@
 #import "ViewController.h"
 #import "KZPMusicKeyboardDelegate.h"
 #import "KZPMusicSciNotation.h"
+#import "KZPMusicKeyboardDataAggregator.h"
 
 @interface KZPMusicKeyboardRibbonViewController : UIViewController
 
 @property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
 
+@property (weak, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
+
 - (MusicSpelling)selectedAccidental;
 - (void)resetSpelling;
-- (unsigned int)selectedDuration;
-- (BOOL)isRest;
-- (BOOL)isTied;
-- (BOOL)isRest;
 
 - (NSString *)selectedPatch;
 
 - (void)resetDuration;
+
+- (void)sendDurationAndSpelling;
 
 @end

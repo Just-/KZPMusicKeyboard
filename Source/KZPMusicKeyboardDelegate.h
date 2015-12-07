@@ -12,6 +12,7 @@
 
 @protocol KZPMusicKeyboardDelegate <NSObject>
 
+@required
 - (void)keyboardDidSendPitchData:(KZPMusicPitchData *)pitchData
                 withDurationData:(KZPMusicDurationData *)durationData;
 

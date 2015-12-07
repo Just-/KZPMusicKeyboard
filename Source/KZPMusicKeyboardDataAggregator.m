@@ -10,7 +10,6 @@
 
 @interface KZPMusicKeyboardDataAggregator ()
 
-// Aggregation of note information for the purpose of detecting chords
 @property (strong, nonatomic) NSTimer *chordTimer;
 @property (strong, nonatomic) KZPMusicDurationData *durationData;
 @property (strong, nonatomic) KZPMusicPitchData *pitchData;
@@ -45,18 +44,16 @@
 {
     [self.pitchData addPitch:pitch];
     
-//    [self.noteIDs addObject:@(pitch)];
 //    [self.inputTypes addObject:@(KBD__NOTE_ON)];
     
     [self.chordTimer invalidate];
     
     if (self.chordDetectionEnabled) {
-//        NSUInteger sliderSetting = (NSUInteger)round([self.aggregatorThresholdSlider value]);
-//        self.chordTimer = [NSTimer scheduledTimerWithTimeInterval:(double)sliderSetting / 1000
-//                                                           target:self
-//                                                         selector:@selector(flushAggregatedNoteInformation)
-//                                                         userInfo:nil
-//                                                          repeats:NO];
+        self.chordTimer = [NSTimer scheduledTimerWithTimeInterval:(double)self.chordSensitivity / 1000
+                                                           target:self
+                                                         selector:@selector(chordDetected)
+                                                         userInfo:nil
+                                                          repeats:NO];
     } else {
         [self flush];
     }
@@ -64,7 +61,9 @@
 
 - (void)flush
 {
-
+    if ([[self.pitchData spellings] count] == 0) {
+        [self.pitchData addSpelling:MusicSpelling_Natural];
+    }
     [self.delegate keyboardDidSendPitchData:self.pitchData withDurationData:self.durationData];
     [self reset];
 }
@@ -81,23 +80,5 @@
 //    }
 }
 
-
-- (void)flushAggregatedNoteInformation
-{
-
-    
-//    if (![self.spellings count]) [self.spellings addObject:@(SP__NATURAL)];
-//    if ([self.delegate respondsToSelector:@selector(keyboardDidSendSignal:inputType:spelling:duration:dotted:tied:midiPacket:oscPacket:)]) {
-//        [self.delegate keyboardDidSendSignal:self.noteIDs
-//                                   inputType:self.inputTypes
-//                                    spelling:self.spellings
-//                                    duration:self.rhythmControlsEnabled ? self.selectedDuration : nil
-//                                      dotted:self.dotButton.selected
-//                                        tied:self.tieButton.selected
-//                                  midiPacket:self.MIDIPackets
-//                                   oscPacket:self.OSCPackets];
-//    }
-//    [self resetAggregation];
-}
 
 @end

@@ -67,10 +67,10 @@ static KZPMusicKeyboard *keyboardInstance;
 //    CGFloat landscapeScreenWidth = MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     [self.keyboardViewController.view setFrameY:landscapeScreenHeight];
     [self.windowView addSubview:self.keyboardViewController.view];
-    
     [UIView animateWithDuration:self.shouldAnimate ? 0.3 : 0.0 animations:^{
-        [self.keyboardViewController.view setFrameY:landscapeScreenHeight -
-         [self.keyboardViewController height]];
+        [self.keyboardViewController.view setFrameY:landscapeScreenHeight - [self.keyboardViewController height]];
+    } completion:^(BOOL finished) {
+        completionBlock();
     }];
 //    self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.keyboardViewController.view.frame.origin.y);    
 }

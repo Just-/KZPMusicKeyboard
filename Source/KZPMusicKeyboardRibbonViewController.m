@@ -63,6 +63,16 @@
 //}
 
 
+- (void)sendDurationAndSpelling
+{
+    [self.musicDataAggregator receiveDuration:[self selectedDuration]
+                                         rest:self.restButton.selected
+                                       dotted:self.dottedButton.selected
+                                         tied:self.tieButton.selected];
+    [self.musicDataAggregator receiveSpelling:[self selectedAccidental]];
+    [self resetSpelling];
+}
+
 #pragma mark - Actions -
 
 
@@ -88,6 +98,7 @@
 
 - (IBAction)dismissButtonPressed:(id)sender
 {
+//    self.delegate
     if ([self.delegate respondsToSelector:@selector(keyboardWasDismissed)]) {
         [self.delegate keyboardWasDismissed];
     }
@@ -200,9 +211,10 @@
 //    }
 }
 
-- (IBAction)chordThresholdSliderValueChanged:(id)sender {
-    NSUInteger sliderSetting = (NSUInteger)round([(UISlider *)sender value]);
-    self.chordThresholdLabel.text = [NSString stringWithFormat:@"Chord: %dms", sliderSetting];
+- (IBAction)chordThresholdSliderValueChanged:(UISlider *)sender {
+    NSUInteger sliderSetting = (NSUInteger)round([sender value]);
+    self.chordThresholdLabel.text = [NSString stringWithFormat:@"Chord: %lums", (unsigned long)sliderSetting];
+    self.musicDataAggregator.chordSensitivity = sliderSetting;
 }
 
 - (MusicSpelling)selectedAccidental {

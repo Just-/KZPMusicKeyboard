@@ -20,6 +20,7 @@ typedef enum {
 @property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
 
 @property (nonatomic, getter=chordDetectionEnabled, setter=enableChordDetection:) BOOL chordDetection;
+@property (nonatomic) NSUInteger chordSensitivity;
 
 - (void)reset;
 - (void)receiveDuration:(unsigned int)duration rest:(BOOL)rest dotted:(BOOL)dotted tied:(BOOL)tied;
