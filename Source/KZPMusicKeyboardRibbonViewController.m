@@ -11,6 +11,7 @@
 @interface KZPMusicKeyboardRibbonViewController ()
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyboardControlButtons;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *durationControlButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *durationButtons;
 @property (weak, nonatomic) IBOutlet UIButton *restButton;
 @property (weak, nonatomic) IBOutlet UISlider *chordThresholdSlider;
@@ -55,7 +56,7 @@
 
 - (void)enableDurationControls:(BOOL)durationControlsEnabled
 {
-    for (UIButton *duration in self.durationButtons) {
+    for (UIButton *duration in self.durationControlButtons) {
         durationControlsEnabled ? [self enableControl:duration] : [self disableControl:duration];
         if ([duration tag] == 1 && [self durationControlsActive]) {
             [self selectControl:duration];
@@ -67,7 +68,7 @@
 - (void)enableSpelling:(BOOL)spellingEnabled
 {
     for (UIButton *spelling in self.spellingButtons) {
-        [self enableControl:spelling];
+        spellingEnabled ? [self enableControl:spelling] : [self disableControl:spelling];
     }
     _spellingEnabled = spellingEnabled;
 }
@@ -82,7 +83,7 @@
         if (sender == accidental) {
             [self toggleControl:sender];
         } else {
-            [self deselectControl:sender];
+            [self deselectControl:accidental];
         }
     }
 }
@@ -257,7 +258,7 @@
 {
     control.selected = NO;
     control.enabled = NO;
-    control.alpha = 0.1;
+    control.alpha = 0.15;
 }
 
 - (void)enableControl:(UIButton *)control

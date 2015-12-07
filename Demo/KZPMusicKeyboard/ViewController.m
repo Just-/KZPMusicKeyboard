@@ -95,7 +95,7 @@
 
 - (void)keyboardDidSendNoteOn:(NSNumber *)noteOnPitch noteOff:(NSNumber *)noteOffPitch
 {
-    NSLog(@"%@, %@", noteOnPitch, noteOffPitch);
+    
 }
 
 

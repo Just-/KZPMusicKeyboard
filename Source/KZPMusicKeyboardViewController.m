@@ -96,7 +96,6 @@
 
 - (void)reconfigureForSettings
 {
-    NSLog(@"%d, %d, %d, %d, %d", [self.controlRibbon spellingEnabled], [self.controlRibbon durationControlsEnabled], [self.controlRibbon dismissEnabled], [self.controlRibbon backspaceEnabled], [self.musicDataAggregator chordDetectionEnabled]);
     if (![self.controlRibbon spellingEnabled] &&
         ![self.controlRibbon durationControlsEnabled] &&
         ![self.controlRibbon dismissEnabled] &&

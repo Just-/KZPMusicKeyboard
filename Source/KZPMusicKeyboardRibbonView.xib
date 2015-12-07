@@ -44,6 +44,15 @@
                 <outletCollection property="spellingButtons" destination="0zj-aL-ekj" id="8Tl-Dr-ugi"/>
                 <outletCollection property="spellingButtons" destination="e2f-hn-kXv" id="829-GV-UQs"/>
                 <outletCollection property="spellingButtons" destination="EAb-Sg-zUD" id="M0X-dq-Y1r"/>
+                <outletCollection property="durationControlButtons" destination="BTW-N6-4wl" id="Cew-Rm-gaJ"/>
+                <outletCollection property="durationControlButtons" destination="pI5-z5-fDg" id="juP-RX-swL"/>
+                <outletCollection property="durationControlButtons" destination="tnv-oc-ak8" id="I8b-Yw-gru"/>
+                <outletCollection property="durationControlButtons" destination="H1T-mi-elx" id="wD1-jN-3LC"/>
+                <outletCollection property="durationControlButtons" destination="0gw-uD-hBY" id="qIE-Pp-BDR"/>
+                <outletCollection property="durationControlButtons" destination="toB-hg-Wxn" id="LjX-nU-UB2"/>
+                <outletCollection property="durationControlButtons" destination="GVF-zd-6lN" id="KkO-ok-uNa"/>
+                <outletCollection property="durationControlButtons" destination="loj-Qv-lHw" id="Qxx-et-0qj"/>
+                <outletCollection property="durationControlButtons" destination="tT7-hb-Tzx" id="1Vq-Fv-a4w"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -164,6 +173,9 @@
                     <state key="normal" image="music-sharp.png">
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="accidentalButtonPress:" destination="-1" eventType="touchUpInside" id="bOJ-8l-k79"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAb-Sg-zUD">
                     <rect key="frame" x="3" y="3" width="35" height="35"/>
@@ -173,7 +185,7 @@
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="accidentalButtonPress:" destination="-1" eventType="touchUpInside" id="mwy-F2-Imh"/>
+                        <action selector="accidentalButtonPress:" destination="-1" eventType="touchUpInside" id="tHZ-Cp-ffY"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="-1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zj-aL-ekj">
@@ -183,6 +195,9 @@
                     <state key="normal" image="music-flat.png">
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="accidentalButtonPress:" destination="-1" eventType="touchUpInside" id="kQ2-HV-1xn"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svz-7a-oAK">
                     <rect key="frame" x="120" y="3" width="35" height="35"/>
@@ -191,6 +206,9 @@
                     <state key="normal" image="music-double-sharp.png">
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="accidentalButtonPress:" destination="-1" eventType="touchUpInside" id="mpP-o5-nDu"/>
+                    </connections>
                 </button>
                 <button opaque="NO" tag="-2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nem-Qq-fEs">
                     <rect key="frame" x="159" y="3" width="35" height="35"/>
@@ -199,6 +217,9 @@
                     <state key="normal" image="music-double-flat.png">
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="accidentalButtonPress:" destination="-1" eventType="touchUpInside" id="gLy-mh-Jph"/>
+                    </connections>
                 </button>
                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="5" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="85k-sp-9O2">
                     <rect key="frame" x="253" y="6" width="121" height="31"/>
