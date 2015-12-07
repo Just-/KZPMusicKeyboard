@@ -57,20 +57,21 @@ If you allow the keyboard to dismiss manually (see 'Configuring'), then it is a 
 Configuring
 -----------
 
-By default the keyboard will display all of its controls and make them active. But this might be unnecessary for situations not involving data entry. The available settings can be explored in the `KZPMusicKeyboard` header. For example, a playable keyboard with no extra functionality that is meant to display permanently could be achieved with the following:
+By default the keyboard will enable all of its controls. But this might be unnecessary for situations not involving data entry. The available settings can be explored in the `KZPMusicKeyboard` header. For example, a playable keyboard with no extra functionality that is meant to display permanently could be achieved with the following:
 
 ```objective-c
  	KZPMusicKeyboard *keyboard = [KPZMusicKeyboard keyboard];
-	keyboard.shouldAnimate = NO;
-	keyboard.sendNoteOff = YES;
-	keyboard.allowSpelling = NO;
-	keyboard.chordDetection = YES;
-	keyboard.chordSensitivity = 20; // milliseconds. When a chord is detected, all its notes are delivered in a single pitch data object.
-	keyboard.useDurationControls = NO;
-	keyboard.useLocalAudio = YES;
-	keyboard.allowDismiss = NO;
-	keyboard.allowBackspace = NO;
+
+	[keyboard shouldAnimate:NO];
+	[keyboard enableSpelling:NO;
+	[keyboard enableChordDetection:YES];
+	[keyboard chordSensitivity:20]; // milliseconds. When a chord is detected, all its notes are delivered in a single pitch data object.
+	[keyboard enableDurationControls:NO];
+	[keyboard enableLocalAudio:YES];
+	[keyboard enableManualDismiss:NO];
+	[keyboard enableBackspaceControl:NO];
+
 	[keyboard show];
 ```
 
-In this case, because none of the additional controls are active and chord sensitivity is fixed programmatically, the keyboard's top ribbon of controls is hidden automatically. 
+In this case, because none of the additional controls are enabled and chord sensitivity is fixed programmatically, the keyboard's top ribbon of controls is hidden automatically. 
