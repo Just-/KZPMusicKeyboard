@@ -169,15 +169,29 @@
 #pragma mark -
 
 
+//- (void)focusKeyboard
+//{
+//    if ([self pitchControlEnabled]) {
+//        [self.musicDataAggregator reset];
+//        [self.controlRibbon resetDuration];
+//        self.keyboardDefocusView
+//        [self.keyboardDefocusView dismissWithCompletion:^{
+//            self.keyboardDefocusView.hidden = YES;
+//        }];
+//    }
+//}
+
 - (void)focusKeyboard
 {
-    if (![self pitchControlEnabled]) return;
-    
-    [self.musicDataAggregator reset];
-    [self.controlRibbon resetDuration];
-    [self.spellingSurfaceViewController dismissWithCompletion:^{
+    if ([self pitchControlEnabled]) {
         self.keyboardDefocusView.hidden = YES;
-    }];
+    }
+}
+
+- (void)defocusKeyboard
+{
+    self.keyboardDefocusView.hidden = NO;
+    self.keyboardDefocusView.alpha = 0.5;
 }
 
 //- (void)setKeyboardEnabled:(BOOL)keyboardEnabled
@@ -186,8 +200,7 @@
 //        self.keyboardDefocusView.hidden = YES;
 //        self.keyboardDefocusView.alpha = 0.0;
 //    } else {
-//        self.keyboardDefocusView.hidden = NO;
-//        self.keyboardDefocusView.alpha = 0.5;
+
 //        [self.controlRibbon resetSpelling];
 //    }
 //    _keyboardEnabled = keyboardEnabled;
@@ -243,12 +256,12 @@
 
 - (void)enablePitchControl:(BOOL)pitchControlEnabled
 {
+    _pitchControlEnabled = pitchControlEnabled;
     if (pitchControlEnabled) {
         [self focusKeyboard];
     } else {
-        //        [self defocusKeyboard];
+        [self defocusKeyboard];
     }
-    _pitchControlEnabled = pitchControlEnabled;
 }
 
 - (void)enableSpelling:(BOOL)setting { [self.controlRibbon enableSpelling:setting]; }
