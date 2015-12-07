@@ -54,7 +54,7 @@
     [self loadKeyboardMap];
     [self loadSpellingSurface];
     [self setupKeyReleaseAction];
-    [self setupDefocusView];
+    [self focusKeyboardAnimated:NO];
 }
 
 - (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate controlDelegate:(id<KZPMusicKeyboardControlDelegate>)controlDelegate
@@ -92,6 +92,7 @@
     self.spellingSurfaceViewController = [[KZPMusicKeyboardSpellingViewController alloc] init];
     self.spellingSurfaceViewController.musicDataAggregator = self.musicDataAggregator;
     self.spellingSurfaceViewController.delegate = self;
+    self.spellingSurfaceViewController.spellingSurface = self.keyboardDefocusView;
     NSMutableDictionary *keyButtonsByNoteID = [NSMutableDictionary dictionary];
     for (UIButton *key in self.keyButtons) {
         [keyButtonsByNoteID setObject:key forKey:[NSString stringWithFormat:@"%ld", (long)[key tag]]];
@@ -160,9 +161,14 @@
 #pragma mark - KZPMusicKeyboardSpellingDelegate -
 
 
-- (void)manualSpellingComplete
+- (void)showSpellingSurface
 {
+    [self defocusKeyboardAnimated:YES light:YES];
+}
 
+- (void)hideSpellingSurface
+{
+    [self focusKeyboardAnimated:YES];
 }
 
 
@@ -192,11 +198,12 @@
     }
 }
 
-- (void)defocusKeyboardAnimated:(BOOL)animated
+- (void)defocusKeyboardAnimated:(BOOL)animated light:(BOOL)light
 {
+    float lightness = light ? 0.3 : 0.5;
     self.keyboardDefocusView.hidden = NO;
     [UIView animateWithDuration:animated ? 0.3 : 0.0 animations:^{
-        self.keyboardDefocusView.alpha = 0.5;
+        self.keyboardDefocusView.alpha = lightness;
     }];
 }
 
@@ -211,14 +218,6 @@
 //    }
 //    _keyboardEnabled = keyboardEnabled;
 //}
-
-- (void)setupDefocusView
-{
-    self.keyboardDefocusView.hidden = YES;
-    self.keyboardDefocusView.alpha = 0.0;
-    UITapGestureRecognizer *refocusGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(focusKeyboardAnimated:)];
-    [self.keyboardDefocusView addGestureRecognizer:refocusGesture];
-}
 
 - (void)recenter
 {
@@ -266,7 +265,7 @@
     if (pitchControlEnabled) {
         [self focusKeyboardAnimated:NO];
     } else {
-        [self defocusKeyboardAnimated:NO];
+        [self defocusKeyboardAnimated:NO light:NO];
     }
 }
 

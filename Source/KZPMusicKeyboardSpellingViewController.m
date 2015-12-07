@@ -11,7 +11,6 @@
 
 @interface KZPMusicKeyboardSpellingViewController () <KZPMusicDataAggregatorDelegate>
 
-// Spelling
 @property (strong, nonatomic) NSArray *imageNames;
 @property (strong, nonatomic) NSDictionary *imageNameMap;
 @property (strong, nonatomic) NSMutableDictionary *spellingButtons;
@@ -21,14 +20,14 @@
 
 @implementation KZPMusicKeyboardSpellingViewController
 
-//- (NSMutableDictionary *)spellingButtons
-//{
-//    if (!_spellingButtons) _spellingButtons = [NSMutableDictionary dictionary];
-//    return _spellingButtons;
-//}
-//
+- (NSMutableDictionary *)spellingButtons
+{
+    if (!_spellingButtons) _spellingButtons = [NSMutableDictionary dictionary];
+    return _spellingButtons;
+}
 
-//
+
+
 //- (NSMutableArray *)spellings
 //{
 //    if (!_spellings) _spellings = [NSMutableArray array];
@@ -44,7 +43,18 @@
                           @"natural": @(0),
                           @"sharp": @(1),
                           @"double-sharp": @(2)};
-    
+}
+
+- (void)setSpellingSurface:(UIView *)spellingSurface
+{
+    _spellingSurface = spellingSurface;
+    UITapGestureRecognizer *refocusGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelManualSpelling)];
+    [_spellingSurface addGestureRecognizer:refocusGesture];
+}
+
+- (void)cancelManualSpelling
+{
+    [self.delegate hideSpellingSurface];
 }
 
 - (void)setMusicDataAggregator:(id<KZPMusicKeyboardDelegate>)musicDataAggregator
@@ -59,6 +69,7 @@
 
 - (void)provideManualSpellingForNoteValues:(NSArray *)noteValues
 {
+    [self.delegate showSpellingSurface];
     self.spellingChoices = [NSMutableDictionary dictionary];
     for (NSNumber *noteID in noteValues) {
         [self displayAccidentalOptionsForNoteID:[noteID intValue]];
@@ -157,7 +168,7 @@
     if ([self spellingSelectionsComplete]) {
         [self sendPitchAndSpellingData];
         self.spellingButtons = nil;
-        [self.delegate manualSpellingComplete];
+//        [self.delegate manualSpellingComplete];
         [UIView animateWithDuration:0.2 animations:^{
             self.spellingSurface.alpha = 0.0;
         } completion:^(BOOL finished) {

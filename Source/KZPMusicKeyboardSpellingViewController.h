@@ -12,7 +12,8 @@
 
 @protocol KZPMusicKeyboardSpellingDelegate <NSObject>
 
-- (void)manualSpellingComplete;
+- (void)showSpellingSurface;
+- (void)hideSpellingSurface;
 
 @end
 
