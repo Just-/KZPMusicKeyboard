@@ -40,15 +40,19 @@ To hide the keyboard, do this:
 
 If the keyboard is set to be animated (see 'Configuring'), you may want to call `showWithCompletion:` and `hideWithCompletion:` instead, which allows you to pass a block which is executed once the keyboard has fully appeared/disappeared.
 
-To receive data from the keyboard, assign an object (such as a view controller) as delegate:
+To receive musical data from the keyboard, assign an object (such as a view controller) as delegate:
 
 ```objective-c
 	[[KZPMusicKeyboard keyboard] setDelegate:self];
 ```
 
-Then implement the `KZPMusicKeyboardDelegate` callback method `musicKeyboardDidSendPitchData:withDurationData:` to receive pitch and/or duration objects depending on the configuration. See the `KZPMusicPitchData` and `KZPMusicDurationData` headers for an explanation of how to use these objects.
+This object should implement the `KZPMusicKeyboardDelegate` and `KZPMusicKeyboardControlDelegate` protocols.
 
-If you allow the keyboard to dismiss manually (see 'Configuring'), then it is a good idea to implement the `keyboardWasDismissed` delegate method in case that action means something. If you allow the user to send a 'backspace' message (e.g., when entering a sequence notes on a staff), then you need to implement the `keyboardDidSendBackspace` delegate method to handle this.
+To receive musical data, implement the `KZPMusicKeyboardDelegate` callback method `keyboardDidSendPitchData:withDurationData:` to receive pitch and/or duration objects depending on the configuration. See the `KZPMusicPitchData` and `KZPMusicDurationData` headers to see what is in these objects.
+
+To receive raw keyboard note data, implement the `KZPMusicKeyboardDelegate` callback method `keyboardDidSendNoteOn:noteOff:`. This is what you do if using the keyboard to drive some internal or external MIDI interface. 
+
+If you allow the keyboard to dismiss manually (see 'Configuring'), then it is a good idea to implement the `keyboardWasDismissed` delegate method in case that action means something. If you allow the user to send a 'backspace' message (e.g., when entering a sequence notes on a staff), then you need to implement the `keyboardDidSendBackspace` delegate method to handle this. These callbacks comprise the `KZPMusicKeyboardControlDelegate` protocol.
 
 Configuring
 -----------

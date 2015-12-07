@@ -32,6 +32,8 @@
 
 @property (strong, nonatomic) KZPMusicKeyboardMapViewController *keyboardMapViewController;
 
+@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> musicalDelegate;
+
 @end
 
 
@@ -54,6 +56,7 @@
 
 - (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate controlDelegate:(id<KZPMusicKeyboardControlDelegate>)controlDelegate
 {
+    self.musicalDelegate = musicalDelegate;
     self.musicDataAggregator.musicalDelegate = musicalDelegate;
     self.controlRibbon.controlDelegate = controlDelegate;
 }
@@ -169,12 +172,18 @@
     [self.localAudio noteOn:noteID];
     [self.controlRibbon sendDurationAndSpelling];
     [self.musicDataAggregator receivePitch:noteID];
+    if ([self.musicalDelegate respondsToSelector:@selector(keyboardDidSendNoteOn:noteOff:)]) {
+        [self.musicalDelegate keyboardDidSendNoteOn:@(noteID) noteOff:nil];
+    }
 }
 
 - (IBAction)keyButtonReleased:(id)sender
 {
     NSUInteger noteID = [sender tag];
     [self.localAudio noteOff:noteID];
+    if ([self.musicalDelegate respondsToSelector:@selector(keyboardDidSendNoteOn:noteOff:)]) {
+        [self.musicalDelegate keyboardDidSendNoteOn:nil noteOff:@(noteID)];
+    }
 }
 
 @end
