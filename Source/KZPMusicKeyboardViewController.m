@@ -181,17 +181,23 @@
 //    }
 //}
 
-- (void)focusKeyboard
+- (void)focusKeyboardAnimated:(BOOL)animated
 {
     if ([self pitchControlEnabled]) {
-        self.keyboardDefocusView.hidden = YES;
+        [UIView animateWithDuration:animated ? 0.3 : 0.0 animations:^{
+            self.keyboardDefocusView.alpha = 0.0;
+        } completion:^(BOOL finished) {
+            self.keyboardDefocusView.hidden = YES;
+        }];
     }
 }
 
-- (void)defocusKeyboard
+- (void)defocusKeyboardAnimated:(BOOL)animated
 {
     self.keyboardDefocusView.hidden = NO;
-    self.keyboardDefocusView.alpha = 0.5;
+    [UIView animateWithDuration:animated ? 0.3 : 0.0 animations:^{
+        self.keyboardDefocusView.alpha = 0.5;
+    }];
 }
 
 //- (void)setKeyboardEnabled:(BOOL)keyboardEnabled
@@ -210,7 +216,7 @@
 {
     self.keyboardDefocusView.hidden = YES;
     self.keyboardDefocusView.alpha = 0.0;
-    UITapGestureRecognizer *refocusGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(focusKeyboard)];
+    UITapGestureRecognizer *refocusGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(focusKeyboardAnimated:)];
     [self.keyboardDefocusView addGestureRecognizer:refocusGesture];
 }
 
@@ -258,9 +264,9 @@
 {
     _pitchControlEnabled = pitchControlEnabled;
     if (pitchControlEnabled) {
-        [self focusKeyboard];
+        [self focusKeyboardAnimated:NO];
     } else {
-        [self defocusKeyboard];
+        [self defocusKeyboardAnimated:NO];
     }
 }
 

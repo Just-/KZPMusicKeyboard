@@ -37,6 +37,7 @@ static KZPMusicKeyboard *keyboardInstance;
     if (self) {
         self.keyboardViewController = [[KZPMusicKeyboardViewController alloc] initWithNibName:@"KZPMusicKeyboardView" bundle:nil];
         [self.keyboardViewController.view setFrameY:[[UIScreen mainScreen] bounds].size.width - [self.keyboardViewController height]];
+        [self applyDefaultSettings];
     }
     return self;
 }
@@ -47,6 +48,18 @@ static KZPMusicKeyboard *keyboardInstance;
     _delegate = delegate;
 }
 
+- (void)applyDefaultSettings
+{
+    [self shouldAnimate:YES];
+    [self enablePitchControl:YES];
+    [self enableChordDetection:YES];
+    [self enableSpelling:YES];
+    [self enableDurationControls:YES];
+    [self durationControlsActive:NO];
+    [self enableLocalAudio:YES];
+    [self enableBackspaceControl:NO];
+    [self enableManualDismiss:YES];
+}
 
 #pragma mark - KZPMusicKeyboardControlDelegate -
 
@@ -68,7 +81,7 @@ static KZPMusicKeyboard *keyboardInstance;
 }
 
 
-#pragma mark - Interface -
+#pragma mark - Public Interface -
 
 
 - (void)show
@@ -125,6 +138,24 @@ static KZPMusicKeyboard *keyboardInstance;
     }
 }
 
+
+#pragma mark - Developer Settings -
+
+
+- (void)enableSpelling:(BOOL)setting { [self.keyboardViewController enableSpelling:setting]; }
+- (void)enablePitchControl:(BOOL)setting { [self.keyboardViewController enablePitchControl:setting]; }
+- (void)enableChordDetection:(BOOL)setting { [self.keyboardViewController enableChordDetection:setting]; }
+- (void)enableDurationControls:(BOOL)setting { [self.keyboardViewController enableDurationControls:setting]; }
+- (void)durationControlsActive:(BOOL)setting { [self.keyboardViewController durationControlsActive:setting]; }
+- (void)enableLocalAudio:(BOOL)setting { [self.keyboardViewController enableLocalAudio:setting]; }
+- (void)enableManualDismiss:(BOOL)setting { [self.keyboardViewController enableManualDismiss:setting]; }
+- (void)enableBackspaceControl:(BOOL)setting { [self.keyboardViewController enableBackspaceControl:setting]; }
+- (void)chordSensitivity:(NSUInteger)setting { [self.keyboardViewController chordSensitivity:setting]; }
+
+
+#pragma mark -
+
+
 - (CGFloat)screenHeight
 {
     return MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
@@ -142,36 +173,9 @@ static KZPMusicKeyboard *keyboardInstance;
 
 - (void)destroyWindowView
 {
-//    self.windowView = [self.keyboardViewController.view superview];
     [self.keyboardViewController.view removeFromSuperview];
-    
-    // TODO: This is to do with switching between text fields without dismissing?
-    //        if (deactivate) {
     [self.windowView removeFromSuperview];
     self.windowView = nil;
 }
-
-
-
-// What is the purpose of this?
-//- (void)removeImmediately
-//{
-//    [self.windowView removeFromSuperview];
-//    self.windowView = nil;
-//}
-
-
-#pragma mark - Developer Settings -
-
-
-- (void)enableSpelling:(BOOL)setting { [self.keyboardViewController enableSpelling:setting]; }
-- (void)enablePitchControl:(BOOL)setting { [self.keyboardViewController enablePitchControl:setting]; }
-- (void)enableChordDetection:(BOOL)setting { [self.keyboardViewController enableChordDetection:setting]; }
-- (void)enableDurationControls:(BOOL)setting { [self.keyboardViewController enableDurationControls:setting]; }
-- (void)durationControlsActive:(BOOL)setting { [self.keyboardViewController durationControlsActive:setting]; }
-- (void)enableLocalAudio:(BOOL)setting { [self.keyboardViewController enableLocalAudio:setting]; }
-- (void)enableManualDismiss:(BOOL)setting { [self.keyboardViewController enableManualDismiss:setting]; }
-- (void)enableBackspaceControl:(BOOL)setting { [self.keyboardViewController enableBackspaceControl:setting]; }
-- (void)chordSensitivity:(NSUInteger)setting { [self.keyboardViewController chordSensitivity:setting]; }
 
 @end

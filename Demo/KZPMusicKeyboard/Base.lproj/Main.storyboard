@@ -116,7 +116,7 @@
                                             <action selector="configurationSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="WNr-os-Wze"/>
                                         </connections>
                                     </switch>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cKS-Ki-9vf">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cKS-Ki-9vf">
                                         <rect key="frame" x="43" y="316" width="51" height="31"/>
                                         <connections>
                                             <action selector="configurationSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Pue-eO-Pdj"/>
