@@ -17,6 +17,6 @@
 @property (strong, nonatomic) NSArray *noteValues;
 @property (strong, nonatomic) NSArray *sciNotations;
 
-- (void)addPitch:(NSUInteger)pitch withSpelling:(MusicSpelling)spelling;
+- (void)addPitch:(NSUInteger)pitch withSpelling:(NSNumber *)spelling;
 
 @end

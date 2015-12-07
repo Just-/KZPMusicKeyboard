@@ -28,22 +28,24 @@
 {
     for (int i = 0; i < [noteData count]; i++) {
         NSUInteger pitch = [noteData[i] integerValue];
-        MusicSpelling spelling = (MusicSpelling)[spellingData[i] intValue];
-        [self addPitch:pitch withSpelling:spelling];
+        [self addPitch:pitch withSpelling:spellingData[i]];
     }
 }
 
-- (void)addPitch:(NSUInteger)pitch withSpelling:(MusicSpelling)spelling
+- (void)addPitch:(NSUInteger)pitch withSpelling:(NSNumber *)spelling
 {
-    NSString *sciNotation = [KZPMusicSciNotation sciNotationForPitch:(int)pitch modifier:(int)spelling resolve:YES];
-    int resolvedSpelling;
-    [KZPMusicSciNotation pitchValueForSciNotation:sciNotation modifier:&resolvedSpelling];
-    
     [self addPitch:pitch];
-    [self addSpelling:resolvedSpelling];
     
-    if (!_sciNotations) _sciNotations = [NSArray array];
-    self.sciNotations = [self.sciNotations arrayByAddingObject:sciNotation];
+    if (spelling) {
+        NSString *sciNotation = [KZPMusicSciNotation sciNotationForPitch:(int)pitch modifier:[spelling intValue] resolve:YES];
+        int resolvedSpelling;
+        [KZPMusicSciNotation pitchValueForSciNotation:sciNotation modifier:&resolvedSpelling];
+        
+        [self addSpelling:resolvedSpelling];
+        
+        if (!_sciNotations) _sciNotations = [NSArray array];
+        self.sciNotations = [self.sciNotations arrayByAddingObject:sciNotation];
+    }
 }
 
 - (void)addPitch:(NSUInteger)pitch

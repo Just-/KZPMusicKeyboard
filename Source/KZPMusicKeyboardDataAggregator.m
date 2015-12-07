@@ -14,7 +14,7 @@
 @property (strong, nonatomic) KZPMusicDurationData *durationData;
 @property (strong, nonatomic) KZPMusicPitchData *pitchData;
 
-@property (nonatomic) MusicSpelling currentSpelling;
+@property (nonatomic) NSNumber *currentSpelling;
 
 @end
 
@@ -30,6 +30,7 @@
 {
     self.durationData = nil;
     self.pitchData = nil;
+    self.currentSpelling = nil;
 }
 
 - (void)resetPitchData
@@ -44,7 +45,7 @@
 
 - (void)receiveSpelling:(MusicSpelling)spelling
 {
-    self.currentSpelling = spelling;
+    self.currentSpelling = @(spelling);
 }
 
 - (void)receivePitch:(NSUInteger)pitch
