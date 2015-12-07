@@ -36,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"loaded");
 
     self.imageNames = @[@"double-flat", @"flat", @"natural", @"sharp", @"double-sharp"];
     self.imageNameMap = @{@"double-flat": @(-2),
@@ -78,14 +79,8 @@
 }
 
 
-#define EBONY_DIM       31
-#define IVORY_DIM       34
-#define EBONY_INSET_H    8
-#define IVORY_INSET_H   22
-#define EBONY_INSET_V   18
-#define IVORY_INSET_V   12
-#define EBONY_OFFSET    36
-#define IVORY_OFFSET    40
+#pragma mark -
+
 
 - (void)displayAccidentalOptionsForNoteID:(int)noteID
 {
@@ -121,32 +116,56 @@
     for (int i = 0; i < 5; i++) {
         int modifier = order[i];
         if ([KZPMusicSciNotation modifier:modifier isLegalForPitch:noteID]) {
-            CGRect accidentalFrame = CGRectMake(keyButtonFrame.origin.x + inset_h,
+            CGRect spellingFrame = CGRectMake(keyButtonFrame.origin.x + inset_h,
                                                 keyButtonFrame.size.height - (buttonCount * offset) - inset_v - dim,
                                                 dim, dim);
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"music-%@%@", self.imageNames[modifier + 2], isWhite ? @"" : @"-inverted"]];
-            UIButton *button = [[UIButton alloc] initWithFrame:accidentalFrame];
-            button.tag = noteID;
-            [button setImage:image forState:UIControlStateNormal];
-            button.clipsToBounds = YES;
-            [button addTarget:self action:@selector(spellingButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-            button.layer.borderWidth = 1.0;
-            button.layer.cornerRadius = 5.0;
-            button.layer.borderColor = isWhite ? [UIColor lightGrayColor].CGColor : [UIColor darkGrayColor].CGColor;
-            button.alpha = 0.0;
-            button.backgroundColor = [UIColor clearColor];
-            button.titleLabel.text = self.imageNames[modifier + 2];
+            UIImage *image = [self spellingButtonImageForModifier:modifier isWhite:isWhite];
+            UIButton *spellingButton = [[UIButton alloc] initWithFrame:spellingFrame];
+            spellingButton.tag = noteID;
+            [spellingButton setImage:image forState:UIControlStateNormal];
+            [self styleSpellingButton:spellingButton isWhite:isWhite];
+            
+            
+
+
+            [spellingButton addTarget:self action:@selector(spellingButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+
+
+
+            spellingButton.titleLabel.text = self.imageNames[modifier + 2];
             [UIView animateWithDuration:0.3 animations:^{
-                button.alpha = 1.0;
+                spellingButton.alpha = 1.0;
             }];
             buttonCount++;
-            [spellingButtons addObject:button];
-            [self.spellingSurface addSubview:button];
-            [self.spellingSurface bringSubviewToFront:button];
+            [spellingButtons addObject:spellingButton];
+            [self.spellingSurface addSubview:spellingButton];
+            [self.spellingSurface bringSubviewToFront:spellingButton];
         }
     }
     
     [self.spellingButtons setObject:spellingButtons forKey:[NSNumber numberWithInt:noteID]];
+}
+
+- (void)styleSpellingButton:(UIButton *)spellingButton isWhite:(BOOL)isWhite
+{
+    spellingButton.layer.borderWidth = 1.0;
+    spellingButton.layer.cornerRadius = 5.0;
+    spellingButton.clipsToBounds = YES;
+    spellingButton.alpha = 0.0;
+    spellingButton.backgroundColor = [UIColor clearColor];
+    spellingButton.layer.borderColor = isWhite ? [UIColor lightGrayColor].CGColor : [UIColor darkGrayColor].CGColor;
+}
+
+- (UIImage *)spellingButtonImageForModifier:(int)modifier isWhite:(BOOL)isWhite
+{
+    NSString *imageName = @"music-";
+    NSLog(@"%@", self.imageNames);
+    imageName = [imageName stringByAppendingString:self.imageNames[modifier + 2]];
+    if (isWhite) {
+        imageName = [imageName stringByAppendingString:@"-inverted"];
+    }
+    NSLog(@"image name: %@", imageName);
+    return [UIImage imageNamed:imageName];
 }
 
 - (void)spellingButtonPressed:(UIButton *)sender

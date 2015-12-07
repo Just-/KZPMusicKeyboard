@@ -10,6 +10,15 @@
 #import "KZPMusicKeyboardDelegate.h"
 #import "KZPMusicKeyboardDataAggregator.h"
 
+#define EBONY_DIM       31
+#define IVORY_DIM       34
+#define EBONY_INSET_H    8
+#define IVORY_INSET_H   22
+#define EBONY_INSET_V   18
+#define IVORY_INSET_V   12
+#define EBONY_OFFSET    36
+#define IVORY_OFFSET    40
+
 @protocol KZPMusicKeyboardSpellingDelegate <NSObject>
 
 - (void)showSpellingSurface;

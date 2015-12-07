@@ -175,18 +175,6 @@
 #pragma mark -
 
 
-//- (void)focusKeyboard
-//{
-//    if ([self pitchControlEnabled]) {
-//        [self.musicDataAggregator reset];
-//        [self.controlRibbon resetDuration];
-//        self.keyboardDefocusView
-//        [self.keyboardDefocusView dismissWithCompletion:^{
-//            self.keyboardDefocusView.hidden = YES;
-//        }];
-//    }
-//}
-
 - (void)focusKeyboardAnimated:(BOOL)animated
 {
     if ([self pitchControlEnabled]) {
@@ -205,23 +193,6 @@
     [UIView animateWithDuration:animated ? 0.3 : 0.0 animations:^{
         self.keyboardDefocusView.alpha = lightness;
     }];
-}
-
-//- (void)setKeyboardEnabled:(BOOL)keyboardEnabled
-//{
-//    if (keyboardEnabled) {
-//        self.keyboardDefocusView.hidden = YES;
-//        self.keyboardDefocusView.alpha = 0.0;
-//    } else {
-
-//        [self.controlRibbon resetSpelling];
-//    }
-//    _keyboardEnabled = keyboardEnabled;
-//}
-
-- (void)recenter
-{
-    [self.keyboardMapViewController panToRangeWithCenterNote:60 animated:NO];
 }
 
 - (void)setupKeyReleaseAction

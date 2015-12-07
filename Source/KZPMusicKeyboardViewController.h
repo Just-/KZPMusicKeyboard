@@ -21,8 +21,6 @@ typedef enum {
 
 @property (nonatomic) SpellingOperation spellingOperation; // ??
 
-- (void)recenter;
-
 - (CGFloat)height;
 
 @property (nonatomic, setter=enablePitchControl:) BOOL pitchControlEnabled;
