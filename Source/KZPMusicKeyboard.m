@@ -93,13 +93,9 @@ static KZPMusicKeyboard *keyboardInstance;
 - (void)showWithCompletion:(void (^)())completionBlock
 {
     [self.keyboardViewController reconfigureForSettings];
-    
-    if (self.windowView == nil) {
-        self.windowView = [[KZPKeyboardSuperview alloc] initAndAddToKeyWindow];
-        self.windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskLandscape;
-    }
-    
     [self.keyboardViewController.view setFrameY:[self screenHeight]];
+    
+    [self prepareSuperview];
     [self.windowView addSubview:self.keyboardViewController.view];
     
     if ([self shouldAnimate]) {
@@ -112,7 +108,6 @@ static KZPMusicKeyboard *keyboardInstance;
         [self moveKeyboardViewOnscreen];
         completionBlock();
     }
-    
     
     CGFloat landscapeScreenWidth = MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     self.windowView.passThroughFrame = CGRectMake(0, 0, landscapeScreenWidth, self.keyboardViewController.view.frame.origin.y);
@@ -129,11 +124,11 @@ static KZPMusicKeyboard *keyboardInstance;
         [UIView animateWithDuration:0.3 animations:^{
             [self moveKeyboardViewOffscreen];
         } completion:^(BOOL finished) {
-            [self destroyWindowView];
+            [self destroySuperview];
             completionBlock();
         }];
     } else {
-        [self destroyWindowView];
+        [self destroySuperview];
         completionBlock();
     }
 }
@@ -156,6 +151,14 @@ static KZPMusicKeyboard *keyboardInstance;
 #pragma mark -
 
 
+- (void)prepareSuperview
+{
+    if (self.windowView == nil) {
+        self.windowView = [[KZPKeyboardSuperview alloc] initAndAddToKeyWindow];
+        self.windowView.supportedInterfaceOrientations = AGInterfaceOrientationMaskLandscape;
+    }
+}
+
 - (CGFloat)screenHeight
 {
     return MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
@@ -171,7 +174,7 @@ static KZPMusicKeyboard *keyboardInstance;
     [self.keyboardViewController.view setFrameY:[self screenHeight]];
 }
 
-- (void)destroyWindowView
+- (void)destroySuperview
 {
     [self.keyboardViewController.view removeFromSuperview];
     [self.windowView removeFromSuperview];
