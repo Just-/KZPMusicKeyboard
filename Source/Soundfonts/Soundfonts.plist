@@ -5,16 +5,16 @@
 	<key>Piano</key>
 	<dict>
 		<key>soundfont</key>
-		<string>Grand Piano</string>
+		<string>Grandpno</string>
 		<key>preset</key>
 		<integer>0</integer>
 	</dict>
 	<key>Rhodes</key>
 	<dict>
 		<key>soundfont</key>
-		<string>Rhodes</string>
+		<string>Crysrhod</string>
 		<key>preset</key>
-		<integer>4</integer>
+		<integer>0</integer>
 	</dict>
 </dict>
 </plist>

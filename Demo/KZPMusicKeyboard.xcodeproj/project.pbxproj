@@ -19,9 +19,9 @@
 		A19FB8F81C16538E00B54305 /* KZPMusicKeyboardRibbonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A19FB8F61C16538E00B54305 /* KZPMusicKeyboardRibbonButton.m */; };
 		A19FB8FF1C16BDFC00B54305 /* KZPSampler.h in Headers */ = {isa = PBXBuildFile; fileRef = A19FB8FB1C16BDFC00B54305 /* KZPSampler.h */; };
 		A19FB9001C16BDFC00B54305 /* KZPSampler.m in Sources */ = {isa = PBXBuildFile; fileRef = A19FB8FC1C16BDFC00B54305 /* KZPSampler.m */; };
-		A19FB9021C16BFE500B54305 /* Rhodes.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A19FB9011C16BFE500B54305 /* Rhodes.sf2 */; };
-		A19FB9041C16C02500B54305 /* Grand Piano.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A19FB9031C16C02500B54305 /* Grand Piano.sf2 */; };
 		A19FB9291C16C5E300B54305 /* Soundfonts.plist in Resources */ = {isa = PBXBuildFile; fileRef = A19FB9281C16C5E300B54305 /* Soundfonts.plist */; };
+		A19FB92C1C16CD2400B54305 /* Crysrhod.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A19FB92A1C16CD2400B54305 /* Crysrhod.sf2 */; };
+		A19FB92D1C16CD2400B54305 /* Grandpno.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A19FB92B1C16CD2400B54305 /* Grandpno.sf2 */; };
 		A1EFF8611C142C7E005636E5 /* KZPMusicDurationData.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF85F1C142C7D005636E5 /* KZPMusicDurationData.h */; };
 		A1EFF8621C142C7E005636E5 /* KZPMusicDurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */; };
 		A1EFF8631C142C7E005636E5 /* KZPMusicDurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */; };
@@ -110,9 +110,9 @@
 		A19FB8F61C16538E00B54305 /* KZPMusicKeyboardRibbonButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardRibbonButton.m; path = ../Source/KZPMusicKeyboardRibbonButton.m; sourceTree = "<group>"; };
 		A19FB8FB1C16BDFC00B54305 /* KZPSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPSampler.h; path = ../Source/KZPSampler.h; sourceTree = "<group>"; };
 		A19FB8FC1C16BDFC00B54305 /* KZPSampler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPSampler.m; path = ../Source/KZPSampler.m; sourceTree = "<group>"; };
-		A19FB9011C16BFE500B54305 /* Rhodes.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rhodes.sf2; sourceTree = "<group>"; };
-		A19FB9031C16C02500B54305 /* Grand Piano.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Grand Piano.sf2"; sourceTree = "<group>"; };
 		A19FB9281C16C5E300B54305 /* Soundfonts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Soundfonts.plist; sourceTree = "<group>"; };
+		A19FB92A1C16CD2400B54305 /* Crysrhod.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Crysrhod.sf2; sourceTree = "<group>"; };
+		A19FB92B1C16CD2400B54305 /* Grandpno.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Grandpno.sf2; sourceTree = "<group>"; };
 		A1EFF85F1C142C7D005636E5 /* KZPMusicDurationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicDurationData.h; path = ../Source/KZPMusicDurationData.h; sourceTree = "<group>"; };
 		A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicDurationData.m; path = ../Source/KZPMusicDurationData.m; sourceTree = "<group>"; };
 		A1EFF8641C142C9B005636E5 /* KZPMusicPitchData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicPitchData.h; path = ../Source/KZPMusicPitchData.h; sourceTree = "<group>"; };
@@ -260,8 +260,8 @@
 		A1EFF8891C144910005636E5 /* Soundfonts */ = {
 			isa = PBXGroup;
 			children = (
-				A19FB9031C16C02500B54305 /* Grand Piano.sf2 */,
-				A19FB9011C16BFE500B54305 /* Rhodes.sf2 */,
+				A19FB92A1C16CD2400B54305 /* Crysrhod.sf2 */,
+				A19FB92B1C16CD2400B54305 /* Grandpno.sf2 */,
 				A19FB9281C16C5E300B54305 /* Soundfonts.plist */,
 			);
 			name = Soundfonts;
@@ -587,10 +587,10 @@
 				A1EFF8941C144910005636E5 /* music-dot.png in Resources */,
 				A1EFF88A1C144910005636E5 /* backspace.png in Resources */,
 				A1EFF8A01C144910005636E5 /* music-sharp-inverted.png in Resources */,
-				A19FB9021C16BFE500B54305 /* Rhodes.sf2 in Resources */,
+				A19FB92C1C16CD2400B54305 /* Crysrhod.sf2 in Resources */,
 				A1EFF89B1C144910005636E5 /* music-flat.png in Resources */,
+				A19FB92D1C16CD2400B54305 /* Grandpno.sf2 in Resources */,
 				A1EFF8A51C144910005636E5 /* music-rests.png in Resources */,
-				A19FB9041C16C02500B54305 /* Grand Piano.sf2 in Resources */,
 				A1EFF8A11C144910005636E5 /* music-sharp.png in Resources */,
 				C989F1D419AF07AC002608F7 /* Main.storyboard in Resources */,
 				A1EFF89E1C144910005636E5 /* music-natural.png in Resources */,
