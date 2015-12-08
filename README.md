@@ -3,7 +3,7 @@
 KZPMusicKeyboard 
 ============
 
-Drop this into an iOS project to enable versatile musical data entry. It can also be used as a playable virtual instrument if required.
+Drop this into an iPad project to enable versatile musical data entry. It can also be used as a playable virtual instrument if required.
 
 ![alt text](https://github.com/kazoompah/KZPMusicKeyboard/blob/master/example.png "Example interface")	
 
@@ -22,13 +22,10 @@ Explanation
 
 The keyboard object generates data for pitch, spelling and duration, which is received through delegate methods and can be used selectively depending on the application. For example, it can be configured as a way of entering data for musical notation, or it can be configured to only supply note on/off information which could then be translated into MIDI events to control a sampler, sequencer or a remote interface. It does not send messages directly to CoreMIDI. There are several ways of doing the latter using libraries such as [TheAmazingAudioEngine](http://theamazingaudioengine.com/), [MidiBus](http://www.audeonic.com/midibus/) or [MIKMIDI](https://github.com/mixedinkey-opensource/MIKMIDI).
 
-Demo
-----
-
-The repo contains a demo project that will allow you to quickly discover what configurations are available and what kind of output will be provided to your app. The demo code should also be informative if you're having trouble setting it up correctly. Make sure that you run `pod install` after cloning the repo.
-
 Basic Usage 
 ------
+
+`#import "KZPMusicKeyboard.h"`
 
 The keyboard is a singleton which is summoned like this:
 ```objective-c
@@ -55,6 +52,11 @@ To receive musical data, implement the `KZPMusicKeyboardDelegate` callback metho
 To receive raw keyboard note data, implement the `KZPMusicKeyboardDelegate` callback method `keyboardDidSendNoteOn:noteOff:`. This is what you do if using the keyboard to drive some internal or external MIDI interface. 
 
 If you allow the keyboard to dismiss manually (see 'Configuring'), then it is a good idea to implement the `keyboardWasDismissed` delegate method in case that action means something. If you allow the user to send a 'backspace' message (e.g., when entering a sequence notes on a staff), then you need to implement the `keyboardDidSendBackspace` delegate method to handle this. These callbacks comprise the `KZPMusicKeyboardControlDelegate` protocol.
+
+Demo
+----
+
+The repository contains a demo project that will allow you to quickly discover what configurations are available and what kind of output will be provided to your app. The demo code should also be informative if you're having trouble setting it up correctly. Make sure that you run `pod install` after cloning the repo.
 
 Configuring
 -----------
