@@ -17,6 +17,11 @@
 		A19FB8F41C16530C00B54305 /* KZPMusicKeyboardSpellingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A19FB8F21C16530C00B54305 /* KZPMusicKeyboardSpellingButton.m */; };
 		A19FB8F71C16538E00B54305 /* KZPMusicKeyboardRibbonButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A19FB8F51C16538E00B54305 /* KZPMusicKeyboardRibbonButton.h */; };
 		A19FB8F81C16538E00B54305 /* KZPMusicKeyboardRibbonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A19FB8F61C16538E00B54305 /* KZPMusicKeyboardRibbonButton.m */; };
+		A19FB8FF1C16BDFC00B54305 /* KZPSampler.h in Headers */ = {isa = PBXBuildFile; fileRef = A19FB8FB1C16BDFC00B54305 /* KZPSampler.h */; };
+		A19FB9001C16BDFC00B54305 /* KZPSampler.m in Sources */ = {isa = PBXBuildFile; fileRef = A19FB8FC1C16BDFC00B54305 /* KZPSampler.m */; };
+		A19FB9021C16BFE500B54305 /* Rhodes.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A19FB9011C16BFE500B54305 /* Rhodes.sf2 */; };
+		A19FB9041C16C02500B54305 /* Grand Piano.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = A19FB9031C16C02500B54305 /* Grand Piano.sf2 */; };
+		A19FB9291C16C5E300B54305 /* Soundfonts.plist in Resources */ = {isa = PBXBuildFile; fileRef = A19FB9281C16C5E300B54305 /* Soundfonts.plist */; };
 		A1EFF8611C142C7E005636E5 /* KZPMusicDurationData.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF85F1C142C7D005636E5 /* KZPMusicDurationData.h */; };
 		A1EFF8621C142C7E005636E5 /* KZPMusicDurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */; };
 		A1EFF8631C142C7E005636E5 /* KZPMusicDurationData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */; };
@@ -103,6 +108,11 @@
 		A19FB8F21C16530C00B54305 /* KZPMusicKeyboardSpellingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardSpellingButton.m; path = ../Source/KZPMusicKeyboardSpellingButton.m; sourceTree = "<group>"; };
 		A19FB8F51C16538E00B54305 /* KZPMusicKeyboardRibbonButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardRibbonButton.h; path = ../Source/KZPMusicKeyboardRibbonButton.h; sourceTree = "<group>"; };
 		A19FB8F61C16538E00B54305 /* KZPMusicKeyboardRibbonButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardRibbonButton.m; path = ../Source/KZPMusicKeyboardRibbonButton.m; sourceTree = "<group>"; };
+		A19FB8FB1C16BDFC00B54305 /* KZPSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPSampler.h; path = ../Source/KZPSampler.h; sourceTree = "<group>"; };
+		A19FB8FC1C16BDFC00B54305 /* KZPSampler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPSampler.m; path = ../Source/KZPSampler.m; sourceTree = "<group>"; };
+		A19FB9011C16BFE500B54305 /* Rhodes.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rhodes.sf2; sourceTree = "<group>"; };
+		A19FB9031C16C02500B54305 /* Grand Piano.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Grand Piano.sf2"; sourceTree = "<group>"; };
+		A19FB9281C16C5E300B54305 /* Soundfonts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Soundfonts.plist; sourceTree = "<group>"; };
 		A1EFF85F1C142C7D005636E5 /* KZPMusicDurationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicDurationData.h; path = ../Source/KZPMusicDurationData.h; sourceTree = "<group>"; };
 		A1EFF8601C142C7D005636E5 /* KZPMusicDurationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicDurationData.m; path = ../Source/KZPMusicDurationData.m; sourceTree = "<group>"; };
 		A1EFF8641C142C9B005636E5 /* KZPMusicPitchData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicPitchData.h; path = ../Source/KZPMusicPitchData.h; sourceTree = "<group>"; };
@@ -250,6 +260,9 @@
 		A1EFF8891C144910005636E5 /* Soundfonts */ = {
 			isa = PBXGroup;
 			children = (
+				A19FB9031C16C02500B54305 /* Grand Piano.sf2 */,
+				A19FB9011C16BFE500B54305 /* Rhodes.sf2 */,
+				A19FB9281C16C5E300B54305 /* Soundfonts.plist */,
 			);
 			name = Soundfonts;
 			path = ../Source/Soundfonts;
@@ -289,9 +302,11 @@
 		A1EFF8B01C145304005636E5 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				A1EFF8891C144910005636E5 /* Soundfonts */,
 				A1EFF8AA1C1452CB005636E5 /* KZPMusicKeyboardAudio.h */,
 				A1EFF8AB1C1452CB005636E5 /* KZPMusicKeyboardAudio.m */,
+				A19FB8FB1C16BDFC00B54305 /* KZPSampler.h */,
+				A19FB8FC1C16BDFC00B54305 /* KZPSampler.m */,
+				A1EFF8891C144910005636E5 /* Soundfonts */,
 			);
 			name = Audio;
 			sourceTree = "<group>";
@@ -459,6 +474,7 @@
 			files = (
 				A1EFF8611C142C7E005636E5 /* KZPMusicDurationData.h in Headers */,
 				A1EFF8AC1C1452CB005636E5 /* KZPMusicKeyboardAudio.h in Headers */,
+				A19FB8FF1C16BDFC00B54305 /* KZPSampler.h in Headers */,
 				A1EFF8C41C145BBD005636E5 /* KZPMusicKeyboardDelegate.h in Headers */,
 				A1EFF8B71C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.h in Headers */,
 				A19FB8EF1C15CC7800B54305 /* KZPKeyboardSuperview.h in Headers */,
@@ -560,6 +576,7 @@
 				A1EFF88D1C144910005636E5 /* ebony_keydown.png in Resources */,
 				A1EFF8A41C144910005636E5 /* music-wt.png in Resources */,
 				A1EFF8A71C144910005636E5 /* piano_keyboard.png in Resources */,
+				A19FB9291C16C5E300B54305 /* Soundfonts.plist in Resources */,
 				A19FB8E21C1487DC00B54305 /* KZPMusicKeyboardView.xib in Resources */,
 				A1EFF8981C144910005636E5 /* music-double-sharp.png in Resources */,
 				A1EFF8A31C144910005636E5 /* music-tie.png in Resources */,
@@ -570,8 +587,10 @@
 				A1EFF8941C144910005636E5 /* music-dot.png in Resources */,
 				A1EFF88A1C144910005636E5 /* backspace.png in Resources */,
 				A1EFF8A01C144910005636E5 /* music-sharp-inverted.png in Resources */,
+				A19FB9021C16BFE500B54305 /* Rhodes.sf2 in Resources */,
 				A1EFF89B1C144910005636E5 /* music-flat.png in Resources */,
 				A1EFF8A51C144910005636E5 /* music-rests.png in Resources */,
+				A19FB9041C16C02500B54305 /* Grand Piano.sf2 in Resources */,
 				A1EFF8A11C144910005636E5 /* music-sharp.png in Resources */,
 				C989F1D419AF07AC002608F7 /* Main.storyboard in Resources */,
 				A1EFF89E1C144910005636E5 /* music-natural.png in Resources */,
@@ -652,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A19FB9001C16BDFC00B54305 /* KZPSampler.m in Sources */,
 				C989F2B119AF0A8E002608F7 /* KZPMusicKeyboardViewController.m in Sources */,
 				A1EFF8B81C14578C005636E5 /* KZPMusicKeyboardRibbonViewController.m in Sources */,
 				A1EFF8AD1C1452CB005636E5 /* KZPMusicKeyboardAudio.m in Sources */,

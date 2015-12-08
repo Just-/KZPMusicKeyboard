@@ -244,13 +244,6 @@
     return MusicSpelling_Natural;
 }
 
-// TODO: What is this for?
-- (void)resetDuration
-{
-    [self.tieButton deselect];
-    [self.manualSpellButton deselect];
-}
-
 - (void)resetChordSensitivitySlider
 {
     NSUInteger sensitivity = [self.musicDataAggregator chordSensitivity];

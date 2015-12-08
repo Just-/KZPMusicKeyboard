@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Piano</key>
+	<dict>
+		<key>soundfont</key>
+		<string>Grand Piano</string>
+		<key>preset</key>
+		<integer>0</integer>
+	</dict>
+	<key>Rhodes</key>
+	<dict>
+		<key>soundfont</key>
+		<string>Rhodes</string>
+		<key>preset</key>
+		<integer>4</integer>
+	</dict>
+</dict>
+</plist>

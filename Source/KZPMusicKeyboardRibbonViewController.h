@@ -33,7 +33,6 @@
 @property (nonatomic) BOOL durationControlsActive;
 
 - (NSString *)selectedPatch;
-- (void)resetDuration;
 - (void)sendDurationAndSpelling;
 - (void)resetChordSensitivitySlider;
 

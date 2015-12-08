@@ -47,10 +47,10 @@
     self.musicDataAggregator = [[KZPMusicKeyboardDataAggregator alloc] init];
 
     [self applyKeyboardHighlightImages];
-    [self loadLocalAudio];
     [self loadControlRibbon];
     [self loadKeyboardMap];
     [self loadSpellingSurface];
+    [self loadLocalAudio];
     [self setupKeyReleaseAction];
     [self focusKeyboardAnimated:NO];
 }
@@ -73,12 +73,6 @@
             [key setImage:ebonyKeydown forState:UIControlStateHighlighted];
         }
     }
-}
-
-- (void)loadLocalAudio
-{
-    self.localAudioPlayer = [[KZPMusicKeyboardAudio alloc] init];
-    self.localAudioPlayer.patch = [self.controlRibbon selectedPatch];
 }
 
 - (void)loadKeyboardMap
@@ -109,6 +103,12 @@
         [keyButtonsByNoteID setObject:key forKey:@([key tag])];
     }
     self.spellingSurfaceViewController.keyButtonsByNoteID = [NSDictionary dictionaryWithDictionary:keyButtonsByNoteID];
+}
+
+- (void)loadLocalAudio
+{
+    self.localAudioPlayer = [[KZPMusicKeyboardAudio alloc] init];
+    self.localAudioPlayer.patch = [self.controlRibbon selectedPatch];
 }
 
 - (void)reconfigureForSettings
