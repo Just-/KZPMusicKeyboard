@@ -64,14 +64,9 @@
     }
 }
 
-- (void)receiveSpellingArray:(NSArray *)spellings
+- (void)receivePitchArray:(NSArray *)pitches withSpellingArray:(NSArray *)spellings
 {
-    self.pitchData.spellings = spellings;
-}
-
-- (void)receivePitchArray:(NSArray *)pitches
-{
-    self.pitchData.noteValues = pitches;
+    self.pitchData = [[KZPMusicPitchData alloc] initWithNoteData:pitches spellingData:spellings];
 }
 
 - (void)flush

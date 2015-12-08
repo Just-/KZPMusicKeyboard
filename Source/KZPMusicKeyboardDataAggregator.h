@@ -31,9 +31,7 @@
 - (void)receiveDuration:(unsigned int)duration rest:(BOOL)rest dotted:(BOOL)dotted tied:(BOOL)tied;
 - (void)receiveSpelling:(MusicSpelling)spelling;
 - (void)receivePitch:(NSUInteger)pitch;
-
-- (void)receiveSpellingArray:(NSArray *)spellings;
-- (void)receivePitchArray:(NSArray *)pitches;
+- (void)receivePitchArray:(NSArray *)pitches withSpellingArray:(NSArray *)spellings;
 
 - (void)flush;
 

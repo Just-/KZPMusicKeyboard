@@ -145,8 +145,9 @@ static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
 - (void)sendPitchAndSpellingData
 {
     [self.musicDataAggregator resetPitchData];
-    [self.musicDataAggregator receivePitchArray:[self.selectedSpellingChoices allKeys]];
-    [self.musicDataAggregator receiveSpellingArray:[self.selectedSpellingChoices allValues]];
+    NSLog(@"%@", self.selectedSpellingChoices);
+    [self.musicDataAggregator receivePitchArray:[self.selectedSpellingChoices allKeys]
+                              withSpellingArray:[self.selectedSpellingChoices allValues]];
     [self.musicDataAggregator flush];
 }
 
