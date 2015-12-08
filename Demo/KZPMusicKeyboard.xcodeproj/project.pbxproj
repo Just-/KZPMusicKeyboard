@@ -25,7 +25,6 @@
 		A1EFF8681C142C9B005636E5 /* KZPMusicPitchData.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8651C142C9B005636E5 /* KZPMusicPitchData.m */; };
 		A1EFF88A1C144910005636E5 /* backspace.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF86A1C144910005636E5 /* backspace.png */; };
 		A1EFF88B1C144910005636E5 /* bg-wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF86B1C144910005636E5 /* bg-wood.jpg */; };
-		A1EFF88C1C144910005636E5 /* dismiss.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF86C1C144910005636E5 /* dismiss.png */; };
 		A1EFF88D1C144910005636E5 /* ebony_keydown.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF86D1C144910005636E5 /* ebony_keydown.png */; };
 		A1EFF88E1C144910005636E5 /* ebony_keyup.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF86E1C144910005636E5 /* ebony_keyup.png */; };
 		A1EFF88F1C144910005636E5 /* ivory_keydown.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF86F1C144910005636E5 /* ivory_keydown.png */; };
@@ -51,7 +50,6 @@
 		A1EFF8A31C144910005636E5 /* music-tie.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8831C144910005636E5 /* music-tie.png */; };
 		A1EFF8A41C144910005636E5 /* music-wt.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8841C144910005636E5 /* music-wt.png */; };
 		A1EFF8A51C144910005636E5 /* music-rests.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8851C144910005636E5 /* music-rests.png */; };
-		A1EFF8A61C144910005636E5 /* piano_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8861C144910005636E5 /* piano_icon.png */; };
 		A1EFF8A71C144910005636E5 /* piano_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EFF8871C144910005636E5 /* piano_keyboard.png */; };
 		A1EFF8AC1C1452CB005636E5 /* KZPMusicKeyboardAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EFF8AA1C1452CB005636E5 /* KZPMusicKeyboardAudio.h */; };
 		A1EFF8AD1C1452CB005636E5 /* KZPMusicKeyboardAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EFF8AB1C1452CB005636E5 /* KZPMusicKeyboardAudio.m */; };
@@ -111,7 +109,6 @@
 		A1EFF8651C142C9B005636E5 /* KZPMusicPitchData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicPitchData.m; path = ../Source/KZPMusicPitchData.m; sourceTree = "<group>"; };
 		A1EFF86A1C144910005636E5 /* backspace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backspace.png; sourceTree = "<group>"; };
 		A1EFF86B1C144910005636E5 /* bg-wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-wood.jpg"; sourceTree = "<group>"; };
-		A1EFF86C1C144910005636E5 /* dismiss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dismiss.png; sourceTree = "<group>"; };
 		A1EFF86D1C144910005636E5 /* ebony_keydown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ebony_keydown.png; sourceTree = "<group>"; };
 		A1EFF86E1C144910005636E5 /* ebony_keyup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ebony_keyup.png; sourceTree = "<group>"; };
 		A1EFF86F1C144910005636E5 /* ivory_keydown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ivory_keydown.png; sourceTree = "<group>"; };
@@ -137,7 +134,6 @@
 		A1EFF8831C144910005636E5 /* music-tie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-tie.png"; sourceTree = "<group>"; };
 		A1EFF8841C144910005636E5 /* music-wt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-wt.png"; sourceTree = "<group>"; };
 		A1EFF8851C144910005636E5 /* music-rests.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-rests.png"; sourceTree = "<group>"; };
-		A1EFF8861C144910005636E5 /* piano_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piano_icon.png; sourceTree = "<group>"; };
 		A1EFF8871C144910005636E5 /* piano_keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piano_keyboard.png; sourceTree = "<group>"; };
 		A1EFF8AA1C1452CB005636E5 /* KZPMusicKeyboardAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KZPMusicKeyboardAudio.h; path = ../Source/KZPMusicKeyboardAudio.h; sourceTree = "<group>"; };
 		A1EFF8AB1C1452CB005636E5 /* KZPMusicKeyboardAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KZPMusicKeyboardAudio.m; path = ../Source/KZPMusicKeyboardAudio.m; sourceTree = "<group>"; };
@@ -220,7 +216,6 @@
 			children = (
 				A1EFF86A1C144910005636E5 /* backspace.png */,
 				A1EFF86B1C144910005636E5 /* bg-wood.jpg */,
-				A1EFF86C1C144910005636E5 /* dismiss.png */,
 				A1EFF86D1C144910005636E5 /* ebony_keydown.png */,
 				A1EFF86E1C144910005636E5 /* ebony_keyup.png */,
 				A1EFF86F1C144910005636E5 /* ivory_keydown.png */,
@@ -246,7 +241,6 @@
 				A1EFF8831C144910005636E5 /* music-tie.png */,
 				A1EFF8841C144910005636E5 /* music-wt.png */,
 				A1EFF8851C144910005636E5 /* music-rests.png */,
-				A1EFF8861C144910005636E5 /* piano_icon.png */,
 				A1EFF8871C144910005636E5 /* piano_keyboard.png */,
 			);
 			name = Images;
@@ -577,12 +571,10 @@
 				A1EFF88A1C144910005636E5 /* backspace.png in Resources */,
 				A1EFF8A01C144910005636E5 /* music-sharp-inverted.png in Resources */,
 				A1EFF89B1C144910005636E5 /* music-flat.png in Resources */,
-				A1EFF8A61C144910005636E5 /* piano_icon.png in Resources */,
 				A1EFF8A51C144910005636E5 /* music-rests.png in Resources */,
 				A1EFF8A11C144910005636E5 /* music-sharp.png in Resources */,
 				C989F1D419AF07AC002608F7 /* Main.storyboard in Resources */,
 				A1EFF89E1C144910005636E5 /* music-natural.png in Resources */,
-				A1EFF88C1C144910005636E5 /* dismiss.png in Resources */,
 				A1EFF8931C144910005636E5 /* music-crotchet.png in Resources */,
 				A1EFF8921C144910005636E5 /* music-accidentals.png in Resources */,
 				A1EFF89D1C144910005636E5 /* music-natural-inverted.png in Resources */,
