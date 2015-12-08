@@ -123,6 +123,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="selected" image="ivory_keydown.png"/>
+                            <state key="highlighted" image="ivory_keydown.png"/>
                             <connections>
                                 <action selector="keyButtonPressed:" destination="-1" eventType="touchDown" id="nhh-oi-NQD"/>
                                 <action selector="keyButtonReleased:" destination="-1" eventType="touchUpOutside" id="RlQ-SH-0Qd"/>

@@ -49,6 +49,7 @@
     [super viewDidLoad];
     self.musicDataAggregator = [[KZPMusicKeyboardDataAggregator alloc] init];
 
+    [self applyKeyboardHighlightImages];
     [self loadLocalAudio];
     [self loadControlRibbon];
     [self loadKeyboardMap];
@@ -62,6 +63,19 @@
     self.musicalDelegate = musicalDelegate;
     self.musicDataAggregator.musicalDelegate = musicalDelegate;
     self.controlRibbon.controlDelegate = controlDelegate;
+}
+
+- (void)applyKeyboardHighlightImages
+{
+    UIImage *ivoryKeydown = [UIImage imageNamed:@"ivory_keydown.png"];
+    UIImage *ebonyKeydown = [UIImage imageNamed:@"ebony_keydown.png"];
+    for (UIButton *key in self.keyButtons) {
+        if ([KZPMusicSciNotation noteIsWhite:(int)[key tag]]) {
+            [key setImage:ivoryKeydown forState:UIControlStateHighlighted];
+        } else {
+            [key setImage:ebonyKeydown forState:UIControlStateHighlighted];
+        }
+    }
 }
 
 - (void)loadLocalAudio
