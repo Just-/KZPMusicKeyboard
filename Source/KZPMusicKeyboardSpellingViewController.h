@@ -17,7 +17,7 @@
 
 @end
 
-@interface KZPMusicKeyboardSpellingViewController : UIViewController
+@interface KZPMusicKeyboardSpellingViewController : NSObject
 
 @property (weak, nonatomic) id<KZPMusicKeyboardSpellingDelegate> delegate;
 @property (weak, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
@@ -25,7 +25,5 @@
 @property (weak, nonatomic) UIView *spellingSurface;
 
 @property (strong, nonatomic) NSDictionary *keyButtonsByNoteID;
-
-- (void)dismissWithCompletion:(void (^)())completionBlock;
 
 @end

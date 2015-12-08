@@ -95,7 +95,7 @@
     self.spellingSurfaceViewController.spellingSurface = self.keyboardDefocusView;
     NSMutableDictionary *keyButtonsByNoteID = [NSMutableDictionary dictionary];
     for (UIButton *key in self.keyButtons) {
-        [keyButtonsByNoteID setObject:key forKey:[NSString stringWithFormat:@"%ld", (long)[key tag]]];
+        [keyButtonsByNoteID setObject:key forKey:@([key tag])];
     }
     self.spellingSurfaceViewController.keyButtonsByNoteID = [NSDictionary dictionaryWithDictionary:keyButtonsByNoteID];
 }

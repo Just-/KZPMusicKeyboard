@@ -29,21 +29,10 @@ static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
     return _spellingButtons;
 }
 
-
-
-//- (NSMutableArray *)spellings
-//{
-//    if (!_spellings) _spellings = [NSMutableArray array];
-//    return _spellings;
-//}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.imageNameMap = @{@"double-flat": @(-2),
-                          @"flat": @(-1),
-                          @"natural": @(0),
-                          @"sharp": @(1),
-                          @"double-sharp": @(2)};
+- (void)setMusicDataAggregator:(id<KZPMusicKeyboardDelegate>)musicDataAggregator
+{
+    _musicDataAggregator = musicDataAggregator;
+    _musicDataAggregator.delegate = self;
 }
 
 - (void)setSpellingSurface:(UIView *)spellingSurface
@@ -55,13 +44,11 @@ static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
 
 - (void)cancelManualSpelling
 {
+    for (NSNumber *key in [self.spellingButtons allKeys]) {
+        [self hideSpellingButtonsForNoteID:key];
+    }
+    [self.musicDataAggregator reset];
     [self.delegate hideSpellingSurface];
-}
-
-- (void)setMusicDataAggregator:(id<KZPMusicKeyboardDelegate>)musicDataAggregator
-{
-    _musicDataAggregator = musicDataAggregator;
-    _musicDataAggregator.delegate = self;
 }
 
 
@@ -73,14 +60,31 @@ static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
     [self.delegate showSpellingSurface];
     self.selectedSpellingChoices = [NSMutableDictionary dictionary];
     for (NSNumber *noteID in noteValues) {
-        [self displaySpellingOptionsForNoteID:[noteID intValue]];
+        [self displaySpellingOptionsForNoteID:noteID];
         [self.selectedSpellingChoices setObject:[NSNull null] forKey:noteID];
     }
 }
 
-- (void)displaySpellingOptionsForNoteID:(int)noteID
+
+#pragma mark - KZPMusicKeyboardSpellingButtonDelegate -
+
+
+- (void)spellingButtonPressed:(KZPMusicKeyboardSpellingButton *)sender
 {
-    UIButton *pianoKeyButton = [self.keyButtonsByNoteID objectForKey:[NSString stringWithFormat:@"%d", noteID]];
+    [self.selectedSpellingChoices setObject:@([sender modifier]) forKey:[sender noteID]];
+    [self hideSpellingButtonsForNoteID:[sender noteID]];
+    if ([self spellingSelectionsComplete]) {
+        [self finaliseSpelling];
+    }
+}
+
+
+#pragma mark -
+
+
+- (void)displaySpellingOptionsForNoteID:(NSNumber *)noteID
+{
+    UIButton *pianoKeyButton = [self.keyButtonsByNoteID objectForKey:noteID];
     [self generateSpellingButtonsForPianoKey:pianoKeyButton];
 }
 
@@ -112,53 +116,13 @@ static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
     [spellingButton show];
 }
 
-
-#pragma mark - KZPMusicKeyboardSpellingButtonDelegate -
-
-
-- (void)spellingButtonPressed:(KZPMusicKeyboardSpellingButton *)sender
+- (void)hideSpellingButtonsForNoteID:(NSNumber *)noteID
 {
-    NSNumber *key = [NSNumber numberWithLong:[sender tag]];
-    NSArray *buttonSet = [self.spellingButtons objectForKey:key];
-    [self.spellingButtons removeObjectForKey:key];
-    
-    for (KZPMusicKeyboardSpellingButton *spellingButton in [self.spellingButtons objectForKey:key]) {
+    NSArray *spellingButtons = [self.spellingButtons objectForKey:noteID];
+    for (KZPMusicKeyboardSpellingButton *spellingButton in spellingButtons) {
         [spellingButton hide];
     }
-    
-    [self.spellingChoices setObject:[self.imageNameMap valueForKey:sender.titleLabel.text] forKey:key];
-    
-    if ([self spellingSelectionsComplete]) {
-        [self sendPitchAndSpellingData];
-        self.spellingButtons = nil;
-//        [self.delegate manualSpellingComplete];
-        [UIView animateWithDuration:0.2 animations:^{
-            self.spellingSurface.alpha = 0.0;
-        } completion:^(BOOL finished) {
-            self.spellingSurface.hidden = YES;
-        }];
-    }
-}
-
-- (void)dismissWithCompletion:(void (^)())completionBlock
-{
-    [UIView animateWithDuration:0.2 animations:^{
-        self.spellingSurface.alpha = 0.0;
-        for (NSArray *buttonSet in [self.spellingButtons allValues]) {
-            for (UIButton *button in buttonSet) {
-                button.alpha = 0.0;
-            }
-        }
-        
-    } completion:^(BOOL finished) {
-        for (NSArray *buttonSet in [self.spellingButtons allValues]) {
-            for (UIButton *button in buttonSet) {
-                [button removeFromSuperview];
-            }
-        }
-        self.spellingButtons = nil;
-        completionBlock();
-    }];
+    [self.spellingButtons removeObjectForKey:noteID];
 }
 
 - (BOOL)spellingSelectionsComplete
@@ -169,6 +133,13 @@ static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
         }
     }
     return YES;
+}
+
+- (void)finaliseSpelling
+{
+    [self sendPitchAndSpellingData];
+    self.spellingButtons = nil;
+    [self.delegate hideSpellingSurface];
 }
 
 - (void)sendPitchAndSpellingData

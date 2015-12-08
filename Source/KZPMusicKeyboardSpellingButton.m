@@ -33,8 +33,7 @@
     if (self) {
         NSUInteger noteID = pianoKey.tag;
         self.white = [KZPMusicSciNotation noteIsWhite:(int)noteID];
-        self.noteID = noteID;
-        self.tag = noteID;
+        self.noteID = @(noteID);
         self.modifier = modifier;
         [self style];
         [self applyImage];
@@ -92,14 +91,14 @@
 
 - (void)show
 {
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         self.alpha = 1.0;
     }];
 }
 
 - (void)hide
 {
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         self.alpha = 0.0;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];

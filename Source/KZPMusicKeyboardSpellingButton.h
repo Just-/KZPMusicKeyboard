@@ -24,7 +24,7 @@
 
 @property (weak, nonatomic) id<KZPMusicKeyboardSpellingButtonDelegate> delegate;
 
-@property (nonatomic) NSUInteger noteID;
+@property (nonatomic) NSNumber *noteID;
 @property (nonatomic, getter=isWhite) BOOL white;
 @property (nonatomic) int modifier;
 
