@@ -9,17 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "KZPMusicKeyboardDelegate.h"
 
-typedef enum {
-    SPELLING_OP__POST,
-    SPELLING_OP__PRE
-} SpellingOperation;
-
 @interface KZPMusicKeyboardViewController : UIViewController
 
 - (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate
               controlDelegate:(id<KZPMusicKeyboardControlDelegate>)controlDelegate;
-
-@property (nonatomic) SpellingOperation spellingOperation; // ??
 
 - (CGFloat)height;
 

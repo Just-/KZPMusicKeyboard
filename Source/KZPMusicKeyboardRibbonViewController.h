@@ -11,6 +11,7 @@
 #import "KZPMusicSciNotation.h"
 #import "KZPMusicKeyboardDataAggregator.h"
 
+
 @protocol KZPMusicKeyboardRibbonControlDelegate <NSObject>
 
 - (void)playbackToneChanged;

@@ -9,6 +9,7 @@
 #import "KZPMusicKeyboardMapViewController.h"
 #import "UIView+frameOperations.h"
 
+
 @interface KZPMusicKeyboardMapViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *keyboardMap;
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIView *mapRegionVisible;
 
 @end
+
 
 @implementation KZPMusicKeyboardMapViewController
 

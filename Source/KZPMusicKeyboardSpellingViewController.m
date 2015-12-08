@@ -13,6 +13,7 @@
 #define N_MODIFIERS 5
 static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
 
+
 @interface KZPMusicKeyboardSpellingViewController () <KZPMusicDataAggregatorDelegate, KZPMusicKeyboardSpellingButtonDelegate>
 
 @property (strong, nonatomic) NSDictionary *imageNameMap;
@@ -20,6 +21,7 @@ static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
 @property (strong, nonatomic) NSMutableDictionary *selectedSpellingChoices;
 
 @end
+
 
 @implementation KZPMusicKeyboardSpellingViewController
 
@@ -145,7 +147,6 @@ static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
 - (void)sendPitchAndSpellingData
 {
     [self.musicDataAggregator resetPitchData];
-    NSLog(@"%@", self.selectedSpellingChoices);
     [self.musicDataAggregator receivePitchArray:[self.selectedSpellingChoices allKeys]
                               withSpellingArray:[self.selectedSpellingChoices allValues]];
     [self.musicDataAggregator flush];

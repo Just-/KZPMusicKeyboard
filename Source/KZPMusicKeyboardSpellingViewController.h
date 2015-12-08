@@ -23,7 +23,6 @@
 @property (weak, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
 
 @property (weak, nonatomic) UIView *spellingSurface;
-
 @property (strong, nonatomic) NSDictionary *keyButtonsByNoteID;
 
 @end

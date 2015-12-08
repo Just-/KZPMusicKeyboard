@@ -8,6 +8,7 @@
 
 #import "KZPMusicKeyboardDataAggregator.h"
 
+
 @interface KZPMusicKeyboardDataAggregator ()
 
 @property (strong, nonatomic) NSTimer *chordTimer;
@@ -17,6 +18,7 @@
 @property (nonatomic) NSNumber *currentSpelling;
 
 @end
+
 
 @implementation KZPMusicKeyboardDataAggregator
 

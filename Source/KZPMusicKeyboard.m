@@ -10,6 +10,7 @@
 #import "UIView+frameOperations.h"
 #import "KZPKeyboardSuperview.h"
 #import "KZPMusicKeyboardMapViewController.h"
+#import "KZPMusicKeyboardViewController.h"
 
 static KZPMusicKeyboard *keyboardInstance;
 

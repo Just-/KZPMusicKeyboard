@@ -25,7 +25,7 @@
 {
     [super viewDidLoad];
     self.keyboard = [KZPMusicKeyboard keyboard];
-    self.keyboard.delegate = self;    
+    self.keyboard.delegate = self;
     [self applySettings];
 }
 

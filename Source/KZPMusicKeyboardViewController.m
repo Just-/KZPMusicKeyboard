@@ -21,20 +21,17 @@
 
 @property (weak, nonatomic) IBOutlet UIView *keyboardMainView;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyButtons;
-
 @property (weak, nonatomic) IBOutlet UIView *keyboardDefocusView;
-
-@property (strong, nonatomic) KZPMusicKeyboardAudio *localAudioPlayer;
-@property (strong, nonatomic) KZPMusicKeyboardRibbonViewController *controlRibbon;
-
-@property (strong, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
-@property (strong, nonatomic) KZPMusicKeyboardSpellingViewController *spellingSurfaceViewController;
-
-@property (strong, nonatomic) KZPMusicKeyboardMapViewController *keyboardMapViewController;
 
 @property (weak, nonatomic) id<KZPMusicKeyboardDelegate> musicalDelegate;
 
 @property (nonatomic) BOOL ribbonVisible;
+@property (strong, nonatomic) KZPMusicKeyboardRibbonViewController *controlRibbon;
+@property (strong, nonatomic) KZPMusicKeyboardMapViewController *keyboardMapViewController;
+@property (strong, nonatomic) KZPMusicKeyboardSpellingViewController *spellingSurfaceViewController;
+
+@property (strong, nonatomic) KZPMusicKeyboardAudio *localAudioPlayer;
+@property (strong, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
 
 @property (nonatomic) BOOL chordSensitivityWasSetProgrammatically;
 

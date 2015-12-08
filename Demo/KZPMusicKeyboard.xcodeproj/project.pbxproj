@@ -272,7 +272,6 @@
 		A1EFF8AE1C1452DA005636E5 /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
-				A1EFF8C31C145BBD005636E5 /* KZPMusicKeyboardDelegate.h */,
 				A1EFF8C51C145CE3005636E5 /* Music Data Aggregator */,
 				A1EFF8BA1C145A26005636E5 /* Spelling Surface */,
 				A1EFF8B91C145A12005636E5 /* Keyboard Map Ribbon */,
@@ -436,6 +435,7 @@
 		C989F1F519AF099F002608F7 /* KZPMusicKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				A1EFF8C31C145BBD005636E5 /* KZPMusicKeyboardDelegate.h */,
 				C989F2AC19AF0A8E002608F7 /* KZPMusicKeyboard.h */,
 				C989F2AD19AF0A8E002608F7 /* KZPMusicKeyboard.m */,
 				A1EFF8AF1C1452EC005636E5 /* Utilities */,

@@ -22,8 +22,10 @@
 - (void)showWithCompletion:(void (^)())completionBlock;
 - (void)hideWithCompletion:(void (^)())completionBlock;
 
+//
+// Use these methods to override the keyboard's default settings
+//
 @property (nonatomic, setter=shouldAnimate:) BOOL shouldAnimate;
-
 - (void)enablePitchControl:(BOOL)setting;
 - (void)enableChordDetection:(BOOL)setting;
 - (void)enableDurationControls:(BOOL)setting;

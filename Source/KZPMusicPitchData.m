@@ -44,20 +44,20 @@
         [self addSpelling:resolvedSpelling];
         
         if (!_sciNotations) _sciNotations = [NSArray array];
-        self.sciNotations = [self.sciNotations arrayByAddingObject:sciNotation];
+        _sciNotations = [_sciNotations arrayByAddingObject:sciNotation];
     }
 }
 
 - (void)addPitch:(NSUInteger)pitch
 {
     if (!_noteValues) _noteValues = [NSArray array];
-    self.noteValues = [self.noteValues arrayByAddingObject:@(pitch)];
+    _noteValues = [_noteValues arrayByAddingObject:@(pitch)];
 }
 
 - (void)addSpelling:(MusicSpelling)spelling
 {
     if (!_spellings) _spellings = [NSArray array];
-    self.spellings = [self.spellings arrayByAddingObject:@(spelling)];
+    _spellings = [_spellings arrayByAddingObject:@(spelling)];
 }
 
 @end
