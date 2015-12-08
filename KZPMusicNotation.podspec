@@ -9,4 +9,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "7.1"
   s.requires_arc = true
   s.dependency 'TheAmazingAudioEngine'
+  s.dependency 'AGWindowView'
 end
