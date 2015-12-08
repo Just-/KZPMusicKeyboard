@@ -67,7 +67,7 @@ Configuring
 By default the keyboard will enable all of its controls. But this might be unnecessary for situations not involving data entry. The available settings can be explored in the `KZPMusicKeyboard` header. For example, a playable keyboard with no extra functionality could be achieved with the following:
 
 ```objective-c
-KZPMusicKeyboard *keyboard = [KPZMusicKeyboard keyboard];
+KZPMusicKeyboard *keyboard = [KZPMusicKeyboard keyboard];
 [keyboard shouldAnimate:NO];
 [keyboard enablePitchControl:YES];
 [keyboard enableSpelling:NO];
