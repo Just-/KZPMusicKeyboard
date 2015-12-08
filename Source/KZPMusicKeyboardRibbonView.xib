@@ -235,8 +235,8 @@
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pq0-d1-kCx">
                     <rect key="frame" x="819" y="6" width="140" height="29"/>
                     <segments>
-                        <segment title="Rhodes"/>
                         <segment title="Piano"/>
+                        <segment title="E. Piano"/>
                     </segments>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
