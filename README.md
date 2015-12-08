@@ -39,6 +39,9 @@ To hide the keyboard, do this:
 
 If the keyboard is set to be animated (see 'Configuring'), you may want to call `showWithCompletion:` and `hideWithCompletion:` instead, which allows you to pass a block which is executed once the keyboard has fully appeared/disappeared.
 
+Receiving Data
+--------------
+
 To receive musical data from the keyboard, assign an object (such as a view controller) as delegate:
 
 ```objective-c
