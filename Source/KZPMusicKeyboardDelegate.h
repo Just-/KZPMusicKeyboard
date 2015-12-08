@@ -32,7 +32,7 @@
 
 
 //
-// Implement to receive miscellaneous control signals
+// Implement to receive miscellaneous control signals.
 //
 @protocol KZPMusicKeyboardControlDelegate <NSObject>
 

@@ -68,16 +68,15 @@ By default the keyboard will enable all of its controls. But this might be unnec
 
 ```objective-c
 KZPMusicKeyboard *keyboard = [KPZMusicKeyboard keyboard];
-
 [keyboard shouldAnimate:NO];
-[keyboard enableSpelling:NO;
+[keyboard enablePitchControl:YES];
+[keyboard enableSpelling:NO];
 [keyboard enableChordDetection:YES];
 [keyboard chordSensitivity:20]; // milliseconds. When a chord is detected, all its notes are delivered in a single pitch data object.
 [keyboard enableDurationControls:NO];
 [keyboard enableLocalAudio:YES];
 [keyboard enableManualDismiss:NO];
 [keyboard enableBackspaceControl:NO];
-
 [keyboard show];
 ```
 
