@@ -10,7 +10,7 @@ Drop this into an iPad project to enable versatile musical data entry.
 Explanation
 -----------
 
-The keyboard generates data for pitch, spelling and duration, which can be used selectively depending on the application. For example, it can be configured as a way of entering data for musical notation, or it can be configured to only supply note on/off information which could then be translated into MIDI events to control a sampler or remote interface. The keyboard does not send messages directly to CoreMIDI. 
+The keyboard generates data for pitch, spelling and duration, which can be used selectively depending on the application. For example, it can be configured as a way of entering data for musical notation, or it can be configured to only supply note on/off information which could then be translated into MIDI events to control a sampler or remote instrument. The keyboard does not send messages directly to CoreMIDI. 
 
 Installation
 ------------
@@ -52,13 +52,13 @@ To receive musical data from the keyboard, assign an object (such as a view cont
 [[KZPMusicKeyboard keyboard] setDelegate:self];
 ```
 
-This object should implement the `KZPMusicKeyboardDelegate` and `KZPMusicKeyboardControlDelegate` protocols.
+This object should implement the `KZPMusicKeyboardDelegate` protocol.
 
-To receive musical data, implement the `KZPMusicKeyboardDelegate` callback method `keyboardDidSendPitchData:withDurationData:` to receive pitch and/or duration objects depending on the configuration. See the `KZPMusicPitchData` and `KZPMusicDurationData` headers to understand these objects.
+To receive musical data, implement `keyboardDidSendPitchData:withDurationData:` to receive pitch and/or duration objects depending on the configuration. See the `KZPMusicPitchData` and `KZPMusicDurationData` headers to understand what is returned in these objects.
 
-To receive raw keyboard note data, implement the `KZPMusicKeyboardDelegate` callback method `keyboardDidSendNoteOn:noteOff:`. This is what you need if using the keyboard to drive some internal or external MIDI interface. 
+To receive raw keyboard note data, implement `keyboardDidSendNoteOn:noteOff:`. This is what you need if using the keyboard to drive some internal or external MIDI interface. 
 
-If you allow the keyboard to dismiss manually (see 'Configuring'), then it is a good idea to implement the `keyboardWasDismissed` delegate method in case that action means something. If you allow the user to send a 'backspace' message (e.g., when entering a note sequence), then you need to implement the `keyboardDidSendBackspace` delegate method to handle this.
+If you allow the keyboard to be dismissed manually (see 'Configuring'), then it is a good idea to implement the `keyboardWasDismissed` delegate method in case that action means something. If you allow the user to send a 'backspace' message (e.g., when entering a note sequence), then you need to implement the `keyboardDidSendBackspace` delegate method to handle this.
 
 Demo
 ----
