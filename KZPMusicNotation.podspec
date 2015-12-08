@@ -8,4 +8,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Source/*.{h,m}'
   s.ios.deployment_target = "7.1"
   s.requires_arc = true
+  s.dependency 'TheAmazingAudioEngine'
 end
