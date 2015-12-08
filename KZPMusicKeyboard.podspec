@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.author       = { "Matt Rankin" => "kazoompah@gmail.com" }
   s.source       = { :git => "https://github.com/kazoompah/KZPMusicKeyboard.git" } 
   s.source_files = 'Source/*.{h,m}'
-  s.resources    = 'Sources/*.xib', Source/Images/*.png', 'Source/Soundfonts/*.{sf2,plist}'
+  s.resources    = 'Source/*.xib', Source/Images/*.png', 'Source/Soundfonts/*.{sf2,plist}'
   s.ios.deployment_target = "7.1"
   s.requires_arc = true
   s.dependency 'TheAmazingAudioEngine'
