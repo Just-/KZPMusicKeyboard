@@ -39,6 +39,7 @@ static KZPMusicKeyboard *keyboardInstance;
     if (self) {
         self.keyboardViewController = [[KZPMusicKeyboardViewController alloc] initWithNibName:@"KZPMusicKeyboardView" bundle:nil];
         [self.keyboardViewController.view setFrameY:[[UIScreen mainScreen] bounds].size.width - [self.keyboardViewController height]];
+        [self.keyboardViewController registerControlDelegate:self];
         [self applyDefaultSettings];
     }
     return self;
@@ -46,7 +47,7 @@ static KZPMusicKeyboard *keyboardInstance;
 
 - (void)setDelegate:(id<KZPMusicKeyboardDelegate, KZPMusicKeyboardControlDelegate>)delegate
 {
-    [self.keyboardViewController registerMusicDelegate:delegate controlDelegate:self];
+    [self.keyboardViewController registerMusicDelegate:delegate];
     _delegate = delegate;
 }
 

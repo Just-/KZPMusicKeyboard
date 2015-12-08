@@ -11,8 +11,8 @@
 
 @interface KZPMusicKeyboardViewController : UIViewController
 
-- (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate
-              controlDelegate:(id<KZPMusicKeyboardControlDelegate>)controlDelegate;
+- (void)registerControlDelegate:(id<KZPMusicKeyboardControlDelegate>)controlDelegate;
+- (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate;
 
 - (CGFloat)height;
 

@@ -55,11 +55,15 @@
     [self focusKeyboardAnimated:NO];
 }
 
-- (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate controlDelegate:(id<KZPMusicKeyboardControlDelegate>)controlDelegate
+- (void)registerControlDelegate:(id<KZPMusicKeyboardControlDelegate>)controlDelegate
+{
+    self.controlRibbon.controlDelegate = controlDelegate;
+}
+
+- (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate
 {
     self.musicalDelegate = musicalDelegate;
     self.musicDataAggregator.musicalDelegate = musicalDelegate;
-    self.controlRibbon.controlDelegate = controlDelegate;
 }
 
 - (void)applyKeyboardHighlightImages
