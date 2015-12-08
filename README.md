@@ -3,7 +3,7 @@
 KZPMusicKeyboard 
 ============
 
-Drop this into an iPad project to enable versatile musical data entry. It can also be used as a playable virtual instrument if required.
+Drop this into an iPad project to enable versatile musical data entry.
 
 ![alt text](https://github.com/kazoompah/KZPMusicKeyboard/blob/master/example.png "Example interface")	
 
@@ -20,10 +20,14 @@ The best way to add this to a project is to use Cocoapods. Add the following 2 l
 	pod 'KZPUtilities', :git => 'https://github.com/kazoompah/KZPUtilities.git'
 	pod 'KZPMusicKeyboard', :git => 'https://github.com/kazoompah/KZPMusicKeyboard.git'	
 
-The project is not available via the public cocoa pods repo at the moment.
+The project is not available via the public cocoa pods repository at the moment.
 
 Basic Usage 
 ------
+
+Ensure the 'Portrait' and 'Upside Down' device orientations are deselected in the project settings, and that the deployment device is set to iPad. The interface is not designed for phone screens.
+
+Then:
 
 `#import "KZPMusicKeyboard.h"`
 
