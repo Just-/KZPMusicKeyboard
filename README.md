@@ -10,7 +10,7 @@ Drop this into an iPad project to enable versatile musical data entry.
 Explanation
 -----------
 
-The keyboard generates data for pitch, spelling and duration, which can be used selectively depending on the application. For example, it can be configured as a way of entering data for musical notation, or it can be configured to only supply note on/off information which could then be translated into MIDI events to control a sampler or remote interface. There are several ways of doing the latter using libraries such as [TheAmazingAudioEngine](http://theamazingaudioengine.com/), [MidiBus](http://www.audeonic.com/midibus/) or [MIKMIDI](https://github.com/mixedinkey-opensource/MIKMIDI). The keyboard does not send messages directly to CoreMIDI. 
+The keyboard generates data for pitch, spelling and duration, which can be used selectively depending on the application. For example, it can be configured as a way of entering data for musical notation, or it can be configured to only supply note on/off information which could then be translated into MIDI events to control a sampler or remote interface. The keyboard does not send messages directly to CoreMIDI. 
 
 Installation
 ------------
