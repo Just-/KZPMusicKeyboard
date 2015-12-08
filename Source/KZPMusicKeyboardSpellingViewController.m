@@ -111,9 +111,9 @@ static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
 - (void)displaySpellingButton:(KZPMusicKeyboardSpellingButton *)spellingButton
 {
     spellingButton.delegate = self;
+    [spellingButton show];    
     [self.spellingSurface addSubview:spellingButton];
     [self.spellingSurface bringSubviewToFront:spellingButton];
-    [spellingButton show];
 }
 
 - (void)hideSpellingButtonsForNoteID:(NSNumber *)noteID

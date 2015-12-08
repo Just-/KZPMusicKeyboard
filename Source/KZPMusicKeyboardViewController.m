@@ -106,7 +106,7 @@
     self.spellingSurfaceViewController = [[KZPMusicKeyboardSpellingViewController alloc] init];
     self.spellingSurfaceViewController.musicDataAggregator = self.musicDataAggregator;
     self.spellingSurfaceViewController.delegate = self;
-    self.spellingSurfaceViewController.spellingSurface = self.keyboardDefocusView;
+    self.spellingSurfaceViewController.spellingSurface = self.keyboardMainView;
     NSMutableDictionary *keyButtonsByNoteID = [NSMutableDictionary dictionary];
     for (UIButton *key in self.keyButtons) {
         [keyButtonsByNoteID setObject:key forKey:@([key tag])];

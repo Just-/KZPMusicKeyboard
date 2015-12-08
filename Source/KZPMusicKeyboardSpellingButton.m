@@ -71,9 +71,9 @@
     self.layer.cornerRadius = 5.0;
     self.clipsToBounds = YES;
     self.alpha = 0.0;
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor whiteColor];
     self.layer.borderColor = [self isWhite] ? [UIColor lightGrayColor].CGColor : [UIColor darkGrayColor].CGColor;
-    
+
     self.titleLabel.text = [KZPMusicKeyboardSpellingButton imageTypes][[self modifier] + 2];
 }
 
@@ -82,7 +82,7 @@
     NSString *imageName = @"music-";
     NSArray *imageTypes = [KZPMusicKeyboardSpellingButton imageTypes];
     imageName = [imageName stringByAppendingString:imageTypes[[self modifier] + 2]];
-    if ([self isWhite]) {
+    if (![self isWhite]) {
         imageName = [imageName stringByAppendingString:@"-inverted"];
     }
     UIImage *image = [UIImage imageNamed:imageName];
