@@ -7,22 +7,22 @@
 //
 
 #import "KZPMusicKeyboardRibbonViewController.h"
-
+#import "KZPMusicKeyboardRibbonButton.h"
 
 @interface KZPMusicKeyboardRibbonViewController ()
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyboardControlButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *durationControlButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *durationButtons;
-@property (weak, nonatomic) IBOutlet UIButton *restButton;
+@property (weak, nonatomic) IBOutlet KZPMusicKeyboardRibbonButton *restButton;
 @property (weak, nonatomic) IBOutlet UISlider *chordThresholdSlider;
 @property (weak, nonatomic) IBOutlet UILabel *chordThresholdLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *spellingButtons;
-@property (weak, nonatomic) IBOutlet UIButton *dottedButton;
-@property (weak, nonatomic) IBOutlet UIButton *tieButton;
-@property (weak, nonatomic) IBOutlet UIButton *manualSpellButton;
-@property (weak, nonatomic) IBOutlet UIButton *backspaceButton;
-@property (weak, nonatomic) IBOutlet UIButton *dismissButton;
+@property (weak, nonatomic) IBOutlet KZPMusicKeyboardRibbonButton *dottedButton;
+@property (weak, nonatomic) IBOutlet KZPMusicKeyboardRibbonButton *tieButton;
+@property (weak, nonatomic) IBOutlet KZPMusicKeyboardRibbonButton *manualSpellButton;
+@property (weak, nonatomic) IBOutlet KZPMusicKeyboardRibbonButton *backspaceButton;
+@property (weak, nonatomic) IBOutlet KZPMusicKeyboardRibbonButton *dismissButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *toneSelector;
 
 @end
@@ -34,10 +34,10 @@
 {
     [super viewDidLoad];
     
-    for (UIButton *control in self.keyboardControlButtons) {
-        [self styleControl:control];
+    for (KZPMusicKeyboardRibbonButton *control in self.keyboardControlButtons) {
+        [control style];
         if (control != self.backspaceButton && control != self.dismissButton) {
-            [self deselectControl:control];
+            [control deselect];
         }
     }
     
@@ -51,22 +51,22 @@
 - (void)enableBackspace:(BOOL)backspaceEnabled
 {
     _backspaceEnabled = backspaceEnabled;
-    backspaceEnabled ? [self enableControl:self.backspaceButton] : [self disableControl:self.backspaceButton];
-    [self selectControl:self.backspaceButton];
+    backspaceEnabled ? [self.backspaceButton enable] : [self.backspaceButton disable];
+    [self.backspaceButton select];
 }
 
 - (void)enableDismiss:(BOOL)dismissEnabled
 {
     _dismissEnabled = dismissEnabled;
-    dismissEnabled ? [self enableControl:self.dismissButton] : [self disableControl:self.dismissButton];
-    [self selectControl:self.dismissButton];
+    dismissEnabled ? [self.dismissButton enable] : [self.dismissButton disable];
+    [self.dismissButton select];
 }
 
 - (void)enableDurationControls:(BOOL)durationControlsEnabled
 {
     _durationControlsEnabled = durationControlsEnabled;
-    for (UIButton *duration in self.durationControlButtons) {
-        durationControlsEnabled ? [self enableControl:duration] : [self disableControl:duration];
+    for (KZPMusicKeyboardRibbonButton *duration in self.durationControlButtons) {
+        durationControlsEnabled ? [duration enable] : [duration disable];
     }
     [self resetDefaultDuration];
 }
@@ -74,8 +74,8 @@
 - (void)enableSpelling:(BOOL)spellingEnabled
 {
     _spellingEnabled = spellingEnabled;
-    for (UIButton *spelling in self.spellingButtons) {
-        spellingEnabled ? [self enableControl:spelling] : [self disableControl:spelling];
+    for (KZPMusicKeyboardRibbonButton *spelling in self.spellingButtons) {
+        spellingEnabled ? [spelling enable] : [spelling disable];
     }
     if (!spellingEnabled) self.musicDataAggregator.manualSpellingEnabled = NO;
 }
@@ -84,8 +84,8 @@
 {
     _durationControlsActive = durationControlsActive;
     if (durationControlsActive) {
-        for (UIButton *duration in self.durationControlButtons) {
-            [self deselectControl:duration];
+        for (KZPMusicKeyboardRibbonButton *duration in self.durationControlButtons) {
+            [duration deselect];
         }
     } else {
         [self resetDefaultDuration];
@@ -94,9 +94,9 @@
 
 - (void)resetDefaultDuration
 {
-    for (UIButton *duration in self.durationControlButtons) {
+    for (KZPMusicKeyboardRibbonButton *duration in self.durationControlButtons) {
         if ([duration tag] == 1 && ![self durationControlsActive]) {
-            [self selectControl:duration];
+            [duration select];
         }
     }
 }
@@ -105,72 +105,72 @@
 #pragma mark - Actions -
 
 
-- (IBAction)accidentalButtonPress:(UIButton *)sender
+- (IBAction)accidentalButtonPress:(KZPMusicKeyboardRibbonButton *)sender
 {
-    for (UIButton *accidental in self.spellingButtons) {
+    for (KZPMusicKeyboardRibbonButton *accidental in self.spellingButtons) {
         if (sender == accidental) {
-            [self toggleControl:sender];
+            [sender toggle];
         } else {
-            [self deselectControl:accidental];
+            [accidental deselect];
         }
     }
     self.musicDataAggregator.manualSpellingEnabled = self.manualSpellButton.selected;
 }
 
-- (IBAction)restButtonTouch:(UIButton *)sender
+- (IBAction)restButtonTouch:(KZPMusicKeyboardRibbonButton *)sender
 {
     if ([self durationControlsActive]) {
-        [self toggleControl:sender];
+        [sender toggle];
     } else {
-        [self selectControl:sender];
+        [sender select];
         [self sendDuration];
         [self.musicDataAggregator flush];
     }
 }
 
-- (IBAction)restButtonPress:(UIButton *)sender
+- (IBAction)restButtonPress:(KZPMusicKeyboardRibbonButton *)sender
 {
     if (![self durationControlsActive]) {
-        [self deselectControl:sender];
+        [sender deselect];
     }
 }
 
-- (IBAction)durationButtonTouch:(UIButton *)sender
+- (IBAction)durationButtonTouch:(KZPMusicKeyboardRibbonButton *)sender
 {
     if ([self durationControlsActive]) {
-        [self selectControl:sender];
+        [sender select];
         [self sendDuration];
         [self.musicDataAggregator flush];
     } else {
-        for (UIButton *duration in self.durationButtons) {
+        for (KZPMusicKeyboardRibbonButton *duration in self.durationButtons) {
             if (duration == sender) {
-                [self selectControl:duration];
+                [duration select];
             } else {
-                [self deselectControl:duration];
+                [duration deselect];
             }
         }
     }
 }
 
-- (IBAction)durationButtonPress:(UIButton *)sender
+- (IBAction)durationButtonPress:(KZPMusicKeyboardRibbonButton *)sender
 {
     if ([self durationControlsActive]) {
-        [self deselectControl:sender];
+        [sender deselect];
     }
 }
 
-- (IBAction)dotButtonPress:(UIButton *)sender
+- (IBAction)dotButtonPress:(KZPMusicKeyboardRibbonButton *)sender
 {
-    [self toggleControl:sender];
+    [sender toggle];
 }
 
-- (IBAction)tieButtonPress:(UIButton *)sender
+- (IBAction)tieButtonPress:(KZPMusicKeyboardRibbonButton *)sender
 {
-    [self toggleControl:sender];
+    [sender toggle];
 }
 
 
-- (IBAction)backButtonPressed:(UIButton *)sender
+- (IBAction)backButtonPressed:(KZPMusicKeyboardRibbonButton *)sender
 {
     if ([self.controlDelegate respondsToSelector:@selector(keyboardDidSendBackspace)]) {
         [self.controlDelegate keyboardDidSendBackspace];
@@ -247,8 +247,8 @@
 // TODO: What is this for?
 - (void)resetDuration
 {
-    [self deselectControl:self.tieButton];
-    [self deselectControl:self.manualSpellButton];
+    [self.tieButton deselect];
+    [self.manualSpellButton deselect];
 }
 
 - (void)resetChordSensitivitySlider
@@ -261,49 +261,6 @@
 - (NSString *)selectedPatch
 {
     return [self.toneSelector titleForSegmentAtIndex:[self.toneSelector selectedSegmentIndex]];
-}
-
-- (void)styleControl:(UIButton *)control
-{
-    control.layer.borderWidth = 1.0;
-    control.layer.cornerRadius = 5.0;
-    control.clipsToBounds = YES;
-    control.layer.borderColor = [UIColor darkGrayColor].CGColor;
-}
-
-- (void)toggleControl:(UIButton *)control
-{
-    control.selected ? [self deselectControl:control] : [self selectControl:control];
-}
-
-- (void)selectControl:(UIButton *)control
-{
-    if (control.enabled) {
-        control.selected = YES;
-        control.alpha = 1.0;
-    }
-}
-
-- (void)deselectControl:(UIButton *)control
-{
-    if (control.enabled) {
-        control.selected = NO;
-        control.alpha = 0.5;
-    }
-}
-
-- (void)disableControl:(UIButton *)control
-{
-    control.selected = NO;
-    control.enabled = NO;
-    control.alpha = 0.15;
-}
-
-- (void)enableControl:(UIButton *)control
-{
-    control.selected = NO;
-    control.enabled = YES;
-    control.alpha = 0.5;
 }
 
 @end
