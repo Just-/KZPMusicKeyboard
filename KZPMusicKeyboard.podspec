@@ -9,5 +9,6 @@ Pod::Spec.new do |s|
   s.resources    = 'Sources/*.xib', Source/Images/*.png', 'Source/Soundfonts/*.{sf2,plist}'
   s.ios.deployment_target = "7.1"
   s.requires_arc = true
-  s.dependency 'TheAmazingAudioEngine', 'AGWindowView'
+  s.dependency 'TheAmazingAudioEngine'
+  s.dependency 'AGWindowView'
 end
