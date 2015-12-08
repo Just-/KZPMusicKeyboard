@@ -19,6 +19,7 @@ static KZPMusicKeyboard *keyboardInstance;
 
 @property (strong, nonatomic) KZPMusicKeyboardViewController *keyboardViewController;
 @property (strong, nonatomic) KZPKeyboardSuperview *windowView;
+@property (nonatomic, copy) void (^completionBlock) ();
 
 @end
 
@@ -93,6 +94,13 @@ static KZPMusicKeyboard *keyboardInstance;
 
 - (void)showWithCompletion:(void (^)())completionBlock
 {
+    self.completionBlock = completionBlock;
+    [NSTimer scheduledTimerWithTimeInterval:0 target:self selector:@selector(deferredShowWithCompletion) userInfo:nil repeats:NO];
+}
+
+- (void)deferredShowWithCompletion
+{
+    [[UIApplication sharedApplication] keyWindow];
     [self.keyboardViewController reconfigureForSettings];
     [self.keyboardViewController.view setFrameY:[self screenHeight]];
     
@@ -103,11 +111,11 @@ static KZPMusicKeyboard *keyboardInstance;
         [UIView animateWithDuration:0.3 animations:^{
             [self moveKeyboardViewOnscreen];
         } completion:^(BOOL finished) {
-            completionBlock();
+            self.completionBlock();
         }];
     } else {
         [self moveKeyboardViewOnscreen];
-        completionBlock();
+        self.completionBlock();
     }
     
     CGFloat landscapeScreenWidth = MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
