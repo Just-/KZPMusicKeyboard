@@ -7,6 +7,11 @@ Drop this into an iPad project to enable versatile musical data entry. It can al
 
 ![alt text](https://github.com/kazoompah/KZPMusicKeyboard/blob/master/example.png "Example interface")	
 
+Explanation
+-----------
+
+The keyboard object generates data for pitch, spelling and duration, which is received through delegate methods and can be used selectively depending on the application. For example, it can be configured as a way of entering data for musical notation, or it can be configured to only supply note on/off information which could then be translated into MIDI events to control a sampler or remote interface. It does not send messages directly to CoreMIDI. There are several ways of doing that using libraries such as [TheAmazingAudioEngine](http://theamazingaudioengine.com/), [MidiBus](http://www.audeonic.com/midibus/) or [MIKMIDI](https://github.com/mixedinkey-opensource/MIKMIDI).
+
 Installation
 ------------
 
@@ -16,11 +21,6 @@ The best way to add this to a project is to use Cocoapods. Add the following 2 l
 	pod 'KZPMusicKeyboard', :git => 'https://github.com/kazoompah/KZPMusicKeyboard.git'	
 
 The project is not available via the public cocoa pods repo at the moment.
-
-Explanation
------------
-
-The keyboard object generates data for pitch, spelling and duration, which is received through delegate methods and can be used selectively depending on the application. For example, it can be configured as a way of entering data for musical notation, or it can be configured to only supply note on/off information which could then be translated into MIDI events to control a sampler or remote interface. It does not send messages directly to CoreMIDI. There are several ways of doing that using libraries such as [TheAmazingAudioEngine](http://theamazingaudioengine.com/), [MidiBus](http://www.audeonic.com/midibus/) or [MIKMIDI](https://github.com/mixedinkey-opensource/MIKMIDI).
 
 Basic Usage 
 ------
