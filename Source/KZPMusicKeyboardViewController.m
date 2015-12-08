@@ -239,7 +239,7 @@
 }
 
 
-#pragma mark - Developer Settings -
+#pragma mark - Configuration -
 
 - (void)enablePitchControl:(BOOL)pitchControlEnabled
 {

@@ -135,7 +135,7 @@ static KZPMusicKeyboard *keyboardInstance;
 }
 
 
-#pragma mark - Developer Settings -
+#pragma mark - Configuration -
 
 
 - (void)enableSpelling:(BOOL)setting { [self.keyboardViewController enableSpelling:setting]; }
