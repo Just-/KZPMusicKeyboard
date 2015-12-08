@@ -6,7 +6,6 @@
 //  Copyright © 2015 Sudoseng. All rights reserved.
 //
 
-#import "ViewController.h"
 #import "KZPMusicKeyboardDelegate.h"
 
 @protocol KZPMusicKeyboardMapDelegate <NSObject>
