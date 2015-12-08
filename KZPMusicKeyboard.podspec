@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.dependency 'TheAmazingAudioEngine'
   s.dependency 'AGWindowView'
+  s.framework    = 'Foundation', 'UIKit', 'CoreGraphics'
 end
