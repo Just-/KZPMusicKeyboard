@@ -18,7 +18,7 @@
 
 @interface KZPMusicKeyboardDataAggregator : NSObject
 
-@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> musicalDelegate;
+@property (weak, nonatomic) id<KZPMusicKeyboardDataDelegate> musicalDelegate;
 @property (weak, nonatomic) id<KZPMusicDataAggregatorDelegate> delegate;
 
 @property (nonatomic, setter=enableChordDetection:) BOOL chordDetectionEnabled;

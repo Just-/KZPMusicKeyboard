@@ -15,7 +15,7 @@
 
 + (KZPMusicKeyboard *)keyboard;
 
-@property (weak, nonatomic) id<KZPMusicKeyboardDelegate, KZPMusicKeyboardControlDelegate> delegate;
+@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> delegate;
 
 - (void)show;
 - (void)hide;

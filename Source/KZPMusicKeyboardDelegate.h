@@ -12,7 +12,7 @@
 #import "KZPMusicKeyboardDelegate.h"
 
 
-@protocol KZPMusicKeyboardDelegate <NSObject>
+@protocol KZPMusicKeyboardDataDelegate <NSObject>
 
 @optional
 
@@ -31,13 +31,18 @@
 @end
 
 
-//
-// Implement to receive miscellaneous control signals.
-//
 @protocol KZPMusicKeyboardControlDelegate <NSObject>
 
 @optional
+
+//
+// Implement to receive miscellaneous control signals.
+//
 - (void)keyboardWasDismissed;
 - (void)keyboardDidSendBackspace;
 
+@end
+
+
+@protocol KZPMusicKeyboardDelegate <KZPMusicKeyboardControlDelegate, KZPMusicKeyboardDataDelegate>
 @end

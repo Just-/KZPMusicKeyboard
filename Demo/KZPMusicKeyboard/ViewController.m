@@ -11,7 +11,7 @@
 #import "NSArray+functions.h"
 
 
-@interface ViewController () <KZPMusicKeyboardDelegate, KZPMusicKeyboardControlDelegate>
+@interface ViewController () <KZPMusicKeyboardDelegate>
 
 @property (weak, nonatomic) KZPMusicKeyboard *keyboard;
 
@@ -109,10 +109,6 @@
 {
     
 }
-
-
-#pragma mark - KZPMusicKeyboardControlDelegate
-
 
 - (void)keyboardWasDismissed
 {

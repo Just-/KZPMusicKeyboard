@@ -31,7 +31,7 @@ static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
     return _spellingButtons;
 }
 
-- (void)setMusicDataAggregator:(id<KZPMusicKeyboardDelegate>)musicDataAggregator
+- (void)setMusicDataAggregator:(id<KZPMusicKeyboardDataDelegate>)musicDataAggregator
 {
     _musicDataAggregator = musicDataAggregator;
     _musicDataAggregator.delegate = self;

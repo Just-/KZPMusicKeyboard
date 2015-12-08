@@ -23,7 +23,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *keyButtons;
 @property (weak, nonatomic) IBOutlet UIView *keyboardDefocusView;
 
-@property (weak, nonatomic) id<KZPMusicKeyboardDelegate> musicalDelegate;
+@property (weak, nonatomic) id<KZPMusicKeyboardDataDelegate> musicalDelegate;
 
 @property (nonatomic) BOOL ribbonVisible;
 @property (strong, nonatomic) KZPMusicKeyboardRibbonViewController *controlRibbon;
@@ -60,7 +60,7 @@
     self.controlRibbon.controlDelegate = controlDelegate;
 }
 
-- (void)registerMusicDelegate:(id<KZPMusicKeyboardDelegate>)musicalDelegate
+- (void)registerMusicDelegate:(id<KZPMusicKeyboardDataDelegate>)musicalDelegate
 {
     self.musicalDelegate = musicalDelegate;
     self.musicDataAggregator.musicalDelegate = musicalDelegate;
