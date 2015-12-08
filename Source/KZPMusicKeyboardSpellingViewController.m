@@ -10,11 +10,14 @@
 #import "KZPMusicSciNotation.h"
 #import "KZPMusicKeyboardSpellingButton.h"
 
+#define N_MODIFIERS 5
+static int _modifierOrder[N_MODIFIERS] = {-2, 2, -1, 1, 0};
+
 @interface KZPMusicKeyboardSpellingViewController () <KZPMusicDataAggregatorDelegate, KZPMusicKeyboardSpellingButtonDelegate>
 
 @property (strong, nonatomic) NSDictionary *imageNameMap;
 @property (strong, nonatomic) NSMutableDictionary *spellingButtons;
-@property (strong, nonatomic) NSMutableDictionary *spellingChoices;
+@property (strong, nonatomic) NSMutableDictionary *selectedSpellingChoices;
 
 @end
 
@@ -68,50 +71,49 @@
 - (void)provideManualSpellingForNoteValues:(NSArray *)noteValues
 {
     [self.delegate showSpellingSurface];
-    self.spellingChoices = [NSMutableDictionary dictionary];
+    self.selectedSpellingChoices = [NSMutableDictionary dictionary];
     for (NSNumber *noteID in noteValues) {
-        [self displayAccidentalOptionsForNoteID:[noteID intValue]];
-        [self.spellingChoices setObject:[NSNull null] forKey:noteID];
+        [self displaySpellingOptionsForNoteID:[noteID intValue]];
+        [self.selectedSpellingChoices setObject:[NSNull null] forKey:noteID];
     }
+}
+
+- (void)displaySpellingOptionsForNoteID:(int)noteID
+{
+    UIButton *pianoKeyButton = [self.keyButtonsByNoteID objectForKey:[NSString stringWithFormat:@"%d", noteID]];
+    [self generateSpellingButtonsForPianoKey:pianoKeyButton];
+}
+
+- (void)generateSpellingButtonsForPianoKey:(UIButton *)pianoKeyButton
+{
+    NSUInteger noteID = pianoKeyButton.tag;
+    NSMutableArray *spellingButtonsForKey = [NSMutableArray array];
+    
+    for (int i = 0; i < N_MODIFIERS; i++) {
+        int modifier = _modifierOrder[i];
+        
+        if ([KZPMusicSciNotation modifier:modifier isLegalForPitch:(int)noteID]) {
+            KZPMusicKeyboardSpellingButton *spellingButton = [[KZPMusicKeyboardSpellingButton alloc] initWithPianoKey:pianoKeyButton
+                                                                                                  existingButtonCount:[spellingButtonsForKey count]
+                                                                                                             modifier:modifier];
+            [spellingButtonsForKey addObject:spellingButton];
+            [self displaySpellingButton:spellingButton];
+        }
+    }
+    
+    [self.spellingButtons setObject:spellingButtonsForKey forKey:@(noteID)];
+}
+
+- (void)displaySpellingButton:(KZPMusicKeyboardSpellingButton *)spellingButton
+{
+    spellingButton.delegate = self;
+    [self.spellingSurface addSubview:spellingButton];
+    [self.spellingSurface bringSubviewToFront:spellingButton];
+    [spellingButton show];
 }
 
 
 #pragma mark - KZPMusicKeyboardSpellingButtonDelegate -
-
-
-- (void)displayAccidentalOptionsForNoteID:(int)noteID
-{
-    self.spellingSurface.hidden = NO;
-    [UIView animateWithDuration:0.2 animations:^{
-        self.spellingSurface.alpha = 0.3;
-    }];
-    
-    int modifierOrder[5] = {-2, 2, -1, 1, 0};
-    
-    UIButton *pianoKeyButton = [self.keyButtonsByNoteID objectForKey:[NSString stringWithFormat:@"%d", noteID]];
-
-    NSMutableArray *spellingButtons = [NSMutableArray array];
-    
-    for (int i = 0; i < 5; i++) {
-        int modifier = modifierOrder[i];
-
-        if ([KZPMusicSciNotation modifier:modifier isLegalForPitch:noteID]) {
-            KZPMusicKeyboardSpellingButton *spellingButton = [[KZPMusicKeyboardSpellingButton alloc] initWithPianoKey:pianoKeyButton
-                                                                                                  existingButtonCount:[spellingButtons count]
-                                                                                                             modifier:modifier];
-            spellingButton.delegate = self;
-            [spellingButtons addObject:spellingButton];
-            [self.spellingSurface addSubview:spellingButton];
-            [self.spellingSurface bringSubviewToFront:spellingButton];
-            [spellingButton show];
-        }
-    }
-    
-    [self.spellingButtons setObject:spellingButtons forKey:[NSNumber numberWithInt:noteID]];
-}
-
-
-#pragma mark -
 
 
 - (void)spellingButtonPressed:(KZPMusicKeyboardSpellingButton *)sender
@@ -161,8 +163,8 @@
 
 - (BOOL)spellingSelectionsComplete
 {
-    for (NSNumber *k in [self.spellingChoices allKeys]) {
-        if ([[self.spellingChoices objectForKey:k] isEqual:[NSNull null]]) {
+    for (NSNumber *k in [self.selectedSpellingChoices allKeys]) {
+        if ([[self.selectedSpellingChoices objectForKey:k] isEqual:[NSNull null]]) {
             return NO;
         }
     }
@@ -172,8 +174,8 @@
 - (void)sendPitchAndSpellingData
 {
     [self.musicDataAggregator resetPitchData];
-    [self.musicDataAggregator receivePitchArray:[self.spellingChoices allKeys]];
-    [self.musicDataAggregator receiveSpellingArray:[self.spellingChoices allValues]];
+    [self.musicDataAggregator receivePitchArray:[self.selectedSpellingChoices allKeys]];
+    [self.musicDataAggregator receiveSpellingArray:[self.selectedSpellingChoices allValues]];
     [self.musicDataAggregator flush];
 }
 

@@ -190,7 +190,7 @@
 {
     float lightness = light ? 0.3 : 0.5;
     self.keyboardDefocusView.hidden = NO;
-    [UIView animateWithDuration:animated ? 0.3 : 0.0 animations:^{
+    [UIView animateWithDuration:animated ? 0.2 : 0.0 animations:^{
         self.keyboardDefocusView.alpha = lightness;
     }];
 }
