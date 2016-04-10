@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "KZPMusicSciNotation.h"
+@import KZPUtilities;
 
 @interface KZPMusicPitchData : NSObject
 

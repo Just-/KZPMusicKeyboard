@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "KZPMusicKeyboardDelegate.h"
-#import "KZPMusicSciNotation.h"
+@import KZPUtilities;
 
 @protocol KZPMusicDataAggregatorDelegate <NSObject>
 

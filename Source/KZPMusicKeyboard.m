@@ -37,7 +37,7 @@ static KZPMusicKeyboard *keyboardInstance;
 {
     self = [super init];
     if (self) {
-        self.keyboardViewController = [[KZPMusicKeyboardViewController alloc] initWithNibName:@"KZPMusicKeyboardView" bundle:nil];
+        self.keyboardViewController = [[KZPMusicKeyboardViewController alloc] initWithNibName:@"KZPMusicKeyboardView" bundle:[NSBundle bundleForClass:[KZPMusicKeyboard class]]];
         [self.keyboardViewController.view setFrameY:[[UIScreen mainScreen] bounds].size.width - [self.keyboardViewController height]];
         [self.keyboardViewController registerControlDelegate:self];
         [self applyDefaultSettings];

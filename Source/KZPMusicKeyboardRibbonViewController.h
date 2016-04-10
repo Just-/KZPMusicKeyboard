@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "KZPMusicKeyboardDelegate.h"
-#import "KZPMusicSciNotation.h"
+@import KZPUtilities;
 #import "KZPMusicKeyboardDataAggregator.h"
 
 

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TheAmazingAudioEngine.h"
+@import TheAmazingAudioEngine;
 
 @interface KZPSampler : NSObject
 

@@ -81,7 +81,7 @@
 
 - (void)loadKeyboardMap
 {
-    self.keyboardMapViewController = [[KZPMusicKeyboardMapViewController alloc] initWithNibName:@"KZPMusicKeyboardMapView" bundle:nil];
+    self.keyboardMapViewController = [[KZPMusicKeyboardMapViewController alloc] initWithNibName:@"KZPMusicKeyboardMapView" bundle:[NSBundle bundleForClass:[self class]]];
     self.keyboardMapViewController.delegate = self;
     [self.keyboardMapViewController.view setFrameY:self.controlRibbon.view.frame.size.height];
     [self.view addSubview:self.keyboardMapViewController.view];
@@ -89,7 +89,7 @@
 
 - (void)loadControlRibbon
 {
-    self.controlRibbon = [[KZPMusicKeyboardRibbonViewController alloc] initWithNibName:@"KZPMusicKeyboardRibbonView" bundle:nil];
+    self.controlRibbon = [[KZPMusicKeyboardRibbonViewController alloc] initWithNibName:@"KZPMusicKeyboardRibbonView" bundle:[NSBundle bundleForClass:[self class]]];
     self.controlRibbon.musicDataAggregator = self.musicDataAggregator;
     self.controlRibbon.delegate = self;
     [self.view addSubview:self.controlRibbon.view];
