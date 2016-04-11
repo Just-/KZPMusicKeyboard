@@ -143,6 +143,9 @@ static KZPMusicKeyboard *keyboardInstance;
     }
 }
 
+- (KZPMusicKeyboardAudio*)audioPlayer {
+    return self.keyboardViewController.localAudioPlayer;
+}
 
 #pragma mark - Configuration -
 

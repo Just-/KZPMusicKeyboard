@@ -49,7 +49,7 @@
 
 - (BOOL)loadSoundfontWithName:(NSString *)soundfontName
 {
-    NSURL *soundfontURL = [[NSBundle mainBundle] URLForResource:soundfontName withExtension:@"sf2"];
+    NSURL *soundfontURL = [[NSBundle bundleForClass:[self class]] URLForResource:soundfontName withExtension:@"sf2"];
     OSStatus result = [self loadFromDLSOrSoundFont:soundfontURL withPatch:(int)self.presetNumber];
     if (result != noErr) {
         NSLog(@"Failed to load audio sampler unit's soundfont");

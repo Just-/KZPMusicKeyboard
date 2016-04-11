@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "KZPMusicKeyboardDelegate.h"
+#import "KZPMusicKeyboardAudio.h"
 
 @interface KZPMusicKeyboardViewController : UIViewController
 
@@ -18,6 +19,7 @@
 
 @property (nonatomic, setter=enablePitchControl:) BOOL pitchControlEnabled;
 @property (nonatomic, setter=enableLocalAudio:) BOOL localAudioEnabled;
+@property (strong, nonatomic) KZPMusicKeyboardAudio *localAudioPlayer;
 
 - (void)enableSpelling:(BOOL)setting;
 - (void)enableChordDetection:(BOOL)setting;

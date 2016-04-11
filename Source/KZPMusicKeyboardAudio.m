@@ -63,7 +63,7 @@
 - (void)setPatch:(NSString *)patch
 {
     _patch = patch;
-    NSString *soundfontDataFile = [[NSBundle mainBundle] pathForResource:@"Soundfonts" ofType:@"plist"];
+    NSString *soundfontDataFile = [[NSBundle bundleForClass:[self class]] pathForResource:@"Soundfonts" ofType:@"plist"];
     NSDictionary *soundfontData = [NSDictionary dictionaryWithContentsOfFile:soundfontDataFile];
     NSDictionary *patchData = [soundfontData valueForKey:patch];
     NSString *soundfont = [patchData valueForKey:@"soundfont"];

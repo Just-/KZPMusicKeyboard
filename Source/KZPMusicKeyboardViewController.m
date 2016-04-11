@@ -8,7 +8,6 @@
 
 #import "KZPMusicKeyboardViewController.h"
 #import "UIView+frameOperations.h"
-#import "KZPMusicKeyboardAudio.h"
 #import "KZPMusicSciNotation.h"
 #import "KZPMusicKeyboardMapViewController.h"
 #import "KZPMusicKeyboardRibbonViewController.h"
@@ -30,7 +29,6 @@
 @property (strong, nonatomic) KZPMusicKeyboardMapViewController *keyboardMapViewController;
 @property (strong, nonatomic) KZPMusicKeyboardSpellingViewController *spellingSurfaceViewController;
 
-@property (strong, nonatomic) KZPMusicKeyboardAudio *localAudioPlayer;
 @property (strong, nonatomic) KZPMusicKeyboardDataAggregator *musicDataAggregator;
 
 @property (nonatomic) BOOL chordSensitivityWasSetProgrammatically;

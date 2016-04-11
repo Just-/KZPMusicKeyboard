@@ -10,6 +10,7 @@
 #import "KZPMusicPitchData.h"
 #import "KZPMusicDurationData.h"
 #import "KZPMusicKeyboardDelegate.h"
+#import "KZPMusicKeyboardAudio.h"
 
 @interface KZPMusicKeyboard : NSObject
 
@@ -21,6 +22,7 @@
 - (void)hide;
 - (void)showWithCompletion:(void (^)())completionBlock;
 - (void)hideWithCompletion:(void (^)())completionBlock;
+- (KZPMusicKeyboardAudio*)audioPlayer;
 
 /*
    If enabled the keyboard will slide in and out of view on show/hide
